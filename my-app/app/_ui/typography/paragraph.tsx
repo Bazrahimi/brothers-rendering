@@ -1,4 +1,4 @@
-import { roboto } from "@/app/_lib/font";
+import { bodyFont } from "@/app/_lib/font";
 import { cn } from "@/app/_lib/utils/cn";
 import * as React from "react";
 
@@ -26,7 +26,7 @@ export function P({ size = "md", className, children, ...rest }: PProps) {
   return (
     <p
       className={cn(
-        roboto.className,
+        bodyFont.className,
         SIZE[size],
         LEADING[size],
         "antialiased",

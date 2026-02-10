@@ -1,11 +1,13 @@
 import { Inter, Lusitana, Roboto } from "next/font/google";
-export const inter = Inter({ subsets: ["latin"] });
-export const lusitana = Lusitana({
+export const uiFond = Inter({ subsets: ["latin"] });
+
+export const headingFont = Lusitana({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
 
-export const roboto = Roboto({
+
+export const bodyFont = Roboto({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
   display: "swap",

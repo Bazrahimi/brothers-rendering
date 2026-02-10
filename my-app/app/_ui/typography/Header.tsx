@@ -1,4 +1,4 @@
-import { lusitana } from "@/app/_lib/font";
+import { headingFont } from "@/app/_lib/font";
 import { cn } from "@/app/_lib/utils/cn";
 import * as React from "react";
 
@@ -55,7 +55,7 @@ export function Header({
     <Tag
       className={cn(
         "mb-3 break-words font-extrabold leading-tight tracking-tight hyphens-auto text-org-primary-main",
-        lusitana.className,
+        headingFont.className,
         SCALE[as][size],
 
         align === "center"

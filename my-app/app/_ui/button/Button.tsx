@@ -1,6 +1,6 @@
 "use client";
 
-import { inter } from "@/app/_lib/font";
+import { uiFond } from "@/app/_lib/font";
 import { cn } from "@/app/_lib/utils/cn";
 import Link from "next/link";
 import { forwardRef } from "react";
@@ -66,7 +66,7 @@ export const Button = forwardRef<
   const layout = fullWidth ? "flex w-full justify-center" : "inline-flex";
 
   const classes = cn(
-    inter.className,
+    uiFond.className,
     layout,
     "items-center gap-2 rounded-lg font-semibold shadow-md",
     "transition-transform duration-200 focus:outline-none focus:ring-4 hover:scale-105",
