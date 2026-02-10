@@ -1,4 +1,4 @@
-import { ActionState } from "@/app/_lib/ActionHelper";
+import { ActionState } from "@/app/_lib/utils/ActionHelper";
 import {
   SHAMAMA_QUERY_OPTIONS,
   type ShamamaQueryType,
