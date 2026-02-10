@@ -1,6 +1,5 @@
 "use client";
-
-import clsx from "clsx";
+import { cn } from "@/app/_lib/utils/cn";
 import React, { forwardRef, useState } from "react";
 import { IconType } from "react-icons";
 import { IoEye, IoEyeOff } from "react-icons/io5";
@@ -97,7 +96,7 @@ export const Input = forwardRef<HTMLInputElement, BaseInputProps>(
       <div className="mb-5" data-required={required || undefined}>
         <label
           htmlFor={id}
-          className={clsx(
+          className={cn(
             "block text-sm font-medium text-gray-700",
             isRTL && "text-right", // <— label alignment
           )}
@@ -132,7 +131,7 @@ export const Input = forwardRef<HTMLInputElement, BaseInputProps>(
                 readOnly,
               }}
               {...inputProps}
-              className={clsx(
+              className={cn(
                 "peer block w-full rounded-md border border-gray-200",
                 "py-2 pr-10 text-sm sm:text-base outline-1 placeholder:text-gray-500 placeholder:text-xs",
                 "focus:border-hca-blue-main focus:ring-2 focus:ring-blue-100",
@@ -165,7 +164,7 @@ export const Input = forwardRef<HTMLInputElement, BaseInputProps>(
                 defaultValue,
               }}
               {...inputProps}
-              className={clsx(
+              className={cn(
                 "peer block w-full rounded-md border border-gray-200",
                 "py-2 pr-10 text-sm sm:text-base outline-1 placeholder:text-gray-500 placeholder:text-xs",
                 "focus:border-hca-blue-main focus:ring-2 focus:ring-blue-100",
@@ -183,7 +182,7 @@ export const Input = forwardRef<HTMLInputElement, BaseInputProps>(
           {/* Left icon — stays LTR, even in RTL */}
           {Icon && (
             <Icon
-              className={clsx(
+              className={cn(
                 "pointer-events-none absolute top-1/2 h-5 w-5 -translate-y-1/2 text-gray-500 sm:h-6 sm:w-6 peer-focus:text-gray-900",
                 isRTL ? "right-3" : "left-3", // <— flip icon position
               )}
@@ -217,7 +216,7 @@ export const Input = forwardRef<HTMLInputElement, BaseInputProps>(
             id={`${id}-error`}
             aria-live="polite"
             aria-atomic="true"
-            className={clsx(
+            className={cn(
               "mt-2 text-xs text-red-600 sm:text-sm",
               isRTL ? "text-left" : "text-right",
             )}
@@ -232,6 +231,4 @@ export const Input = forwardRef<HTMLInputElement, BaseInputProps>(
   },
 );
 
-export default Input
-
-
+export default Input;

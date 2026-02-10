@@ -1,5 +1,5 @@
 import { lusitana } from "@/app/_lib/font";
-import { cn } from "@/app/_lib";
+import { cn } from "@/app/_lib/utils/cn";
 import * as React from "react";
 
 type AsTag = "h1" | "h2" | "h3" | "h4";

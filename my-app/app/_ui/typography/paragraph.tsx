@@ -1,5 +1,5 @@
-import { roboto } from "@/app/_lib";
-import { cn } from "@/app/_lib";
+import { roboto } from "@/app/_lib/font";
+import { cn } from "@/app/_lib/utils/cn";
 import * as React from "react";
 
 type ParaSize = "sm" | "md" | "lg" | "xl";
