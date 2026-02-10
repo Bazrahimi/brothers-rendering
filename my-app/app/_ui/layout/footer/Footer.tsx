@@ -1,9 +1,8 @@
-
 // app/_ui/layout/footer/footer.tsx
 import Link from "next/link";
 // import { BsFillCartFill } from "react-icons/bs";
-import { ORG_PROFILE } from "@/app/_lib/org/org-profile";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { ORG_PROFILE } from "@/app/_lib/org/profile";
+
 import { FaWpforms } from "react-icons/fa6";
 import {
   HiLocationMarker,
@@ -14,11 +13,12 @@ import {
 import { QUICK_LINKS } from "@/app/_lib/org/services";
 import { Header } from "../../typography/Header";
 import { P } from "../../typography/paragraph";
+import SocialLinks from "./SocialLinks";
 
 // -------------------------------
 // Reusable className tokens
 // -------------------------------
-const CN = {
+export const CN = {
   footer: "mt-16 bg-org-secondary-main",
   wrap: "mx-auto max-w-7xl px-6 py-14",
   grid: "grid grid-cols-1 gap-y-10 gap-x-8 sm:grid-cols-2 md:grid-cols-4",
@@ -36,30 +36,6 @@ const CN = {
 // -------------------------------
 // Data
 // -------------------------------
-
-const SOCIAL_LINKS = [
-  {
-    href: "https://www.facebook.com/profile.php?id=61557919424367",
-    label: "Facebook",
-    iconClass: "text-blue-600",
-    aria: "Open HCA Facebook (opens in new tab)",
-    Icon: FaFacebook,
-  },
-  {
-    href: "https://www.instagram.com/hazaraculturalassociation/",
-    label: "Instagram",
-    iconClass: "text-pink-600",
-    aria: "Open HCA Instagram (opens in new tab)",
-    Icon: FaInstagram,
-  },
-  // {
-  //   href: "https://www.tiktok.com/@yourusername", // <-- replace with real TikTok URL
-  //   label: "TikTok",
-  //   iconClass: "text-black", // TikTok icon is usually black/white, you could style with gradient if desired
-  //   aria: "Open HCA TikTok (opens in new tab)",
-  //   Icon: FaTiktok,
-  // },
-];
 
 const CONTACT = {
   email: ORG_PROFILE.email,
@@ -137,26 +113,7 @@ const Footer = () => {
         </address>
 
         {/* Social Media */}
-        <div>
-          <Header as="h4" size="sm">
-            Follow us on Social Media
-          </Header>
-          <ul className={CN.list}>
-            {SOCIAL_LINKS.map(({ href, label, Icon, iconClass, aria }) => (
-              <li key={href}>
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={CN.socialLink}
-                  aria-label={aria}
-                >
-                  <Icon className={iconClass} aria-hidden="true" /> {label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <SocialLinks />
 
         {/* Administration & Credits */}
 

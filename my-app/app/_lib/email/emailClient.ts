@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 import "server-only";
 import { serverEnv } from "../env/server";
-import { ORG_PROFILE } from "../org/org-profile";
+import { ORG_PROFILE } from "../org/profile";
 
 export const emailClient = new Resend(serverEnv.resendApiKey);
 

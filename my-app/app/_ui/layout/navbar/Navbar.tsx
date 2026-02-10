@@ -2,7 +2,7 @@ import { PublicRoutes } from "@/app/_lib/routes/publicRoutes";
 import Image from "next/image";
 import Link from "next/link";
 // import AccountMenu from "./AccountMenu";
-import { ORG_PROFILE } from "@/app/_lib/org/org-profile";
+import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import NavLinks from "./NavLinks";
 
 // Reusable styles

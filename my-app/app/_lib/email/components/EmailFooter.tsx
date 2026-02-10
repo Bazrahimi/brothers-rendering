@@ -1,4 +1,4 @@
-import { ORG_PROFILE } from "@/app/_lib/org/org-profile";
+import { ORG_PROFILE } from "@/app/_lib/org/profile";
 
 import { Img, Section } from "@react-email/components";
 // app/_lib/email/components/EmailFooter.tsx

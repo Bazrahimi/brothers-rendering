@@ -1,3 +1,4 @@
+//app/_lib/org/org-profile.ts
 const ORG_DOMAIN = "canconstruction.com.au" as const;
 const orgName = "Can Construction Pty Ltd";
 
@@ -21,4 +22,8 @@ export const ORG_PROFILE = {
   logoFullUrl: "",
 } as const;
 
-
+export const ORG_SOCIAL_MEDIA = {
+  facebook: "",
+  instagram: "",
+  tiktok: "", // leave empty or undefined if not used
+} as const;
