@@ -54,7 +54,7 @@ export function Header({
   return (
     <Tag
       className={cn(
-        "mb-3 break-words font-extrabold leading-tight tracking-tight hyphens-auto text-hca-blue-main",
+        "mb-3 break-words font-extrabold leading-tight tracking-tight hyphens-auto text-org-primary-main",
         lusitana.className,
         SCALE[as][size],
 

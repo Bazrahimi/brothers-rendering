@@ -1,0 +1,41 @@
+app
+├── _lib
+│   ├── email
+│   │   ├── components
+│   │   │   └── EmailFooter.tsx
+│   │   ├── emailClient.ts
+│   │   └── templates
+│   ├── env
+│   │   ├── puplic.ts
+│   │   └── server.ts
+│   ├── font.ts
+│   ├── org
+│   │   └── org-profile.ts
+│   ├── routes
+│   │   └── publicRoutes.ts
+│   └── utils
+│       ├── ActionHelper.ts
+│       └── cn.ts
+├── _ui
+│   ├── button
+│   │   ├── ActionButton.tsx
+│   │   └── Button.tsx
+│   ├── form
+│   │   ├── Checkbox.tsx
+│   │   ├── FormErrorsMessage.tsx
+│   │   ├── Input.tsx
+│   │   └── Select.tsx
+│   ├── image
+│   │   └── ImageShimer.tsx
+│   └── typography
+│       ├── Header.tsx
+│       └── paragraph.tsx
+├── contact-us
+│   └── _lib
+│       └── schema.ts
+├── favicon.ico
+├── globals.css
+├── layout.tsx
+└── page.tsx
+
+16 directories, 23 files

@@ -1,8 +1,12 @@
 const ORG_DOMAIN = "canconstruction.com.au" as const;
+const orgName = "Can Construction Pty Ltd";
 
 export const ORG_PROFILE = {
-  orgName: "Can Construction Pty Ltd",
+  orgName: orgName,
   orgNameFarsi: "",
+  description:
+    orgName +
+    " Commercial and Residential Painting work through south easter suburbs",
 
   domain: ORG_DOMAIN,
 
@@ -16,7 +20,6 @@ export const ORG_PROFILE = {
   logo: "/images/logo-transparent-hd.png",
   logoFullUrl: "",
 } as const;
-
 
 export const SHAMAMA_QUERY_OPTIONS = {
   1: "Community Connection & Referrals",
