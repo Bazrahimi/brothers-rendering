@@ -1,3 +1,5 @@
+
+// app/_ui/layout/footer/footer.tsx
 import Link from "next/link";
 // import { BsFillCartFill } from "react-icons/bs";
 import { ORG_PROFILE } from "@/app/_lib/org/org-profile";
@@ -8,12 +10,10 @@ import {
   // HiLocationMarker,
   HiMail,
 } from "react-icons/hi";
-import { IoIosLogIn } from "react-icons/io";
-import { MdOutlineJoinInner } from "react-icons/md";
 
 import { QUICK_LINKS } from "@/app/_lib/org/services";
-import { Header } from "../typography/Header";
-import { P } from "../typography/paragraph";
+import { Header } from "../../typography/Header";
+import { P } from "../../typography/paragraph";
 
 // -------------------------------
 // Reusable className tokens

@@ -21,16 +21,4 @@ export const ORG_PROFILE = {
   logoFullUrl: "",
 } as const;
 
-export const SHAMAMA_QUERY_OPTIONS = {
-  1: "Community Connection & Referrals",
-  2: "Programs & Workshops",
-  3: "Volunteering",
-  4: "Partnerships / Organisations",
-  99: "Other",
-} as const;
-export type ShamamaQueryType =
-  keyof typeof SHAMAMA_QUERY_OPTIONS extends infer K
-    ? K extends `${infer N extends number}`
-      ? N
-      : never
-    : never;
+

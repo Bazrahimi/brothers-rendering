@@ -31,3 +31,17 @@ export const QUICK_LINKS = [
   ...getServiceLinks(),
   {href: PublicRoutes.contact(), label: "Contact-us"}
 ];
+
+
+export const ORG_QUERY_OPTIONS = {
+  ...SERVICES_LIST,
+  99: "Other",
+} as const;
+
+
+export type OrgQueryId = keyof typeof ORG_QUERY_OPTIONS;
+export type OrgQueryLabel = (typeof ORG_QUERY_OPTIONS)[OrgQueryId]
+export type OrgQueryOption = {
+  value: OrgQueryId;
+  label: OrgQueryLabel
+}

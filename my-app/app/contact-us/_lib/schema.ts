@@ -1,14 +1,12 @@
 import { ActionState } from "@/app/_lib/utils/ActionHelper";
-import {
-  SHAMAMA_QUERY_OPTIONS,
-  type ShamamaQueryType,
-} from "@/app/_lib/org/org-profile";
+
+import { ORG_QUERY_OPTIONS, OrgQueryId } from "@/app/_lib/org/services";
 import { z } from "zod";
 
 const QueryTypeSchema = z.coerce
   .number()
   .int()
-  .refine((v): v is ShamamaQueryType => v in SHAMAMA_QUERY_OPTIONS, {
+  .refine((v): v is OrgQueryId => v in ORG_QUERY_OPTIONS, {
     message: "Please select your query type",
   });
 
