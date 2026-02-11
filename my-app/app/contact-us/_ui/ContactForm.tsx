@@ -10,8 +10,9 @@ import { CiUser } from "react-icons/ci";
 import { IoIosPhonePortrait } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { ENQUIRY_FIELDS as F } from "../_lib/constant";
-import MessageField from "./MessageField";
-import QueryTypeSelect from "./QueryTypeSelect";
+import Textarea from "@/app/_ui/form/Textarea";
+// import MessageField from "./MessageField";
+// import QueryTypeSelect from "./QueryTypeSelect";
 
 export default function ContactForm() {
   const [state, formAction, isPending] = useActionState(submitEnquiry, undefined);
@@ -58,9 +59,16 @@ export default function ContactForm() {
         Icon={IoIosPhonePortrait}
       />
 
-      <QueryTypeSelect state={state} />
+      {/* <QueryTypeSelect state={state} /> */}
 
-      <MessageField state={state} />
+      <Textarea
+      id={F.qMessage}
+      label="Message | Query"
+      placeholder="Tell us a little about your enquiry..."
+      error={state?.errors?.qMessage}
+      defaultValue={state?.data?.qMessage}
+      
+      />
       <FormErrorsMessage message={state?.message} />
 
       {/* Submit */}

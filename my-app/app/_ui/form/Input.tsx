@@ -3,6 +3,7 @@ import { cn } from "@/app/_lib/utils/cn";
 import React, { forwardRef, useState } from "react";
 import { IconType } from "react-icons";
 import { IoEye, IoEyeOff } from "react-icons/io5";
+import FieldError from "./FieldError";
 
 export type BaseInputProps = {
   id: string;
@@ -211,21 +212,7 @@ export const Input = forwardRef<HTMLInputElement, BaseInputProps>(
           ) : null}
         </div>
 
-        {hasError && (
-          <div
-            id={`${id}-error`}
-            aria-live="polite"
-            aria-atomic="true"
-            className={cn(
-              "mt-2 text-xs text-red-600 sm:text-sm",
-              isRTL ? "text-left" : "text-right",
-            )}
-          >
-            {error!.map((msg, i) => (
-              <p key={`${id}-error-${i}`}>{msg}</p>
-            ))}
-          </div>
-        )}
+        <FieldError fieldId={id} errors={error} isRTL={isRTL} />
       </div>
     );
   },
