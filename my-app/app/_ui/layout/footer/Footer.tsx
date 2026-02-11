@@ -2,6 +2,8 @@
 // import { BsFillCartFill } from "react-icons/bs";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 
+import { uiFond } from "@/app/_lib/font";
+import { cn } from "@/app/_lib/utils/cn";
 import Acknowledgement from "./Acknowledgement";
 import GetInTouch from "./GetInTouch";
 import OrganisationInfo from "./OrganisationInfo";
@@ -18,7 +20,10 @@ export const CN = {
 
   list: "space-y-2 text-sm",
   listDense: "space-y-3 text-sm",
-  link: "underline underline-offset-4 decoration-black/30 hover:decoration-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 rounded-sm",
+  link: cn(
+    uiFond.className,
+    "underline underline-offset-4 decoration-black/30 hover:decoration-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 rounded-sm",
+  ),
   socialLink:
     "flex items-center gap-2 underline underline-offset-4 decoration-black/30 hover:decoration-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 rounded-sm",
   Item: "flex items-start gap-2",

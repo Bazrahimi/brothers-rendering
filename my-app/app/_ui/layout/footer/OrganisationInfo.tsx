@@ -14,6 +14,9 @@ const OrganisationInfo = () => {
       <P className="mt-2 " size="sm">
         <span className="font-medium">ABN:</span> {ORG_PROFILE.abn}
       </P>
+      <P className="mt-2" size="sm">
+        {ORG_PROFILE.address}
+      </P>
     </div>
   );
 };

@@ -4,7 +4,6 @@ import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import Link from "next/link";
 import { FaWpforms } from "react-icons/fa6";
 import {
-  HiLocationMarker,
   // HiLocationMarker,
   HiMail,
 } from "react-icons/hi";
@@ -32,10 +31,7 @@ const GetInTouch = () => {
             Quick Enquiry
           </Link>
         </li>
-        <li className={CN.Item}>
-          <HiLocationMarker className={CN.Icon} aria-hidden="true" />
-          <span>{CONTACT.address}</span>
-        </li>
+
         <li className={CN.Item}>
           <HiMail className={CN.Icon} aria-hidden="true" />
           <a href={`mailto:${CONTACT.email}`} className={CN.link}>
