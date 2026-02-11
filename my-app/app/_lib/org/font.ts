@@ -12,4 +12,3 @@ export const bodyFont = Roboto({
   subsets: ["latin"],
   display: "swap",
 });
-
