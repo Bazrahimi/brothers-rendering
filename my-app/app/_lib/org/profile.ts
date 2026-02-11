@@ -27,3 +27,5 @@ export const ORG_SOCIAL_MEDIA = {
   instagram: "",
   tiktok: "", // leave empty or undefined if not used
 } as const;
+
+

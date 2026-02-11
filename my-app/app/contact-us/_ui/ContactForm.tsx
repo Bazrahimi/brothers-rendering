@@ -11,6 +11,9 @@ import { IoIosPhonePortrait } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { ENQUIRY_FIELDS as F } from "../_lib/constant";
 import Textarea from "@/app/_ui/form/Textarea";
+import Select from "@/app/_ui/form/Select";
+import { QUERY_OPTIONS } from "../_lib/constant";
+import { serviceListArray } from "@/app/_lib/org/contactUsQuery";
 // import MessageField from "./MessageField";
 // import QueryTypeSelect from "./QueryTypeSelect";
 
@@ -60,6 +63,13 @@ export default function ContactForm() {
       />
 
       {/* <QueryTypeSelect state={state} /> */}
+      <Select 
+      id={F.queryType}
+      label="Select Query Type"
+      error={state?.errors?.queryType}
+      defaultValue={state?.data?.queryType}
+      options={serviceListArray}
+      />
 
       <Textarea
       id={F.qMessage}

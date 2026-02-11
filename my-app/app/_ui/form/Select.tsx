@@ -18,7 +18,7 @@ type SelectProps = {
   isRTL?: boolean;
 };
 
-function Select({
+const Select = ({
   id,
   label,
   options,
@@ -28,7 +28,7 @@ function Select({
   error,
   className,
   isRTL = false,
-}: SelectProps) {
+}: SelectProps) => {
   const hasError = !!error?.length;
 
   // Normalize simple string arrays into {label,value}
@@ -77,6 +77,6 @@ function Select({
       <FieldError fieldId={id} errors={error} isRTL={isRTL} />
     </div>
   );
-}
+};
 
 export default Select;
