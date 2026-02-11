@@ -1,4 +1,4 @@
-import { headingFont } from "@/app/_lib/font";
+import { headingFont } from "@/app/_lib/org/font";
 import { cn } from "@/app/_lib/utils/cn";
 import * as React from "react";
 

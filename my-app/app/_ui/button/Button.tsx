@@ -1,6 +1,6 @@
 "use client";
 
-import { uiFond } from "@/app/_lib/font";
+import { uiFond } from "@/app/_lib/org/font";
 import { cn } from "@/app/_lib/utils/cn";
 import Link from "next/link";
 import { forwardRef } from "react";

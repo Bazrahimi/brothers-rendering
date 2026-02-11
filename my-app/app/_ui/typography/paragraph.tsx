@@ -1,4 +1,4 @@
-import { bodyFont } from "@/app/_lib/font";
+import { bodyFont } from "@/app/_lib/org/font";
 import { cn } from "@/app/_lib/utils/cn";
 import * as React from "react";
 

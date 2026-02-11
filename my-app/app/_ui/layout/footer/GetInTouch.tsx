@@ -1,6 +1,7 @@
 import { HiPhone } from "react-icons/hi";
 
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
+import { PublicRoutes } from "@/app/_lib/routes/publicRoutes";
 import Link from "next/link";
 import { FaWpforms } from "react-icons/fa6";
 import {
@@ -27,7 +28,7 @@ const GetInTouch = () => {
       <ul className={CN.listDense}>
         <li className={CN.Item}>
           <FaWpforms className={CN.Icon} aria-hidden="true" />
-          <Link href="/contact-us" className={CN.link}>
+          <Link href={PublicRoutes.contact()} className={CN.link}>
             Quick Enquiry
           </Link>
         </li>

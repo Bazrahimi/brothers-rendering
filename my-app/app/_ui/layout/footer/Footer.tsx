@@ -2,7 +2,7 @@
 // import { BsFillCartFill } from "react-icons/bs";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 
-import { uiFond } from "@/app/_lib/font";
+import { uiFond } from "@/app/_lib/org/font";
 import { cn } from "@/app/_lib/utils/cn";
 import Acknowledgement from "./Acknowledgement";
 import GetInTouch from "./GetInTouch";
