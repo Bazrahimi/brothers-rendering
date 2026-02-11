@@ -1,18 +1,11 @@
 // app/_ui/layout/footer/footer.tsx
-import Link from "next/link";
 // import { BsFillCartFill } from "react-icons/bs";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 
-import { FaWpforms } from "react-icons/fa6";
-import {
-  HiLocationMarker,
-  // HiLocationMarker,
-  HiMail,
-} from "react-icons/hi";
-
-import { QUICK_LINKS } from "@/app/_lib/org/services";
-import { Header } from "../../typography/Header";
-import { P } from "../../typography/paragraph";
+import Acknowledgement from "./Acknowledgement";
+import GetInTouch from "./GetInTouch";
+import OrganisationInfo from "./OrganisationInfo";
+import QuickLinks from "./QuickLinks";
 import SocialLinks from "./SocialLinks";
 
 // -------------------------------
@@ -37,80 +30,18 @@ export const CN = {
 // Data
 // -------------------------------
 
-const CONTACT = {
-  email: ORG_PROFILE.email,
-  ...(ORG_PROFILE.phone && {
-    phone: ORG_PROFILE.phone,
-  }),
-  address: ORG_PROFILE.address,
-};
-
 const Footer = () => {
   return (
     <footer className={CN.footer} role="contentinfo">
       <div className={`${CN.wrap} ${CN.grid}`}>
         {/* Organisation Info */}
-        <div className="sm:col-span-2">
-          <Header as="h4" size="sm">
-            {ORG_PROFILE.orgName}
-          </Header>
-          <P size="md" className="text-gray-900">
-            {ORG_PROFILE.description}
-          </P>
-          <p className="mt-2 text-sm">
-            <span className="font-medium">ABN:</span> {ORG_PROFILE.abn}
-          </p>
-        </div>
+        <OrganisationInfo />
 
         {/* Quick Links */}
-        <div>
-          <Header as="h4" size="sm">
-            Quick Links
-          </Header>
-          <ul className={CN.list}>
-            {QUICK_LINKS.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className={CN.link}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <QuickLinks />
 
-        {/* Contact Info */}
-        <address className="not-italic" aria-labelledby="contact-heading">
-          <Header as="h4" id="contact-heading" size="sm">
-            Get in touch with us
-          </Header>
-          <ul className={CN.listDense}>
-            <li className={CN.Item}>
-              <FaWpforms className={CN.Icon} aria-hidden="true" />
-              <Link href="/contact-us" className={CN.link}>
-                Quick Enquiry
-              </Link>
-            </li>
-            <li className={CN.Item}>
-              <HiLocationMarker className={CN.Icon} aria-hidden="true" />
-              <span>{CONTACT.address}</span>
-            </li>
-            <li className={CN.Item}>
-              <HiMail className={CN.Icon} aria-hidden="true" />
-              <a href={`mailto:${CONTACT.email}`} className={CN.link}>
-                {CONTACT.email}
-              </a>
-            </li>
-            {/* <li className={CN.Item}>
-              <HiPhone className={CN.Icon} aria-hidden="true" />
-              <a
-                href={`tel:${CONTACT.phone.replace(/\s/g, "")}`}
-                className={CN.link}
-              >
-                {CONTACT.phone}
-              </a>
-            </li> */}
-          </ul>
-        </address>
+        {/* Get In touch */}
+        <GetInTouch />
 
         {/* Social Media */}
         <SocialLinks />
@@ -145,48 +76,8 @@ const Footer = () => {
       </div>
 
       {/* Acknowledgements */}
-      <section
-        aria-labelledby="ack-heading"
-        className="mx-auto mt-10 max-w-7xl px-6"
-        role="region"
-      >
-        <div className="relative overflow-hidden rounded-lg border border-black/10 bg-org-secondary-dark p-4 sm:p-5">
-          <span
-            aria-hidden="true"
-            className="absolute left-0 top-0 h-full w-1.5 bg-[linear-gradient(to_bottom,#000000,#CC0000,#FFFF00)]"
-          />
 
-          <Header
-            as="h4"
-            id="ack-heading"
-            className="mb-2 text-sm font-semibold text-org-primary-main"
-          >
-            Acknowledgements
-          </Header>
-
-          {/* Country Acknowledgement */}
-          <p className="text-sm leading-6 text-gray-900">
-            {ORG_PROFILE.orgName} acknowledges the Bunurong people of the Kulin
-            Nation as the Traditional Custodians of the lands and waters in and
-            around Greater Dandenong. We pay our respects to Elders past and
-            present and extend that respect to all Aboriginal and Torres Strait
-            Islander peoples. We honour their enduring connection to Country,
-            culture, and community.
-          </p>
-
-          {/* Hazara Acknowledgement */}
-          <p className="text-xs leading-6 text-gray-900 mt-3">
-            We also acknowledge the historical and ongoing persecution of Hazara
-            people under successive Afghan rulers, which has resulted in the
-            displacement of millions—many born stateless and without recognised
-            homeland or citizenship rights in countries such as Iran, Pakistan,
-            Turkey, Indonesia, and Malaysia. HCA is committed to justice,
-            cultural preservation, and strengthening community belonging and
-            social cohesion.
-          </p>
-        </div>
-      </section>
-
+      <Acknowledgement />
       {/* Copyright */}
       <div className={CN.copy}>
         © {new Date().getFullYear()} {ORG_PROFILE.orgName}. All rights reserved.
