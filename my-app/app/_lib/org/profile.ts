@@ -1,6 +1,6 @@
 //app/_lib/org/org-profile.ts
 const ORG_DOMAIN = "canconstruction.com.au" as const;
-const orgName = "Can Construction Pty Ltd";
+const orgName = "MGR BUILDING GROUP";
 
 export const ORG_PROFILE = {
   orgName: orgName,
@@ -15,7 +15,7 @@ export const ORG_PROFILE = {
   website: `https://${ORG_DOMAIN}`,
   phone: "+61 404 148 009",
 
-  address: "2 Faldo Place Cranbourne North VIC 3977",
+  address: "22  Faldo Place Cranbourne North VIC 3977",
   abn: "37 649 729 395",
 
   logo: "/images/logo-transparent-hd.png",

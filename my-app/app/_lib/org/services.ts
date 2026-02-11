@@ -1,8 +1,8 @@
 import { PublicRoutes } from "../routes/publicRoutes";
 import { slugify } from "./helper";
 export const SERVICES_LIST = {
-  1: "Services 1",
-  2: "Services 2",
+  1: "Service 1",
+  2: "Service 2",
   3: "Services 3",
 } as const;
 
@@ -29,19 +29,19 @@ export const QUICK_LINKS = [
   { href: PublicRoutes.home(), label: "Home" },
   { href: PublicRoutes.about(), label: "About HCA" },
   ...getServiceLinks(),
-  {href: PublicRoutes.contact(), label: "Contact-us"}
+  { href: PublicRoutes.contact(), label: "Contact-us" },
 ];
-
 
 export const ORG_QUERY_OPTIONS = {
   ...SERVICES_LIST,
   99: "Other",
 } as const;
 
-
 export type OrgQueryId = keyof typeof ORG_QUERY_OPTIONS;
-export type OrgQueryLabel = (typeof ORG_QUERY_OPTIONS)[OrgQueryId]
+export type OrgQueryLabel = (typeof ORG_QUERY_OPTIONS)[OrgQueryId];
 export type OrgQueryOption = {
   value: OrgQueryId;
-  label: OrgQueryLabel
-}
+  label: OrgQueryLabel;
+};
+
+
