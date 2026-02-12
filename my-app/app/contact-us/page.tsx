@@ -1,6 +1,4 @@
-import { CONTACT_FAQS } from "../_lib/org/faqs";
 import ContactDetails from "./_ui/ContactDetails";
-import ContactFAQ from "./_ui/ContactFAQ";
 import ContactForm from "./_ui/ContactForm";
 import ContactIntro from "./_ui/ContactIntro";
 
@@ -13,9 +11,12 @@ const ContactUsPage = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mt-10">
             {/* LEFT — FORM */}
-            <section className="lg:col-span-5">
-              <div className="rounded-2xl border border-slate-200 bg-white shadow-xl p-5 sm:p-7">
-                <ContactForm />
+            {/* LEFT — FORM */}
+            <section className="lg:col-span-5 lg:self-start">
+              <div className="lg:sticky lg:top-24">
+                <div className="rounded-2xl border border-slate-200 bg-white shadow-xl p-5 sm:p-7">
+                  <ContactForm />
+                </div>
               </div>
             </section>
 
@@ -24,8 +25,6 @@ const ContactUsPage = () => {
               <div className="rounded-2xl border border-white/70 bg-white/80 shadow-sm backdrop-blur p-6 sm:p-8">
                 <ContactDetails />
               </div>
-
-              <ContactFAQ items={CONTACT_FAQS} />
             </aside>
           </div>
         </div>

@@ -7,6 +7,8 @@ import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 import ContactMap from "./ContactMap";
 import OpeningHours from "./OpeningHours";
 import { OPENING_HOURS } from "@/app/_lib/org/openingHours";
+import ContactFAQ from "./ContactFAQ";
+import { CONTACT_FAQS } from "@/app/_lib/org/faqs";
 
 const ContactDetails = () => {
   const phone = ORG_PROFILE.phone?.trim();
@@ -89,6 +91,7 @@ const ContactDetails = () => {
       {address && <ContactMap address={address} />}
 
       <OpeningHours hours={OPENING_HOURS} />
+      <ContactFAQ items={CONTACT_FAQS} />
     </div>
   );
 };
