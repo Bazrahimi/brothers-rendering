@@ -1,4 +1,4 @@
-import type { ServiceKey } from "@/app/_lib/org/services/definitions";
+import type { ServiceKey, ServiceTitle } from "@/app/_lib/org/services/definitions";
 import { SERVICES } from "@/app/_lib/org/services/services";
 export const ENQUIRY_FIELDS = {
   fullName: "fullName",
@@ -54,3 +54,14 @@ export const ORG_QUERY_OPTIONS: OrgQueryOption[] = (
   label: ORG_QUERY_TYPES[key].label,
   description: ORG_QUERY_TYPES[key].description,
 }));
+
+
+export const combinedQueryArray = [
+  ...(Object.keys(SERVICES) as ServiceKey[]).map((key) => ({
+    value: key,                 // <-- submitted value (matches state)
+    label: SERVICES[key].title, // <-- what user sees
+  })),
+  { value: "booking", label: "Booking" },
+  { value: "feedback", label: "Feedback" },
+  { value: "other", label: "Other" },
+] as const;

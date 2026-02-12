@@ -1,23 +1,23 @@
 "use client";
-import { Header } from "@/app/_ui/typography/Header";
-import Input from "@/app/_ui/form/Input";
-import FormErrorsMessage from "@/app/_ui/form/FormErrorsMessage";
-import { P } from "@/app/_ui/typography/paragraph";
 import ActionButton from "@/app/_ui/button/ActionButton";
-import { submitEnquiry } from "../_lib/action";
+import FormErrorsMessage from "@/app/_ui/form/FormErrorsMessage";
+import Input from "@/app/_ui/form/Input";
+import Select from "@/app/_ui/form/Select";
+import Textarea from "@/app/_ui/form/Textarea";
+import { Header } from "@/app/_ui/typography/Header";
+import { P } from "@/app/_ui/typography/paragraph";
 import { useActionState } from "react";
 import { CiUser } from "react-icons/ci";
 import { IoIosPhonePortrait } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
-import { ENQUIRY_FIELDS as F } from "../_lib/constant";
-import Textarea from "@/app/_ui/form/Textarea";
-import Select from "@/app/_ui/form/Select";
-import { ORG_QUERY_TYPES } from "../_lib/constant";
-// import MessageField from "./MessageField";
-// import QueryTypeSelect from "./QueryTypeSelect";
+import { submitEnquiry } from "../_lib/action";
+import { combinedQueryArray, ENQUIRY_FIELDS as F } from "../_lib/constant";
 
 export default function ContactForm() {
-  const [state, formAction, isPending] = useActionState(submitEnquiry, undefined);
+  const [state, formAction, isPending] = useActionState(
+    submitEnquiry,
+    undefined,
+  );
 
   return (
     <form className="space-y-4 relative" action={formAction}>
@@ -62,21 +62,21 @@ export default function ContactForm() {
       />
 
       {/* <QueryTypeSelect state={state} /> */}
-      <Select 
-      id={F.queryType}
-      label="Select Query Type"
-      error={state?.errors?.queryType}
-      defaultValue={state?.data?.queryType}
-      options={ORG_QUERY_TYPES}
+      <Select
+        id={F.queryType}
+        label="Select Query Type"
+        placeholder="Select your enquiry type"
+        error={state?.errors?.queryType}
+        defaultValue={state?.data?.queryType}
+        options={combinedQueryArray}
       />
 
       <Textarea
-      id={F.qMessage}
-      label="Message | Query"
-      placeholder="Tell us a little about your enquiry..."
-      error={state?.errors?.qMessage}
-      defaultValue={state?.data?.qMessage}
-      
+        id={F.qMessage}
+        label="Message | Query"
+        placeholder="Tell us a little about your enquiry..."
+        error={state?.errors?.qMessage}
+        defaultValue={state?.data?.qMessage}
       />
       <FormErrorsMessage message={state?.message} />
 
