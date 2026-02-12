@@ -1,13 +1,13 @@
-import type { ServiceKey, ServiceTitle } from "@/app/_lib/org/services/definitions";
+import type { ServiceKey } from "@/app/_lib/org/services/definitions";
 import { SERVICES } from "@/app/_lib/org/services/services";
+import type { SelectOption, ServiceQueryOption } from "./definitions";
 export const ENQUIRY_FIELDS = {
   fullName: "fullName",
   email: "email",
   contactNumber: "contactNumber",
   queryType: "queryType",
-  queryLabel: "queryLabel",
+  queryTypeLabel: "queryTypeLabel",
   qMessage: "qMessage",
-
 } as const;
 
 export const ORG_QUERY_TYPES = {
@@ -55,12 +55,16 @@ export const ORG_QUERY_OPTIONS: OrgQueryOption[] = (
   description: ORG_QUERY_TYPES[key].description,
 }));
 
+export const serviceQueryMap = {
+  service_1: { value: "service_1", label: "Service 1" },
+  service_2: { value: "service_2", label: "Service 2" },
+  service_3: { value: "service_3", label: "Service 3" },
+} satisfies Record<ServiceKey, ServiceQueryOption>;
 
-export const combinedQueryArray = [
-  ...(Object.keys(SERVICES) as ServiceKey[]).map((key) => ({
-    value: key,                 // <-- submitted value (matches state)
-    label: SERVICES[key].title, // <-- what user sees
-  })),
+const serviceQueryOption = Object.values(serviceQueryMap);
+
+export const queryOptions: SelectOption[] = [
+  ...serviceQueryOption,
   { value: "booking", label: "Booking" },
   { value: "feedback", label: "Feedback" },
   { value: "other", label: "Other" },

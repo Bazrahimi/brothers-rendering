@@ -11,7 +11,7 @@ import { CiUser } from "react-icons/ci";
 import { IoIosPhonePortrait } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { submitEnquiry } from "../_lib/action";
-import { combinedQueryArray, ENQUIRY_FIELDS as F } from "../_lib/constant";
+import { ENQUIRY_FIELDS as F, queryOptions } from "../_lib/constant";
 
 export default function ContactForm() {
   const [state, formAction, isPending] = useActionState(
@@ -20,7 +20,7 @@ export default function ContactForm() {
   );
 
   return (
-    <form className="space-y-4 relative" action={formAction}>
+    <form className="space-y-4 relative" action={formAction} noValidate>
       <Header align="center" as="h3" size="sm">
         Quick Enquiry
       </Header>
@@ -64,11 +64,12 @@ export default function ContactForm() {
       {/* <QueryTypeSelect state={state} /> */}
       <Select
         id={F.queryType}
-        label="Select Query Type"
+        label="Select"
         placeholder="Select your enquiry type"
         error={state?.errors?.queryType}
         defaultValue={state?.data?.queryType}
-        options={combinedQueryArray}
+        options={queryOptions}
+        required
       />
 
       <Textarea
@@ -77,6 +78,7 @@ export default function ContactForm() {
         placeholder="Tell us a little about your enquiry..."
         error={state?.errors?.qMessage}
         defaultValue={state?.data?.qMessage}
+        required
       />
       <FormErrorsMessage message={state?.message} />
 

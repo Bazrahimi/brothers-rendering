@@ -1,5 +1,3 @@
-import { ServiceTitle } from "./definitions";
-
 export const SERVICES = {
   service_1: {
     title: "Service 1",
@@ -24,6 +22,4 @@ export const SERVICES = {
   },
 } as const;
 
-
-// How about this 
-
+// How about this

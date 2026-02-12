@@ -11,7 +11,7 @@ const FormErrorsMessage = ({ message }: { message?: string }) => {
       aria-atomic="true"
       className="mt-2 sm:mt-3 lg:mt-4 text-center sm:text-left"
     >
-      <P className=" text-red-600 leading-snug">{message}</P>
+      <P className=" text-red-600 leading-snug" size="sm">{message}</P>
     </div>
   );
 };

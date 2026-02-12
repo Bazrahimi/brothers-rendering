@@ -1,21 +1,13 @@
 import { cn } from "@/app/_lib/utils/cn";
+import type { SelectOption } from "@/app/contact-us/_lib/definitions";
+import { useEffect, useMemo, useState } from "react";
 import FieldError from "./FieldError";
-import { useState, useEffect } from "react";
-
-type OptionType = {
-  label: string;
-  value: string | number;
-};
-
-type SelectOptions =
-  | ReadonlyArray<OptionType | string | number>
-  | Record<string, { label: string; description?: string }>;
 
 type SelectProps = {
   id: string;
   label: string;
-  options: SelectOptions;
-  defaultValue?: string | number;
+  options: ReadonlyArray<SelectOption>;
+  defaultValue: string;
   required?: boolean;
   placeholder?: string;
   error?: string[];
@@ -34,29 +26,20 @@ const Select = ({
   className,
   isRTL = false,
 }: SelectProps) => {
-  const [selected, setSelected] = useState<string | number>(defaultValue ?? "");
+  const [value, setValue] = useState<string>(defaultValue);
 
-useEffect(() => {
-  setSelected(defaultValue); // sync when server state updates
-}, [defaultValue]);
+  // keep value synced when server action returns new defaultValue
+  useEffect(() => {
+    setValue(defaultValue);
+  }, [defaultValue]);
+
+  // selected option object (full object saved)
+  const selectedOption = useMemo(
+    () => options.find((o) => o.value === value) ?? null,
+    [options, value],
+  );
 
   const hasError = !!error?.length;
-
-  console.log("defaultValue", defaultValue);
-
-
-
-  const normalizedOptions: OptionType[] = Array.isArray(options)
-    ? options.map((opt) =>
-        typeof opt === "string" || typeof opt === "number"
-          ? { label: String(opt), value: opt }
-          : opt,
-      )
-    : Object.entries(options).map(([value, meta]) => ({
-        value,
-        label: meta.label,
-        description: meta.description,
-      }));
 
   return (
     <div className="mb-5">
@@ -74,8 +57,8 @@ useEffect(() => {
       <select
         id={id}
         name={id}
-        value={selected}
-        onChange={() => {}}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
         className={cn(
           "mt-1 block w-full rounded-md border border-gray-200",
           "py-2 pr-10 text-sm sm:text-base outline-1",
@@ -86,12 +69,15 @@ useEffect(() => {
         )}
       >
         <option value="">{placeholder}</option>
-        {normalizedOptions.map((opt) => (
-          <option key={String(opt.value)} value={opt.value}>
+        {options.map((opt) => (
+          <option key={opt.value} value={opt.value}>
             {opt.label}
           </option>
         ))}
       </select>
+      {selectedOption && (
+        <input type="hidden" name={`${id}Label`} value={selectedOption.label} />
+      )}
 
       <FieldError fieldId={id} errors={error} isRTL={isRTL} />
     </div>

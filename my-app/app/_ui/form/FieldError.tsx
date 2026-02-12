@@ -38,7 +38,7 @@ export default function FieldError({
           key={`${fieldId}-error-${i}`}
           size="sm"
           className={cn(
-            "mt-2 text-red-600",
+            "mt-2 text-red-500",
             isRTL ? "text-left" : "text-right",
             className,
           )}
