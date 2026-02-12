@@ -4,8 +4,9 @@ import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 import Link from "next/link";
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
+import ContactMap from "./ContactMap";
 
-const ContactHeader = () => {
+const ContactDetails = () => {
   const phone = ORG_PROFILE.phone?.trim();
   const email = ORG_PROFILE.email?.trim();
   const address = ORG_PROFILE.address?.trim();
@@ -26,17 +27,16 @@ const ContactHeader = () => {
   );
 
   return (
-    <>
+    <div className="space-y-5">
+      {/* Intro */}
       <div className="space-y-1">
-        <Header align="center" as="h2">
-          {`Contact ${ORG_PROFILE.orgName}`}
+        <Header as="h3" size="sm" align="center">
+          Prefer to reach us directly?
         </Header>
-
-        <P className="text-gray-700">
-          {`We’ll get back to you as soon as possible.`}
+        <P className=" text-gray-600 text-center" size="sm">
+          You can call, email, or visit us using the details below.
         </P>
       </div>
-
       <div className="mt-3 grid grid-cols-1 gap-3 rounded-lg bg-gray-50 p-3 text-gray-800 sm:grid-cols-2">
         {/* Phone */}
         {phone && telHref && (
@@ -54,7 +54,7 @@ const ContactHeader = () => {
 
         {/* Email */}
         {email && mailHref && (
-          <P size="sm" className="flex items-center">
+          <P size="sm" className="flex items-center" >
             <Link
               href={mailHref}
               className={linkBase}
@@ -82,8 +82,11 @@ const ContactHeader = () => {
           </P>
         )}
       </div>
-    </>
+
+      {/* Embedded Map */}
+      {address && <ContactMap address={address} />}
+    </div>
   );
 };
 
-export default ContactHeader;
+export default ContactDetails;

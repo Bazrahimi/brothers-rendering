@@ -1,6 +1,6 @@
 export const SERVICES = {
   service_1: {
-    title: "Civil Dispute",
+    title: "Service 1",
     shortDesc: "A short one-line summary of Service 1.",
     areasServed: ["Dandenong", "Melbourne South East"],
     category: "General",

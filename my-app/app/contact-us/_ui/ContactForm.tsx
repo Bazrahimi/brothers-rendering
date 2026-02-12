@@ -32,6 +32,12 @@ export default function ContactForm() {
         Quick Enquiry
       </Header>
 
+      <P className="text-center text-sm text-gray-600">
+        Use this form for enquiries, bookings, feedback, or anything else. A
+        member of our team will review your message and respond as soon as
+        possible.
+      </P>
+
       {/* Name */}
       <Input
         id={F.fullName}
