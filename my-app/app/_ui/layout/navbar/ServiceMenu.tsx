@@ -1,6 +1,6 @@
 "use client";
 
-import { getServiceLinks } from "@/app/_lib/org/services";
+import { getServiceLinks } from "@/app/_lib/routes/publicRoutes";
 import Link from "next/link";
 import { HiChevronDown } from "react-icons/hi";
 

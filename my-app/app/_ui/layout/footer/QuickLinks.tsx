@@ -1,4 +1,4 @@
-import { QUICK_LINKS } from "@/app/_lib/org/services";
+import { QUICK_LINKS } from "@/app/_lib/routes/publicRoutes";
 import Link from "next/link";
 import { Header } from "../../typography/Header";
 import { CN } from "./Footer";

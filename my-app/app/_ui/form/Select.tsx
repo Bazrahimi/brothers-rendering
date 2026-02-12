@@ -6,17 +6,22 @@ type OptionType = {
   value: string | number;
 };
 
+type SelectOptions =
+  | ReadonlyArray<OptionType | string | number>
+  | Record<string, { label: string; description?: string }>;
+
 type SelectProps = {
   id: string;
   label: string;
-  options: ReadonlyArray<OptionType | string | number>; // supports simple arrays too
+  options: SelectOptions;
   defaultValue?: string | number;
   required?: boolean;
   placeholder?: string;
-  error?: string[]; // optional – same pattern as Input
+  error?: string[];
   className?: string;
   isRTL?: boolean;
 };
+
 
 const Select = ({
   id,
@@ -31,12 +36,18 @@ const Select = ({
 }: SelectProps) => {
   const hasError = !!error?.length;
 
-  // Normalize simple string arrays into {label,value}
-  const normalizedOptions: OptionType[] = options.map((opt) =>
-    typeof opt === "string" || typeof opt === "number"
-      ? { label: String(opt), value: opt }
-      : opt,
-  );
+ const normalizedOptions: OptionType[] = Array.isArray(options)
+  ? options.map((opt) =>
+      typeof opt === "string" || typeof opt === "number"
+        ? { label: String(opt), value: opt }
+        : opt,
+    )
+  : Object.entries(options).map(([value, meta]) => ({
+      value,
+      label: meta.label,
+      description: meta.description,
+    }));
+
 
   return (
     <div className="mb-5">

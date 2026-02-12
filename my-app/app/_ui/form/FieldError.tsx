@@ -32,14 +32,19 @@ export default function FieldError({
       aria-live={live}
       aria-atomic="true"
       role={live === "off" ? undefined : "status"}
-      className={cn(
-        "mt-2 text-red-600",
-        isRTL ? "text-left" : "text-right",
-        className,
-      )}
     >
       {errors!.map((msg, i) => (
-        <P key={`${fieldId}-error-${i}`}>{msg}</P>
+        <P
+          key={`${fieldId}-error-${i}`}
+          size="sm"
+          className={cn(
+            "mt-2 text-red-600",
+            isRTL ? "text-left" : "text-right",
+            className,
+          )}
+        >
+          {msg}
+        </P>
       ))}
     </div>
   );
