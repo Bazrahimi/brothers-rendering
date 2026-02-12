@@ -1,6 +1,6 @@
 //app/_lib/org/org-profile.ts
 const ORG_DOMAIN = "mgrbuildinggroup.com.au" as const;
-const orgName = "MGR BUILDING GROUP";
+const orgName = "MGR Building Group";
 
 export const ORG_PROFILE = {
   orgName: orgName,
@@ -13,7 +13,7 @@ export const ORG_PROFILE = {
 
   email: "info@mgrbuildinggroup.com.au",
   website: `https://${ORG_DOMAIN}`,
-  phone: "+61 404 148 009",
+  phone: "+61 470 292 364",
 
   address: "22  Faldo Place Cranbourne North VIC 3977",
   abn: "37 649 729 395",
