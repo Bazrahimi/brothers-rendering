@@ -12,12 +12,19 @@ import { IoIosPhonePortrait } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { submitEnquiry } from "../_lib/action";
 import { ENQUIRY_FIELDS as F, queryOptions } from "../_lib/constant";
+import { ContactSuccessMessage } from "./ContactSuccess";
 
 export default function ContactForm() {
   const [state, formAction, isPending] = useActionState(
     submitEnquiry,
     undefined,
   );
+
+  const isSuccess = state?.ok === true;
+
+  if (isSuccess) {
+    return <ContactSuccessMessage />;
+  }
 
   return (
     <form className="space-y-4 relative" action={formAction} noValidate>
