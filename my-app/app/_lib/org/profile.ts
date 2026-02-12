@@ -11,7 +11,7 @@ export const ORG_PROFILE = {
 
   domain: ORG_DOMAIN,
 
-  email: "canconstruction12@gmail.com",
+  email: "info@mgrbuildinggroup.com.au",
   website: `https://${ORG_DOMAIN}`,
   phone: "+61 404 148 009",
 

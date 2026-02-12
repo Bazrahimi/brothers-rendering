@@ -1,22 +1,19 @@
 "use server";
 
 import { toActionErrors } from "@/app/_lib/utils/slugify";
-import { ENQUIRY_FIELDS as F } from "./constant";
+import { handleEnquiryEmails } from "./handleEnquiryEmail";
 import { EnquiryForm, EnquirySchema, EnquiryState } from "./schema";
 
 export const submitEnquiry = async (
   prevState: EnquiryState | undefined,
   formData: FormData,
 ): Promise<EnquiryState | undefined> => {
-  console.log("FormData_______", formData);
   const rawData = Object.fromEntries(
     [...formData.entries()].map(([key, value]) => [
       key,
       typeof value === "string" ? value : undefined,
     ]),
   ) as Partial<EnquiryForm>;
-
-
 
   const parsed = EnquirySchema.safeParse(rawData);
 
@@ -29,5 +26,10 @@ export const submitEnquiry = async (
 
   const data = parsed.data;
 
-  console.log("Data______________", data);
+  const { message } = await handleEnquiryEmails(data);
+
+  return {
+    ok: true,
+    message: message,
+  };
 };
