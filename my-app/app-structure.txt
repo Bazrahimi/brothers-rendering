@@ -3,39 +3,79 @@ app
 │   ├── email
 │   │   ├── components
 │   │   │   └── EmailFooter.tsx
-│   │   ├── emailClient.ts
-│   │   └── templates
+│   │   └── emailClient.ts
 │   ├── env
 │   │   ├── puplic.ts
 │   │   └── server.ts
-│   ├── font.ts
 │   ├── org
-│   │   └── org-profile.ts
+│   │   ├── faqs.ts
+│   │   ├── font.ts
+│   │   ├── openingHours.ts
+│   │   ├── profile.ts
+│   │   └── services
+│   │       ├── definitions.ts
+│   │       ├── helper.ts
+│   │       └── services.ts
 │   ├── routes
 │   │   └── publicRoutes.ts
 │   └── utils
-│       ├── ActionHelper.ts
-│       └── cn.ts
+│       ├── cn.ts
+│       ├── helper.ts
+│       └── slugify.ts
 ├── _ui
 │   ├── button
 │   │   ├── ActionButton.tsx
 │   │   └── Button.tsx
 │   ├── form
 │   │   ├── Checkbox.tsx
+│   │   ├── FieldError.tsx
 │   │   ├── FormErrorsMessage.tsx
 │   │   ├── Input.tsx
-│   │   └── Select.tsx
+│   │   ├── Select.tsx
+│   │   └── Textarea.tsx
 │   ├── image
 │   │   └── ImageShimer.tsx
+│   ├── layout
+│   │   ├── footer
+│   │   │   ├── Acknowledgement.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── GetInTouch.tsx
+│   │   │   ├── OrganisationInfo.tsx
+│   │   │   ├── QuickLinks.tsx
+│   │   │   └── SocialLinks.tsx
+│   │   └── navbar
+│   │       ├── NavLinks.tsx
+│   │       ├── Navbar.tsx
+│   │       ├── ServiceMenu.tsx
+│   │       └── useDropdownMenu.ts
 │   └── typography
 │       ├── Header.tsx
 │       └── paragraph.tsx
 ├── contact-us
-│   └── _lib
-│       └── schema.ts
+│   ├── _lib
+│   │   ├── action.ts
+│   │   ├── constant.ts
+│   │   ├── definitions.ts
+│   │   ├── email
+│   │   │   ├── components
+│   │   │   │   ├── SendToAdmin.tsx
+│   │   │   │   └── sendUserConfirmation.tsx
+│   │   │   └── templates
+│   │   │       └── NewEnquiry.tsx
+│   │   ├── handleEnquiryEmail.ts
+│   │   └── schema.ts
+│   ├── _ui
+│   │   ├── ContactDetails.tsx
+│   │   ├── ContactFAQ.tsx
+│   │   ├── ContactForm.tsx
+│   │   ├── ContactIntro.tsx
+│   │   ├── ContactMap.tsx
+│   │   ├── ContactSuccess.tsx
+│   │   └── OpeningHours.tsx
+│   └── page.tsx
 ├── favicon.ico
 ├── globals.css
 ├── layout.tsx
 └── page.tsx
 
-16 directories, 23 files
+23 directories, 56 files
