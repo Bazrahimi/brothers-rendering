@@ -5,6 +5,8 @@ import { P } from "@/app/_ui/typography/paragraph";
 import Link from "next/link";
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 import ContactMap from "./ContactMap";
+import OpeningHours from "./OpeningHours";
+import { OPENING_HOURS } from "@/app/_lib/org/openingHours";
 
 const ContactDetails = () => {
   const phone = ORG_PROFILE.phone?.trim();
@@ -85,6 +87,8 @@ const ContactDetails = () => {
 
       {/* Embedded Map */}
       {address && <ContactMap address={address} />}
+
+      <OpeningHours hours={OPENING_HOURS} />
     </div>
   );
 };
