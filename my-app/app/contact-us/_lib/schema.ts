@@ -3,21 +3,34 @@ import { z } from "zod";
 import { ActionState } from "@/app/_lib/utils/slugify";
 import { ENQUIRY_FIELDS as F } from "./constant";
 
-export const EnquirySchema = z.object({
-  [F.fullName]: z.string().min(3, { message: "Please enter your full name" }),
-  [F.email]: z.email({ message: "Please enter a valid email address" }).trim(),
-  [F.contactNumber]: z
-    .string()
-    .optional()
-    .refine((v) => !v || v.trim().length > 0, {
-      message: "Invalid phone number",
-    }),
-  [F.queryType]: z.string().min(4, { message: "please select your Query Type" }),
-  [F.qMessage]: z.string().min(2, { message: "please enter your message" }),
-});
+export const EnquirySchema = z
+  .object({
+    [F.fullName]: z.string().min(3, { message: "Please enter your full name" }),
+    [F.email]: z
+      .email({ message: "Please enter a valid email address" })
+      .trim(),
+    [F.contactNumber]: z
+      .string()
+      .optional()
+      .refine((v) => !v || v.trim().length > 0, {
+        message: "Invalid phone number",
+      }),
+    [F.queryType]: z
+      .string()
+      .min(4, { message: "please select your Query Type" }),
+    [F.queryTypeLabel]: z
+      .string()
+      .min(1, { message: "Missing query type label" }),
+    [F.qMessage]: z.string().min(2, { message: "please enter your message" }),
+  })
+  .transform((data) => ({
+    ...data,
+    queryType: {
+      value: data[F.queryType],
+      label: data[F.queryTypeLabel],
+    },
+  }));
 
-
-
-export type Enquiry = z.infer<typeof EnquirySchema>;
+export type Enquiry = z.output<typeof EnquirySchema>;
 export type EnquiryForm = z.infer<typeof EnquirySchema>;
 export type EnquiryState = ActionState<EnquiryForm>;

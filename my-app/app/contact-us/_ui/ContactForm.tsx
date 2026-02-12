@@ -67,7 +67,10 @@ export default function ContactForm() {
         label="Select"
         placeholder="Select your enquiry type"
         error={state?.errors?.queryType}
-        defaultValue={state?.data?.queryType}
+        defaultValue={{
+          value: String(state?.data?.queryType) ?? "",
+          label: state?.data?.queryTypeLabel ?? "",
+        }}
         options={queryOptions}
         required
       />
