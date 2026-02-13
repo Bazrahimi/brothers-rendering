@@ -13,7 +13,7 @@ export const ORG_PROFILE = {
 
   description:
     "Commercial and Residential Painting work through south easter suburbs",
-  languages: ["EN", "FA", "HZ"] as const satisfies readonly LanguageKey[],
+  languages: ["EN", "FA"] as const satisfies readonly LanguageKey[],
 
   domain: ORG_DOMAIN,
 
