@@ -15,3 +15,4 @@ export const OPENING_HOURS: OpeningHours = {
   sat: { closed: true },
   sun: { closed: true },
 };
+

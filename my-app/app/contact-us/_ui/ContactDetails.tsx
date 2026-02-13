@@ -9,6 +9,8 @@ import OpeningHours from "./OpeningHours";
 import { OPENING_HOURS } from "@/app/_lib/org/openingHours";
 import ContactFAQ from "./ContactFAQ";
 import { CONTACT_FAQS } from "@/app/_lib/org/faqs";
+import ServiceArea from "./ServiceArea";
+import MultiLanguageCapacity from "./MultiLanguageCapacity";
 
 const ContactDetails = () => {
   const phone = ORG_PROFILE.phone?.trim();
@@ -87,11 +89,14 @@ const ContactDetails = () => {
         )}
       </div>
 
-      {/* Embedded Map */}
-      {address && <ContactMap address={address} />}
+      
 
       <OpeningHours hours={OPENING_HOURS} />
+      <MultiLanguageCapacity />
       <ContactFAQ items={CONTACT_FAQS} />
+      <ServiceArea />
+      {/* Embedded Map */}
+      {address && <ContactMap address={address} />}
     </div>
   );
 };

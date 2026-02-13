@@ -1,17 +1,23 @@
 //app/_lib/org/org-profile.ts
-const ORG_DOMAIN = "mgrbuildinggroup.com.au" as const;
-const orgName = "MGR Building Group";
+import type { LanguageKey } from "./languages";
+import { ORG_SECTORS } from "./serviceArea";
+
+const ORG_DOMAIN = "canconstruction.com.au" as const;
+const orgName = "Can Construction Pty Ltd";
 
 export const ORG_PROFILE = {
   orgName: orgName,
-  orgNameFarsi: "",
+  orgNameFarsi: "شرکت ساختمانی کن",
+  sector: ORG_SECTORS.BUILDING.label,
+  subSector: ORG_SECTORS.BUILDING.subSectors.painting,
+
   description:
-    orgName +
-    " Commercial and Residential Painting work through south easter suburbs",
+    "Commercial and Residential Painting work through south easter suburbs",
+  languages: ["EN", "FA", "HZ"] as const satisfies readonly LanguageKey[],
 
   domain: ORG_DOMAIN,
 
-  email: "info@mgrbuildinggroup.com.au",
+  email: "info@canconstruction.com.au",
   website: `https://${ORG_DOMAIN}`,
   phone: "+61 470 292 364",
 
@@ -27,5 +33,3 @@ export const ORG_SOCIAL_MEDIA = {
   instagram: "",
   tiktok: "", // leave empty or undefined if not used
 } as const;
-
-
