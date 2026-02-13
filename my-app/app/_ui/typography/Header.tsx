@@ -2,14 +2,15 @@ import { headingFont } from "@/app/_lib/org/font";
 import { cn } from "@/app/_lib/utils/cn";
 import * as React from "react";
 
-type AsTag = "h1" | "h2" | "h3" | "h4";
-type HeadingSize = "xs" | "sm" | "md" | "lg";
+export type AsTag = "h1" | "h2" | "h3" | "h4";
+export type HeadingSize = "xs" | "sm" | "md" | "lg";
+export type HeadingAlign = "left" | "center" | "right";
 
 type HeaderProps = React.HTMLAttributes<HTMLHeadingElement> & {
   children: React.ReactNode;
   as: AsTag; // semantic level
   size?: HeadingSize; // responsive scale
-  align?: "left" | "center" | "right"; // text alignment
+  align?: HeadingAlign;
   className?: string; // optional overrides
 };
 

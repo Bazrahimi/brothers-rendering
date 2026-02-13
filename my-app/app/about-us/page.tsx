@@ -1,76 +1,71 @@
+import { Fragment } from "react";
 import { FaCheck } from "react-icons/fa6";
-import { orgPages } from "../_lib/org/orgPages";
-import { ORG_PROFILE } from "../_lib/org/profile";
+import { aboutUs } from "../_lib/org/orgPages";
 import { Header } from "../_ui/typography/Header";
 import { P } from "../_ui/typography/paragraph";
 
-const renderParagraphs = (items: string[]) =>
-  items.map((item, index) => (
-    <P key={index} className="mt-2">
+const renderParagraphs = (items: readonly string[]) =>
+  items.map((item, idx) => (
+    <P key={idx} className="mt-2">
       {item}
     </P>
   ));
 
-const renderTextSection = (
-  id: string,
-  title: string,
-  items: string[],
-  headerClassName?: string,
-) => {
-  if (!items.length) return null;
+const renderSection = (s: (typeof aboutUs.sections)[number]) => {
+  const headingTag = s.headingTag ?? "h2";
+  const headingSize = s.headingSize ?? "sm";
+  const headingAlign = s.headingAlign ?? "left";
 
+  if (s.type === "text") {
+    if (!s.items.length) return null;
+    return (
+      <section aria-labelledby={s.id}>
+        <Header
+          as={headingTag}
+          size={headingSize}
+          align={headingAlign}
+          className={s.headerClassName}
+        >
+          {s.title}
+        </Header>
+        {renderParagraphs(s.items)}
+      </section>
+    );
+  }
+
+  // list
+  if (!s.items.length) return null;
   return (
-    <section aria-labelledby={id}>
-      <Header as="h2" size="sm" className={headerClassName}>
-        {title}
+    <section aria-labelledby={s.id}>
+      <Header
+        as={headingTag}
+        size={headingSize}
+        align={headingAlign}
+        className={s.headerClassName ?? "mt-5"}
+      >
+        {s.title}
       </Header>
-      {renderParagraphs(items)}
+
+      <ul className="mt-2 space-y-2">
+        {s.items.map((value, idx) => (
+          <li key={idx} className="ml-5 flex items-center gap-2">
+            {s.icon === "check" ? (
+              <FaCheck className="h-4 w-4 shrink-0 text-green-500" aria-hidden />
+            ) : null}
+            <P>{value}</P>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };
 
 const AboutUsPage = () => {
   return (
-    <main className="my-5 md:my-10">
-      <section aria-labelledby="introduction">
-        <Header as="h1" align="center" className="mb-5 md:mb-10">
-          {`About ${ORG_PROFILE.orgName}`}
-        </Header>
-        {renderParagraphs(orgPages.aboutUs.introduction)}
-      </section>
-
-      {/* Content Stack */}
-      <section className="mt-5 md:mt-10 space-y-5 md:space-y-10">
-        {renderTextSection("purpose", "Our Pupose", orgPages.aboutUs.purpose)}
-        {renderTextSection("vision", "Our Vision", orgPages.aboutUs.vision)}
-        <section aria-labelledby="values">
-          <Header as="h2" size="sm">
-            Our Values
-          </Header>
-          <ul className="mt-2 space-y-2">
-            {orgPages.aboutUs.values.map((value, index) => (
-              <li key={index} className="ml-5 flex items-center gap-2">
-                <FaCheck
-                  className="h-4 w-4 shrink-0 text-green-500"
-                  aria-hidden="true"
-                />
-                <P>{value}</P>
-              </li>
-            ))}
-          </ul>
-        </section>
-        {renderTextSection(
-          "what-we-do",
-          "What We Do",
-          orgPages.aboutUs.what_we_do,
-        )}
-
-        {renderTextSection(
-          "governance",
-          "Governance and Business Structure",
-          orgPages.aboutUs.governance,
-        )}
-      </section>
+    <main className="my-5 md:my-10 space-y-5 md:space-y-10">
+      {aboutUs.sections.map((s) => (
+        <Fragment key={s.id}>{renderSection(s)}</Fragment>
+      ))}
     </main>
   );
 };
