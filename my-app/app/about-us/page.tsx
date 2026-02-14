@@ -17,7 +17,7 @@ import { TeamGrid } from "./_ui/TeamGrid";
 
 export default function AboutUsPage() {
   return (
-    <main className="my-10 space-y-10">
+    <main className="space-y-5">
       <SectionWrapper>
         <AboutIntroduction section={ABOUT_INTRODUCTION} />
       </SectionWrapper>
@@ -74,7 +74,7 @@ const SectionWrapper = ({
   return (
     <section
       className={cn(
-        "rounded-2xl border border-slate-200 bg-gray-50   shadow-sm backdrop-blur p-6 sm:p-8",
+        "rounded-b-3xl border border-slate-200 bg-gray-50   shadow-sm backdrop-blur p-6 sm:p-8",
         className,
       )}
     >

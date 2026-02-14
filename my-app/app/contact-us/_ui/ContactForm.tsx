@@ -27,7 +27,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form className="space-y-4 relative" action={formAction} noValidate>
+    <form className="space-y-2 relative" action={formAction} noValidate>
       <Header align="center" as="h3" size="sm">
         Quick Enquiry Form
       </Header>
