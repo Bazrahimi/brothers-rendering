@@ -64,9 +64,9 @@ export const serviceQueryMap = {
     value: "solidPlastering",
     label: "Solid Plastering and Rendering",
   },
-  tilingAndCaulking: {
-    value: "tilingAndCaulking",
-    label: "Tiling and Caulking",
+  siliconAndCaulking: {
+    value: "siliconAndCaulking",
+    label: "Silicon and Caulking",
   },
 } satisfies Record<ServiceKey, ServiceQueryOption>;
 

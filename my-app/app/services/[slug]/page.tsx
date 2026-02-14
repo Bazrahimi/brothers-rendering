@@ -1,10 +1,10 @@
 import { TextSection } from "@/app/_lib/org/orgPages/aboutUs";
 import { getServiceCategoryBySlug } from "@/app/_lib/org/services/helper";
+import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 import AboutIntroduction from "@/app/about-us/_ui/AboutIntroduction";
 import { notFound } from "next/navigation";
-import { cn } from "@/app/_lib/utils/cn";
 
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
@@ -18,27 +18,14 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const introSection = {
     id: slug,
     title: service.category,
-    items: service.shortDesc
-  } satisfies TextSection
+    items: service.shortDesc,
+  } satisfies TextSection;
 
   return (
     <main className="my-10 space-y-8">
       <SectionWrapper>
-        <AboutIntroduction section={introSection}/>
+        <AboutIntroduction section={introSection} />
       </SectionWrapper>
-
-  
-
-      <section className="rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-sm backdrop-blur space-y-2">
-        <P>{service.category}</P>
-
-        {!!service.areasServed?.length && (
-          <P>
-            <span className="font-medium">Areas served:</span>{" "}
-            {service.areasServed.join(", ")}
-          </P>
-        )}
-      </section>
 
       {/* Subcategories (nested object) */}
       {service.subcategories && (
@@ -117,7 +104,6 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 };
 
 export default page;
-
 
 const SectionWrapper = ({
   children,
