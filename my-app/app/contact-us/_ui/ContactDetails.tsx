@@ -10,7 +10,7 @@ import { OPENING_HOURS } from "@/app/_lib/org/openingHours";
 import ContactFAQ from "./ContactFAQ";
 import { CONTACT_FAQS } from "@/app/_lib/org/faqs";
 import ServiceArea from "./ServiceArea";
-import MultiLanguageCapacity from "./MultiLanguageCapacity";
+import MultiLanguageCapacity from "../../_ui/MultiLanguageCapacity";
 
 const ContactDetails = () => {
   const phone = ORG_PROFILE.phone?.trim();

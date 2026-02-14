@@ -29,7 +29,7 @@ export default function ContactForm() {
   return (
     <form className="space-y-4 relative" action={formAction} noValidate>
       <Header align="center" as="h3" size="sm">
-        Quick Enquiry
+        Quick Enquiry Form
       </Header>
 
       <P className="text-center text-sm text-gray-600">

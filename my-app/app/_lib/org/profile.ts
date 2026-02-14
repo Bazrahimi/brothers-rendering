@@ -1,6 +1,6 @@
 //app/_lib/org/org-profile.ts
 import type { LanguageKey } from "./languages";
-import { ORG_SECTORS } from "./serviceArea";
+import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
 
 const ORG_DOMAIN = "canconstruction.com.au" as const;
 const orgName = "Can Construction Pty Ltd";
@@ -8,12 +8,12 @@ const orgName = "Can Construction Pty Ltd";
 export const ORG_PROFILE = {
   orgName: orgName,
   orgNameFarsi: "شرکت ساختمانی کن",
-  sector: ORG_SECTORS.BUILDING.label,
-  subSector: ORG_SECTORS.BUILDING.subSectors.painting,
+  industry: ORG_INDUSTRY_SECTORS.BUILDING.industry,
+  subSector: ORG_INDUSTRY_SECTORS.BUILDING.Sectors.painting,
 
   description:
     "Commercial and Residential Painting work through south easter suburbs",
-  languages: ["EN", "FA"] as const satisfies readonly LanguageKey[],
+  languages: ["EN", "HZ", "FA"] as const satisfies readonly LanguageKey[],
 
   domain: ORG_DOMAIN,
 

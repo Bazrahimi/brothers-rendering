@@ -1,10 +1,10 @@
 
 
-export const ORG_SECTORS = {
+export const ORG_INDUSTRY_SECTORS = {
   BUILDING: {
-    label: "Building and Construction",
+    industry: "Building and Construction",
     defaultScope: "metro",
-    subSectors: {
+    Sectors: {
       painting: "Painting and Decorating",
       builder: "Registered Builders",
       rendering: "Solid Plastering and Rendering",
@@ -12,25 +12,25 @@ export const ORG_SECTORS = {
   },
 
   PROFESSIONAL: {
-    label: "Professional",
+    industry: "Professional",
     defaultScope: "national",
-    subSectors: {
+    sectors: {
       lawyer: "Principal Lawyers",
       accountant: "Registered Tax Agent",
     },
   },
 
   ASSOCIATION: {
-    label: "Association",
+    industry: "Association",
     defaultScope: "state",
-    subSectors: {
+    sectors: {
       ngo: "Non profit organisation",
     },
   },
 } as const;
 
-export type OrgSectorKey = keyof typeof ORG_SECTORS;
-export type CoverageScope = (typeof ORG_SECTORS)[OrgSectorKey]["defaultScope"];
+export type OrgIndustrySectorKey = keyof typeof ORG_INDUSTRY_SECTORS;
+export type CoverageScope = (typeof ORG_INDUSTRY_SECTORS)[OrgIndustrySectorKey]["defaultScope"];
 
 export type ServiceArea = {
   scope: CoverageScope;          // "metro" | "state" | "national"
@@ -42,7 +42,7 @@ export type ServiceArea = {
 };
 
 export const SERVICE_AREA: ServiceArea = {
-  scope: ORG_SECTORS.BUILDING.defaultScope, // or derive from ORG_PROFILE.orgSector
+  scope: ORG_INDUSTRY_SECTORS.BUILDING.defaultScope, // or derive from ORG_PROFILE.orgSector
   primaryRegion: "South East Melbourne",
   state: "VIC",
   country: "Australia",

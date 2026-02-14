@@ -1,5 +1,44 @@
-
+// app/_lib/org/aboutUs.ts
 import { ORG_PROFILE } from "../profile";
+
+export type TeamMember = {
+  name: string;
+  role: string;
+  image?: string; // "/images/team/....png"
+  bio?: string;
+};
+
+export type TeamSection = {
+  id: string;
+  title: string;
+  intro: string; // paragraph under the heading
+  professionalTitles?: readonly string[];
+  members: readonly TeamMember[];
+};
+
+export const ABOUT_TEAM: TeamSection = {
+  id: "team",
+  title: "Our Team",
+  professionalTitles: [
+    "Painters and Decorators",
+    "Solid Plasterers",
+    "Professional Tilers",
+  ],
+  intro: `${ORG_PROFILE.orgName} is guided by experienced tradespeople and community leaders.`,
+  members: [
+    {
+      name: "Dr Zakir Hussain",
+      role: "President",
+      image: "/images/team/zakir-hussain.png",
+    },
+    {
+      name: "Nadia Nazari",
+      role: "Vice President",
+      image: "/images/team/nadia-nazari.png",
+    },
+  ],
+} as const;
+
 
 export type TextSection = {
   id: string;
