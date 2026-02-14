@@ -5,27 +5,27 @@ import {
   type SecondaryLanguageKey,
 } from "@/app/_lib/org/languages";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
+import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
-import { cn } from "@/app/_lib/utils/cn";
 
 const isRtl = (lang: SecondaryLanguageKey) => lang === "FA" || lang === "HZ";
 
 const accentStyle = (lang: SecondaryLanguageKey) => {
   switch (lang) {
     case "HZ":
-      return "border-emerald-200 bg-emerald-50/40";
+      return "border-bg-org-primary-main/50 bg-org-primary-main";
     case "FA":
-      return "border-indigo-200 bg-indigo-50/40";
+      return "border-bg-org-secondary-main/50 bg-org-secondary-main";
   }
 };
 
 const accentDot = (lang: SecondaryLanguageKey) => {
   switch (lang) {
     case "HZ":
-      return "bg-emerald-500";
+      return "bg-org-secondary-main";
     case "FA":
-      return "bg-indigo-500";
+      return "bg-org-primary-main";
   }
 };
 
@@ -61,7 +61,9 @@ export default function MultiLanguageCapacity() {
         </Header>
 
         <P className="text-center text-sm text-slate-600">
-          <span className="font-medium text-slate-800">{ORG_PROFILE.orgName}</span>{" "}
+          <span className="font-medium text-slate-800">
+            {ORG_PROFILE.orgName}
+          </span>{" "}
           can also interact with clients in{" "}
           <span className="font-medium text-slate-800">{languageList}</span>.
         </P>
@@ -72,12 +74,10 @@ export default function MultiLanguageCapacity() {
       {/* Secondary Language Cards */}
       <div className="mt-6 grid gap-4">
         {secondaryLangs.map((lang) => {
-          const orgNameForRtl =
-            ORG_PROFILE.orgNameFarsi || ORG_PROFILE.orgName;
+          const orgNameForRtl = ORG_PROFILE.orgNameFarsi || ORG_PROFILE.orgName;
 
-          const statement = LANGUAGES[lang].multiculturalStatement(
-            orgNameForRtl,
-          );
+          const statement =
+            LANGUAGES[lang].multiculturalStatement(orgNameForRtl);
 
           return (
             <div
@@ -92,15 +92,16 @@ export default function MultiLanguageCapacity() {
                   className={cn("h-2.5 w-2.5 rounded-full", accentDot(lang))}
                   aria-hidden
                 />
-                <h4 className="text-sm font-semibold text-slate-800">
+
+                <Header as="h4" align="right" size="sm" className="text-white">
                   {SECONDARY_LANGUAGE_DISPLAY[lang]}
-                </h4>
+                </Header>
               </div>
 
               <P
                 dir={isRtl(lang) ? "rtl" : "ltr"}
                 className={cn(
-                  "text-sm leading-relaxed text-slate-700",
+                  "leading-relaxed text-gray-50",
                   isRtl(lang) && "text-right",
                 )}
               >

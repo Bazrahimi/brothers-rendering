@@ -22,7 +22,7 @@ export default function ContactFAQ({
   if (!items.length) return null;
 
   return (
-    <section className="mt-10 rounded-2xl border border-white/70 bg-white/80 shadow-sm backdrop-blur p-6 sm:p-8">
+    <section className="mt-10 rounded-2xl border border-org-secondary-main/10 bg-org-secondary-main/20 shadow-sm backdrop-blur p-6 sm:p-8">
       <div className="space-y-1">
         <Header as="h3" size="sm" align="left">
           {title}
