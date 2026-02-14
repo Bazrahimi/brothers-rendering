@@ -9,9 +9,9 @@ export const PublicRoutes = {
 } as const;
 
 /** Service nav links */
-export const getServiceLinks = () => {
+export const getServiceCategoryLinks = () => {
   return (Object.keys(SERVICES) as ServiceKey[]).map((key) => {
-    const title = SERVICES[key].title;
+    const title = SERVICES[key].category;
     const slug = slugify(title);
 
     return {
@@ -26,6 +26,6 @@ export const getServiceLinks = () => {
 export const QUICK_LINKS = [
   { href: PublicRoutes.home(), label: "Home" },
   { href: PublicRoutes.about(), label: "About HCA" },
-  ...getServiceLinks().map(({ href, label }) => ({ href, label })),
+  ...getServiceCategoryLinks().map(({ href, label }) => ({ href, label })),
   { href: PublicRoutes.contact(), label: "Contact us" },
 ] as const;

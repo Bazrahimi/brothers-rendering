@@ -16,7 +16,7 @@ export const ORG_QUERY_TYPES = {
     (Object.keys(SERVICES) as ServiceKey[]).map((key) => [
       key,
       {
-        label: SERVICES[key].title,
+        label: SERVICES[key].category,
         description: SERVICES[key].shortDesc,
       },
     ]),
@@ -56,16 +56,25 @@ export const ORG_QUERY_OPTIONS: OrgQueryOption[] = (
 }));
 
 export const serviceQueryMap = {
-  service_1: { value: "service_1", label: "Service 1" },
-  service_2: { value: "service_2", label: "Service 2" },
-  service_3: { value: "service_3", label: "Service 3" },
+  paintingAndDecorating: {
+    value: "paintingAndDecorating",
+    label: "Painting and Decorating",
+  },
+  solidPlastering: {
+    value: "solidPlastering",
+    label: "Solid Plastering and Rendering",
+  },
+  tilingAndCaulking: {
+    value: "tilingAndCaulking",
+    label: "Tiling and Caulking",
+  },
 } satisfies Record<ServiceKey, ServiceQueryOption>;
 
 const serviceQueryOption = Object.values(serviceQueryMap);
 
 export const queryOptions: SelectOption[] = [
   ...serviceQueryOption,
-  { value: "booking", label: "Booking" },
+  { value: "freeQuote", label: "Free Quote" },
   { value: "feedback", label: "Feedback" },
   { value: "other", label: "Other" },
 ] as const;

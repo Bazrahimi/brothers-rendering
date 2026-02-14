@@ -14,6 +14,7 @@ import AboutIntroduction from "./_ui/AboutIntroduction";
 import AboutTextSections from "./_ui/AboutTextSections";
 import AboutValues from "./_ui/AboutValues";
 import { TeamGrid } from "./_ui/TeamGrid";
+import ServiceArea from "../contact-us/_ui/ServiceArea";
 
 export default function AboutUsPage() {
   return (
@@ -33,6 +34,10 @@ export default function AboutUsPage() {
       <SectionWrapper>
         <TeamGrid team={ABOUT_TEAM} />
       </SectionWrapper>
+
+      <div>
+        <ServiceArea />
+      </div>
 
       <div className="bg-org-secondary-main/15">
         <MultiLanguageCapacity />

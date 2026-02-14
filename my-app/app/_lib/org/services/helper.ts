@@ -1,10 +1,11 @@
-import type { Service, ServiceKey } from "./definitions";
+import { slugify } from "../../utils/helper";
+import type { Service, ServiceKey, ServiceTitle } from "./definitions";
 
 import { SERVICES } from "./services";
 
 /** Get title for a service key (type-safe) */
-export const getServiceTitle = (key: ServiceKey): string => {
-  return SERVICES[key].title;
+export const getServiceCategory = (key: ServiceKey): string => {
+  return SERVICES[key].category;
 };
 
 /** return full service config */
@@ -12,3 +13,13 @@ export const getService = (key: ServiceKey): Service => {
   return SERVICES[key];
 };
 
+export const getServiceCategoryBySlug = (slug: string) => {
+  // Find by matching slugified title
+  const entry = Object.entries(SERVICES).find(([, service]) => {
+    return slugify(service.category as ServiceTitle) === slug;
+  });
+
+  if (!entry) return null;
+  const [key, service] = entry;
+  return { key, service };
+};

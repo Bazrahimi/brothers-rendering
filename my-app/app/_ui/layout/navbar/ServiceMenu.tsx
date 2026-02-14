@@ -1,6 +1,6 @@
 "use client";
 
-import { getServiceLinks } from "@/app/_lib/routes/publicRoutes";
+import { getServiceCategoryLinks } from "@/app/_lib/routes/publicRoutes";
 import Link from "next/link";
 import { HiChevronDown } from "react-icons/hi";
 
@@ -14,7 +14,7 @@ export type ServiceItem = {
   href: string;
   label: string;
 };
-export const SERVICES: readonly ServiceItem[] = getServiceLinks();
+export const SERVICES: readonly ServiceItem[] = getServiceCategoryLinks();
 
 export default function ServicesMenuClient() {
   const totalItems = SERVICES.length;
