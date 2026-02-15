@@ -16,7 +16,7 @@ export const getService = (key: ServiceKey): Service => {
 export const getServiceCategoryBySlug = (slug: string) => {
   // Find by matching slugified title
   const entry = Object.entries(SERVICES).find(([, service]) => {
-    return slugify(service.category as ServiceTitle) === slug;
+    return slugify(service.category) === slug;
   });
 
   if (!entry) return null;
