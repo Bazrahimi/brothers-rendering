@@ -16,9 +16,9 @@ export default function ServiceDetails({
 }) {
   return (
     <div className={cn("space-y-4", level === 0 && "space-y-6")}>
-      {Object.entries(group).map(([key, node]) => {
+      {Object.entries(group).map(([ key, node], index) => {
         if (isServiceLeaf(node)) {
-          return <ServiceLeafCard key={key} leaf={node} level={level} />;
+          return <ServiceLeafCard key={key} leaf={node} level={level}  index={index}/>;
         }
 
         const childGroup = node as ServiceGroup;

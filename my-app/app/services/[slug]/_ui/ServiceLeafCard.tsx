@@ -8,32 +8,35 @@ import ServiceLeafImage from "./ServiceLeafImage";
 export default function ServiceLeafCard({
   leaf,
   level,
+  index,
 }: {
   leaf: ServiceLeaf;
   level: number;
+  index: number;
 }) {
-  const hasImage = leaf.imageUrl;
+  const hasImage = Boolean(leaf.imageUrl);
   const hasItems = leaf.items.length > 0;
+  const isEven = index % 2 === 0; // 0,2,4... => items left, image right
 
   return (
-    <article className="rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-sm ">
-      {/* 12-cols grind on sm+ */}
+    <article className="rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-sm">
       <div className="grid gap-3 sm:gap-6 sm:grid-cols-12 sm:items-start">
+        {/* Row 1: label + summary full width */}
         <header className="sm:col-span-12 space-y-3">
           <Header as={level === 0 ? "h2" : "h3"}>{leaf.label}</Header>
-          {leaf.summary && <P>{leaf.summary}</P>}
+          {leaf.summary ? <P>{leaf.summary}</P> : null}
         </header>
 
-        {/* Row 2 - ITEMS (LEFT) */}
-        {hasItems && (
+        {/* Row 2: ITEMS */}
+        {hasItems ? (
           <section
             className={cn(
-              "sm:col-span-12",
-              // if image exist, items take 8 cols; otherwise take full width
               hasImage ? "sm:col-span-8" : "sm:col-span-12",
+              // swap order on sm+
+              hasImage && (isEven ? "sm:order-1" : "sm:order-2"),
             )}
           >
-            <ul className="list-disc space-y-1 pl-5 text-gray-700">
+            <ul className="list-disc  space-y-1 pl-5 text-gray-700">
               {leaf.items.map((item) => (
                 <li key={item}>
                   <P>{item}</P>
@@ -41,23 +44,25 @@ export default function ServiceLeafCard({
               ))}
             </ul>
           </section>
-        )}
+        ) : null}
 
-        {/* ROW 2 - IMAGE (right) */}
-        {hasImage && (
+        {/* Row 2: IMAGE */}
+        {hasImage ? (
           <aside
             className={cn(
-              // if there are no items, let the image take full width so it does not look lonely
               hasItems ? "sm:col-span-4" : "sm:col-span-12",
+              // IMPORTANT: image must also swap order
+              hasItems && (isEven ? "sm:order-2" : "sm:order-1"),
             )}
           >
             <ServiceLeafImage
-              src={cldCardHeroAuto(leaf.imageUrl)}
+              src={cldCardHeroAuto(leaf.imageUrl!)}
               alt={leaf.label}
-              className="w-full sm:aspect-[4/3"
+              className="w-full sm:aspect-[4/3]"
+
             />
           </aside>
-        )}
+        ) : null}
       </div>
     </article>
   );
