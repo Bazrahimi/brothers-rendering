@@ -3,7 +3,7 @@ import { ImageUrl, ServiceGroup } from "../definitions";
 export const paintingAndDecorating = {
   residential: {
     newBuild: {
-      label: "Residential Painting",
+      label: "New Build Residential Painting",
       imageUrl: ImageUrl,
       summary:
         "Interior and exterior painting for new homes and multi-unit builds.",

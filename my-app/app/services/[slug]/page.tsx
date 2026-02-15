@@ -1,7 +1,6 @@
 import { getServiceCategoryBySlug } from "@/app/_lib/org/category/helper";
 import { TextSection } from "@/app/_lib/org/orgPages/aboutUs";
 import { cn } from "@/app/_lib/utils/cn";
-import { Header } from "@/app/_ui/typography/Header";
 import AboutIntroduction from "@/app/about-us/_ui/AboutIntroduction";
 import { notFound } from "next/navigation";
 import ServiceDetails from "./_ui/ServiceDetails";
@@ -30,10 +29,6 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
       {/* Subcategories (nested object) */}
       {service.subcategories && (
         <section>
-          <Header as="h2" size="sm">
-            Service Details
-          </Header>
-
           <ServiceDetails group={service.subcategories} />
         </section>
       )}
