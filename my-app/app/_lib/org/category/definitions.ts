@@ -5,7 +5,7 @@ export type Service = (typeof SERVICES)[ServiceKey];
 export type ServiceTitle = Service["category"];
 
 export const ImageUrl =
-  "https://res.cloudinary.com/drvh5xeuw/image/upload/v1771144431/business-f/building/bath1234poof_y6clz0.png";
+  "v1771144431/business-f/building/bath1234poof_y6clz0.png";
 
 export type ServiceLeaf = {
   label: string;

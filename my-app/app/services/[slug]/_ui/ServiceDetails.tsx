@@ -1,10 +1,11 @@
-import { cn } from "@/app/_lib/utils/cn";
 import {
   isServiceLeaf,
   type ServiceGroup,
 } from "@/app/_lib/org/category/definitions";
-import { ServiceLeafCard } from "./ServiceLeafCard";
+import { cn } from "@/app/_lib/utils/cn";
+
 import { ServiceGroupSection } from "./ServiceGroupSection";
+import ServiceLeafCard from "./ServiceLeafCard";
 
 export default function ServiceDetails({
   group,
