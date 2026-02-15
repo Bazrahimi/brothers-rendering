@@ -1,7 +1,7 @@
-import Image from "next/image";
+import type { ServiceLeaf } from "@/app/_lib/org/category/definitions";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
-import type { ServiceLeaf } from "@/app/_lib/org/category/definitions";
+import ServiceLeafImage from "./ServiceLeafImage";
 
 export const ServiceLeafCard = ({
   leaf,
@@ -21,15 +21,7 @@ export const ServiceLeafCard = ({
       ) : null}
 
       {leaf.imageUrl ? (
-        <div className="mt-4 overflow-hidden rounded-xl border border-slate-200">
-          <Image
-            src={leaf.imageUrl}
-            alt={leaf.label}
-            width={1200}
-            height={700}
-            className="h-48 w-full object-cover"
-          />
-        </div>
+        <ServiceLeafImage src={leaf.imageUrl} alt={leaf.label} />
       ) : null}
 
       {leaf.items.length ? (
@@ -43,6 +35,6 @@ export const ServiceLeafCard = ({
       ) : null}
     </article>
   );
-}
+};
 
-export default ServiceLeafCard
+export default ServiceLeafCard;
