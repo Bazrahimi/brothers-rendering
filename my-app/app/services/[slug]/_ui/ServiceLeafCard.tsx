@@ -49,7 +49,7 @@ export default function ServiceLeafCard({
             <ServiceLeafImage
               src={imageSrc || leaf.imageUrl}
               alt={leaf.label}
-              className="w-full aspect-square sm:aspect-[4/3] sm:max-w-sm"
+              className="w-full  sm:aspect-[4/3] "
             />
           </div>
         ) : null}
