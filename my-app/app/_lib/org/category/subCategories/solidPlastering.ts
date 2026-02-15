@@ -24,7 +24,7 @@ export const solidPlastering = {
   // ✅ NEW
   repairs: {
     label: "Repairs & Maintenance",
-    imageUrl: ImageUrl,
+    imageUrl: "",
     summary: "this is a summary of repair and maintenance",
     items: [
       "Crack Repairs",

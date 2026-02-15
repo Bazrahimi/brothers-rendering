@@ -1,5 +1,6 @@
 import { cldCardHeroAuto } from "@/app/_lib/cloudinary/cloudinary";
 import type { ServiceLeaf } from "@/app/_lib/org/category/definitions";
+import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 import ServiceLeafImage from "./ServiceLeafImage";
@@ -11,48 +12,52 @@ export default function ServiceLeafCard({
   leaf: ServiceLeaf;
   level: number;
 }) {
-  const imageSrc = leaf.imageUrl ? cldCardHeroAuto(leaf.imageUrl) : "";
+  const hasImage = leaf.imageUrl;
+  const hasItems = leaf.items.length > 0;
 
   return (
-    <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-      <div className="grid gap-6 sm:grid-cols-12 sm:items-start">
-        {/* CONTENT: always first on mobile, left on sm+ */}
-        <div
-          className={
-            leaf.imageUrl
-              ? "order-1 sm:order-none sm:col-span-8 space-y-4"
-              : "order-1 sm:order-none sm:col-span-12 space-y-4"
-          }
-        >
-          <Header as={level === 0 ? "h2" : "h3"} size="sm">
-            {leaf.label}
-          </Header>
+    <article className="rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-sm ">
+      {/* 12-cols grind on sm+ */}
+      <div className="grid gap-3 sm:gap-6 sm:grid-cols-12 sm:items-start">
+        <header className="sm:col-span-12 space-y-3">
+          <Header as={level === 0 ? "h2" : "h3"}>{leaf.label}</Header>
+          {leaf.summary && <P>{leaf.summary}</P>}
+        </header>
 
-          {leaf.summary ? (
-            <P className="text-sm text-slate-600">{leaf.summary}</P>
-          ) : null}
-
-          {leaf.items.length ? (
-            <ul className="list-disc space-y-1 pl-5 text-slate-700">
+        {/* Row 2 - ITEMS (LEFT) */}
+        {hasItems && (
+          <section
+            className={cn(
+              "sm:col-span-12",
+              // if image exist, items take 8 cols; otherwise take full width
+              hasImage ? "sm:col-span-8" : "sm:col-span-12",
+            )}
+          >
+            <ul className="list-disc space-y-1 pl-5 text-gray-700">
               {leaf.items.map((item) => (
                 <li key={item}>
-                  <P className="text-sm">{item}</P>
+                  <P>{item}</P>
                 </li>
               ))}
             </ul>
-          ) : null}
-        </div>
+          </section>
+        )}
 
-        {/* IMAGE: bottom on mobile, right on sm+ */}
-        {leaf.imageUrl ? (
-          <div className="order-2 sm:order-none sm:col-span-4">
+        {/* ROW 2 - IMAGE (right) */}
+        {hasImage && (
+          <aside
+            className={cn(
+              // if there are no items, let the image take full width so it does not look lonely
+              hasItems ? "sm:col-span-4" : "sm:col-span-12",
+            )}
+          >
             <ServiceLeafImage
-              src={imageSrc || leaf.imageUrl}
+              src={cldCardHeroAuto(leaf.imageUrl)}
               alt={leaf.label}
-              className="w-full  sm:aspect-[4/3] "
+              className="w-full sm:aspect-[4/3"
             />
-          </div>
-        ) : null}
+          </aside>
+        )}
       </div>
     </article>
   );
