@@ -1,13 +1,18 @@
-import type { ServiceGroup } from "../definitions";
+import { ImageUrl, ServiceGroup } from "../definitions";
 
 export const solidPlastering = {
   cladding: {
     label: "Board Installation",
+    imageUrl: ImageUrl,
+    summary:
+      "installation of blueboard, foamboard, hebels and render and text finish",
     items: ["Foam Board Installation", "Hebel Panel Systems", "Blue Board"],
   },
 
   finishing: {
     label: "Render & Texture",
+    imageUrl: ImageUrl,
+    summary: "Restore damaged render and keep façades looking sharp.",
     items: [
       "Cement Rendering",
       "Acrylic Texture Coatings",
@@ -19,6 +24,8 @@ export const solidPlastering = {
   // ✅ NEW
   repairs: {
     label: "Repairs & Maintenance",
+    imageUrl: ImageUrl,
+    summary: "this is a summary of repair and maintenance",
     items: [
       "Crack Repairs",
       "Water Damage Repairs",
@@ -30,6 +37,8 @@ export const solidPlastering = {
   // ✅ NEW
   insulation: {
     label: "Insulation & Lightweight Systems",
+    imageUrl: ImageUrl,
+    summary: "this is for this",
     items: [
       "External Insulation Systems (EIFS)",
       "Thermal Render Systems",

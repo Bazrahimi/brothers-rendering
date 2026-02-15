@@ -1,8 +1,10 @@
-import type { ServiceGroup } from "../definitions";
+import { ImageUrl, ServiceGroup } from "../definitions";
 
 export const siliconAndCaulking = {
   caulking: {
     label: "Professional Caulking",
+    imageUrl: ImageUrl,
+    summary: "this is summary of Profesional caulking",
     items: [
       "Expansion Joints",
       "Window & Door Caulking",
@@ -14,6 +16,8 @@ export const siliconAndCaulking = {
   // ✅ NEW
   wetAreas: {
     label: "Bathrooms & Wet Areas",
+    imageUrl: ImageUrl,
+    summary: "this is bathroom and wet area",
     items: [
       "Bathroom Re-siliconing",
       "Shower Screen & Tray Sealing",
@@ -25,6 +29,8 @@ export const siliconAndCaulking = {
   // ✅ NEW
   weatherproofing: {
     label: "Exterior Weatherproofing",
+    imageUrl: ImageUrl,
+    summary: "this is summary of exterior weatherProfing",
     items: [
       "Facade & Cladding Joint Sealing",
       "Brick Expansion Joint Sealing",
@@ -36,6 +42,8 @@ export const siliconAndCaulking = {
   // ✅ NEW (optional extra)
   fireRated: {
     label: "Fire-Rated & Acoustic Sealing",
+    imageUrl: ImageUrl,
+    summary: "this is a summary of fire-reated and acoustis sealing",
     items: [
       "Fire-Rated Penetration Sealing",
       "Acoustic Sealing Between Units",
