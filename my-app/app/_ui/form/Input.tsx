@@ -17,7 +17,7 @@ export type BaseInputProps = {
   Icon?: IconType;
   required?: boolean;
   autoComplete?: string;
-  inputClassName?: string;
+  className?: string;
   min?: number | string;
   max?: number | string;
   step?: number | string;
@@ -55,7 +55,7 @@ export const Input = forwardRef<HTMLInputElement, BaseInputProps>(
       required = false,
       autoComplete,
       inputProps,
-      inputClassName,
+      className,
       endAdornment,
       min,
       max,
@@ -142,7 +142,7 @@ export const Input = forwardRef<HTMLInputElement, BaseInputProps>(
                 isRTL && "text-right",
                 isRTL && "direction-rtl",
                 readOnly && "bg-gray-100 text-gray-500 cursor-not-allowed",
-                inputClassName,
+                className,
               )}
             />
           ) : (
@@ -175,7 +175,7 @@ export const Input = forwardRef<HTMLInputElement, BaseInputProps>(
                 isRTL && "text-right",
                 isRTL && "direction-rtl",
                 readOnly && "bg-gray-100 text-gray-500 cursor-not-allowed",
-                inputClassName,
+                className,
               )}
             />
           )}

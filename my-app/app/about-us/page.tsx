@@ -9,12 +9,13 @@ import { cn } from "../_lib/utils/cn";
 import { Header } from "../_ui/typography/Header";
 
 import MultiLanguageCapacity from "../_ui/MultiLanguageCapacity";
+import { P } from "../_ui/typography/paragraph";
 import ContactForm from "../contact-us/_ui/ContactForm";
+import ServiceArea from "../contact-us/_ui/ServiceArea";
 import AboutIntroduction from "./_ui/AboutIntroduction";
 import AboutTextSections from "./_ui/AboutTextSections";
 import AboutValues from "./_ui/AboutValues";
 import { TeamGrid } from "./_ui/TeamGrid";
-import ServiceArea from "../contact-us/_ui/ServiceArea";
 
 export default function AboutUsPage() {
   return (
@@ -44,26 +45,20 @@ export default function AboutUsPage() {
       </div>
 
       {/* 🔥 Special CTA Section */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 p-8 sm:p-10 shadow-xl text-white">
+      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 p-8 sm:p-10 shadow-xl">
         {/* Decorative blur accent */}
         <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
 
-        <div className="relative z-10 text-center space-y-4">
-          <Header as="h3" size="md" align="center" className="text-white">
-            Ready to get started?
-          </Header>
+        <Header as="h3" size="md" align="center" className="text-white">
+          Ready to get started?
+        </Header>
 
-          <p className="text-sm text-slate-300 max-w-xl mx-auto">
-            Contact {ORG_PROFILE.orgName} today to discuss your project. Our
-            team is ready to assist you.
-          </p>
+        <P className=" text-slate-300 " size="sm">
+          Contact {ORG_PROFILE.orgName} today to discuss your project. Our team
+          is ready to assist you.
+        </P>
 
-          <div className="mx-auto max-w-lg">
-            <div className="rounded-2xl bg-white p-6 shadow-lg">
-              <ContactForm />
-            </div>
-          </div>
-        </div>
+        <ContactForm showMotion />
       </section>
     </main>
   );

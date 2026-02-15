@@ -10,6 +10,7 @@ type Props = {
   placeholder?: string;
   defaultValue?: string;
   error?: string[];
+  className?: string;
   required?: boolean;
   rows?: number;
 };
@@ -21,6 +22,7 @@ const Textarea = ({
   placeholder,
   defaultValue,
   error,
+  className,
   required,
   rows = 5,
 }: Props) => {
@@ -47,6 +49,7 @@ const Textarea = ({
           "focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-600",
           "min-h-[120px]",
           hasError && "border-red-300 focus:border-red-400 focus:ring-red-100",
+          className,
         )}
       />
 

@@ -10,12 +10,20 @@ app
 │   ├── org
 │   │   ├── faqs.ts
 │   │   ├── font.ts
+│   │   ├── languages.ts
 │   │   ├── openingHours.ts
+│   │   ├── orgPages
+│   │   │   └── aboutUs.ts
 │   │   ├── profile.ts
+│   │   ├── serviceArea.ts
 │   │   └── services
 │   │       ├── definitions.ts
 │   │       ├── helper.ts
-│   │       └── services.ts
+│   │       ├── services.ts
+│   │       └── subCategories
+│   │           ├── caulking.ts
+│   │           ├── paintingAndDecorating.ts
+│   │           └── solidPlastering.ts
 │   ├── routes
 │   │   └── publicRoutes.ts
 │   └── utils
@@ -23,6 +31,7 @@ app
 │       ├── helper.ts
 │       └── slugify.ts
 ├── _ui
+│   ├── MultiLanguageCapacity.tsx
 │   ├── button
 │   │   ├── ActionButton.tsx
 │   │   └── Button.tsx
@@ -51,6 +60,14 @@ app
 │   └── typography
 │       ├── Header.tsx
 │       └── paragraph.tsx
+├── about-us
+│   ├── _ui
+│   │   ├── AboutIntroduction.tsx
+│   │   ├── AboutTextSections.tsx
+│   │   ├── AboutValues.tsx
+│   │   ├── SectionWrapper.tsx
+│   │   └── TeamGrid.tsx
+│   └── page.tsx
 ├── contact-us
 │   ├── _lib
 │   │   ├── action.ts
@@ -71,11 +88,17 @@ app
 │   │   ├── ContactIntro.tsx
 │   │   ├── ContactMap.tsx
 │   │   ├── ContactSuccess.tsx
-│   │   └── OpeningHours.tsx
+│   │   ├── OpeningHours.tsx
+│   │   └── ServiceArea.tsx
 │   └── page.tsx
 ├── favicon.ico
 ├── globals.css
 ├── layout.tsx
-└── page.tsx
+├── page.tsx
+└── services
+    ├── [slug]
+    │   ├── _ui
+    │   └── page.tsx
+    └── page.tsx
 
-23 directories, 56 files
+30 directories, 72 files

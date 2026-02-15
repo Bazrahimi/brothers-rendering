@@ -1,6 +1,7 @@
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 import Link from "next/link";
+import { FaArrowAltCircleDown } from "react-icons/fa";
 
 import type { FAQItem } from "@/app/_lib/org/faqs";
 
@@ -39,9 +40,10 @@ export default function ContactFAQ({
             <summary className="cursor-pointer list-none select-none font-medium text-gray-900">
               <span className="mr-2 text-gray-500">Q.</span>
               {item.q}
-              <span className="float-right text-gray-400 group-open:rotate-180 transition-transform">
+              {/* <span className="float-right text-gray-400 group-open:rotate-180 transition-transform animate-bounce">
                 ▾
-              </span>
+              </span> */}
+              <FaArrowAltCircleDown className="float-right text-org-primary-main group-open:rotate-180 transition-transform animate-pulse w-5 h-5" />
             </summary>
 
             <div className="mt-3 pl-1">
