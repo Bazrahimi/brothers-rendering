@@ -18,7 +18,7 @@ export default function AboutValues({ section }: { section: ValuesSection }) {
           <li key={i} className="ml-5 flex items-center gap-2">
             {section.icon === "check" ? (
               <FaCheck
-                className="h-4 w-4 shrink-0 text-green-500"
+                className="h-5 w-5 shrink-0 text-green-500 animate-pulse"
                 aria-hidden
               />
             ) : null}
