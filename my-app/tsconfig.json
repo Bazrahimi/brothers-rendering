@@ -29,7 +29,7 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    "app/_lib/org/services/subCategories"
+    "app/_lib/org/category/subCategories"
   ],
   "exclude": ["node_modules"]
 }

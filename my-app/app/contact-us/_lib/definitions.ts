@@ -1,4 +1,4 @@
-import { ServiceKey, ServiceTitle } from "@/app/_lib/org/services/definitions";
+import { ServiceKey, ServiceTitle } from "@/app/_lib/org/category/definitions";
 
 export type ServiceQueryOption = {
   value: ServiceKey;

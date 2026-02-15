@@ -1,5 +1,5 @@
 import { TextSection } from "@/app/_lib/org/orgPages/aboutUs";
-import { getServiceCategoryBySlug } from "@/app/_lib/org/services/helper";
+import { getServiceCategoryBySlug } from "@/app/_lib/org/category/helper";
 import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";

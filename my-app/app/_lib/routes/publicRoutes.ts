@@ -1,5 +1,5 @@
-import { SERVICES } from "@/app/_lib/org/services/services";
-import { ServiceKey } from "../org/services/definitions";
+import { SERVICES } from "@/app/_lib/org/category/services";
+import { ServiceKey } from "../org/category/definitions";
 import { slugify } from "../utils/helper";
 export const PublicRoutes = {
   home: () => "/",

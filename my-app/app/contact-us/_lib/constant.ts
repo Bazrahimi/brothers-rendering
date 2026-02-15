@@ -1,5 +1,6 @@
-import type { ServiceKey } from "@/app/_lib/org/services/definitions";
-import { SERVICES } from "@/app/_lib/org/services/services";
+import type { ServiceKey } from "@/app/_lib/org/category/definitions";
+
+import { SERVICES } from "@/app/_lib/org/category/services";
 import type { SelectOption, ServiceQueryOption } from "./definitions";
 export const ENQUIRY_FIELDS = {
   fullName: "fullName",
