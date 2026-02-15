@@ -14,7 +14,7 @@ export const siliconAndCaulking = {
   },
 
   // ✅ NEW
-  wetAreas: {
+  wet_areas: {
     label: "Bathrooms & Wet Areas",
     imageUrl: ImageUrl,
     summary: "this is bathroom and wet area",

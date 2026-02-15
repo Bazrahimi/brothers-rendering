@@ -1,7 +1,7 @@
 import { ImageUrl, ServiceGroup } from "../definitions";
 
 export const paintingAndDecorating = {
-  residential: {
+  residential_painting_work: {
     newBuild: {
       label: "New Build Residential Painting",
       imageUrl: ImageUrl,
@@ -14,7 +14,7 @@ export const paintingAndDecorating = {
         "Plasterboard and Villaboards",
       ],
     },
-    renovations: {
+    renovations_painting_work: {
       label: "Renovations & Specialized Coatings",
       imageUrl: ImageUrl,
       summary: "Interior and exterior painting renovation and extensions",
@@ -26,7 +26,7 @@ export const paintingAndDecorating = {
       ],
     },
   },
-  commercial: {
+  commercial_painting_work: {
     label: "Commercial Painting",
     imageUrl: ImageUrl,
     summary: "Durable coatings and flexible scheduling to minimise downtime.",
