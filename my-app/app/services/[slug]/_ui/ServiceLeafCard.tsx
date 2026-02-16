@@ -1,5 +1,6 @@
 import type { ServiceLeaf } from "@/app/_lib/org/category/definitions";
 import { cn } from "@/app/_lib/utils/cn";
+import List from "@/app/_ui/content/List";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 import ServiceLeafImage from "./ServiceLeafImage";
@@ -21,7 +22,9 @@ export default function ServiceLeafCard({
       <div className="grid gap-3 sm:gap-6 sm:grid-cols-12 sm:items-start">
         {/* Row 1 — Title + Summary (always full width) */}
         <header className="sm:col-span-12 space-y-3">
-          <Header as={level === 0 ? "h2" : "h3"}>{leaf.label}</Header>
+          <Header as={level === 0 ? "h2" : "h3"} align="center">
+            {leaf.label}
+          </Header>
 
           {leaf.summary && <P>{leaf.summary}</P>}
         </header>
@@ -34,13 +37,7 @@ export default function ServiceLeafCard({
               isEven ? "sm:order-1" : "sm:order-2",
             )}
           >
-            <ul className="list-disc list-inside space-y-1 text-gray-700">
-              {leaf.items.map((item) => (
-                <li key={item}>
-                  <P>{item}</P>
-                </li>
-              ))}
-            </ul>
+            <List items={leaf.items} variant="check" />
           </section>
         )}
 

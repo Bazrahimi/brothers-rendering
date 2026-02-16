@@ -1,8 +1,7 @@
 import { Header } from "@/app/_ui/typography/Header";
-import { P } from "@/app/_ui/typography/paragraph";
-import { FaCheck } from "react-icons/fa6";
 
 import type { ValuesSection } from "@/app/_lib/org/orgPages/aboutUs";
+import List from "@/app/_ui/content/List";
 
 export default function AboutValues({ section }: { section: ValuesSection }) {
   if (!section.items.length) return null;
@@ -13,19 +12,7 @@ export default function AboutValues({ section }: { section: ValuesSection }) {
         {section.title}
       </Header>
 
-      <ul className="mt-2 space-y-2">
-        {section.items.map((value, i) => (
-          <li key={i} className="ml-5 flex items-center gap-2">
-            {section.icon === "check" ? (
-              <FaCheck
-                className="h-5 w-5 shrink-0 text-green-500 animate-pulse"
-                aria-hidden
-              />
-            ) : null}
-            <P>{value}</P>
-          </li>
-        ))}
-      </ul>
+      <List items={section.items} variant="check" className="mt-2 ml-5" />
     </section>
   );
 }
