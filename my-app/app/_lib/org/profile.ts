@@ -3,7 +3,7 @@ import type { LanguageKey } from "./languages";
 import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
 
 const ORG_DOMAIN = "canconstruction.com.au" as const;
-const orgName = "Can Construction Pty Ltd";
+const orgName = "14 Star Gems ";
 
 export const ORG_PROFILE = {
   orgName: orgName,
@@ -19,7 +19,7 @@ export const ORG_PROFILE = {
 
   email: "info@canconstruction.com.au",
   website: `https://${ORG_DOMAIN}`,
-  phone: "+61 470 292 364",
+  phone: "+61 2343 3533",
 
   address: "22  Faldo Place Cranbourne North VIC 3977",
   abn: "37 649 729 395",

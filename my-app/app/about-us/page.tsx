@@ -5,14 +5,15 @@ import {
   ABOUT_VALUES,
 } from "@/app/_lib/org/orgPages/aboutUs";
 import { ORG_PROFILE } from "../_lib/org/profile";
-import { cn } from "../_lib/utils/cn";
+import Section from "../_ui/layout/Section";
 import { Header } from "../_ui/typography/Header";
 
 import MultiLanguageCapacity from "../_ui/MultiLanguageCapacity";
 import { P } from "../_ui/typography/paragraph";
 import ContactForm from "../contact-us/_ui/ContactForm";
 import ServiceArea from "../contact-us/_ui/ServiceArea";
-import AboutIntroduction from "./_ui/AboutIntroduction";
+
+import PageIntro from "../_ui/layout/PageIntro";
 import AboutTextSections from "./_ui/AboutTextSections";
 import AboutValues from "./_ui/AboutValues";
 import { TeamGrid } from "./_ui/TeamGrid";
@@ -20,21 +21,24 @@ import { TeamGrid } from "./_ui/TeamGrid";
 export default function AboutUsPage() {
   return (
     <main className="space-y-5">
-      <SectionWrapper>
-        <AboutIntroduction section={ABOUT_INTRODUCTION} />
-      </SectionWrapper>
+      <Section id={ABOUT_INTRODUCTION.id}>
+        <PageIntro
+          heading={ABOUT_INTRODUCTION.title}
+          subHeading={ABOUT_INTRODUCTION.items}
+        />
+      </Section>
 
-      <SectionWrapper>
+      <Section>
         <AboutTextSections sections={ABOUT_SECTIONS} />
-      </SectionWrapper>
+      </Section>
 
-      <SectionWrapper>
+      <Section>
         <AboutValues section={ABOUT_VALUES} />
-      </SectionWrapper>
+      </Section>
 
-      <SectionWrapper>
+      <Section>
         <TeamGrid team={ABOUT_TEAM} />
-      </SectionWrapper>
+      </Section>
 
       <div>
         <ServiceArea />
@@ -63,22 +67,3 @@ export default function AboutUsPage() {
     </main>
   );
 }
-
-const SectionWrapper = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <section
-      className={cn(
-        "rounded-b-3xl border border-slate-200 bg-gray-50   shadow-sm backdrop-blur p-6 sm:p-8",
-        className,
-      )}
-    >
-      {children}
-    </section>
-  );
-};

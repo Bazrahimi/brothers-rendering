@@ -1,7 +1,6 @@
 import { getServiceCategoryBySlug } from "@/app/_lib/org/category/helper";
-import { TextSection } from "@/app/_lib/org/orgPages/aboutUs";
-import { cn } from "@/app/_lib/utils/cn";
-import AboutIntroduction from "@/app/about-us/_ui/AboutIntroduction";
+import PageIntro from "@/app/_ui/layout/PageIntro";
+import Section from "@/app/_ui/layout/Section";
 import { notFound } from "next/navigation";
 import ServiceDetails from "./_ui/ServiceDetails";
 
@@ -14,23 +13,17 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   }
   const { service } = found;
 
-  const introSection = {
-    id: slug,
-    title: service.category,
-    items: service.shortDesc,
-  } satisfies TextSection;
-
   return (
     <main className=" my-5 space-y-8">
-      <SectionWrapper>
-        <AboutIntroduction section={introSection} />
-      </SectionWrapper>
+      <Section id={slug}>
+        <PageIntro heading={service.category} subHeading={service.shortDesc} />
+      </Section>
 
       {/* Subcategories (nested object) */}
       {service.subcategories && (
-        <section>
+        <Section>
           <ServiceDetails group={service.subcategories} />
-        </section>
+        </Section>
       )}
     </main>
   );
@@ -38,21 +31,3 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
 export default page;
 
-const SectionWrapper = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <section
-      className={cn(
-        "rounded-b-3xl border border-slate-200 bg-gray-50   shadow-sm backdrop-blur p-6 sm:p-8",
-        className,
-      )}
-    >
-      {children}
-    </section>
-  );
-};
