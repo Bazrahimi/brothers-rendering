@@ -13,6 +13,7 @@ import { P } from "../_ui/typography/paragraph";
 import ContactForm from "../contact-us/_ui/ContactForm";
 import ServiceArea from "../contact-us/_ui/ServiceArea";
 
+import { Suspense } from "react";
 import PageIntro from "../_ui/layout/PageIntro";
 import AboutTextSections from "./_ui/AboutTextSections";
 import AboutValues from "./_ui/AboutValues";
@@ -61,8 +62,9 @@ export default function AboutUsPage() {
           Contact {ORG_PROFILE.orgName} today to discuss your project. Our team
           is ready to assist you.
         </P>
-
-        <ContactForm showMotion />
+        <Suspense fallback={null}>
+          <ContactForm showMotion />
+        </Suspense>
       </section>
     </main>
   );

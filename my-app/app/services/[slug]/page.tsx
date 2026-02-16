@@ -3,6 +3,7 @@ import ServiceCTA from "@/app/_ui/content/ServiceCTA";
 import PageIntro from "@/app/_ui/layout/PageIntro";
 import Section from "@/app/_ui/layout/Section";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import ServiceDetails from "./_ui/ServiceDetails";
 
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -28,7 +29,9 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
       )}
 
       <Section>
-        <ServiceCTA serviceCategory={service.category} />
+        <Suspense fallback={null}>
+          <ServiceCTA serviceCategory={service.category} />
+        </Suspense>
       </Section>
     </main>
   );

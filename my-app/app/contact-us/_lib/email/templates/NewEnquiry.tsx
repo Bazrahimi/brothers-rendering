@@ -44,9 +44,7 @@ const NewEnquiry = ({
             <Text>
               <strong>Phone:</strong> {data.contactNumber}
             </Text>
-            <Text>
-              <strong>Query Type:</strong> {String(data.queryTypeLabel)}
-            </Text>
+    
             {data.qMessage && (
               <>
                 <Hr />
