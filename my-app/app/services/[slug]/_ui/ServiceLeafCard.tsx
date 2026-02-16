@@ -26,14 +26,14 @@ export default function ServiceLeafCard({
             {leaf.label}
           </Header>
 
-          {leaf.summary && <P>{leaf.summary}</P>}
+          {leaf.summary && <P className="text-gray-800" size="lg">{leaf.summary}</P>}
         </header>
 
         {/* Row 2 — Items (8 cols) */}
         {hasItems && (
           <section
             className={cn(
-              "sm:col-span-8",
+              "sm:col-span-6",
               isEven ? "sm:order-1" : "sm:order-2",
             )}
           >
@@ -44,14 +44,14 @@ export default function ServiceLeafCard({
         {/* Row 2 — Image (4 cols) */}
         <aside
           className={cn(
-            hasItems ? "sm:col-span-4" : "sm:col-span-12",
+            hasItems ? "sm:col-span-6" : "sm:col-span-12",
             isEven ? "sm:order-2" : "sm:order-1",
           )}
         >
           <ServiceLeafImage
             image={leaf.image}
             alt={leaf.label}
-            className="w-full sm:aspect-[4/3]"
+            className="w-full sm:aspect-[4/2]"
           />
         </aside>
       </div>

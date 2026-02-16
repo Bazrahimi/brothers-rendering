@@ -45,7 +45,7 @@ const List = ({
               aria-hidden
             />
           )}
-          <P>{item}</P>
+          <P className="text-gray-600">{item}</P>
         </li>
       ))}
     </ul>

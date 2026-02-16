@@ -21,7 +21,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   } satisfies TextSection;
 
   return (
-    <main className="my-10 space-y-8">
+    <main className=" my-5 space-y-8">
       <SectionWrapper>
         <AboutIntroduction section={introSection} />
       </SectionWrapper>
