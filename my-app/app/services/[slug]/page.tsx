@@ -1,4 +1,5 @@
 import { getServiceCategoryBySlug } from "@/app/_lib/org/category/helper";
+import ServiceCTA from "@/app/_ui/content/ServiceCTA";
 import PageIntro from "@/app/_ui/layout/PageIntro";
 import Section from "@/app/_ui/layout/Section";
 import { notFound } from "next/navigation";
@@ -25,9 +26,12 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
           <ServiceDetails group={service.subcategories} />
         </Section>
       )}
+
+      <Section>
+        <ServiceCTA serviceCategory={service.category} />
+      </Section>
     </main>
   );
 };
 
 export default page;
-

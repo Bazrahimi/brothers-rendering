@@ -5,6 +5,7 @@ export const PublicRoutes = {
   home: () => "/",
   about: () => "/about-us",
   contact: () => "/contact-us",
+  freeConsultation: () => "/free-consultation",
   service: (slug: string) => `/services/${slug}`,
 } as const;
 

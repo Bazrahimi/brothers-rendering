@@ -3,6 +3,7 @@ import { cn } from "@/app/_lib/utils/cn";
 import List from "@/app/_ui/content/List";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
+import Link from "next/link";
 import ServiceLeafImage from "./ServiceLeafImage";
 
 export default function ServiceLeafCard({
@@ -18,47 +19,63 @@ export default function ServiceLeafCard({
   const isEven = index % 2 === 0;
 
   return (
-    <article className="rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-sm">
-      <div className="grid gap-3 sm:gap-6 sm:grid-cols-12 sm:items-start">
-        {/* Row 1 — Title + Summary (always full width) */}
-        <header className="sm:col-span-12 space-y-3">
-          <Header as={level === 0 ? "h2" : "h3"} align="center">
-            {leaf.label}
-          </Header>
+    <>
+      <article className="rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-sm">
+        <div className="grid gap-3 sm:gap-6 sm:grid-cols-12 sm:items-start">
+          {/* Row 1 — Title + Summary (always full width) */}
+          <header className="sm:col-span-12 space-y-3">
+            <Header as={level === 0 ? "h2" : "h3"} align="center">
+              {leaf.label}
+            </Header>
 
-          {leaf.summary && (
-            <P className="text-gray-800" size="lg">
-              {leaf.summary}
-            </P>
+            {leaf.summary && (
+              <P className="text-gray-800" size="lg">
+                {leaf.summary}
+              </P>
+            )}
+          </header>
+
+          {/* Row 2 — Items (8 cols) */}
+          {hasItems && (
+            <section
+              className={cn(
+                "sm:col-span-6",
+                isEven ? "sm:order-1" : "sm:order-2",
+              )}
+            >
+              <List items={leaf.items} variant="check" />
+            </section>
           )}
-        </header>
 
-        {/* Row 2 — Items (8 cols) */}
-        {hasItems && (
-          <section
+          {/* Row 2 — Image (4 cols) */}
+          <aside
             className={cn(
-              "sm:col-span-6",
-              isEven ? "sm:order-1" : "sm:order-2",
+              hasItems ? "sm:col-span-6" : "sm:col-span-12",
+              isEven ? "sm:order-2" : "sm:order-1",
             )}
           >
-            <List items={leaf.items} variant="check" />
-          </section>
-        )}
-
-        {/* Row 2 — Image (4 cols) */}
-        <aside
-          className={cn(
-            hasItems ? "sm:col-span-6" : "sm:col-span-12",
-            isEven ? "sm:order-2" : "sm:order-1",
-          )}
-        >
-          <ServiceLeafImage
-            image={leaf.image}
-            alt={leaf.label}
-            // className="w-full sm:aspect-[4/2] "
-          />
-        </aside>
-      </div>
-    </article>
+            <ServiceLeafImage
+              image={leaf.image}
+              alt={leaf.label}
+              // className="w-full sm:aspect-[4/2] "
+            />
+          </aside>
+        </div>
+      </article>
+      {/* <Link
+        href={{
+          pathname: "/contact-us",
+          query: {
+            subject: "Free quote",
+            service: parentCategory, // pass this down to leaf card
+            leaf: leaf.label,
+            message: `Hi, I’d like a free quote for: ${parentCategory} → ${leaf.label}.`,
+          },
+        }}
+        className="mt-4 inline-flex rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+      >
+        Get a quote for this
+      </Link> */}
+    </>
   );
 }
