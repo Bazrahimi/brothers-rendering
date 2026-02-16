@@ -1,8 +1,8 @@
-import { LeafImage } from "@/app/_lib/org/category/definitions";
 import { cldCardHeroAuto } from "@/app/_lib/cloudinary/cloudinary";
-import { svgFromText } from "@/app/_ui/image/svgFromText";
+import { LeafImage } from "@/app/_lib/org/category/definitions";
 import { cn } from "@/app/_lib/utils/cn";
 import { IMAGE_DEFAULT_BLUR } from "@/app/_ui/image/ImageShimer";
+import { svgFromText } from "@/app/_ui/image/svgFromText";
 import Image from "next/image";
 
 export default function ServiceLeafImage({
@@ -30,7 +30,7 @@ export default function ServiceLeafImage({
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-2xl border border-slate-200 bg-slate-100",
+        "overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 aspect-[4/2]",
         className,
       )}
     >
@@ -38,7 +38,7 @@ export default function ServiceLeafImage({
         src={src}
         alt={alt}
         width={1200}
-        height={900}
+        height={600}
         className={cn("h-full w-full object-cover", imgClassName)}
         loading="lazy"
         {...(!isDataUrl && {

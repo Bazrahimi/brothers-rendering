@@ -26,7 +26,11 @@ export default function ServiceLeafCard({
             {leaf.label}
           </Header>
 
-          {leaf.summary && <P className="text-gray-800" size="lg">{leaf.summary}</P>}
+          {leaf.summary && (
+            <P className="text-gray-800" size="lg">
+              {leaf.summary}
+            </P>
+          )}
         </header>
 
         {/* Row 2 — Items (8 cols) */}
@@ -51,7 +55,7 @@ export default function ServiceLeafCard({
           <ServiceLeafImage
             image={leaf.image}
             alt={leaf.label}
-            className="w-full sm:aspect-[4/2]"
+            // className="w-full sm:aspect-[4/2] "
           />
         </aside>
       </div>
