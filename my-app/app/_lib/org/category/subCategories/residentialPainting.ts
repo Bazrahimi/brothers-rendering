@@ -1,9 +1,10 @@
-import { ImageUrl, ServiceGroup } from "../definitions";
+import { ImageUrl, ServiceLeaf, type ServiceSubCategory } from "../definitions";
 
-export const paintingAndDecorating = {
-  residential_painting_work: {
+export const residentialPaintingAndDecorating = {
+
+
     newBuild: {
-      label: "New Build Residential Painting",
+      label: "New Build",
       image: { kind: "url", src: ImageUrl },
       summary:
         "Interior and exterior painting for new homes and multi-unit builds.",
@@ -14,8 +15,8 @@ export const paintingAndDecorating = {
         "Plasterboard and Villaboards",
       ],
     },
-    renovations_painting_work: {
-      label: "Renovations & Specialized Coatings",
+    renovationAndExtensions: {
+      label: "Renovation And Extensions",
       image: { kind: "svg", text: "Renovations & Specialized Coatings" },
       summary: "Interior and exterior painting renovation and extensions",
       items: [
@@ -25,16 +26,5 @@ export const paintingAndDecorating = {
         "Driveway and Concrete Sealers",
       ],
     },
-  },
-  commercial_painting_work: {
-    label: "Commercial Painting",
-    image: { kind: "url", src: ImageUrl },
-    summary: "Durable coatings and flexible scheduling to minimise downtime.",
-    items: [
-      "Office Fit-outs",
-      "Retail Spaces",
-      "Warehouse Coatings",
-      "Body Corporate Maintenance",
-    ],
-  },
-} as const satisfies ServiceGroup;
+  
+} as const satisfies ServiceSubCategory;

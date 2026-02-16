@@ -1,20 +1,30 @@
-import { ServiceConfig } from "./definitions";
+import { Service } from "./definitions";
 import { siliconAndCaulking } from "./subCategories/caulking";
-import { paintingAndDecorating } from "./subCategories/paintingAndDecorating";
+import { commercialPaintingAndDecorating } from "./subCategories/commercialPainting";
+import { residentialPaintingAndDecorating } from "./subCategories/residentialPainting";
+
 import { solidPlastering } from "./subCategories/solidPlastering";
 
 export const SERVICES = {
-  paintingAndDecorating: {
-    category: "Painting and Decorating",
+  residentialPainting: {
+    label: "Residential Painting And Decorating",
     shortDesc: [
       "Comprehensive interior and exterior painting solutions for homes and businesses.",
     ] as const,
 
-    subcategories: paintingAndDecorating,
+    subcategories: residentialPaintingAndDecorating,
+  },
+  commercialPainting: {
+    label: "Commercial Painting And Decorating",
+    shortDesc: [
+      "Comprehensive interior and exterior painting solutions for businesses.",
+    ] as const,
+
+    subcategories: commercialPaintingAndDecorating,
   },
 
   solidPlastering: {
-    category: "Solid Plastering and Rendering",
+    label: "Solid Plastering and Rendering",
     shortDesc: [
       "Expert external cladding and traditional rendering services.",
     ] as const,
@@ -23,11 +33,11 @@ export const SERVICES = {
   },
 
   siliconAndCaulking: {
-    category: "Silicon and Caulking",
+    label: "Silicon and Caulking",
     shortDesc: [
       "Precision tiling and professional caulking for residential and commercial projects.",
     ] as const,
 
     subcategories: siliconAndCaulking,
   },
-} as const satisfies Record<string, ServiceConfig>;
+} as const satisfies Record<string, Service>;

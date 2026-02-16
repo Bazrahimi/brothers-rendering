@@ -1,4 +1,4 @@
-import {isLeaf, type ServiceGroup } from "@/app/_lib/org/category/definitions";
+import {isLeaf, type ServiceSubCategory } from "@/app/_lib/org/category/definitions";
 import { cn } from "@/app/_lib/utils/cn";
 
 import { ServiceGroupSection } from "./ServiceGroupSection";
@@ -8,7 +8,7 @@ export default function ServiceDetails({
   group,
   level = 0,
 }: {
-  group: ServiceGroup;
+  group: ServiceSubCategory;
   level?: number;
 }) {
   return (
@@ -25,7 +25,7 @@ export default function ServiceDetails({
           );
         }
 
-        const childGroup = node as ServiceGroup;
+        const childGroup = node as ServiceSubCategory;
 
         return (
           <ServiceGroupSection key={key} groupKey={key} level={level}>

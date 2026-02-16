@@ -1,4 +1,4 @@
-import { ServiceGroup } from "../definitions";
+import { ServiceSubCategory} from "../definitions";
 
 export const solidPlastering = {
   cladding: {
@@ -46,4 +46,4 @@ export const solidPlastering = {
       "Lightweight Facade Upgrades",
     ],
   },
-} as const satisfies ServiceGroup;
+} as const satisfies ServiceSubCategory;

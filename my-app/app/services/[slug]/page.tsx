@@ -1,4 +1,4 @@
-import { getServiceCategoryBySlug } from "@/app/_lib/org/category/helper";
+import { getServiceLabelBySlug } from "@/app/_lib/org/category/helper";
 import ServiceCTA from "@/app/_ui/content/ServiceCTA";
 import PageIntro from "@/app/_ui/layout/PageIntro";
 import Section from "@/app/_ui/layout/Section";
@@ -9,7 +9,7 @@ import ServiceDetails from "./_ui/ServiceDetails";
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
 
-  const found = getServiceCategoryBySlug(slug);
+  const found = getServiceLabelBySlug(slug);
   if (!found) {
     notFound();
   }
@@ -18,7 +18,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   return (
     <main className=" my-5 space-y-8">
       <Section id={slug}>
-        <PageIntro heading={service.category} subHeading={service.shortDesc} />
+        <PageIntro heading={service.label} subHeading={service.shortDesc} />
       </Section>
 
       {/* Subcategories (nested object) */}
@@ -30,7 +30,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
       <Section>
         <Suspense fallback={null}>
-          <ServiceCTA serviceCategory={service.category} />
+          <ServiceCTA serviceCategory={service.label} />
         </Suspense>
       </Section>
     </main>

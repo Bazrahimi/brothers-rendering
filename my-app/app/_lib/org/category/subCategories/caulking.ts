@@ -1,4 +1,4 @@
-import { ImageUrl, ServiceGroup } from "../definitions";
+import { ImageUrl, ServiceSubCategory} from "../definitions";
 
 export const siliconAndCaulking = {
   caulking: {
@@ -51,4 +51,4 @@ export const siliconAndCaulking = {
       "Compliance Sealing for Commercial Builds",
     ],
   },
-} as const satisfies ServiceGroup;
+} as const satisfies ServiceSubCategory;

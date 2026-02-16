@@ -12,7 +12,7 @@ export const PublicRoutes = {
 /** Service nav links */
 export const getServiceCategoryLinks = () => {
   return (Object.keys(SERVICES) as ServiceKey[]).map((key) => {
-    const title = SERVICES[key].category;
+    const title = SERVICES[key].label;
     const slug = slugify(title);
 
     return {

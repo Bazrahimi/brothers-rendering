@@ -1,8 +1,8 @@
 import { SERVICES } from "./services";
 
 export type ServiceKey = keyof typeof SERVICES;
-export type Service = (typeof SERVICES)[ServiceKey];
-export type ServiceTitle = Service["category"];
+
+export type ServiceTitle = Service["label"];
 
 export const ImageUrl =
   "v1771144431/business-f/building/bath1234poof_y6clz0.png";
@@ -18,15 +18,14 @@ export type ServiceLeaf = {
   items: readonly string[];
 };
 
-// ✅ recursive type MUST be an interface (or “object type”)
-export interface ServiceGroup {
-  [key: string]: ServiceLeaf | ServiceGroup;
-}
+export type ServiceSubCategory = {
+  [key: string]: ServiceLeaf;
+};
 
-export type ServiceConfig = {
-  category: string;
+export type Service = {
+  label: string;
   shortDesc: readonly string[];
-  subcategories: ServiceGroup;
+  subcategories: ServiceSubCategory;
 };
 
 /**
@@ -40,8 +39,7 @@ export const prettifyKey = (key: string) => {
     .replace(/\b\w/g, (c) => c.toUpperCase()); // Title Case
 };
 
-
-export function isLeaf(node: ServiceLeaf | ServiceGroup): node is ServiceLeaf {
+export function isLeaf(node: ServiceLeaf): node is ServiceLeaf {
   return (
     typeof (node as ServiceLeaf).label === "string" &&
     typeof (node as ServiceLeaf).summary === "string" &&
