@@ -3,7 +3,7 @@ import { ImageUrl, ServiceGroup } from "../definitions";
 export const siliconAndCaulking = {
   caulking: {
     label: "Professional Caulking",
-    imageUrl: ImageUrl,
+    image: { kind: "svg", text: "Professional Caulking" },
     summary: "this is summary of Profesional caulking",
     items: [
       "Expansion Joints",
@@ -16,7 +16,7 @@ export const siliconAndCaulking = {
   // ✅ NEW
   wet_areas: {
     label: "Bathrooms & Wet Areas",
-    imageUrl: ImageUrl,
+    image: { kind: "svg", text: "Bathroom and wet area" },
     summary: "this is bathroom and wet area",
     items: [
       "Bathroom Re-siliconing",
@@ -29,7 +29,7 @@ export const siliconAndCaulking = {
   // ✅ NEW
   weatherproofing: {
     label: "Exterior Weatherproofing",
-    imageUrl: ImageUrl,
+    image: { kind: "url", src: ImageUrl },
     summary: "this is summary of exterior weatherProfing",
     items: [
       "Facade & Cladding Joint Sealing",
@@ -42,7 +42,7 @@ export const siliconAndCaulking = {
   // ✅ NEW (optional extra)
   fireRated: {
     label: "Fire-Rated & Acoustic Sealing",
-    imageUrl: ImageUrl,
+    image: { kind: "url", src: ImageUrl },
     summary: "this is a summary of fire-reated and acoustis sealing",
     items: [
       "Fire-Rated Penetration Sealing",

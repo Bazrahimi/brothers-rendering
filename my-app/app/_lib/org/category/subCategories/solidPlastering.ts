@@ -1,9 +1,9 @@
-import { ImageUrl, ServiceGroup } from "../definitions";
+import { ServiceGroup } from "../definitions";
 
 export const solidPlastering = {
   cladding: {
     label: "Board Installation",
-    imageUrl: ImageUrl,
+    image: { kind: "svg", text: "Bathroom and wet area" },
     summary:
       "installation of blueboard, foamboard, hebels and render and text finish",
     items: ["Foam Board Installation", "Hebel Panel Systems", "Blue Board"],
@@ -11,7 +11,7 @@ export const solidPlastering = {
 
   finishing: {
     label: "Render & Texture",
-    imageUrl: ImageUrl,
+    image: { kind: "svg", text: "Bathroom and wet area" },
     summary: "Restore damaged render and keep façades looking sharp.",
     items: [
       "Cement Rendering",
@@ -24,7 +24,7 @@ export const solidPlastering = {
   // ✅ NEW
   repairs: {
     label: "Repairs & Maintenance",
-    imageUrl: "",
+    image: { kind: "svg", text: "Bathroom and wet area" },
     summary: "this is a summary of repair and maintenance",
     items: [
       "Crack Repairs",
@@ -37,7 +37,7 @@ export const solidPlastering = {
   // ✅ NEW
   insulation: {
     label: "Insulation & Lightweight Systems",
-    imageUrl: ImageUrl,
+    image: { kind: "svg", text: "Bathroom and wet area" },
     summary: "this is for this",
     items: [
       "External Insulation Systems (EIFS)",

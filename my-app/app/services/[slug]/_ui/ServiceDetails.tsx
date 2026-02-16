@@ -1,7 +1,4 @@
-import {
-  isServiceLeaf,
-  type ServiceGroup,
-} from "@/app/_lib/org/category/definitions";
+import {isLeaf, type ServiceGroup } from "@/app/_lib/org/category/definitions";
 import { cn } from "@/app/_lib/utils/cn";
 
 import { ServiceGroupSection } from "./ServiceGroupSection";
@@ -16,9 +13,16 @@ export default function ServiceDetails({
 }) {
   return (
     <div className={cn("space-y-4", level === 0 && "space-y-6")}>
-      {Object.entries(group).map(([ key, node], index) => {
-        if (isServiceLeaf(node)) {
-          return <ServiceLeafCard key={key} leaf={node} level={level}  index={index}/>;
+      {Object.entries(group).map(([key, node], index) => {
+        if (isLeaf(node)) {
+          return (
+            <ServiceLeafCard
+              key={key}
+              leaf={node}
+              level={level}
+              index={index}
+            />
+          );
         }
 
         const childGroup = node as ServiceGroup;

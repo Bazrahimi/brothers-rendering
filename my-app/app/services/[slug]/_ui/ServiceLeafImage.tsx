@@ -1,18 +1,32 @@
+import { LeafImage } from "@/app/_lib/org/category/definitions";
+import { cldCardHeroAuto } from "@/app/_lib/cloudinary/cloudinary";
+import { svgFromText } from "@/app/_ui/image/svgFromText";
 import { cn } from "@/app/_lib/utils/cn";
-import { IMAGE_DEFAULT_BLUR } from "@/app/_ui/image/ImageShimer"; // use your existing file
+import { IMAGE_DEFAULT_BLUR } from "@/app/_ui/image/ImageShimer";
 import Image from "next/image";
 
 export default function ServiceLeafImage({
-  src,
+  image,
   alt,
   className,
   imgClassName,
 }: {
-  src: string;
+  image: LeafImage;
   alt: string;
   className?: string;
   imgClassName?: string;
 }) {
+  // ✅ Type-safe narrowing
+  let src: string;
+
+  if (image.kind === "url") {
+    src = cldCardHeroAuto(image.src);
+  } else {
+    src = svgFromText(image.text);
+  }
+
+  const isDataUrl = src.startsWith("data:image/");
+
   return (
     <div
       className={cn(
@@ -26,9 +40,11 @@ export default function ServiceLeafImage({
         width={1200}
         height={900}
         className={cn("h-full w-full object-cover", imgClassName)}
-        placeholder="blur"
-        blurDataURL={IMAGE_DEFAULT_BLUR}
         loading="lazy"
+        {...(!isDataUrl && {
+          placeholder: "blur" as const,
+          blurDataURL: IMAGE_DEFAULT_BLUR,
+        })}
       />
     </div>
   );

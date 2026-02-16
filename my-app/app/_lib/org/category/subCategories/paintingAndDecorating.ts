@@ -1,10 +1,11 @@
+import { cldCardHeroAuto } from "@/app/_lib/cloudinary/cloudinary";
 import { ImageUrl, ServiceGroup } from "../definitions";
 
 export const paintingAndDecorating = {
   residential_painting_work: {
     newBuild: {
       label: "New Build Residential Painting",
-      imageUrl: ImageUrl,
+      image: {kind: "url", src: ImageUrl},
       summary:
         "Interior and exterior painting for new homes and multi-unit builds.",
       items: [
@@ -16,7 +17,7 @@ export const paintingAndDecorating = {
     },
     renovations_painting_work: {
       label: "Renovations & Specialized Coatings",
-      imageUrl: ImageUrl,
+       image: { kind: "svg", text: "Renovations & Specialized Coatings" },
       summary: "Interior and exterior painting renovation and extensions",
       items: [
         "Garage Extensions",
@@ -28,7 +29,7 @@ export const paintingAndDecorating = {
   },
   commercial_painting_work: {
     label: "Commercial Painting",
-    imageUrl: ImageUrl,
+      image: {kind: "url", src: ImageUrl},
     summary: "Durable coatings and flexible scheduling to minimise downtime.",
     items: [
       "Office Fit-outs",
