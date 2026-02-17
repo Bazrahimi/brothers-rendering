@@ -39,12 +39,3 @@ export const prettifyKey = (key: string) => {
     .replace(/\b\w/g, (c) => c.toUpperCase()); // Title Case
 };
 
-export function isLeaf(node: ServiceLeaf): node is ServiceLeaf {
-  return (
-    typeof (node as ServiceLeaf).label === "string" &&
-    typeof (node as ServiceLeaf).summary === "string" &&
-    (node as ServiceLeaf).image != null &&
-    typeof (node as ServiceLeaf).image === "object" &&
-    Array.isArray((node as ServiceLeaf).items)
-  );
-}

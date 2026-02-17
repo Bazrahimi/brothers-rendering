@@ -1,5 +1,5 @@
 import { slugify } from "../../utils/helper";
-import type { Service, ServiceKey, ServiceTitle } from "./definitions";
+import type { Service, ServiceKey } from "./definitions";
 
 import { SERVICES } from "./services";
 

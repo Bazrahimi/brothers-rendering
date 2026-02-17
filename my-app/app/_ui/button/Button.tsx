@@ -2,6 +2,7 @@
 
 import { uiFond } from "@/app/_lib/org/font";
 import { cn } from "@/app/_lib/utils/cn";
+import type { LinkProps } from "next/link";
 import Link from "next/link";
 import { forwardRef } from "react";
 
@@ -22,11 +23,10 @@ type ButtonAsButton = BaseButtonProps &
   Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "className"> & {
     as?: "button";
   };
-
 type ButtonAsLink = BaseButtonProps &
-  Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "className"> & {
+  Omit<LinkProps, "href"> & {
     as: "link";
-    href: string;
+    href: LinkProps["href"];
   };
 
 export type ButtonProps = ButtonAsButton | ButtonAsLink;
@@ -63,7 +63,7 @@ export const Button = forwardRef<
     ...rest
   } = props as ButtonProps;
 
-  const layout = fullWidth ? "flex w-full justify-center" : "inline-flex";
+  const layout = fullWidth ? "flex w-full justify-center" : "inline-flex justify-center";
 
   const classes = cn(
     uiFond.className,

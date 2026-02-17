@@ -1,22 +1,22 @@
 import type { ServiceLeaf } from "@/app/_lib/org/category/definitions";
+import { CTA_MAP, ORG_PROFILE } from "@/app/_lib/org/profile";
 import { cn } from "@/app/_lib/utils/cn";
 import List from "@/app/_ui/content/List";
+import ServiceCTA from "@/app/_ui/content/ServiceCTA";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
-import Link from "next/link";
 import ServiceLeafImage from "./ServiceLeafImage";
 
 export default function ServiceLeafCard({
   leaf,
-  level,
   index,
 }: {
   leaf: ServiceLeaf;
-  level: number;
   index: number;
 }) {
   const hasItems = leaf.items.length > 0;
   const isEven = index % 2 === 0;
+  const activeCta = CTA_MAP[ORG_PROFILE.cta];
 
   return (
     <>
@@ -24,7 +24,7 @@ export default function ServiceLeafCard({
         <div className="grid gap-3 sm:gap-6 sm:grid-cols-12 sm:items-start">
           {/* Row 1 — Title + Summary (always full width) */}
           <header className="sm:col-span-12 space-y-3">
-            <Header as={level === 0 ? "h2" : "h3"} align="center">
+            <Header as="h2" align="center">
               {leaf.label}
             </Header>
 
@@ -61,21 +61,12 @@ export default function ServiceLeafCard({
             />
           </aside>
         </div>
+        <ServiceCTA
+          headingLabel={activeCta.label}
+          serviceLabel={leaf.label}
+          message={activeCta.message}
+        />
       </article>
-      {/* <Link
-        href={{
-          pathname: "/contact-us",
-          query: {
-            subject: "Free quote",
-            service: parentCategory, // pass this down to leaf card
-            leaf: leaf.label,
-            message: `Hi, I’d like a free quote for: ${parentCategory} → ${leaf.label}.`,
-          },
-        }}
-        className="mt-4 inline-flex rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
-      >
-        Get a quote for this
-      </Link> */}
     </>
   );
 }
