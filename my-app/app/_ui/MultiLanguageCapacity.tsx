@@ -14,9 +14,9 @@ const isRtl = (lang: SecondaryLanguageKey) => lang === "FA" || lang === "HZ";
 const accentStyle = (lang: SecondaryLanguageKey) => {
   switch (lang) {
     case "HZ":
-      return "border-bg-org-primary-main/50 bg-org-primary-main";
+      return "border-bg-org-primary-main/50 bg-gradient-to-br from-org-primary-dark to-org-secondary-dark";
     case "FA":
-      return "border-bg-org-secondary-main/50 bg-org-secondary-main";
+      return "border-bg-org-secondary-main/50 bg-gradient-to-br from-org-secondary-dark to-org-primary-dark";
   }
 };
 
