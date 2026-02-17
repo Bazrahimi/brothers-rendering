@@ -8,7 +8,7 @@ import { ORG_PROFILE } from "../_lib/org/profile";
 import Section from "../_ui/layout/Section";
 import { Header } from "../_ui/typography/Header";
 
-import MultiLanguageCapacity from "../_ui/multiLangue/MultiLanguageCapacity";
+import MultiLanguageCapacity from "../_ui/content/MultiLanguageCapacity";
 import { P } from "../_ui/typography/paragraph";
 import ContactForm from "../contact-us/_ui/ContactForm";
 import ServiceArea from "../contact-us/_ui/ServiceArea";

@@ -6,7 +6,7 @@ import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 import Link from "next/link";
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
-import MultiLanguageCapacity from "../../_ui/multiLangue/MultiLanguageCapacity";
+import MultiLanguageCapacity from "../../_ui/content/MultiLanguageCapacity";
 import ContactFAQ from "./ContactFAQ";
 import ContactMap from "./ContactMap";
 import OpeningHours from "./OpeningHours";

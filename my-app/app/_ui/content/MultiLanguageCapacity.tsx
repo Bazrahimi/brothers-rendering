@@ -4,35 +4,24 @@ import {
   type SecondaryLanguageKey,
 } from "@/app/_lib/org/languages";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
-import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 
-const accentStyle = (lang: SecondaryLanguageKey) => {
-  switch (lang) {
-    case "HZ":
-      return "border-bg-org-primary-main/50 bg-gradient-to-br from-org-primary-dark to-org-secondary-dark";
-    case "FA":
-      return "border-bg-org-secondary-main/50 bg-gradient-to-br from-org-secondary-dark to-org-primary-dark";
-  }
-};
+import SecondaryLanguageCard from "../MultiLanguageCapacity/SecondaryLanguageCard";
 
 export default function MultiLanguageCapacity() {
   const langs = ORG_PROFILE.languages as readonly LanguageKey[];
 
-  // Secondary languages only (exclude EN)
   const secondaryLangs = langs.filter(
     (l): l is SecondaryLanguageKey => l !== "EN",
   );
 
-  // If only English -> don't render
   if (!secondaryLangs.length) return null;
 
   const labels = secondaryLangs.map((l) => LANGUAGES[l].label.EN);
   const languageList =
     labels.length === 2 ? `${labels[0]} and ${labels[1]}` : labels[0];
 
-  // English statement (always primary)
   const englishStatement = LANGUAGES.EN.multiculturalStatement(
     ORG_PROFILE.orgName,
   );
@@ -42,7 +31,6 @@ export default function MultiLanguageCapacity() {
       className="mt-10 rounded-2xl border border-slate-200 bg-white/70 shadow-sm backdrop-blur p-6 sm:p-8"
       aria-labelledby="multi-language-capacity"
     >
-      {/* Header */}
       <div className="space-y-3">
         <Header as="h3" size="sm" align="center" id="multi-language-capacity">
           Multi-language capacity
@@ -59,35 +47,10 @@ export default function MultiLanguageCapacity() {
         <P className="text-sm text-slate-700">{englishStatement}</P>
       </div>
 
-      {/* Secondary Language Cards */}
       <div className="mt-6 grid gap-4">
-        {secondaryLangs.map((lang) => {
-          const orgNameForRtl = ORG_PROFILE.orgNameFarsi || ORG_PROFILE.orgName;
-
-          const statement =
-            LANGUAGES[lang].multiculturalStatement(orgNameForRtl);
-
-          return (
-            <div
-              key={lang}
-              dir="rtl"
-              className={cn(
-                "rounded-2xl border p-5 sm:p-6 shadow-sm transition-shadow hover:shadow-md",
-                accentStyle(lang),
-              )}
-            >
-              <div className="mb-3 flex items-center gap-2">
-                <Header as="h4" align="right" className="text-white">
-                  {lang === "HZ"
-                    ? LANGUAGES.HZ.label.HZ
-                    : LANGUAGES.FA.label.FA}
-                </Header>
-              </div>
-
-              <P className={cn("leading-relaxed text-gray-50")}>{statement}</P>
-            </div>
-          );
-        })}
+        {secondaryLangs.map((lang) => (
+          <SecondaryLanguageCard key={lang} lang={lang} />
+        ))}
       </div>
     </section>
   );
