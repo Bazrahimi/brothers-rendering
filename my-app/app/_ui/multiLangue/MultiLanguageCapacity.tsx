@@ -8,8 +8,6 @@ import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 
-const isRtl = (lang: SecondaryLanguageKey) => lang === "FA" || lang === "HZ";
-
 const accentStyle = (lang: SecondaryLanguageKey) => {
   switch (lang) {
     case "HZ":
@@ -18,8 +16,6 @@ const accentStyle = (lang: SecondaryLanguageKey) => {
       return "border-bg-org-secondary-main/50 bg-gradient-to-br from-org-secondary-dark to-org-primary-dark";
   }
 };
-
-
 
 export default function MultiLanguageCapacity() {
   const langs = ORG_PROFILE.languages as readonly LanguageKey[];
@@ -74,29 +70,21 @@ export default function MultiLanguageCapacity() {
           return (
             <div
               key={lang}
+              dir="rtl"
               className={cn(
                 "rounded-2xl border p-5 sm:p-6 shadow-sm transition-shadow hover:shadow-md",
                 accentStyle(lang),
               )}
             >
               <div className="mb-3 flex items-center gap-2">
-             
-
-                <Header as="h4" align="right" size="sm" className="text-white">
-                  
-                  {LANGUAGES[lang].label[lang]}
+                <Header as="h4" align="right" className="text-white">
+                  {lang === "HZ"
+                    ? LANGUAGES.HZ.label.HZ
+                    : LANGUAGES.FA.label.FA}
                 </Header>
               </div>
 
-              <P
-                dir={isRtl(lang) ? "rtl" : "ltr"}
-                className={cn(
-                  "leading-relaxed text-gray-50",
-                  isRtl(lang) && "text-right",
-                )}
-              >
-                {statement}
-              </P>
+              <P className={cn("leading-relaxed text-gray-50")}>{statement}</P>
             </div>
           );
         })}

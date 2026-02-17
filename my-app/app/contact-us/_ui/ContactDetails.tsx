@@ -1,16 +1,16 @@
+import { CONTACT_FAQS } from "@/app/_lib/org/faqs";
+import { OPENING_HOURS } from "@/app/_lib/org/openingHours";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 import Link from "next/link";
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
+import MultiLanguageCapacity from "../../_ui/multiLangue/MultiLanguageCapacity";
+import ContactFAQ from "./ContactFAQ";
 import ContactMap from "./ContactMap";
 import OpeningHours from "./OpeningHours";
-import { OPENING_HOURS } from "@/app/_lib/org/openingHours";
-import ContactFAQ from "./ContactFAQ";
-import { CONTACT_FAQS } from "@/app/_lib/org/faqs";
 import ServiceArea from "./ServiceArea";
-import MultiLanguageCapacity from "../../_ui/MultiLanguageCapacity";
 
 const ContactDetails = () => {
   const phone = ORG_PROFILE.phone?.trim();
@@ -60,7 +60,7 @@ const ContactDetails = () => {
 
         {/* Email */}
         {email && mailHref && (
-          <P size="sm" className="flex items-center" >
+          <P size="sm" className="flex items-center">
             <Link
               href={mailHref}
               className={linkBase}
@@ -88,8 +88,6 @@ const ContactDetails = () => {
           </P>
         )}
       </div>
-
-      
 
       <OpeningHours hours={OPENING_HOURS} />
       <MultiLanguageCapacity />
