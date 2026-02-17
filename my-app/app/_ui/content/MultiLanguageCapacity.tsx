@@ -32,7 +32,7 @@ export default function MultiLanguageCapacity() {
       aria-labelledby="multi-language-capacity"
     >
       <div className="space-y-3">
-        <Header as="h3" size="sm" align="center" id="multi-language-capacity">
+        <Header as="h3" size="sm" id="multi-language-capacity">
           Multi-language capacity
         </Header>
 

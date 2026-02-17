@@ -4,7 +4,7 @@ import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
 import type { CtaLabel } from "./definitions";
 
 const ORG_DOMAIN = "canconstruction.com.au" as const;
-const orgName = "14 Star Gems ";
+const orgName = "FairPoint Lawyers ";
 
 export const ORG_PROFILE = {
   orgName: orgName,

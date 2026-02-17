@@ -39,7 +39,7 @@ export default function ServiceCTA({
     >
       <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
       {generalEnquiry && (
-        <Header as="h2" size="md" align="center" className="text-white">
+        <Header as="h2" size="md"  className="text-white">
           {headingLabel} {" | General enquiry"}
         </Header>
       )}

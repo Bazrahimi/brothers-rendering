@@ -28,7 +28,7 @@ export default function ServiceArea() {
       aria-labelledby="service-area"
     >
       <div className="space-y-2">
-        <Header as="h3" size="sm" align="center">
+        <Header as="h3" size="sm">
           Areas we service
         </Header>
 

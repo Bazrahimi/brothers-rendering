@@ -23,12 +23,12 @@ export default function ContactFAQ({
   if (!items.length) return null;
 
   return (
-    <section className="mt-10 rounded-2xl border border-org-secondary-main/10 bg-org-secondary-main/20 shadow-sm backdrop-blur p-6 sm:p-8">
+    <section className="mt-10 rounded-2xl border border-org-primary-main/10 bg-linear-to-br from-org-primary-dark to-org-primary-light shadow-sm backdrop-blur p-6 sm:p-8">
       <div className="space-y-1">
-        <Header as="h3" size="sm" align="left">
+        <Header as="h3"   className="text-gray-50">
           {title}
         </Header>
-        <P className="text-gray-700">{subtitle}</P>
+        <P className="text-gray-50">{subtitle}</P>
       </div>
 
       <div className="mt-5 space-y-3">

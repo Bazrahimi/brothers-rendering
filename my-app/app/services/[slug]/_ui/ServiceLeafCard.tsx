@@ -26,7 +26,7 @@ export default function ServiceLeafCard({
         <div className="grid gap-3 sm:gap-6 sm:grid-cols-12 sm:items-start">
           {/* Row 1 — Title + Summary (always full width) */}
           <header className="sm:col-span-12 space-y-3">
-            <Header as="h2" align="center">
+            <Header as="h2">
               {leaf.label}
             </Header>
 

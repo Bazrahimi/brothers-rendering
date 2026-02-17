@@ -23,7 +23,7 @@ export default function OpeningHours({
 }: Props) {
   return (
     <div className="rounded-xl border border-gray-200 bg-white p-4">
-      <Header as="h3" size="sm" align="center">
+      <Header as="h3" size="sm">
         {title}
       </Header>
 

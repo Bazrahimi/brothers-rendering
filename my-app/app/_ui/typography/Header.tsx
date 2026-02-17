@@ -46,7 +46,7 @@ export function Header({
   children,
   size = "md",
   as,
-  align = "left",
+  align = "center",
   className,
   ...rest
 }: HeaderProps) {

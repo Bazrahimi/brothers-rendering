@@ -66,7 +66,7 @@ const Form = ({ header, subHeader, message }: Props) => {
     <div className="max-w-lg mx-auto rounded-2xl bg-gray-100 p-6 shadow-lg">
       <form className="space-y-2 relative" action={formAction} noValidate>
         {header && (
-          <Header align="center" as="h3" size="sm">
+          <Header  as="h3" size="sm">
             {header}
           </Header>
         )}

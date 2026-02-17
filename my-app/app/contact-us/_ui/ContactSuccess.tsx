@@ -11,7 +11,7 @@ type ContactSuccessMessageProps = {
 export function ContactSuccessMessage({ onReset }: ContactSuccessMessageProps) {
   return (
     <div className="space-y-4 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-      <Header align="center" as="h3" size="sm">
+      <Header  as="h3" size="sm">
         Message sent ✅
       </Header>
 

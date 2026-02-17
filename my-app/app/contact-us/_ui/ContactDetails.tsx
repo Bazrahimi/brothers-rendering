@@ -36,7 +36,7 @@ const ContactDetails = () => {
     <div className="space-y-5">
       {/* Intro */}
       <div className="space-y-1">
-        <Header as="h3" size="sm" align="center">
+        <Header as="h3" size="sm">
           Prefer to reach us directly?
         </Header>
         <P className=" text-gray-600 text-center" size="sm">

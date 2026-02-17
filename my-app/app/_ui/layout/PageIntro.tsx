@@ -8,7 +8,7 @@ type Props = {
 const PageIntro = ({ heading, subHeading }: Props) => {
   return (
     <>
-      <Header as="h1" size="md" align="center" className="mb-5 md:mb-10">
+      <Header as="h1" size="md"  className="mb-5 md:mb-10">
         {heading}
       </Header>
 

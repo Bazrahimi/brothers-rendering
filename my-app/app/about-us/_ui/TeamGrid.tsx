@@ -70,7 +70,7 @@ export function TeamGrid({ team }: { team: TeamSection }) {
             className="mx-auto w-full max-w-sm rounded-2xl border border-gray-100 bg-white p-5 text-center shadow-sm"
           >
             <Avatar member={member} />
-            <Header className="text-gray-900" as="h3" size="xs" align="center">
+            <Header className="text-gray-900" as="h3" size="xs">
               {member.name}
             </Header>
             <P className="mt-1 text-sm text-gray-600">{member.role}</P>
