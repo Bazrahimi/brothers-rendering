@@ -1,6 +1,5 @@
 import {
   LANGUAGES,
-  SECONDARY_LANGUAGE_DISPLAY,
   type LanguageKey,
   type SecondaryLanguageKey,
 } from "@/app/_lib/org/languages";
@@ -20,14 +19,7 @@ const accentStyle = (lang: SecondaryLanguageKey) => {
   }
 };
 
-const accentDot = (lang: SecondaryLanguageKey) => {
-  switch (lang) {
-    case "HZ":
-      return "bg-org-secondary-main";
-    case "FA":
-      return "bg-org-primary-main";
-  }
-};
+
 
 export default function MultiLanguageCapacity() {
   const langs = ORG_PROFILE.languages as readonly LanguageKey[];
@@ -40,7 +32,7 @@ export default function MultiLanguageCapacity() {
   // If only English -> don't render
   if (!secondaryLangs.length) return null;
 
-  const labels = secondaryLangs.map((l) => SECONDARY_LANGUAGE_DISPLAY[l]);
+  const labels = secondaryLangs.map((l) => LANGUAGES[l].label.EN);
   const languageList =
     labels.length === 2 ? `${labels[0]} and ${labels[1]}` : labels[0];
 
@@ -88,13 +80,11 @@ export default function MultiLanguageCapacity() {
               )}
             >
               <div className="mb-3 flex items-center gap-2">
-                <span
-                  className={cn("h-2.5 w-2.5 rounded-full", accentDot(lang))}
-                  aria-hidden
-                />
+             
 
                 <Header as="h4" align="right" size="sm" className="text-white">
-                  {SECONDARY_LANGUAGE_DISPLAY[lang]}
+                  
+                  {LANGUAGES[lang].label[lang]}
                 </Header>
               </div>
 
