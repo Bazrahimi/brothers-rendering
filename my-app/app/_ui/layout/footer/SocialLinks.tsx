@@ -1,7 +1,7 @@
 import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
 import { Header } from "../../typography/Header";
 import { CN } from "./Footer";
-import { ORG_SOCIAL_MEDIA } from "@/app/_lib/org/profile";
+import { SOCIAL_MEDIA } from "@/app/_lib/org/socialMedia";
 
 const SOCIAL_META = {
   facebook: {
@@ -25,7 +25,7 @@ const SOCIAL_META = {
 } as const;
 
 const SocialLinks = () => {
-  const entries = Object.entries(ORG_SOCIAL_MEDIA).filter(
+  const entries = Object.entries(SOCIAL_MEDIA).filter(
     ([, href]) => typeof href === "string" && href.length > 0,
   );
 

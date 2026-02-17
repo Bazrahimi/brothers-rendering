@@ -1,7 +1,7 @@
-import { slugify } from "../../utils/helper";
+import { slugify } from "../utils/helper";
 import type { Service, ServiceKey } from "./definitions";
 
-import { SERVICES } from "./services";
+import { SERVICES } from "./category/services";
 
 /** Get title for a service key (type-safe) */
 export const getServiceLabel = (key: ServiceKey): string => {
@@ -23,3 +23,6 @@ export const getServiceLabelBySlug = (slug: string) => {
   const [key, service] = entry;
   return { key, service };
 };
+
+export const ImageUrl =
+  "v1771144431/business-f/building/bath1234poof_y6clz0.png";

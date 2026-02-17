@@ -1,4 +1,5 @@
-import { Service } from "./definitions";
+
+import type { Service } from "../definitions";
 import { siliconAndCaulking } from "./subCategories/caulking";
 import { commercialPaintingAndDecorating } from "./subCategories/commercialPainting";
 import { residentialPaintingAndDecorating } from "./subCategories/residentialPainting";

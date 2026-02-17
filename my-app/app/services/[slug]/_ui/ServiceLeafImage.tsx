@@ -1,5 +1,5 @@
 import { cldCardHeroAuto } from "@/app/_lib/cloudinary/cloudinary";
-import { LeafImage } from "@/app/_lib/org/category/definitions";
+import { LeafImage } from "@/app/_lib/org/definitions";
 import { cn } from "@/app/_lib/utils/cn";
 import { IMAGE_DEFAULT_BLUR } from "@/app/_ui/image/ImageShimer";
 import { svgFromText } from "@/app/_ui/image/svgFromText";

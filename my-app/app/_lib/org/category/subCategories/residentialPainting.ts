@@ -1,4 +1,5 @@
-import { ImageUrl, type ServiceSubCategory } from "../definitions";
+import type { ServiceSubCategory } from "../../definitions";
+import { ImageUrl } from "../../helper";
 
 export const residentialPaintingAndDecorating = {
   newBuild: {

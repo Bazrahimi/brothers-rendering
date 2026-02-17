@@ -1,6 +1,7 @@
 //app/_lib/org/org-profile.ts
 import type { LanguageKey } from "./languages";
 import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
+import type { CtaLabel } from "./definitions";
 
 const ORG_DOMAIN = "canconstruction.com.au" as const;
 const orgName = "14 Star Gems ";
@@ -29,26 +30,4 @@ export const ORG_PROFILE = {
   cta: "Free Quote" as CtaLabel,
 } as const;
 
-export const ORG_SOCIAL_MEDIA = {
-  facebook: "",
-  instagram: "",
-  tiktok: "", // leave empty or undefined if not used
-} as const;
 
-type CtaLabel = "Free Quote" | "Free Consultation";
-
-export const CTA = {
-  freeQuote: {
-    label: "Free Quote" as CtaLabel,
-    message: "Hi, I’d like a free quote for: ",
-  },
-  freeConsultation: {
-    label: "Free Consultation" as CtaLabel,
-    message: "Hi, I’d like a free consultation for: ",
-  },
-};
-
-export const CTA_MAP: Record<CtaLabel, (typeof CTA)[keyof typeof CTA]> = {
-  "Free Quote": CTA.freeQuote,
-  "Free Consultation": CTA.freeConsultation,
-};

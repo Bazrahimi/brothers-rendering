@@ -1,4 +1,4 @@
-import type { ServiceSubCategory } from "@/app/_lib/org/category/definitions";
+import type { ServiceSubCategory } from "@/app/_lib/org/definitions";
 import ServiceLeafCard from "./ServiceLeafCard";
 
 export default function ServiceDetails({

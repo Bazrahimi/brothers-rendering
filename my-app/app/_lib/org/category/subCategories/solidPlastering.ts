@@ -1,4 +1,4 @@
-import { ServiceSubCategory} from "../definitions";
+import { ServiceSubCategory } from "../../definitions";
 
 export const solidPlastering = {
   cladding: {
