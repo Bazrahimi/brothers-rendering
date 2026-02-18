@@ -1,50 +1,30 @@
-import { cldCardHeroAuto } from "@/app/_lib/cloudinary/cloudinary";
-import { LeafImage } from "@/app/_lib/org/definitions";
-import { cn } from "@/app/_lib/utils/cn";
-import { IMAGE_DEFAULT_BLUR } from "@/app/_ui/image/ImageShimer";
+import { cldLeafAuto } from "@/app/_lib/cloudinary/cloudinary";
+import type { LeafImage } from "@/app/_lib/org/definitions";
 import { svgFromText } from "@/app/_ui/image/svgFromText";
 import Image from "next/image";
 
 export default function ServiceLeafImage({
   image,
   alt,
-  className,
-  imgClassName,
 }: {
   image: LeafImage;
   alt: string;
-  className?: string;
-  imgClassName?: string;
 }) {
-  // ✅ Type-safe narrowing
-  let src: string;
-
-  if (image.kind === "url") {
-    src = cldCardHeroAuto(image.src);
-  } else {
-    src = svgFromText(image.text);
-  }
+  const src =
+    image.kind === "url" ? cldLeafAuto(image.src) : svgFromText(image.text);
 
   const isDataUrl = src.startsWith("data:image/");
 
   return (
-    <div
-      className={cn(
-        "overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 aspect-[4/2]",
-        className,
-      )}
-    >
+    <div className="relative overflow-hidden rounded-2xl aspect-[2/1] bg-slate-100">
       <Image
         src={src}
         alt={alt}
-        width={1200}
-        height={600}
-        className={cn("h-full w-full object-cover", imgClassName)}
+        fill
+        sizes="(min-width: 640px) 50vw, 100vw"
+        className="object-cover"
         loading="lazy"
-        {...(!isDataUrl && {
-          placeholder: "blur" as const,
-          blurDataURL: IMAGE_DEFAULT_BLUR,
-        })}
+        unoptimized={isDataUrl}
       />
     </div>
   );

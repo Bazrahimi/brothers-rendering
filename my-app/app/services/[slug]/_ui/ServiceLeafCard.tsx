@@ -27,15 +27,12 @@ export default function ServiceLeafCard({
           <header className="sm:col-span-12 space-y-3">
             <Header as="h2">{leaf.label}</Header>
 
-            {
-              leaf.details &&
-                leaf.details.map((t, i) => (
-                  <P key={i} className="indent-6">
-                    {t}
-                  </P>
-                ))
-      
-            }
+            {leaf.details &&
+              leaf.details.map((t, i) => (
+                <P key={i} className="indent-6">
+                  {t}
+                </P>
+              ))}
           </header>
 
           {/* Row 2 — Items (8 cols) */}
@@ -57,11 +54,7 @@ export default function ServiceLeafCard({
               isEven ? "sm:order-2" : "sm:order-1",
             )}
           >
-            <ServiceLeafImage
-              image={leaf.image}
-              alt={leaf.label}
-
-            />
+            <ServiceLeafImage image={leaf.image} alt={leaf.label} />
           </aside>
         </div>
         <ServiceCTA
