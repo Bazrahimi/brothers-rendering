@@ -16,7 +16,7 @@ export default function AboutTextSections({
           </Header>
 
           {s.items.map((t, i) => (
-            <P key={i} className="mt-2">
+            <P key={i} className="indent-6">
               {t}
             </P>
           ))}

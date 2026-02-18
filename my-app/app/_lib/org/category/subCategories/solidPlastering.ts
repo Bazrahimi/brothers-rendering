@@ -4,15 +4,15 @@ export const solidPlastering = {
   cladding: {
     label: "Board Installation",
     image: { kind: "svg", text: "Bathroom and wet area" },
-    summary:
-      "installation of blueboard, foamboard, hebels and render and text finish",
+    details:
+      ["installation of blueboard, foamboard, hebels and render and text finish"],
     items: ["Foam Board Installation", "Hebel Panel Systems", "Blue Board"],
   },
 
   finishing: {
     label: "Render & Texture",
     image: { kind: "svg", text: "Bathroom and wet area" },
-    summary: "Restore damaged render and keep façades looking sharp.",
+    details: ["Restore damaged render and keep façades looking sharp."],
     items: [
       "Cement Rendering",
       "Acrylic Texture Coatings",
@@ -25,7 +25,7 @@ export const solidPlastering = {
   repairs: {
     label: "Repairs & Maintenance",
     image: { kind: "svg", text: "Bathroom and wet area" },
-    summary: "this is a summary of repair and maintenance",
+    details: ["this is a summary of repair and maintenance"],
     items: [
       "Crack Repairs",
       "Water Damage Repairs",
@@ -38,7 +38,7 @@ export const solidPlastering = {
   insulation: {
     label: "Insulation & Lightweight Systems",
     image: { kind: "svg", text: "Bathroom and wet area" },
-    summary: "this is for this",
+    details: ["this is for this"],
     items: [
       "External Insulation Systems (EIFS)",
       "Thermal Render Systems",

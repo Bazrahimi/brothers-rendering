@@ -12,7 +12,7 @@ export type LeafImage =
 
 export type ServiceLeaf = {
   label: string;
-  summary: string;
+  details: string[];
   image: LeafImage;
   items: readonly string[];
 };

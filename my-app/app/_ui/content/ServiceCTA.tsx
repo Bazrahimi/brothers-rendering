@@ -33,21 +33,27 @@ export default function ServiceCTA({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-3xl bg-gradient-to-br from-org-primary-dark to-org-secondary-dark p-8 sm:p-10 shadow-xl",
+        "relative overflow-hidden rounded-3xl bg-linear-to-br p-5 sm:p-10 shadow-xl",
+        generalEnquiry
+          ? "from-org-secondary-dark to-org-primary-dark"
+          : " from-org-primary-dark to-org-secondary-dark",
         className,
       )}
     >
       <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
       {generalEnquiry && (
-        <Header as="h2" size="md"  className="text-white">
+        <Header as="h2" size="md" className="text-white">
           {headingLabel} {" | General enquiry"}
         </Header>
       )}
 
       {serviceLabel && (
-        <P className="mt-3 text-center text-slate-300">
-          Tell {` ${ORG_PROFILE.orgName}`} what you need for {serviceLabel},
-          and we’ll reply with clear next steps.
+        <P className={cn(
+          "text-center text-slate-300",
+          !generalEnquiry && "text-sm leading-relaxed"
+        )}>
+          Tell {` ${ORG_PROFILE.orgName}`} what you need for {serviceLabel}, and
+          we’ll reply with clear next steps.
         </P>
       )}
 

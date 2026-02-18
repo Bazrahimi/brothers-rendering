@@ -5,8 +5,8 @@ export const commercialPaintingAndDecorating = {
   newBuild: {
     label: "New Build",
     image: { kind: "url", src: ImageUrl },
-    summary:
-      "Painting of new warehouses, factories , shops, all plasterboard, villaBoards, ",
+    details:
+      ["Painting of new warehouses, factories , shops, all plasterboard, villaBoards, "],
     items: [
       "Office Fit-outs",
       "Retail Spaces",

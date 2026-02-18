@@ -47,7 +47,7 @@ export default function MultiLanguageCapacity() {
         </P>
 
         {englishStatement.map((t, i) => (
-          <P key={i} className=" text-gray-700">
+          <P key={i} className=" text-gray-700 indent-6">
             {t}
           </P>
         ))}

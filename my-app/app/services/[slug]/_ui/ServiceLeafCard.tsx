@@ -1,7 +1,6 @@
-
-import type { ServiceLeaf } from "@/app/_lib/org/definitions";
-import {  ORG_PROFILE } from "@/app/_lib/org/profile";
 import { CTA_MAP } from "@/app/_lib/org/cta";
+import type { ServiceLeaf } from "@/app/_lib/org/definitions";
+import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import { cn } from "@/app/_lib/utils/cn";
 import List from "@/app/_ui/content/List";
 import ServiceCTA from "@/app/_ui/content/ServiceCTA";
@@ -23,18 +22,20 @@ export default function ServiceLeafCard({
   return (
     <>
       <article className="rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-sm">
-        <div className="grid gap-3 sm:gap-6 sm:grid-cols-12 sm:items-start">
+        <div className="grid gap-3 sm:gap-6 sm:grid-cols-12 sm:items-start mb-5 sm:mb-10">
           {/* Row 1 — Title + Summary (always full width) */}
           <header className="sm:col-span-12 space-y-3">
-            <Header as="h2">
-              {leaf.label}
-            </Header>
+            <Header as="h2">{leaf.label}</Header>
 
-            {leaf.summary && (
-              <P className="text-gray-800" size="lg">
-                {leaf.summary}
-              </P>
-            )}
+            {
+              leaf.details &&
+                leaf.details.map((t, i) => (
+                  <P key={i} className="indent-6">
+                    {t}
+                  </P>
+                ))
+      
+            }
           </header>
 
           {/* Row 2 — Items (8 cols) */}
@@ -59,7 +60,7 @@ export default function ServiceLeafCard({
             <ServiceLeafImage
               image={leaf.image}
               alt={leaf.label}
-              // className="w-full sm:aspect-[4/2] "
+
             />
           </aside>
         </div>
