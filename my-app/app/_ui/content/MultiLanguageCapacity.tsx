@@ -1,30 +1,32 @@
-import {
-  LANGUAGES,
-  type LanguageKey,
-  type SecondaryLanguageKey,
-} from "@/app/_lib/org/languages";
+// import {
+//   LANGUAGES,
+//   type LanguageKey,
+//   type SecondaryLanguageKey,
+// } from "@/app/_lib/org/languages";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 
+import {
+  PRIMARY_LANGUAGE,
+  SECONDARY_LANGUAGES,
+} from "@/app/_lib/languages/multiculturalStatement";
 import SecondaryLanguageCard from "../MultiLanguageCapacity/SecondaryLanguageCard";
 
 export default function MultiLanguageCapacity() {
-  const langs = ORG_PROFILE.languages as readonly LanguageKey[];
-
-  const secondaryLangs = langs.filter(
-    (l): l is SecondaryLanguageKey => l !== "EN",
-  );
+  const secondaryLangs = ORG_PROFILE.SecondaryLanguages;
+  const orgNameFarsi = ORG_PROFILE.orgNameFarsi;
 
   if (!secondaryLangs.length) return null;
 
-  const labels = secondaryLangs.map((l) => LANGUAGES[l].label.EN);
-  const languageList =
-    labels.length === 2 ? `${labels[0]} and ${labels[1]}` : labels[0];
+  const labels = secondaryLangs.map((l) => SECONDARY_LANGUAGES[l].label.EN);
 
-  const englishStatement = LANGUAGES.EN.multiculturalStatement(
-    ORG_PROFILE.orgName,
-  );
+  const languageList =
+    labels.length > 1
+      ? `${labels.slice(0, -1).join(", ")} and ${labels.slice(-1)}`
+      : labels[0] || "";
+
+  const englishStatement = PRIMARY_LANGUAGE.statement(ORG_PROFILE.orgName);
 
   return (
     <section
@@ -44,12 +46,21 @@ export default function MultiLanguageCapacity() {
           <span className="font-medium text-slate-800">{languageList}</span>.
         </P>
 
-        <P className="text-sm text-slate-700">{englishStatement}</P>
+        {englishStatement.map((t, i) => (
+          <P key={i} className=" text-gray-700">
+            {t}
+          </P>
+        ))}
+        {/* <P>{englishStatement}</P> */}
       </div>
 
       <div className="mt-6 grid gap-4">
         {secondaryLangs.map((lang) => (
-          <SecondaryLanguageCard key={lang} lang={lang} />
+          <SecondaryLanguageCard
+            key={lang}
+            lang={lang}
+            orgNameFarsi={orgNameFarsi}
+          />
         ))}
       </div>
     </section>

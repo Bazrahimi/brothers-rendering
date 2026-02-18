@@ -54,7 +54,7 @@ export default function AboutUsPage() {
         {/* Decorative blur accent */}
         <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
 
-        <Header as="h3" size="md"  className="text-white">
+        <Header as="h3" size="md" className="text-white">
           Ready to get started?
         </Header>
 

@@ -1,5 +1,8 @@
-import { LANGUAGES, type SecondaryLanguageKey } from "@/app/_lib/org/languages";
-import { ORG_PROFILE } from "@/app/_lib/org/profile";
+// import { LANGUAGES, type SecondaryLanguageKey } from "@/app/_lib/org/languages";
+import {
+  SECONDARY_LANGUAGES,
+  SecondaryLanguageKey,
+} from "@/app/_lib/languages/multiculturalStatement";
 import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
@@ -15,15 +18,16 @@ const accentStyle = (lang: SecondaryLanguageKey) => {
 
 export default function SecondaryLanguageCard({
   lang,
+  orgNameFarsi,
 }: {
   lang: SecondaryLanguageKey;
+  orgNameFarsi: string;
 }) {
-  const orgNameForRtl = ORG_PROFILE.orgNameFarsi || ORG_PROFILE.orgName;
-  const statement = LANGUAGES[lang].multiculturalStatement(orgNameForRtl);
+  const statement = SECONDARY_LANGUAGES[lang].statement(orgNameFarsi);
 
   const nativeLabelByLang: Record<SecondaryLanguageKey, string> = {
-    HZ: LANGUAGES.HZ.label.HZ,
-    FA: LANGUAGES.FA.label.FA,
+    HZ: SECONDARY_LANGUAGES.HZ.label.HZ,
+    FA: SECONDARY_LANGUAGES.FA.label.FA,
   };
   const nativeLabel = nativeLabelByLang[lang];
 
@@ -41,7 +45,12 @@ export default function SecondaryLanguageCard({
         </Header>
       </div>
 
-      <P className="leading-relaxed text-gray-50">{statement}</P>
+      {/* <P className="leading-relaxed text-gray-50">{statement}</P> */}
+      {statement.map((t, i) => (
+        <P key={i} className="text-gray-50 pr-4">
+          {t}
+        </P>
+      ))}
     </div>
   );
 }

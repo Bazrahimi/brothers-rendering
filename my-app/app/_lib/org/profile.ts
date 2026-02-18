@@ -1,7 +1,8 @@
 //app/_lib/org/org-profile.ts
-import type { LanguageKey } from "./languages";
+
 import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
 import type { CtaLabel } from "./definitions";
+import { SecondaryLanguageKey } from "../languages/multiculturalStatement";
 
 const ORG_DOMAIN = "canconstruction.com.au" as const;
 const orgName = "FairPoint Lawyers ";
@@ -14,7 +15,8 @@ export const ORG_PROFILE = {
 
   description:
     "Commercial and Residential Painting work through south easter suburbs",
-  languages: ["EN", "HZ", "FA"] as const satisfies readonly LanguageKey[],
+  // languages: ["EN", "HZ", "FA"] as const satisfies readonly LanguageKey[],
+  SecondaryLanguages: ["HZ", "FA"] as const satisfies readonly SecondaryLanguageKey[],
 
   domain: ORG_DOMAIN,
 
