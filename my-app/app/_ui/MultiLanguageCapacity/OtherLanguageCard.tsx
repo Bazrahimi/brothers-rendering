@@ -1,13 +1,13 @@
-// import { LANGUAGES, type SecondaryLanguageKey } from "@/app/_lib/org/languages";
+// import { LANGUAGES, type OtherLanguageKey } from "@/app/_lib/org/languages";
 import {
-  SECONDARY_LANGUAGES,
-  SecondaryLanguageKey,
+  OTHER_LANGUAGES,
+  OtherLanguageKey,
 } from "@/app/_lib/languages/multiculturalStatement";
 import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 
-const accentStyle = (lang: SecondaryLanguageKey) => {
+const accentStyle = (lang: OtherLanguageKey) => {
   switch (lang) {
     case "HZ":
       return "border-bg-org-primary-main/50 bg-gradient-to-br from-org-primary-dark to-org-secondary-dark";
@@ -20,14 +20,14 @@ export default function SecondaryLanguageCard({
   lang,
   orgNameFarsi,
 }: {
-  lang: SecondaryLanguageKey;
+  lang: OtherLanguageKey;
   orgNameFarsi: string;
 }) {
-  const statement = SECONDARY_LANGUAGES[lang].statement(orgNameFarsi);
+  const statement = OTHER_LANGUAGES[lang].statement(orgNameFarsi);
 
-  const nativeLabelByLang: Record<SecondaryLanguageKey, string> = {
-    HZ: SECONDARY_LANGUAGES.HZ.label.HZ,
-    FA: SECONDARY_LANGUAGES.FA.label.FA,
+  const nativeLabelByLang: Record<OtherLanguageKey, string> = {
+    HZ: OTHER_LANGUAGES.HZ.label.HZ,
+    FA: OTHER_LANGUAGES.FA.label.FA,
   };
   const nativeLabel = nativeLabelByLang[lang];
 

@@ -6,7 +6,7 @@ export const PRIMARY_LANGUAGE = {
   ],
 } as const;
 
-export const SECONDARY_LANGUAGES = {
+export const OTHER_LANGUAGES = {
   HZ: {
     label: { HZ: "هزارگی", EN: "Hazaragi" },
     statement: (orgName: string) => [
@@ -26,4 +26,5 @@ export const SECONDARY_LANGUAGES = {
   },
 } as const;
 
-export type SecondaryLanguageKey = keyof typeof SECONDARY_LANGUAGES;
+export type OtherLanguageKey = keyof typeof OTHER_LANGUAGES;
+

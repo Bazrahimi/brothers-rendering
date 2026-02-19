@@ -9,7 +9,7 @@ export const PublicRoutes = {
   freeConsultation: () => "/free-consultation",
   service: (slug: string) => `/services/${slug}`,
   languages: () => languages,
-  secondaryLanguages: (lang: string) =>
+  otherLanguages: (lang: string) =>
     `${languages}/${encodeURIComponent(lang)}`,
 } as const;
 

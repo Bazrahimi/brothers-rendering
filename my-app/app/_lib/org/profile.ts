@@ -2,7 +2,7 @@
 
 import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
 import type { CtaLabel } from "./definitions";
-import { SecondaryLanguageKey } from "../languages/multiculturalStatement";
+import { OtherLanguageKey } from "../languages/multiculturalStatement";
 
 const ORG_DOMAIN = "canconstruction.com.au" as const;
 const orgName = "FairPoint Lawyers ";
@@ -16,7 +16,7 @@ export const ORG_PROFILE = {
   description:
     "Commercial and Residential Painting work through south easter suburbs",
   // languages: ["EN", "HZ", "FA"] as const satisfies readonly LanguageKey[],
-  secondaryLanguages: ["HZ", "FA"] as const satisfies readonly SecondaryLanguageKey[],
+  otherLangKeys: ["HZ", "FA"] as readonly OtherLanguageKey[],
 
   domain: ORG_DOMAIN,
 

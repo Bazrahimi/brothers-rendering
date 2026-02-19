@@ -1,7 +1,7 @@
 import { PublicRoutes } from "@/app/_lib/routes/publicRoutes";
 import Link from "next/link";
 
-import Languages from "./SecondaryLanguages";
+import Languages from "./OtherLanguages";
 import ServicesMenuClient from "./ServiceMenu";
 
 export const navLinksClasses =

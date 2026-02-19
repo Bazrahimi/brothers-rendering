@@ -9,17 +9,17 @@ import { P } from "@/app/_ui/typography/paragraph";
 
 import {
   PRIMARY_LANGUAGE,
-  SECONDARY_LANGUAGES,
+  OTHER_LANGUAGES,
 } from "@/app/_lib/languages/multiculturalStatement";
-import SecondaryLanguageCard from "../MultiLanguageCapacity/SecondaryLanguageCard";
+import SecondaryLanguageCard from "../MultiLanguageCapacity/OtherLanguageCard";
 
 export default function MultiLanguageCapacity() {
-  const secondaryLangs = ORG_PROFILE.secondaryLanguages;
+  const secondaryLangs = ORG_PROFILE.otherLangKeys;
   const orgNameFarsi = ORG_PROFILE.orgNameFarsi;
 
   if (!secondaryLangs.length) return null;
 
-  const labels = secondaryLangs.map((l) => SECONDARY_LANGUAGES[l].label.EN);
+  const labels = secondaryLangs.map((l) => OTHER_LANGUAGES[l].label.EN);
 
   const languageList =
     labels.length > 1

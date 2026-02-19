@@ -1,11 +1,11 @@
-import { SECONDARY_LANGUAGES as sl } from "@/app/_lib/languages/multiculturalStatement";
+import { OTHER_LANGUAGES as ol } from "@/app/_lib/languages/multiculturalStatement";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import { PublicRoutes } from "@/app/_lib/routes/publicRoutes";
 import { cn } from "@/app/_lib/utils/cn";
 import Link from "next/link";
 
-const SecondaryLanguages = ({ className }: { className: string }) => {
-  const langs = ORG_PROFILE.secondaryLanguages;
+const OtherLanguages = ({ className }: { className: string }) => {
+  const langs = ORG_PROFILE.otherLangKeys;
 
   const hasHz = langs.includes("HZ");
   const hasFa = langs.includes("FA");
@@ -15,12 +15,12 @@ const SecondaryLanguages = ({ className }: { className: string }) => {
 
   const labels: string[] = [];
 
-  if (hasHz) labels.push(sl.HZ.label.HZ);
-  if (hasFa) labels.push(sl.FA.label.FA);
+  if (hasHz) labels.push(ol.HZ.label.HZ);
+  if (hasFa) labels.push(ol.FA.label.FA);
 
   return (
     <Link
-      href={PublicRoutes.secondaryLanguages(labels.join("-"))}
+      href={PublicRoutes.otherLanguages(labels.join("-"))}
       className={cn(className)}
     >
       {labels.join(" - ")}
@@ -28,4 +28,4 @@ const SecondaryLanguages = ({ className }: { className: string }) => {
   );
 };
 
-export default SecondaryLanguages;
+export default OtherLanguages;
