@@ -10,7 +10,7 @@ const PageIntro = ({ heading, subHeading, isRtl=false }: Props) => {
   return (
     <>
       {heading && (
-        <Header as="h1" className="mb-5 md:mb-10">
+        <Header as="h1" className="my-5 md:mb-10">
           {heading}
         </Header>
       )}
