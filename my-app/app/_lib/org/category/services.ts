@@ -9,7 +9,7 @@ import { solidPlastering } from "./subCategories/solidPlastering";
 export const SERVICES = {
   residentialPainting: {
     label: "Residential Painting And Decorating",
-    labelFarsi: "",
+    labelFarsi: "", 
     shortDesc: [
       "Comprehensive interior and exterior painting solutions for homes and businesses.",
     ] as const,

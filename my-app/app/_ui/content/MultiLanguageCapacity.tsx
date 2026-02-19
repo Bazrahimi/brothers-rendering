@@ -14,7 +14,7 @@ import {
 import SecondaryLanguageCard from "../MultiLanguageCapacity/SecondaryLanguageCard";
 
 export default function MultiLanguageCapacity() {
-  const secondaryLangs = ORG_PROFILE.SecondaryLanguages;
+  const secondaryLangs = ORG_PROFILE.secondaryLanguages;
   const orgNameFarsi = ORG_PROFILE.orgNameFarsi;
 
   if (!secondaryLangs.length) return null;

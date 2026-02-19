@@ -19,7 +19,7 @@ const OtherLanguagePage = async ({
       ? undefined
       : decoded.slice(hyphenIndex + 1);
 
-  const langs = ORG_PROFILE.SecondaryLanguages;
+  const langs = ORG_PROFILE.secondaryLanguages;
   const selectedLabels = [firstLang, secondLang].filter(
     (lang): lang is string => Boolean(lang),
   );

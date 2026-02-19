@@ -5,7 +5,7 @@ import { cn } from "@/app/_lib/utils/cn";
 import Link from "next/link";
 
 const SecondaryLanguages = ({ className }: { className: string }) => {
-  const langs = ORG_PROFILE.SecondaryLanguages;
+  const langs = ORG_PROFILE.secondaryLanguages;
 
   const hasHz = langs.includes("HZ");
   const hasFa = langs.includes("FA");

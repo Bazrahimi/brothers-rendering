@@ -22,7 +22,7 @@ export type ServiceSubCategory = {
 
 export type Service = {
   label: string;
-  labelFarsi: string;
+  labelFarsi: string; // 
   shortDesc: readonly string[];
   subcategories: ServiceSubCategory;
 };
