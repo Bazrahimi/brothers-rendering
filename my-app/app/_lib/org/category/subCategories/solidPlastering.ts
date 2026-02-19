@@ -3,6 +3,7 @@ import { ServiceSubCategory } from "../../definitions";
 export const solidPlastering = {
   cladding: {
     label: "Board Installation",
+    labelFarsi: "",
     image: { kind: "svg", text: "Bathroom and wet area" },
     details:
       ["installation of blueboard, foamboard, hebels and render and text finish"],
@@ -11,6 +12,7 @@ export const solidPlastering = {
 
   finishing: {
     label: "Render & Texture",
+    labelFarsi: "",
     image: { kind: "svg", text: "Bathroom and wet area" },
     details: ["Restore damaged render and keep façades looking sharp."],
     items: [
@@ -24,6 +26,7 @@ export const solidPlastering = {
   // ✅ NEW
   repairs: {
     label: "Repairs & Maintenance",
+    labelFarsi: "",
     image: { kind: "svg", text: "Bathroom and wet area" },
     details: ["this is a summary of repair and maintenance"],
     items: [
@@ -37,6 +40,7 @@ export const solidPlastering = {
   // ✅ NEW
   insulation: {
     label: "Insulation & Lightweight Systems",
+    labelFarsi: "",
     image: { kind: "svg", text: "Bathroom and wet area" },
     details: ["this is for this"],
     items: [

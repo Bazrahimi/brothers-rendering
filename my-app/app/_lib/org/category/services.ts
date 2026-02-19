@@ -9,6 +9,7 @@ import { solidPlastering } from "./subCategories/solidPlastering";
 export const SERVICES = {
   residentialPainting: {
     label: "Residential Painting And Decorating",
+    labelFarsi: "",
     shortDesc: [
       "Comprehensive interior and exterior painting solutions for homes and businesses.",
     ] as const,
@@ -17,6 +18,7 @@ export const SERVICES = {
   },
   commercialPainting: {
     label: "Commercial Painting And Decorating",
+    labelFarsi: "",
     shortDesc: [
       "Comprehensive interior and exterior painting solutions for businesses.",
     ] as const,
@@ -26,6 +28,7 @@ export const SERVICES = {
 
   solidPlastering: {
     label: "Solid Plastering and Rendering",
+    labelFarsi: "",
     shortDesc: [
       "Expert external cladding and traditional rendering services.",
     ] as const,
@@ -35,6 +38,7 @@ export const SERVICES = {
 
   siliconAndCaulking: {
     label: "Silicon and Caulking",
+    labelFarsi: "",
     shortDesc: [
       "Precision tiling and professional caulking for residential and commercial projects.",
     ] as const,

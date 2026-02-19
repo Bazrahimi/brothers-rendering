@@ -4,6 +4,7 @@ import { ImageUrl } from "../../helper";
 export const residentialPaintingAndDecorating = {
   newBuild: {
     label: "New Build",
+    labelFarsi: "",
     image: { kind: "url", src: ImageUrl },
     details:
       ["Interior and exterior painting for new homes and multi-unit builds."],
@@ -16,6 +17,7 @@ export const residentialPaintingAndDecorating = {
   },
   renovationAndExtensions: {
     label: "Renovation And Extensions",
+    labelFarsi: "",
     image: { kind: "svg", text: "Renovations & Specialized Coatings" },
     details: ["Interior and exterior painting renovation and extensions"],
     items: [
