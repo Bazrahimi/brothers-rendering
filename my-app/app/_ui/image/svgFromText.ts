@@ -33,8 +33,8 @@ export function svgFromText(
     maxCharsPerLine?: number;
   },
 ): string {
-  const w = opts?.w ?? 1200;
-  const h = opts?.h ?? 900; // 4:3
+  const w = opts?.w ?? 640;
+  const h = opts?.h ?? 320; // 4:3
   const padding = opts?.padding ?? Math.round(Math.min(w, h) * 0.08);
   const maxCharsPerLine = opts?.maxCharsPerLine ?? 18;
 

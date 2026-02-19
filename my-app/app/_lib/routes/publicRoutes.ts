@@ -1,13 +1,16 @@
 import { SERVICES } from "@/app/_lib/org/category/services";
 import type { ServiceKey } from "../org/definitions";
 import { slugify } from "../utils/helper";
+const languages = "/languages";
 export const PublicRoutes = {
   home: () => "/",
   about: () => "/about-us",
   contact: () => "/contact-us",
   freeConsultation: () => "/free-consultation",
   service: (slug: string) => `/services/${slug}`,
-  MultiLanguageCapacity: () => "/multi-languages-capacity",
+  languages: () => languages,
+  secondaryLanguages: (lang: string) =>
+    `${languages}/${encodeURIComponent(lang)}`,
 } as const;
 
 /** Service nav links */

@@ -1,29 +1,35 @@
 app
 ├── _lib
+│   ├── cloudinary
+│   │   └── cloudinary.ts
 │   ├── email
 │   │   ├── components
 │   │   │   └── EmailFooter.tsx
 │   │   └── emailClient.ts
 │   ├── env
-│   │   ├── puplic.ts
+│   │   ├── public.ts
 │   │   └── server.ts
+│   ├── languages
+│   │   └── multiculturalStatement.ts
 │   ├── org
+│   │   ├── category
+│   │   │   ├── services.ts
+│   │   │   └── subCategories
+│   │   │       ├── caulking.ts
+│   │   │       ├── commercialPainting.ts
+│   │   │       ├── residentialPainting.ts
+│   │   │       └── solidPlastering.ts
+│   │   ├── cta.ts
+│   │   ├── definitions.ts
 │   │   ├── faqs.ts
 │   │   ├── font.ts
-│   │   ├── languages.ts
+│   │   ├── helper.ts
 │   │   ├── openingHours.ts
 │   │   ├── orgPages
 │   │   │   └── aboutUs.ts
 │   │   ├── profile.ts
 │   │   ├── serviceArea.ts
-│   │   └── services
-│   │       ├── definitions.ts
-│   │       ├── helper.ts
-│   │       ├── services.ts
-│   │       └── subCategories
-│   │           ├── caulking.ts
-│   │           ├── paintingAndDecorating.ts
-│   │           └── solidPlastering.ts
+│   │   └── socialMedia.ts
 │   ├── routes
 │   │   └── publicRoutes.ts
 │   └── utils
@@ -31,10 +37,15 @@ app
 │       ├── helper.ts
 │       └── slugify.ts
 ├── _ui
-│   ├── MultiLanguageCapacity.tsx
+│   ├── MultiLanguageCapacity
+│   │   └── SecondaryLanguageCard.tsx
 │   ├── button
 │   │   ├── ActionButton.tsx
 │   │   └── Button.tsx
+│   ├── content
+│   │   ├── List.tsx
+│   │   ├── MultiLanguageCapacity.tsx
+│   │   └── ServiceCTA.tsx
 │   ├── form
 │   │   ├── Checkbox.tsx
 │   │   ├── FieldError.tsx
@@ -43,8 +54,11 @@ app
 │   │   ├── Select.tsx
 │   │   └── Textarea.tsx
 │   ├── image
-│   │   └── ImageShimer.tsx
+│   │   ├── ImageShimer.tsx
+│   │   └── svgFromText.ts
 │   ├── layout
+│   │   ├── PageIntro.tsx
+│   │   ├── Section.tsx
 │   │   ├── footer
 │   │   │   ├── Acknowledgement.tsx
 │   │   │   ├── Footer.tsx
@@ -55,6 +69,7 @@ app
 │   │   └── navbar
 │   │       ├── NavLinks.tsx
 │   │       ├── Navbar.tsx
+│   │       ├── SecondaryLanguages.tsx
 │   │       ├── ServiceMenu.tsx
 │   │       └── useDropdownMenu.ts
 │   └── typography
@@ -62,10 +77,8 @@ app
 │       └── paragraph.tsx
 ├── about-us
 │   ├── _ui
-│   │   ├── AboutIntroduction.tsx
 │   │   ├── AboutTextSections.tsx
 │   │   ├── AboutValues.tsx
-│   │   ├── SectionWrapper.tsx
 │   │   └── TeamGrid.tsx
 │   └── page.tsx
 ├── contact-us
@@ -92,13 +105,20 @@ app
 │   │   └── ServiceArea.tsx
 │   └── page.tsx
 ├── favicon.ico
+├── free-consultation
+│   └── page.tsx
 ├── globals.css
+├── languages
+│   └── page.tsx
 ├── layout.tsx
 ├── page.tsx
 └── services
     ├── [slug]
     │   ├── _ui
+    │   │   ├── ServiceDetails.tsx
+    │   │   ├── ServiceLeafCard.tsx
+    │   │   └── ServiceLeafImage.tsx
     │   └── page.tsx
     └── page.tsx
 
-30 directories, 72 files
+36 directories, 86 files

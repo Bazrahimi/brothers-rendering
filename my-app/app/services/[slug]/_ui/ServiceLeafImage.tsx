@@ -16,7 +16,7 @@ export default function ServiceLeafImage({
   const isDataUrl = src.startsWith("data:image/");
 
   return (
-    <div className="relative overflow-hidden rounded-2xl aspect-[2/1] bg-slate-100">
+    <div className="relative overflow-hidden rounded-2xl aspect-2/1 bg-slate-100">
       <Image
         src={src}
         alt={alt}
