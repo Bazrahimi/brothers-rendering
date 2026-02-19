@@ -1,9 +1,11 @@
 //app/languages/[otherLangs]/page.tsx
 import { OTHER_LANGUAGES as ol } from "@/app/_lib/languages/multiculturalStatement";
+import { SERVICES } from "@/app/_lib/org/category/services";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import PageIntro from "@/app/_ui/layout/PageIntro";
 import Section from "@/app/_ui/layout/Section";
 import { notFound } from "next/navigation";
+import SubcategoriesOtherLangs from "./_ui/SubcategoriesOtherLangs";
 
 const OtherLanguagePage = async ({
   params,
@@ -43,6 +45,16 @@ const OtherLanguagePage = async ({
               heading={lang === "HZ" ? ol[lang].label.HZ : ol[lang].label.FA}
               subHeading={ol[lang].statement(ORG_PROFILE.orgNameFarsi)}
               isRtl
+            />
+          </div>
+        ))}
+      </Section>
+      <Section>
+        {Object.entries(SERVICES).map(([key, service]) => (
+          <div key={key}>
+            <SubcategoriesOtherLangs
+              heading={service.labelFarsi}
+              subcategories={service.subcategories}
             />
           </div>
         ))}

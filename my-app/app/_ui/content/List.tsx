@@ -24,7 +24,7 @@ const List = ({
   return (
     <ul
       className={cn(
-        isCheck ? "space-y-2" : "list-disc list-inside space-y-2",
+        isCheck ? "space-y-2 rounded-3xl bg-gray-200/50 px-3 border border-gray-100 py-10" : "list-disc list-inside space-y-2",
         className,
       )}
     >
@@ -45,7 +45,14 @@ const List = ({
               aria-hidden
             />
           )}
-          <P className="text-gray-600">{item}</P>
+          <P
+            className={cn(
+              "text-gray-600 rounded-xl bg-gray-100 px-3 border border-gray-50",
+              isCheck && "flex-1",
+            )}
+          >
+            {item}
+          </P>
         </li>
       ))}
     </ul>

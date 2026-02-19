@@ -4,7 +4,7 @@ import { ImageUrl } from "../../helper";
 export const siliconAndCaulking = {
   caulking: {
     label: "Professional Caulking",
-    labelFarsi: "",
+    labelFarsi: "درزگیری حرفه‌ای",
     image: { kind: "svg", text: "Professional Caulking" },
     details: ["this is summary of Profesional caulking"],
     items: [
@@ -18,7 +18,7 @@ export const siliconAndCaulking = {
   // ✅ NEW
   wet_areas: {
     label: "Bathrooms & Wet Areas",
-    labelFarsi: "",
+    labelFarsi: "حمام‌ها و فضاهای مرطوب",
     image: { kind: "svg", text: "Bathroom and wet area" },
     details: ["this is bathroom and wet area"],
     items: [
@@ -32,7 +32,7 @@ export const siliconAndCaulking = {
   // ✅ NEW
   weatherproofing: {
     label: "Exterior Weatherproofing",
-    labelFarsi: "",
+    labelFarsi: "آب‌بندی فضای بیرونی",
     image: { kind: "url", src: ImageUrl },
     details: ["this is summary of exterior weatherProfing"],
     items: [
@@ -46,7 +46,7 @@ export const siliconAndCaulking = {
   // ✅ NEW (optional extra)
   fireRated: {
     label: "Fire-Rated & Acoustic Sealing",
-    labelFarsi: "",
+    labelFarsi: "آب‌بندی مقاوم در برابر آتش و آکوستیک",
     image: { kind: "url", src: ImageUrl },
     details: ["this is a summary of fire-reated and acoustis sealing"],
     items: [
