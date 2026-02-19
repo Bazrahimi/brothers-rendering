@@ -53,8 +53,10 @@ const OtherLanguagePage = async ({
         {Object.entries(SERVICES).map(([key, service]) => (
           <div key={key}>
             <SubcategoriesOtherLangs
+
               heading={service.labelFarsi}
               subcategories={service.subcategories}
+             
             />
           </div>
         ))}

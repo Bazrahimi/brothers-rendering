@@ -54,7 +54,6 @@ export default function ServiceLeafCard({
                   message={activeCta.message}
                 />
               </div>
-         
             </section>
           )}
 
@@ -66,13 +65,13 @@ export default function ServiceLeafCard({
             )}
           >
             <ServiceLeafImage image={leaf.image} alt={leaf.label} />
-                 <div className="mt-5 block md:hidden">
-                <ServiceCTA
-                  headingLabel={activeCta.label}
-                  serviceLabel={leaf.label}
-                  message={activeCta.message}
-                />
-              </div>
+            <div className="mt-5 block md:hidden">
+              <ServiceCTA
+                headingLabel={activeCta.label}
+                serviceLabel={leaf.label}
+                message={activeCta.message}
+              />
+            </div>
           </aside>
         </div>
       </article>
