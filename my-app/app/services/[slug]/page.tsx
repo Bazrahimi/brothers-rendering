@@ -1,6 +1,6 @@
 import { getServiceLabelBySlug } from "@/app/_lib/org/helper";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
-import { CTA_MAP } from "@/app/_lib/org/sociaMediaLinks";
+import { CTA_MAP } from "@/app/_lib/content/cta";
 import ServiceCTA from "@/app/_ui/content/ServiceCTA";
 import PageHeading from "@/app/_ui/layout/PageIntro";
 import Section from "@/app/_ui/layout/Section";

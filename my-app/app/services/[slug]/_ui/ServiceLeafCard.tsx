@@ -1,6 +1,6 @@
 import type { ServiceLeaf } from "@/app/_lib/org/definitions";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
-import { CTA_MAP } from "@/app/_lib/org/sociaMediaLinks";
+import { CTA_MAP } from "@/app/_lib/content/cta";
 import { cn } from "@/app/_lib/utils/cn";
 import List from "@/app/_ui/content/List";
 import ServiceCTA from "@/app/_ui/content/ServiceCTA";

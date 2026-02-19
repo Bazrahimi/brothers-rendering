@@ -27,7 +27,7 @@ export type Service = {
   subcategories: ServiceSubCategory;
 };
 
-export type CtaLabel = "Free Quote" | "Free Consultation";
+// export type CtaLabel = "Free Quote" | "Free Consultation";
 
 // /**
 //  * 2) Helper: keys like "newBuild" or "siliconAndCaulking" look ugly.

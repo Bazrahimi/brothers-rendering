@@ -1,8 +1,8 @@
 //app/_lib/org/org-profile.ts
 
-import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
-import type { CtaLabel } from "./definitions";
+import { CtaKey } from "../content/cta";
 import { OtherLanguageKey } from "../languages/multiculturalStatement";
+import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
 
 const ORG_DOMAIN = "canconstruction.com.au" as const;
 const orgName = "FairPoint Lawyers ";
@@ -29,7 +29,5 @@ export const ORG_PROFILE = {
 
   logo: "/images/logo-transparent-hd.png",
   logoFullUrl: "",
-  cta: "Free Quote" as CtaLabel,
+  cta: "freeQuote" as CtaKey,
 } as const;
-
-
