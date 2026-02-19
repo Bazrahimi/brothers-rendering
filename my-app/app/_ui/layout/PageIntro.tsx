@@ -3,9 +3,10 @@ import { P } from "../typography/paragraph";
 type Props = {
   heading?: string;
   subHeading?: readonly string[];
+  isRtl?: boolean,
 };
 
-const PageIntro = ({ heading, subHeading }: Props) => {
+const PageIntro = ({ heading, subHeading, isRtl=false }: Props) => {
   return (
     <>
       {heading && (
@@ -15,7 +16,7 @@ const PageIntro = ({ heading, subHeading }: Props) => {
       )}
 
       {subHeading?.map((t, i) => (
-        <P key={i} className="indent-6">
+        <P key={i} className="indent-6" dir={isRtl ? "rtl" : "ltr"}>
           {t}
         </P>
       ))}
