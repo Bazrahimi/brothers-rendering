@@ -43,7 +43,18 @@ export default function ServiceLeafCard({
                 isEven ? "sm:order-1" : "sm:order-2",
               )}
             >
+              {/* Divider */}
+              <div className="mb-4 h-px w-full bg-slate-200/70" />
               <List items={leaf.items} variant="check" />
+
+              <div className="mt-5 hidden md:block">
+                <ServiceCTA
+                  headingLabel={activeCta.label}
+                  serviceLabel={leaf.label}
+                  message={activeCta.message}
+                />
+              </div>
+         
             </section>
           )}
 
@@ -55,13 +66,15 @@ export default function ServiceLeafCard({
             )}
           >
             <ServiceLeafImage image={leaf.image} alt={leaf.label} />
+                 <div className="mt-5 block md:hidden">
+                <ServiceCTA
+                  headingLabel={activeCta.label}
+                  serviceLabel={leaf.label}
+                  message={activeCta.message}
+                />
+              </div>
           </aside>
         </div>
-        <ServiceCTA
-          headingLabel={activeCta.label}
-          serviceLabel={leaf.label}
-          message={activeCta.message}
-        />
       </article>
     </>
   );

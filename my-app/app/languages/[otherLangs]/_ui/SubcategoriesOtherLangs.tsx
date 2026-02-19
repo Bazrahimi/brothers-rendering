@@ -38,8 +38,7 @@ export default function SubcategoriesOtherLangs({
         </span>
       </div>
 
-      {/* Divider */}
-      <div className="mt-4 h-px w-full bg-slate-200/70" />
+    
 
       {/* List */}
       <div className="mt-4">
