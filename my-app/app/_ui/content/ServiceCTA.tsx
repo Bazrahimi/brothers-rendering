@@ -1,11 +1,11 @@
+import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import { PublicRoutes } from "@/app/_lib/routes/publicRoutes";
 import { cn } from "@/app/_lib/utils/cn";
-import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import Button from "../button/Button";
 import { Header } from "../typography/Header";
 import { P } from "../typography/paragraph";
 
-import { getCtaCopy, ctaCall, ctaCallFarsi } from "@/app/_lib/content/cta"; // adjust path
+import { ctaCall, ctaCallFarsi, getCtaCopy } from "@/app/_lib/content/cta"; // adjust path
 
 import type { CtaKey, Locale } from "@/app/_lib/content/cta";
 
@@ -37,7 +37,9 @@ export default function ServiceCTA({
   const dir = copy.dir;
 
   const resolvedServiceLabel =
-    locale === "fa" ? serviceLabelFarsi ?? serviceLabel ?? "" : serviceLabel ?? "";
+    locale === "fa"
+      ? (serviceLabelFarsi ?? serviceLabel ?? "")
+      : (serviceLabel ?? "");
 
   const callout =
     resolvedServiceLabel.trim().length > 0
@@ -66,7 +68,7 @@ export default function ServiceCTA({
         "relative overflow-hidden rounded-3xl bg-linear-to-br p-5 sm:p-10 shadow-xl",
         generalEnquiry
           ? "from-org-secondary-dark to-org-primary-dark"
-          : "from-org-primary-dark to-org-secondary-dark",
+          : "from-gray-50 to-gray-200",
         className,
       )}
       dir={dir}
@@ -75,15 +77,16 @@ export default function ServiceCTA({
 
       {generalEnquiry && (
         <Header as="h2" size="md" className="text-white">
-          {(headingOverride ?? copy.label) + (locale === "fa" ? " | پرسش عمومی" : " | General enquiry")}
+          {(headingOverride ?? copy.label) +
+            (locale === "fa" ? " | پرسش عمومی" : " | General enquiry")}
         </Header>
       )}
 
       {!!callout && (
         <P
           className={cn(
-            "text-center text-slate-300",
-            !generalEnquiry && "text-sm leading-relaxed",
+            "text-center text-gray-50",
+            !generalEnquiry && "text-sm leading-relaxed text-gray-700",
           )}
         >
           {callout}
@@ -104,7 +107,13 @@ export default function ServiceCTA({
       )}
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-        <Button as="link" href={href} variant="outline" size="sm" className="text-center">
+        <Button
+          as="link"
+          href={href}
+          variant={generalEnquiry ? "outline" : "primary"}
+          size="sm"
+          className="text-center"
+        >
           {locale === "fa" ? copy.label : `Get a ${copy.label}`}
         </Button>
 
@@ -113,7 +122,12 @@ export default function ServiceCTA({
             <P className="text-slate-300 text-center font-bold inline-flex justify-center">
               {locale === "fa" ? "| یا |" : "| OR |"}
             </P>
-            <Button as="link" href={PublicRoutes.contact()} variant="outline" size="sm">
+            <Button
+              as="link"
+              href={PublicRoutes.contact()}
+              variant="outline"
+              size="sm"
+            >
               {locale === "fa" ? "پرسش عمومی" : "General Enquiry"}
             </Button>
           </>

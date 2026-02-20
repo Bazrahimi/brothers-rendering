@@ -12,14 +12,11 @@ export const ORG_PROFILE = {
   orgNameFarsi: "شرکت ساختمانی کن",
   industry: ORG_INDUSTRY_SECTORS.BUILDING.industry,
   subSector: ORG_INDUSTRY_SECTORS.BUILDING.Sectors.painting,
-
   description:
     "Commercial and Residential Painting work through south easter suburbs",
   // languages: ["EN", "HZ", "FA"] as const satisfies readonly LanguageKey[],
   otherLangKeys: ["HZ", "FA"] as readonly OtherLanguageKey[],
-
   domain: ORG_DOMAIN,
-
   email: "info@canconstruction.com.au",
   website: `https://${ORG_DOMAIN}`,
   phone: "+61 2343 3533",

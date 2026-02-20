@@ -68,6 +68,19 @@ export default function SubcategoriesOtherLangs({
             itemClassName="rounded-xl border border-slate-200/60 bg-slate-50/80 px-3 py-2"
             iconClassName="text-emerald-600"
           />
+          <div className="mt-5">
+            <div className="my-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
+              <P className="my-2 text-slate-600">
+                برای جزئیات بیشتر، از بخش‌های مربوطه استفاده کنید.
+              </P>
+            </div>
+            <ServiceCTA
+              ctaKey={ORG_PROFILE.cta}
+              locale="fa"
+              serviceLabelFarsi={heading}
+              serviceLabel={heading}
+            />
+          </div>
         </section>
 
         {/* Row 2 — Image + Summary */}
@@ -76,31 +89,8 @@ export default function SubcategoriesOtherLangs({
         >
           {/* image is optional */}
           {img ? <ServiceLeafImage image={img} alt={heading} /> : null}
-
-          <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
-            <Header as="h3" align="right" className="text-slate-900" size="sm">
-              خلاصه
-            </Header>
-
-            <P className="mt-2 text-slate-700">
-              {count} مورد در این بخش موجود است.
-            </P>
-
-            <P className="mt-2 text-slate-600">
-              برای جزئیات بیشتر، از بخش‌های مربوطه استفاده کنید.
-            </P>
-
-            {/* <ServiceCTA headingLabel=" برای جزئیات بیشتر، از بخش‌های مربوطه استفاده کنید." serviceLabel={heading}  isRtl /> */}
-            
-          </div>
         </aside>
       </div>
-      <ServiceCTA 
-        ctaKey={ORG_PROFILE.cta}
-        locale="fa"
-        serviceLabelFarsi={heading}
-        serviceLabel={heading}
-      />
     </article>
   );
 }
