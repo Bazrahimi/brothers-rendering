@@ -1,6 +1,5 @@
 import { getServiceLabelBySlug } from "@/app/_lib/org/helper";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
-import { CTA_MAP } from "@/app/_lib/content/cta";
 import ServiceCTA from "@/app/_ui/content/ServiceCTA";
 import PageHeading from "@/app/_ui/layout/PageIntro";
 import Section from "@/app/_ui/layout/Section";
@@ -17,7 +16,6 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     notFound();
   }
   const { service } = found;
-  const activeCta = CTA_MAP[ORG_PROFILE.cta];
 
   return (
     <main className=" my-5 space-y-8">
@@ -35,9 +33,9 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
       <Section>
         <Suspense fallback={null}>
           <ServiceCTA
-            headingLabel={activeCta.label}
+            ctaKey={ORG_PROFILE.cta}
+            locale="en"
             serviceLabel={service.label}
-            message={activeCta.message}
             generalEnquiry
           />
         </Suspense>

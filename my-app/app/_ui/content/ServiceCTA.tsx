@@ -1,32 +1,62 @@
 import { PublicRoutes } from "@/app/_lib/routes/publicRoutes";
 import { cn } from "@/app/_lib/utils/cn";
-
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import Button from "../button/Button";
 import { Header } from "../typography/Header";
 import { P } from "../typography/paragraph";
 
+import { getCtaCopy, ctaCall, ctaCallFarsi } from "@/app/_lib/content/cta"; // adjust path
+
+import type { CtaKey, Locale } from "@/app/_lib/content/cta";
+
 type Props = {
-  headingLabel: string;
-  serviceLabel: string;
-  message: string;
+  ctaKey: CtaKey;
+  locale?: Locale;
+
+  // service label can be bilingual so the component can switch easily
+  serviceLabel?: string;
+  serviceLabelFarsi?: string;
+
   generalEnquiry?: boolean;
   className?: string;
+
+  // optional override if you want different heading on a specific page
+  headingOverride?: string;
 };
 
 export default function ServiceCTA({
-  headingLabel,
+  ctaKey,
+  locale = "en",
   serviceLabel,
-  className,
-  message,
+  serviceLabelFarsi,
   generalEnquiry,
+  className,
+  headingOverride,
 }: Props) {
+  const copy = getCtaCopy(ctaKey, locale);
+  const dir = copy.dir;
+
+  const resolvedServiceLabel =
+    locale === "fa" ? serviceLabelFarsi ?? serviceLabel ?? "" : serviceLabel ?? "";
+
+  const callout =
+    resolvedServiceLabel.trim().length > 0
+      ? locale === "fa"
+        ? ctaCallFarsi(ORG_PROFILE.orgName, resolvedServiceLabel)
+        : ctaCall(ORG_PROFILE.orgName, resolvedServiceLabel)
+      : "";
+
+  // Build the message passed to your form (include the service label if you want)
+  const message = `${copy.message}${resolvedServiceLabel}`;
+
   const href = {
     pathname: PublicRoutes.freeConsultation(),
     query: {
-      headingLabel,
-      serviceLabel,
+      headingLabel: headingOverride ?? copy.label,
+      serviceLabel: resolvedServiceLabel,
       message,
+      ctaKey, // helpful later if you want the form to know which CTA was used
+      locale,
     },
   };
 
@@ -36,61 +66,55 @@ export default function ServiceCTA({
         "relative overflow-hidden rounded-3xl bg-linear-to-br p-5 sm:p-10 shadow-xl",
         generalEnquiry
           ? "from-org-secondary-dark to-org-primary-dark"
-          : " from-org-primary-dark to-org-secondary-dark",
+          : "from-org-primary-dark to-org-secondary-dark",
         className,
       )}
+      dir={dir}
     >
       <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
+
       {generalEnquiry && (
         <Header as="h2" size="md" className="text-white">
-          {headingLabel} {" | General enquiry"}
+          {(headingOverride ?? copy.label) + (locale === "fa" ? " | پرسش عمومی" : " | General enquiry")}
         </Header>
       )}
 
-      {serviceLabel && (
-        <P className={cn(
-          "text-center text-slate-300",
-          !generalEnquiry && "text-sm leading-relaxed"
-        )}>
-          Tell {` ${ORG_PROFILE.orgName}`} what you need for {serviceLabel}, and
-          we’ll reply with clear next steps.
+      {!!callout && (
+        <P
+          className={cn(
+            "text-center text-slate-300",
+            !generalEnquiry && "text-sm leading-relaxed",
+          )}
+        >
+          {callout}
         </P>
       )}
 
       {generalEnquiry && (
         <>
-          {" "}
-          <P className="mt-3 text-center text-slate-100">| OR | </P>
+          <P className="mt-3 text-center text-slate-100">
+            {locale === "fa" ? "| یا |" : "| OR |"}
+          </P>
           <P className="mt-2 text-center text-slate-300">
-            Contact {ORG_PROFILE.orgName} if you have a general question.
+            {locale === "fa"
+              ? `اگر پرسش عمومی دارید با ${ORG_PROFILE.orgName} تماس بگیرید.`
+              : `Contact ${ORG_PROFILE.orgName} if you have a general question.`}
           </P>
         </>
       )}
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-        <Button
-          as="link"
-          href={href}
-          variant="outline"
-          size="sm"
-          className="text-center"
-          // className="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-white/90"
-        >
-          Get a {ORG_PROFILE.cta}
+        <Button as="link" href={href} variant="outline" size="sm" className="text-center">
+          {locale === "fa" ? copy.label : `Get a ${copy.label}`}
         </Button>
 
         {generalEnquiry && (
           <>
             <P className="text-slate-300 text-center font-bold inline-flex justify-center">
-              | OR |
+              {locale === "fa" ? "| یا |" : "| OR |"}
             </P>
-            <Button
-              as="link"
-              href={PublicRoutes.contact()}
-              variant="outline"
-              size="sm"
-            >
-              General Enquiry
+            <Button as="link" href={PublicRoutes.contact()} variant="outline" size="sm">
+              {locale === "fa" ? "پرسش عمومی" : "General Enquiry"}
             </Button>
           </>
         )}

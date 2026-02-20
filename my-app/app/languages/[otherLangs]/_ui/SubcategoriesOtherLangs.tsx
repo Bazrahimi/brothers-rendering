@@ -94,6 +94,7 @@ export default function SubcategoriesOtherLangs({
           </div>
         </aside>
       </div>
+      
     </article>
   );
 }

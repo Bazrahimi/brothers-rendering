@@ -1,6 +1,5 @@
 import type { ServiceLeaf } from "@/app/_lib/org/definitions";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
-import { CTA_MAP } from "@/app/_lib/content/cta";
 import { cn } from "@/app/_lib/utils/cn";
 import List from "@/app/_ui/content/List";
 import ServiceCTA from "@/app/_ui/content/ServiceCTA";
@@ -17,7 +16,7 @@ export default function ServiceLeafCard({
 }) {
   const hasItems = leaf.items.length > 0;
   const isEven = index % 2 === 0;
-  const activeCta = CTA_MAP[ORG_PROFILE.cta];
+  // const activeCta = CTA_MAP[ORG_PROFILE.cta];
 
   return (
     <>
@@ -49,9 +48,9 @@ export default function ServiceLeafCard({
 
               <div className="mt-5 hidden md:block">
                 <ServiceCTA
-                  headingLabel={activeCta.label}
+                  ctaKey={ORG_PROFILE.cta}
                   serviceLabel={leaf.label}
-                  message={activeCta.message}
+                  locale="en"
                 />
               </div>
             </section>
@@ -67,9 +66,9 @@ export default function ServiceLeafCard({
             <ServiceLeafImage image={leaf.image} alt={leaf.label} />
             <div className="mt-5 block md:hidden">
               <ServiceCTA
-                headingLabel={activeCta.label}
+                ctaKey={ORG_PROFILE.cta}
                 serviceLabel={leaf.label}
-                message={activeCta.message}
+                locale="en"
               />
             </div>
           </aside>
