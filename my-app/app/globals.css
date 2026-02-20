@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Swiper Base Styles */
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;
