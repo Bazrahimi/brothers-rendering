@@ -5,7 +5,7 @@ import { OtherLanguageKey } from "../languages/multiculturalStatement";
 import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
 
 const ORG_DOMAIN = "canconstruction.com.au" as const;
-const orgName = "FairPoint Lawyers ";
+const orgName = "Kateb offices ";
 
 export const ORG_PROFILE = {
   orgName: orgName,

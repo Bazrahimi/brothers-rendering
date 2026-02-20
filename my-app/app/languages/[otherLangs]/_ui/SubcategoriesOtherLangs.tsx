@@ -1,4 +1,5 @@
 import type { ServiceSubCategory } from "@/app/_lib/org/definitions";
+import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import { cn } from "@/app/_lib/utils/cn";
 import List from "@/app/_ui/content/List";
 import ServiceCTA from "@/app/_ui/content/ServiceCTA";
@@ -94,7 +95,12 @@ export default function SubcategoriesOtherLangs({
           </div>
         </aside>
       </div>
-      
+      <ServiceCTA 
+        ctaKey={ORG_PROFILE.cta}
+        locale="fa"
+        serviceLabelFarsi={heading}
+        serviceLabel={heading}
+      />
     </article>
   );
 }

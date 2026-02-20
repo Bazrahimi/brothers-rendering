@@ -6,6 +6,7 @@ import PageIntro from "@/app/_ui/layout/PageIntro";
 import Section from "@/app/_ui/layout/Section";
 import { notFound } from "next/navigation";
 import SubcategoriesOtherLangs from "./_ui/SubcategoriesOtherLangs";
+import ServiceCTA from "@/app/_ui/content/ServiceCTA";
 
 const OtherLanguagePage = async ({
   params,
@@ -53,13 +54,21 @@ const OtherLanguagePage = async ({
         {Object.entries(SERVICES).map(([key, service]) => (
           <div key={key}>
             <SubcategoriesOtherLangs
-
               heading={service.labelFarsi}
               subcategories={service.subcategories}
-             
             />
           </div>
         ))}
+      </Section>
+
+      <Section>
+        <ServiceCTA 
+        ctaKey={ORG_PROFILE.cta}
+        locale="fa"
+        serviceLabel="test"
+        generalEnquiry
+        
+        />
       </Section>
     </main>
   );
