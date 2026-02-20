@@ -27,15 +27,3 @@ export type Service = {
   subcategories: ServiceSubCategory;
 };
 
-// export type CtaLabel = "Free Quote" | "Free Consultation";
-
-// /**
-//  * 2) Helper: keys like "newBuild" or "siliconAndCaulking" look ugly.
-//  *    This converts them to "New Build" or "Silicon And Caulking".
-//  */
-// export const prettifyKey = (key: string) => {
-//   return key
-//     .replace(/([a-z])([A-Z])/g, "$1 $2") // camelCase -> camel Case
-//     .replace(/[-_]/g, " ") // kebab_case -> spaces
-//     .replace(/\b\w/g, (c) => c.toUpperCase()); // Title Case
-// };
