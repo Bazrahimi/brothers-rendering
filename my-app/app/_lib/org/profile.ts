@@ -5,7 +5,7 @@ import { OtherLanguageKey } from "../languages/multiculturalStatement";
 import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
 
 const ORG_DOMAIN = "canconstruction.com.au" as const;
-const orgName = "Kateb offices ";
+const orgName = "Kateb lawyers ";
 
 export const ORG_PROFILE = {
   orgName: orgName,
@@ -20,10 +20,8 @@ export const ORG_PROFILE = {
   email: "info@canconstruction.com.au",
   website: `https://${ORG_DOMAIN}`,
   phone: "+61 2343 3533",
-
   address: "22  Faldo Place Cranbourne North VIC 3977",
   abn: "37 649 729 395",
-
   logo: "/images/logo-transparent-hd.png",
   logoFullUrl: "",
   cta: "freeQuote" as CtaKey,
