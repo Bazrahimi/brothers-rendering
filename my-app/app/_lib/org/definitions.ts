@@ -27,3 +27,15 @@ export type Service = {
   subcategories: ServiceSubCategory;
 };
 
+
+
+export const  isLeaf = (v: unknown): v is ServiceLeaf => {
+  return (
+    typeof v === "object" &&
+    v !== null &&
+    "label" in v &&
+    "labelFarsi" in v &&
+    "image" in v &&
+    "items" in v
+  );
+}
