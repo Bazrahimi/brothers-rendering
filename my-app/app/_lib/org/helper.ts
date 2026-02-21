@@ -1,4 +1,3 @@
-import { slugify } from "../utils/helper";
 import type { Service, ServiceKey } from "./definitions";
 
 import { SERVICES } from "./category/services";
@@ -16,7 +15,7 @@ export const getService = (key: ServiceKey): Service => {
 export const getServiceLabelBySlug = (slug: string) => {
   // Find by matching slugified title
   const entry = Object.entries(SERVICES).find(([, service]) => {
-    return slugify(service.label) === slug;
+    return service.slug === slug;
   });
 
   if (!entry) return null;

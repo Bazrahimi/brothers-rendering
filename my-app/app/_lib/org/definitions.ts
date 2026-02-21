@@ -1,4 +1,5 @@
 import { SERVICES } from "./category/services";
+import { slugify } from "../utils/helper";
 
 export type ServiceKey = keyof typeof SERVICES;
 
@@ -23,7 +24,7 @@ export type ServiceSubCategory = {
 export type Service = {
   label: string;
   labelFarsi: string; // 
-  slug: // TODO. I want create the slug from label. could you do it and make necestary change to everyone that it need
+  slug: string; // TODO: i want type check check that value is matching with label by using this slugifyfunction
   description: readonly string[];
   subcategories: ServiceSubCategory;
 };

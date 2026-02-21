@@ -2,7 +2,6 @@
 
 import { SERVICES } from "@/app/_lib/org/category/services";
 import ServiceLeavesCarousel from "@/app/_ui/carousels/ServiceLeavesCarousel";
-import { solidPlastering } from "./_lib/org/category/subCategories/solidPlastering";
 
 export default function HomePage() {
   return (
@@ -18,8 +17,8 @@ export default function HomePage() {
       <ServiceLeavesCarousel
         subcategories={SERVICES.solidPlastering.subcategories}
         heading={SERVICES.solidPlastering.label}
+        slug={SERVICES.solidPlastering.slug}
         locale="en"
-      
       />
     </div>
   );

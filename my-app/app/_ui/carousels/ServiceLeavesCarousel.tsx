@@ -2,7 +2,6 @@
 import CarouselSlide from "./CarouselSlide";
 
 // ✅ Swiper styles (required)
-import { slugify } from "@/app/_lib/utils/helper";
 
 import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -20,17 +19,17 @@ type Props = {
   subcategories: ServiceSubCategory;
   className?: string;
   heading?: string;
+  slug: string;
 
-  // ✅ new: choose which language to display
   locale?: Locale;
 
-  // ✅ optional: control direction (auto from locale by default)
   dir?: "ltr" | "rtl";
 };
 
 export default function ServiceLeavesCarousel({
   subcategories,
   className,
+  slug,
   heading = "Featured Services", // ✅ English default
   locale = "en",
   dir,
@@ -79,11 +78,7 @@ export default function ServiceLeavesCarousel({
         >
           {leaves.map((leaf) => (
             <SwiperSlide key={leaf.label}>
-              <CarouselSlide
-                leaf={leaf}
-                serviceSlug={slugify(heading)} // ⚠️ still recommend passing real slug
-                locale={locale}
-              />
+              <CarouselSlide leaf={leaf} serviceSlug={slug} locale={locale} />
             </SwiperSlide>
           ))}
         </Swiper>
