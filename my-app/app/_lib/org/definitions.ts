@@ -23,6 +23,7 @@ export type ServiceSubCategory = {
 export type Service = {
   label: string;
   labelFarsi: string; // 
+  slug: // TODO. I want create the slug from label. could you do it and make necestary change to everyone that it need
   description: readonly string[];
   subcategories: ServiceSubCategory;
 };

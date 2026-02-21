@@ -1,6 +1,5 @@
 "use client";
-import CarouselImage from "./CarouselImage";
-import CarouselSlideContent from "./CarouselSlideContent";
+import CarouselSlide from "./CarouselSlide";
 
 // ✅ Swiper styles (required)
 import { slugify } from "@/app/_lib/utils/helper";
@@ -10,10 +9,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import type { ServiceSubCategory } from "@/app/_lib/org/definitions";
 import { isLeaf } from "@/app/_lib/org/definitions";
-import { PublicRoutes } from "@/app/_lib/routes/publicRoutes";
 import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
-import Link from "next/link";
 import CarouselSkeleton from "./CarouselSkeleton";
 import { useMounted } from "./hook/useMounted";
 
@@ -80,27 +77,15 @@ export default function ServiceLeavesCarousel({
             1024: { slidesPerView: 3.1 },
           }}
         >
-          {leaves.map((leaf, i) => {
-            const title = locale === "fa" ? leaf.labelFarsi : leaf.label;
-            const sectionId = slugify(leaf.label);
-
-            return (
-              <SwiperSlide key={`${leaf.label}-${i}`}>
-                <Link
-                  href={`${PublicRoutes.service(slugify(heading))}#${sectionId}`}
-                >
-                  <article className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-                    <CarouselSlideContent
-                      title={title}
-                      description={[...leaf.description]}
-                      locale={locale}
-                    />
-                    <CarouselImage image={leaf.image} alt={title} />
-                  </article>
-                </Link>
-              </SwiperSlide>
-            );
-          })}
+          {leaves.map((leaf) => (
+            <SwiperSlide key={leaf.label}>
+              <CarouselSlide
+                leaf={leaf}
+                serviceSlug={slugify(heading)} // ⚠️ still recommend passing real slug
+                locale={locale}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>
