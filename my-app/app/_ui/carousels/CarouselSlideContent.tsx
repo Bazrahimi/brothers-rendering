@@ -3,34 +3,22 @@ import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "../typography/Header";
 import { P } from "../typography/paragraph";
 
-import type { Locale } from "./ServiceLeavesCarousel";
 type CarouselSlideContentProps = {
-  title: string;
+  label: string;
   description: string[];
-  locale: Locale;
 };
 
 const CarouselSlideContent = ({
-  title,
+  label,
   description,
-  locale,
 }: CarouselSlideContentProps) => {
   return (
     <div className="px-4 pb-4">
-      <Header
-        as="h3"
-        size="sm"
-        className={cn("text-slate-900", locale === "fa" && "text-right")}
-      >
-        {title}
+      <Header as="h3" size="sm">
+        {label}
       </Header>
 
-      <P
-        className={cn(
-          "mt-2 text-slate-600 text-sm line-clamp-2",
-          locale === "fa" && "text-right",
-        )}
-      >
+      <P className={cn("mt-2 text-slate-600 text-sm line-clamp-2")}>
         {description}
       </P>
     </div>

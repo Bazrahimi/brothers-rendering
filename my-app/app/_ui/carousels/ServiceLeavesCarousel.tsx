@@ -18,8 +18,6 @@ type Props = {
   className?: string;
   heading?: string;
   slug: string;
-  locale?: Locale;
-  dir?: "ltr" | "rtl";
 };
 
 export default function ServiceLeavesCarousel({
@@ -27,13 +25,9 @@ export default function ServiceLeavesCarousel({
   className,
   slug,
   heading = "Featured Services",
-  locale = "en",
-  dir,
 }: Props) {
   const mounted = useMounted();
   if (!mounted) return <CarouselSkeleton />;
-
-  const resolvedDir = dir ?? (locale === "fa" ? "rtl" : "ltr");
 
   // ✅ keep keys for anchors + stable React keys
   const entries = Object.entries(subcategories).filter(([, v]) => isLeaf(v));
@@ -41,7 +35,6 @@ export default function ServiceLeavesCarousel({
 
   return (
     <section
-      dir={resolvedDir}
       className={cn(
         "rounded-2xl border border-slate-200 bg-white/70 p-5 shadow-sm backdrop-blur sm:p-7",
         className,
@@ -74,7 +67,12 @@ export default function ServiceLeavesCarousel({
         >
           {entries.map(([leafId, leaf]) => (
             <SwiperSlide key={leafId}>
-              <CarouselSlide leaf={leaf} leafId={leafId} serviceSlug={slug} locale={locale} />
+              <CarouselSlide
+                leaf={leaf}
+                leafId={leafId}
+                serviceSlug={slug}
+            
+              />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -5,23 +5,14 @@ import { PublicRoutes } from "@/app/_lib/routes/publicRoutes";
 import Link from "next/link";
 import CarouselImage from "./CarouselImage";
 import CarouselSlideContent from "./CarouselSlideContent";
-import type { Locale } from "./ServiceLeavesCarousel";
 
 type Props = {
   leaf: ServiceLeaf;
   leafId: string;
   serviceSlug: string;
-  locale: Locale;
 };
 
-export default function CarouselSlide({
-  leaf,
-  leafId,
-  serviceSlug,
-  locale,
-}: Props) {
-  const title = locale === "fa" ? leaf.labelFarsi : leaf.label;
-
+export default function CarouselSlide({ leaf, leafId, serviceSlug }: Props) {
   return (
     <Link
       href={`${PublicRoutes.service(serviceSlug)}#${leafId}`}
@@ -29,11 +20,10 @@ export default function CarouselSlide({
     >
       <article className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
         <CarouselSlideContent
-          title={title}
+          label={leaf.label}
           description={[...leaf.description]}
-          locale={locale}
         />
-        <CarouselImage image={leaf.image} alt={title} />
+        <CarouselImage image={leaf.image} alt={leaf.label} />
       </article>
     </Link>
   );
