@@ -1,8 +1,6 @@
 "use client";
 import CarouselSlide from "./CarouselSlide";
 
-// ✅ Swiper styles (required)
-
 import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -20,9 +18,7 @@ type Props = {
   className?: string;
   heading?: string;
   slug: string;
-
   locale?: Locale;
-
   dir?: "ltr" | "rtl";
 };
 
@@ -30,18 +26,18 @@ export default function ServiceLeavesCarousel({
   subcategories,
   className,
   slug,
-  heading = "Featured Services", // ✅ English default
+  heading = "Featured Services",
   locale = "en",
   dir,
 }: Props) {
   const mounted = useMounted();
-
   if (!mounted) return <CarouselSkeleton />;
+
   const resolvedDir = dir ?? (locale === "fa" ? "rtl" : "ltr");
 
-  // ✅ Convert object values to array + keep only real leaves
-  const leaves = Object.values(subcategories).filter(isLeaf);
-  if (leaves.length === 0) return null;
+  // ✅ keep keys for anchors + stable React keys
+  const entries = Object.entries(subcategories).filter(([, v]) => isLeaf(v));
+  if (entries.length === 0) return null;
 
   return (
     <section
@@ -60,7 +56,7 @@ export default function ServiceLeavesCarousel({
       <div className="mt-4">
         <Swiper
           modules={[Navigation, Pagination, A11y, Autoplay]}
-          loop={leaves.length > 3}
+          loop={entries.length > 3}
           watchOverflow
           navigation
           pagination={{ clickable: true }}
@@ -76,9 +72,9 @@ export default function ServiceLeavesCarousel({
             1024: { slidesPerView: 3.1 },
           }}
         >
-          {leaves.map((leaf) => (
-            <SwiperSlide key={leaf.label}>
-              <CarouselSlide leaf={leaf} serviceSlug={slug} locale={locale} />
+          {entries.map(([leafId, leaf]) => (
+            <SwiperSlide key={leafId}>
+              <CarouselSlide leaf={leaf} leafId={leafId} serviceSlug={slug} locale={locale} />
             </SwiperSlide>
           ))}
         </Swiper>

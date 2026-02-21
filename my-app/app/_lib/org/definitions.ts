@@ -24,7 +24,7 @@ export type ServiceSubCategory = {
 export type Service = {
   label: string;
   labelFarsi: string; // 
-  slug: string; // TODO: i want type check check that value is matching with label by using this slugifyfunction
+  slug: string; 
   description: readonly string[];
   subcategories: ServiceSubCategory;
 };

@@ -9,7 +9,7 @@ export default function ServiceDetails({
   return (
     <div className="space-y-4">
       {Object.entries(subcategories).map(([key, leaf], index) => (
-        <ServiceLeafCard key={key} leaf={leaf} index={index} />
+        <ServiceLeafCard key={key} leaf={leaf} index={index} leafId={key} />
       ))}
     </div>
   );

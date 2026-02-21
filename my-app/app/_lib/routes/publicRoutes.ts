@@ -1,6 +1,5 @@
 import { SERVICES } from "@/app/_lib/org/category/services";
 import type { ServiceKey } from "../org/definitions";
-import { slugify } from "../utils/helper";
 const languages = "/languages";
 export const PublicRoutes = {
   home: () => "/",
@@ -9,19 +8,18 @@ export const PublicRoutes = {
   freeConsultation: () => "/free-consultation",
   service: (slug: string) => `/services/${slug}`,
   languages: () => languages,
-  otherLanguages: (lang: string) =>
-    `${languages}/${encodeURIComponent(lang)}`,
+  otherLanguages: (lang: string) => `${languages}/${encodeURIComponent(lang)}`,
 } as const;
 
 /** Service nav links */
 export const getServiceCategoryLinks = () => {
   return (Object.keys(SERVICES) as ServiceKey[]).map((key) => {
-    const title = SERVICES[key].label;
-    const slug = slugify(title);
+    const label = SERVICES[key].label;
+    const slug = SERVICES[key].slug;
 
     return {
       key,
-      label: title,
+      label: label,
       href: PublicRoutes.service(slug),
     };
   });
