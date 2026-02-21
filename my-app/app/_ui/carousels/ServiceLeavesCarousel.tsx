@@ -1,18 +1,22 @@
 "use client";
 
 // ✅ Swiper styles (required)
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { useSyncExternalStore } from "react";
+import { slugify } from "@/app/_lib/utils/helper";
 
-import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import type { ServiceLeaf, ServiceSubCategory } from "@/app/_lib/org/definitions";
+import type {
+  ServiceLeaf,
+  ServiceSubCategory,
+} from "@/app/_lib/org/definitions";
 import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 import ServiceLeafImage from "@/app/services/[slug]/_ui/ServiceLeafImage";
+import Link from "next/link";
+import { PublicRoutes } from "@/app/_lib/routes/publicRoutes";
 
 type Locale = "en" | "fa";
 
@@ -46,6 +50,18 @@ export default function ServiceLeavesCarousel({
   locale = "en",
   dir,
 }: Props) {
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+
+  if (!mounted) {
+    // Render a skeleton with same height
+    return (
+      <div className="min-h-85 rounded-2xl border border-slate-200 bg-slate-50" />
+    );
+  }
   const resolvedDir = dir ?? (locale === "fa" ? "rtl" : "ltr");
 
   // ✅ Convert object values to array + keep only real leaves
@@ -64,10 +80,6 @@ export default function ServiceLeavesCarousel({
         <Header as="h2" className="text-slate-900">
           {heading}
         </Header>
-
-        <span className="hidden sm:inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600">
-          {locale === "fa" ? "اسلاید" : "Carousel"}
-        </span>
       </div>
 
       <div className="mt-4">
@@ -87,33 +99,39 @@ export default function ServiceLeavesCarousel({
 
             return (
               <SwiperSlide key={`${leaf.label}-${i}`}>
-                <article className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-                  <div className="p-3">
-                    <ServiceLeafImage image={leaf.image} alt={title} />
-                  </div>
+                <Link href={PublicRoutes.service(slugify(heading))}>
+                  <article className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+                    <div className="p-3">
+                      <ServiceLeafImage
+                        image={leaf.image}
+                        alt={title}
+                        aspect="aspect-[4/3]"
+                      />
+                    </div>
 
-                  <div className="px-4 pb-4">
-                    <Header
-                      as="h3"
-                      size="sm"
-                      className={cn(
-                        "text-slate-900",
-                        locale === "fa" && "text-right",
-                      )}
-                    >
-                      {title}
-                    </Header>
+                    <div className="px-4 pb-4">
+                      <Header
+                        as="h3"
+                        size="sm"
+                        className={cn(
+                          "text-slate-900",
+                          locale === "fa" && "text-right",
+                        )}
+                      >
+                        {title}
+                      </Header>
 
-                    <P
-                      className={cn(
-                        "mt-2 text-slate-600 text-sm line-clamp-2",
-                        locale === "fa" && "text-right",
-                      )}
-                    >
-                      {leaf.items.slice(0, 2).join(" • ")}
-                    </P>
-                  </div>
-                </article>
+                      <P
+                        className={cn(
+                          "mt-2 text-slate-600 text-sm line-clamp-2",
+                          locale === "fa" && "text-right",
+                        )}
+                      >
+                        {leaf.items.slice(0, 2).join(" • ")}
+                      </P>
+                    </div>
+                  </article>
+                </Link>
               </SwiperSlide>
             );
           })}

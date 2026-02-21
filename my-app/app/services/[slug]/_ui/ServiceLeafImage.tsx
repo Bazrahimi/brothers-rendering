@@ -1,14 +1,17 @@
 import { cldLeafAuto } from "@/app/_lib/cloudinary/cloudinary";
 import type { LeafImage } from "@/app/_lib/org/definitions";
+import { cn } from "@/app/_lib/utils/cn";
 import { svgFromText } from "@/app/_ui/image/svgFromText";
 import Image from "next/image";
 
 export default function ServiceLeafImage({
   image,
   alt,
+  aspect = "aspect-[2/1]", // default ratio
 }: {
   image: LeafImage;
   alt: string;
+  aspect?: string;
 }) {
   const src =
     image.kind === "url" ? cldLeafAuto(image.src) : svgFromText(image.text);
@@ -16,7 +19,7 @@ export default function ServiceLeafImage({
   const isDataUrl = src.startsWith("data:image/");
 
   return (
-    <div className="relative overflow-hidden rounded-2xl aspect-2/1 ">
+    <div className={cn("relative overflow-hidden rounded-2xl", aspect)}>
       <Image
         src={src}
         alt={alt}
