@@ -5,17 +5,17 @@ import CarouselSlideContent from "./CarouselSlideContent";
 // ✅ Swiper styles (required)
 import { slugify } from "@/app/_lib/utils/helper";
 
-import { A11y, Navigation, Pagination } from "swiper/modules";
+import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import type { ServiceSubCategory } from "@/app/_lib/org/definitions";
+import { isLeaf } from "@/app/_lib/org/definitions";
 import { PublicRoutes } from "@/app/_lib/routes/publicRoutes";
 import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
 import Link from "next/link";
 import CarouselSkeleton from "./CarouselSkeleton";
 import { useMounted } from "./hook/useMounted";
-import { isLeaf } from "@/app/_lib/org/definitions";
 
 export type Locale = "en" | "fa";
 
@@ -63,9 +63,16 @@ export default function ServiceLeavesCarousel({
 
       <div className="mt-4">
         <Swiper
-          modules={[Navigation, Pagination, A11y]}
+          modules={[Navigation, Pagination, A11y, Autoplay]}
+          loop={leaves.length > 3}
+          watchOverflow
           navigation
           pagination={{ clickable: true }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
           spaceBetween={14}
           slidesPerView={1.1}
           breakpoints={{
@@ -83,12 +90,12 @@ export default function ServiceLeavesCarousel({
                   href={`${PublicRoutes.service(slugify(heading))}#${sectionId}`}
                 >
                   <article className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-                    <CarouselImage image={leaf.image} alt={title} />
                     <CarouselSlideContent
                       title={title}
-                      items={[...leaf.items]}
+                      details={[...leaf.details]}
                       locale={locale}
                     />
+                    <CarouselImage image={leaf.image} alt={title} />
                   </article>
                 </Link>
               </SwiperSlide>

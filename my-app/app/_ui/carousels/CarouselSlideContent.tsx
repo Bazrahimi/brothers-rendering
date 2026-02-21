@@ -6,13 +6,13 @@ import { P } from "../typography/paragraph";
 import type { Locale } from "./ServiceLeavesCarousel";
 type CarouselSlideContentProps = {
   title: string;
-  items: string[];
+  details: string[];
   locale: Locale;
 };
 
 const CarouselSlideContent = ({
   title,
-  items,
+  details,
   locale,
 }: CarouselSlideContentProps) => {
   return (
@@ -31,7 +31,7 @@ const CarouselSlideContent = ({
           locale === "fa" && "text-right",
         )}
       >
-        {items.slice(0, 2).join(" • ")}
+        {details}
       </P>
     </div>
   );
