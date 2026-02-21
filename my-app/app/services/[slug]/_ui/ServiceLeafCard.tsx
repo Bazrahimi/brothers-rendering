@@ -6,6 +6,7 @@ import ServiceCTA from "@/app/_ui/content/ServiceCTA";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 import ServiceLeafImage from "./ServiceLeafImage";
+import { slugify } from "@/app/_lib/utils/helper";
 
 export default function ServiceLeafCard({
   leaf,
@@ -20,7 +21,7 @@ export default function ServiceLeafCard({
 
   return (
     <>
-      <article className="rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-sm">
+      <article className="rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-sm scroll-mt-24" id={slugify(leaf.label)}>
         <div className="grid gap-3 sm:gap-6 sm:grid-cols-12 sm:items-start mb-5 sm:mb-10">
           {/* Row 1 — Title + Summary (always full width) */}
           <header className="sm:col-span-12 space-y-3">

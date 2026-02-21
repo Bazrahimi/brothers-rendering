@@ -75,10 +75,13 @@ export default function ServiceLeavesCarousel({
         >
           {leaves.map((leaf, i) => {
             const title = locale === "fa" ? leaf.labelFarsi : leaf.label;
+            const sectionId = slugify(leaf.label);
 
             return (
               <SwiperSlide key={`${leaf.label}-${i}`}>
-                <Link href={PublicRoutes.service(slugify(heading))}>
+                <Link
+                  href={`${PublicRoutes.service(slugify(heading))}#${sectionId}`}
+                >
                   <article className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                     <CarouselImage image={leaf.image} alt={title} />
                     <CarouselSlideContent
