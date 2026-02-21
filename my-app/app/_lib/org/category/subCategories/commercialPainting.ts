@@ -6,7 +6,7 @@ export const commercialPaintingAndDecorating = {
     label: "New Build",
     labelFarsi: "ساخت‌وساز جدید",
     image: { kind: "url", src: ImageUrl },
-    details:
+    description:
       ["Painting of new warehouses, factories , shops, all plasterboard, villaBoards, "],
     items: [
       "Office Fit-outs",

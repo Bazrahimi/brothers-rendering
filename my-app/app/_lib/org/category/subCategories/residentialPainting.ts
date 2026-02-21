@@ -6,7 +6,7 @@ export const residentialPaintingAndDecorating = {
     label: "New Build",
     labelFarsi: "ساخت‌وساز جدید",
     image: { kind: "url", src: ImageUrl },
-    details:
+    description:
       ["Interior and exterior painting for new homes and multi-unit builds."],
     items: [
       "New Houses",
@@ -19,7 +19,7 @@ export const residentialPaintingAndDecorating = {
     label: "Renovation And Extensions",
     labelFarsi: "بازسازی و توسعه",
     image: { kind: "svg", text: "Renovations & Specialized Coatings" },
-    details: ["Interior and exterior painting renovation and extensions"],
+    description: ["Interior and exterior painting renovation and extensions"],
     items: [
       "Garage Extensions",
       "Kitchen & Bathroom Renovations",

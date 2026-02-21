@@ -6,7 +6,7 @@ export const siliconAndCaulking = {
     label: "Professional Caulking",
     labelFarsi: "درزگیری حرفه‌ای",
     image: { kind: "svg", text: "Professional Caulking" },
-    details: ["this is summary of Profesional caulking"],
+    description: ["this is summary of Profesional caulking"],
     items: [
       "Expansion Joints",
       "Window & Door Caulking",
@@ -20,7 +20,7 @@ export const siliconAndCaulking = {
     label: "Bathrooms & Wet Areas",
     labelFarsi: "حمام‌ها و فضاهای مرطوب",
     image: { kind: "svg", text: "Bathroom and wet area" },
-    details: ["this is bathroom and wet area"],
+    description: ["this is bathroom and wet area"],
     items: [
       "Bathroom Re-siliconing",
       "Shower Screen & Tray Sealing",
@@ -34,7 +34,7 @@ export const siliconAndCaulking = {
     label: "Exterior Weatherproofing",
     labelFarsi: "آب‌بندی فضای بیرونی",
     image: { kind: "url", src: ImageUrl },
-    details: ["this is summary of exterior weatherProfing"],
+    description: ["this is summary of exterior weatherProfing"],
     items: [
       "Facade & Cladding Joint Sealing",
       "Brick Expansion Joint Sealing",
@@ -48,7 +48,7 @@ export const siliconAndCaulking = {
     label: "Fire-Rated & Acoustic Sealing",
     labelFarsi: "آب‌بندی مقاوم در برابر آتش و آکوستیک",
     image: { kind: "url", src: ImageUrl },
-    details: ["this is a summary of fire-reated and acoustis sealing"],
+    description: ["this is a summary of fire-reated and acoustis sealing"],
     items: [
       "Fire-Rated Penetration Sealing",
       "Acoustic Sealing Between Units",

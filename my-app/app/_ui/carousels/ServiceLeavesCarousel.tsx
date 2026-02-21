@@ -92,7 +92,7 @@ export default function ServiceLeavesCarousel({
                   <article className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                     <CarouselSlideContent
                       title={title}
-                      details={[...leaf.details]}
+                      description={[...leaf.description]}
                       locale={locale}
                     />
                     <CarouselImage image={leaf.image} alt={title} />

@@ -20,7 +20,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   return (
     <main className=" my-5 space-y-8">
       <Section id={slug}>
-        <PageHeading heading={service.label} subHeading={service.shortDesc} />
+        <PageHeading heading={service.label} subHeading={service.description} />
       </Section>
 
       {/* Subcategories (nested object) */}

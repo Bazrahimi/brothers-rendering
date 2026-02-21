@@ -10,7 +10,7 @@ export const SERVICES = {
   residentialPainting: {
     label: "Residential Painting And Decorating",
     labelFarsi: "نقاشی و دکوراسیون مسکونی",
-    shortDesc: [
+    description: [
       "Comprehensive interior and exterior painting solutions for homes and businesses.",
     ] as const,
 
@@ -19,7 +19,7 @@ export const SERVICES = {
   commercialPainting: {
     label: "Commercial Painting And Decorating",
     labelFarsi: "نقاشی و دکوراسیون تجاری",
-    shortDesc: [
+    description: [
       "Comprehensive interior and exterior painting solutions for businesses.",
     ] as const,
 
@@ -29,7 +29,7 @@ export const SERVICES = {
   solidPlastering: {
     label: "Solid Plastering and Rendering",
     labelFarsi: "گچ‌کاری و اندودکاری",
-    shortDesc: [
+    description: [
       "Expert external cladding and traditional rendering services.",
     ] as const,
 
@@ -39,7 +39,7 @@ export const SERVICES = {
   siliconAndCaulking: {
     label: "Silicon and Caulking",
     labelFarsi: "سیلیکون‌کاری و درزگیری",
-    shortDesc: [
+    description: [
       "Precision tiling and professional caulking for residential and commercial projects.",
     ] as const,
 

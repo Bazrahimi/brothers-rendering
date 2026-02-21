@@ -5,7 +5,7 @@ export const solidPlastering = {
     label: "Board Installation",
     labelFarsi: "نصب پنل",
     image: { kind: "svg", text: "Bathroom and wet area" },
-    details:
+    description:
       ["installation of blueboard, foamboard, hebels and render and text finish"],
     items: ["Foam Board Installation", "Hebel Panel Systems", "Blue Board"],
   },
@@ -14,7 +14,7 @@ export const solidPlastering = {
     label: "Render & Texture",
     labelFarsi: "اندود و بافت",
     image: { kind: "svg", text: "Bathroom and wet area" },
-    details: ["Restore damaged render and keep façades looking sharp."],
+    description: ["Restore damaged render and keep façades looking sharp."],
     items: [
       "Cement Rendering",
       "Acrylic Texture Coatings",
@@ -28,7 +28,7 @@ export const solidPlastering = {
     label: "Repairs & Maintenance",
     labelFarsi: "تعمیرات و نگهداری",
     image: { kind: "svg", text: "Bathroom and wet area" },
-    details: ["this is a summary of repair and maintenance"],
+    description: ["this is a summary of repair and maintenance"],
     items: [
       "Crack Repairs",
       "Water Damage Repairs",
@@ -42,7 +42,7 @@ export const solidPlastering = {
     label: "Insulation & Lightweight Systems",
     labelFarsi: "عایق‌کاری و سیستم‌های سبک",
     image: { kind: "svg", text: "Bathroom and wet area" },
-    details: ["this is for this"],
+    description: ["this is for this"],
     items: [
       "External Insulation Systems (EIFS)",
       "Thermal Render Systems",

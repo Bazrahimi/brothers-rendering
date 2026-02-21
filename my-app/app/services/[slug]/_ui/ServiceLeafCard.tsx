@@ -27,8 +27,8 @@ export default function ServiceLeafCard({
           <header className="sm:col-span-12 space-y-3">
             <Header as="h2">{leaf.label}</Header>
 
-            {leaf.details &&
-              leaf.details.map((t, i) => (
+            {leaf.description &&
+              leaf.description.map((t, i) => (
                 <P key={i} className="indent-6">
                   {t}
                 </P>

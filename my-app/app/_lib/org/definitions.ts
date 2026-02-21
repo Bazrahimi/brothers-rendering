@@ -11,7 +11,7 @@ export type LeafImage =
 export type ServiceLeaf = {
   label: string;
   labelFarsi: string;
-  details: string[];
+  description: string[];
   image: LeafImage;
   items: readonly string[];
 };
@@ -23,7 +23,7 @@ export type ServiceSubCategory = {
 export type Service = {
   label: string;
   labelFarsi: string; // 
-  shortDesc: readonly string[];
+  description: readonly string[];
   subcategories: ServiceSubCategory;
 };
 
