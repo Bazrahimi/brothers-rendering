@@ -44,6 +44,14 @@ app
 │   ├── button
 │   │   ├── ActionButton.tsx
 │   │   └── Button.tsx
+│   ├── carousels
+│   │   ├── CarouselImage.tsx
+│   │   ├── CarouselSkeleton.tsx
+│   │   ├── CarouselSlide.tsx
+│   │   ├── CarouselSlideContent.tsx
+│   │   ├── ServiceLeavesCarousel.tsx
+│   │   └── hook
+│   │       └── useMounted.ts
 │   ├── content
 │   │   ├── List.tsx
 │   │   ├── MultiLanguageCapacity.tsx
@@ -125,6 +133,8 @@ app
     │   │   ├── ServiceLeafCard.tsx
     │   │   └── ServiceLeafImage.tsx
     │   └── page.tsx
+    ├── _ui
+    │   └── ServicesHero.tsx
     └── page.tsx
 
-39 directories, 89 files
+42 directories, 96 files

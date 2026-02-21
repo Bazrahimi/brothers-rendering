@@ -3,7 +3,7 @@ import { P } from "@/app/_ui/typography/paragraph";
 import Link from "next/link";
 import { FaArrowAltCircleDown } from "react-icons/fa";
 
-import type { FAQItem } from "@/app/_lib/org/faqs";
+import type { FAQItem } from "@/app/_lib/org/orgPages/contactUs";
 
 type Props = {
   items: ReadonlyArray<FAQItem>;

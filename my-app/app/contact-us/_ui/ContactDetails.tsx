@@ -1,5 +1,5 @@
-import { CONTACT_FAQS } from "@/app/_lib/org/faqs";
-import { OPENING_HOURS } from "@/app/_lib/org/openingHours";
+import { CONTACT_FAQS } from "@/app/_lib/org/orgPages/contactUs";
+import { OPENING_HOURS } from "@/app/_lib/org/orgPages/contactUs";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";

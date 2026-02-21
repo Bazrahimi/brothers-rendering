@@ -1,7 +1,7 @@
 import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
 import { Header } from "../../typography/Header";
 import { CN } from "./Footer";
-import { SOCIAL_MEDIA } from "@/app/_lib/org/socialMedia";
+import { SOCIAL_MEDIA } from "@/app/_lib/org/orgPages/contactUs";
 
 const SOCIAL_META = {
   facebook: {

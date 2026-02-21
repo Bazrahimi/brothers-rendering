@@ -1,5 +1,5 @@
 "use client";
-import CarouselSlide from "./CarouselSlide";
+import CarouselSlide from "./components/CarouselSlide";
 
 import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -46,7 +46,7 @@ export default function ServiceLeavesCarousel({
         </Header>
       </div>
 
-      <div className="mt-4">
+      <div className="mt-4 min-h-[360]">
         <Swiper
           modules={[Navigation, Pagination, A11y, Autoplay]}
           loop={entries.length > 3}
@@ -66,13 +66,10 @@ export default function ServiceLeavesCarousel({
           }}
         >
           {entries.map(([leafId, leaf]) => (
-            <SwiperSlide key={leafId}>
-              <CarouselSlide
-                leaf={leaf}
-                leafId={leafId}
-                serviceSlug={slug}
-            
-              />
+            <SwiperSlide key={leafId} className="h-auto">
+              <div className="h-full">
+                <CarouselSlide leaf={leaf} leafId={leafId} serviceSlug={slug} />
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

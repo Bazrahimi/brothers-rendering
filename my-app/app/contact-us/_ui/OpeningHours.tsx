@@ -1,4 +1,4 @@
-import type { DayKey, OpeningHours } from "@/app/_lib/org/openingHours";
+import type { DayKey, OpeningHours } from "@/app/_lib/org/orgPages/contactUs";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 

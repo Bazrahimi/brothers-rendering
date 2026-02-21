@@ -1,5 +1,4 @@
 import { SERVICES } from "./category/services";
-import { slugify } from "../utils/helper";
 
 export type ServiceKey = keyof typeof SERVICES;
 
@@ -23,15 +22,13 @@ export type ServiceSubCategory = {
 
 export type Service = {
   label: string;
-  labelFarsi: string; // 
-  slug: string; 
+  labelFarsi: string; //
+  slug: string;
   description: readonly string[];
   subcategories: ServiceSubCategory;
 };
 
-
-
-export const  isLeaf = (v: unknown): v is ServiceLeaf => {
+export const isLeaf = (v: unknown): v is ServiceLeaf => {
   return (
     typeof v === "object" &&
     v !== null &&
@@ -40,4 +37,4 @@ export const  isLeaf = (v: unknown): v is ServiceLeaf => {
     "image" in v &&
     "items" in v
   );
-}
+};
