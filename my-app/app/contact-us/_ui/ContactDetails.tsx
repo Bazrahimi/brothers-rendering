@@ -1,5 +1,4 @@
-import { CONTACT_FAQS } from "@/app/_lib/org/orgPages/contactUs";
-import { OPENING_HOURS } from "@/app/_lib/org/orgPages/contactUs";
+import { CONTACT_FAQS, OPENING_HOURS } from "@/app/_lib/org/orgPages/contactUs";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
@@ -13,9 +12,15 @@ import OpeningHours from "./OpeningHours";
 import ServiceArea from "./ServiceArea";
 
 const ContactDetails = () => {
-  const phone = ORG_PROFILE.phone?.trim();
-  const email = ORG_PROFILE.email?.trim();
-  const address = ORG_PROFILE.address?.trim();
+  const {
+    phone,
+    email,
+    address,
+    otherLangKeys,
+    orgNameFarsi,
+  } = ORG_PROFILE;
+
+
 
   // Basic safe formatting for tel: (remove spaces/brackets/dashes)
   const telHref = phone ? `tel:${phone.replace(/[^\d+]/g, "")}` : null;
@@ -90,7 +95,13 @@ const ContactDetails = () => {
       </div>
 
       <OpeningHours hours={OPENING_HOURS} />
-      <MultiLanguageCapacity />
+      {otherLangKeys.length && (
+        <MultiLanguageCapacity
+          otherLangKeys={otherLangKeys}
+          orgNameFarsi={orgNameFarsi}
+        />
+      )}
+
       <ContactFAQ items={CONTACT_FAQS} />
       <ServiceArea />
       {/* Embedded Map */}

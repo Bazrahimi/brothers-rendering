@@ -15,13 +15,12 @@ import {
 import SecondaryLanguageCard from "../MultiLanguageCapacity/OtherLanguageCard";
 
 type Props = {
-  otherLangs: OtherLanguageKey[];
+  otherLangKeys: OtherLanguageKey[];
   orgNameFarsi: string;
 };
-export default function MultiLanguageCapacity({ otherLangs, orgNameFarsi }: Props) {
-  if (!otherLangs.length) return null;
+export default function MultiLanguageCapacity({ otherLangKeys, orgNameFarsi }: Props) {
 
-  const labels = otherLangs.map((l) => OTHER_LANGUAGES[l].label.EN);
+  const labels = otherLangKeys.map((l) => OTHER_LANGUAGES[l].label.EN);
 
   const languageList =
     labels.length > 1
@@ -57,12 +56,8 @@ export default function MultiLanguageCapacity({ otherLangs, orgNameFarsi }: Prop
       </div>
 
       <div className="mt-6 grid gap-4">
-        {otherLangs.map((lang) => (
-          <SecondaryLanguageCard
-            key={lang}
-            lang={lang}
-            orgNameFarsi={orgNameFarsi}
-          />
+        {otherLangKeys.map((otherLangKey) => (
+          <SecondaryLanguageCard key={otherLangKey} otherLangKey={otherLangKey} orgNameFarsi={orgNameFarsi} />
         ))}
       </div>
     </section>

@@ -21,15 +21,13 @@
 // }
 import { SERVICES } from "@/app/_lib/org/category/services";
 import { Suspense } from "react";
-import { ORG_PROFILE } from "./_lib/org/profile";
+import { ORG_PROFILE as op } from "./_lib/org/profile";
 import MultiLanguageCapacity from "./_ui/content/MultiLanguageCapacity";
 import OtherLanguagesSnapshot from "./_ui/content/OtherLanguagesSnapshot";
 import ServiceSection from "./_ui/services/ServicesSection";
 import ServiceArea from "./contact-us/_ui/ServiceArea";
 
 export default function HomePage() {
-  const otherLangs = ORG_PROFILE.otherLangKeys;
-  const orgNameFarsi = ORG_PROFILE.orgNameFarsi;
   return (
     <main className="space-y-10">
       {/* <div>
@@ -38,9 +36,12 @@ export default function HomePage() {
       <div>
         <ServiceArea />
       </div>
-      {otherLangs.length && (
+      {op.otherLangKeys.length && (
         <div>
-          <MultiLanguageCapacity otherLangs={otherLangs} orgNameFarsi={orgNameFarsi} />
+          <MultiLanguageCapacity
+            otherLangKeys={op.otherLangKeys}
+            orgNameFarsi={op.orgNameFarsi}
+          />
         </div>
       )}
 

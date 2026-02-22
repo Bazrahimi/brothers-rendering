@@ -4,7 +4,7 @@ import {
   ABOUT_TEAM,
   ABOUT_VALUES,
 } from "@/app/_lib/org/orgPages/aboutUs";
-import { ORG_PROFILE } from "../_lib/org/profile";
+import { ORG_PROFILE as op } from "../_lib/org/profile";
 import Section from "../_ui/layout/Section";
 import { Header } from "../_ui/typography/Header";
 
@@ -45,9 +45,14 @@ export default function AboutUsPage() {
         <ServiceArea />
       </div>
 
-      <div className="bg-org-secondary-main/15">
-        <MultiLanguageCapacity />
-      </div>
+      {op.otherLangKeys.length && (
+        <div className="bg-org-secondary-main/15">
+          <MultiLanguageCapacity
+            otherLangKeys={op.otherLangKeys}
+            orgNameFarsi={op.orgNameFarsi}
+          />
+        </div>
+      )}
 
       {/* 🔥 Special CTA Section */}
       <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 p-8 sm:p-10 shadow-xl">
@@ -59,8 +64,8 @@ export default function AboutUsPage() {
         </Header>
 
         <P className=" text-slate-300 " size="sm">
-          Contact {ORG_PROFILE.orgName} today to discuss your project. Our team
-          is ready to assist you.
+          Contact {op.orgName} today to discuss your project. Our team is ready
+          to assist you.
         </P>
         <Suspense fallback={null}>
           <ContactForm showMotion />

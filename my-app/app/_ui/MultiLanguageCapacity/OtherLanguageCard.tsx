@@ -17,26 +17,26 @@ const accentStyle = (lang: OtherLanguageKey) => {
 };
 
 export default function SecondaryLanguageCard({
-  lang,
+  otherLangKey,
   orgNameFarsi,
 }: {
-  lang: OtherLanguageKey;
+  otherLangKey: OtherLanguageKey;
   orgNameFarsi: string;
 }) {
-  const statement = OTHER_LANGUAGES[lang].statement(orgNameFarsi);
+  const statement = OTHER_LANGUAGES[otherLangKey].statement(orgNameFarsi);
 
   const nativeLabelByLang: Record<OtherLanguageKey, string> = {
     HZ: OTHER_LANGUAGES.HZ.label.HZ,
     FA: OTHER_LANGUAGES.FA.label.FA,
   };
-  const nativeLabel = nativeLabelByLang[lang];
+  const nativeLabel = nativeLabelByLang[otherLangKey];
 
   return (
     <div
       dir="rtl"
       className={cn(
         "rounded-2xl border p-5 sm:p-6 shadow-sm transition-shadow hover:shadow-md",
-        accentStyle(lang),
+        accentStyle(otherLangKey),
       )}
     >
       <div className="mb-3 flex items-center gap-2">
