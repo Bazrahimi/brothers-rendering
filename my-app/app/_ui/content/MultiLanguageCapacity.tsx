@@ -8,18 +8,20 @@ import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 
 import {
-  PRIMARY_LANGUAGE,
   OTHER_LANGUAGES,
+  OtherLanguageKey,
+  PRIMARY_LANGUAGE,
 } from "@/app/_lib/languages/multiculturalStatement";
 import SecondaryLanguageCard from "../MultiLanguageCapacity/OtherLanguageCard";
 
-export default function MultiLanguageCapacity() {
-  const secondaryLangs = ORG_PROFILE.otherLangKeys;
-  const orgNameFarsi = ORG_PROFILE.orgNameFarsi;
+type Props = {
+  otherLangs: OtherLanguageKey[];
+  orgNameFarsi: string;
+};
+export default function MultiLanguageCapacity({ otherLangs, orgNameFarsi }: Props) {
+  if (!otherLangs.length) return null;
 
-  if (!secondaryLangs.length) return null;
-
-  const labels = secondaryLangs.map((l) => OTHER_LANGUAGES[l].label.EN);
+  const labels = otherLangs.map((l) => OTHER_LANGUAGES[l].label.EN);
 
   const languageList =
     labels.length > 1
@@ -55,7 +57,7 @@ export default function MultiLanguageCapacity() {
       </div>
 
       <div className="mt-6 grid gap-4">
-        {secondaryLangs.map((lang) => (
+        {otherLangs.map((lang) => (
           <SecondaryLanguageCard
             key={lang}
             lang={lang}

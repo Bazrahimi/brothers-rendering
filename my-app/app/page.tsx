@@ -20,14 +20,36 @@
 //   );
 // }
 import { SERVICES } from "@/app/_lib/org/category/services";
+import { Suspense } from "react";
+import { ORG_PROFILE } from "./_lib/org/profile";
+import MultiLanguageCapacity from "./_ui/content/MultiLanguageCapacity";
+import OtherLanguagesSnapshot from "./_ui/content/OtherLanguagesSnapshot";
 import ServiceSection from "./_ui/services/ServicesSection";
+import ServiceArea from "./contact-us/_ui/ServiceArea";
 
 export default function HomePage() {
+  const otherLangs = ORG_PROFILE.otherLangKeys;
+  const orgNameFarsi = ORG_PROFILE.orgNameFarsi;
   return (
-    <main className="space-y-10 p-6">
-      {Object.entries(SERVICES).map(([key, service]) => (
-        <ServiceSection key={key} service={service} />
-      ))}
+    <main className="space-y-10">
+      {/* <div>
+        HeroComponent
+      </div> */}
+      <div>
+        <ServiceArea />
+      </div>
+      {otherLangs.length && (
+        <div>
+          <MultiLanguageCapacity otherLangs={otherLangs} orgNameFarsi={orgNameFarsi} />
+        </div>
+      )}
+
+      <OtherLanguagesSnapshot />
+      <Suspense fallback={null}>
+        {Object.entries(SERVICES).map(([key, service]) => (
+          <ServiceSection key={key} service={service} />
+        ))}
+      </Suspense>
     </main>
   );
 }

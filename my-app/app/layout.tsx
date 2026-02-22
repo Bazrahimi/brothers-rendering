@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <Navbar />
 
-        <main className="mx-auto w-full max-w-8xl px-2 sm:px-2 lg:px-4  bg-org-primary-main/70">
+        <main className="mx-auto w-full max-w-7xl px-2 sm:px-2 lg:px-4  bg-org-primary-main/70">
           {children}
         </main>
 

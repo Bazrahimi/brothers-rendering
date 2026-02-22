@@ -44,7 +44,7 @@ export default function ServiceLeavesCarousel({
         className,
       )}
     >
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex items-center justify-between gap-3 p-3 md:p-6">
         <Header as="h2" align="center">
           {heading}
         </Header>
