@@ -25,6 +25,7 @@ export type Service = {
   labelFarsi: string; //
   slug: string;
   description: readonly string[];
+  image: LeafImage;
   subcategories: ServiceSubCategory;
 };
 

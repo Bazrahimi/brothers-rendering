@@ -1,4 +1,3 @@
-
 import type { Service } from "../definitions";
 import { siliconAndCaulking } from "./subCategories/caulking";
 import { commercialPaintingAndDecorating } from "./subCategories/commercialPainting";
@@ -10,6 +9,7 @@ export const SERVICES = {
   residentialPainting: {
     slug: "residential-painting-and-decorating",
     label: "Residential Painting And Decorating",
+    image: { kind: "svg", text: "Residential Painting And Decorating" },
     labelFarsi: "نقاشی و دکوراسیون مسکونی",
     description: [
       "Comprehensive interior and exterior painting solutions for homes and businesses.",
@@ -20,6 +20,7 @@ export const SERVICES = {
   commercialPainting: {
     slug: "commercial-painting-and-decorating",
     label: "Commercial Painting And Decorating",
+    image: { kind: "svg", text: "Commercial Painting And Decorating" },
     labelFarsi: "نقاشی و دکوراسیون تجاری",
     description: [
       "Comprehensive interior and exterior painting solutions for businesses.",
@@ -30,6 +31,7 @@ export const SERVICES = {
   solidPlastering: {
     slug: "solid-plastering-and-rendering",
     label: "Solid Plastering and Rendering",
+    image: { kind: "svg", text: "Solid Plastering and Rendering" },
     labelFarsi: "گچ‌کاری و اندودکاری",
     description: [
       "Expert external cladding and traditional rendering services.",
@@ -40,6 +42,7 @@ export const SERVICES = {
   siliconAndCaulking: {
     slug: "silicon-and-caulking",
     label: "Silicon and Caulking",
+    image: { kind: "svg", text: "Silicon and Caulking" },
     labelFarsi: "سیلیکون‌کاری و درزگیری",
     description: [
       "Precision tiling and professional caulking for residential and commercial projects.",
