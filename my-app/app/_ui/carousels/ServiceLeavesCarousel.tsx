@@ -1,17 +1,18 @@
 "use client";
-import CarouselSlide from "./components/CarouselSlide";
 
-import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
+import CarouselSkeleton from "./CarouselSkeleton";
+import CarouselNav from "./components/CarouselNav";
+import CarouselSlide from "./components/CarouselSlide";
+import { useCarouselNav } from "./hook/useCarouselNav";
+import { useMounted } from "./hook/useMounted";
+
+import { A11y, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import type { ServiceSubCategory } from "@/app/_lib/org/definitions";
 import { isLeaf } from "@/app/_lib/org/definitions";
 import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
-import CarouselSkeleton from "./CarouselSkeleton";
-import { useMounted } from "./hook/useMounted";
-
-export type Locale = "en" | "fa";
 
 type Props = {
   subcategories: ServiceSubCategory;
@@ -27,11 +28,14 @@ export default function ServiceLeavesCarousel({
   heading = "Featured Services",
 }: Props) {
   const mounted = useMounted();
+  const { prevClass, nextClass, navigation } =
+    useCarouselNav("service-carousel");
   if (!mounted) return <CarouselSkeleton />;
 
-  // ✅ keep keys for anchors + stable React keys
   const entries = Object.entries(subcategories).filter(([, v]) => isLeaf(v));
   if (entries.length === 0) return null;
+
+  const shouldPaginate = entries.length > 1
 
   return (
     <section
@@ -41,23 +45,20 @@ export default function ServiceLeavesCarousel({
       )}
     >
       <div className="flex items-center justify-between gap-3">
-        <Header as="h2" className="text-slate-900">
+        <Header as="h2" align="center">
           {heading}
         </Header>
       </div>
 
-      <div className="mt-4 min-h-[360]">
+      {/* ✅ fix: min-h needs px */}
+      <div className="relative mt-4 min-h-[360px]">
         <Swiper
-          modules={[Navigation, Pagination, A11y, Autoplay]}
+          modules={[Navigation, Pagination, A11y]}
           loop={entries.length > 3}
           watchOverflow
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
+          navigation={navigation}
+          className="service-carousel pb-14"
+          pagination={ shouldPaginate ? { clickable: true } : false}
           spaceBetween={14}
           slidesPerView={1.1}
           breakpoints={{
@@ -73,6 +74,9 @@ export default function ServiceLeavesCarousel({
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* ✅ nav overlay fully extracted */}
+        <CarouselNav prevClass={prevClass} nextClass={nextClass} />
       </div>
     </section>
   );
