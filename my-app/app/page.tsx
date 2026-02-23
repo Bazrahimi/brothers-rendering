@@ -1,11 +1,11 @@
 
-// import { SERVICES } from "@/app/_lib/org/category/services";
-// import { Suspense } from "react";
-// import { ORG_PROFILE as op } from "./_lib/org/profile";
-// import MultiLanguageCapacity from "./_ui/content/MultiLanguageCapacity";
+import { SERVICES } from "@/app/_lib/org/category/services";
+import { Suspense } from "react";
+import { ORG_PROFILE as op } from "./_lib/org/profile";
+import MultiLanguageCapacity from "./_ui/content/MultiLanguageCapacity";
 
-// import ServiceSection from "./_ui/services/ServicesSection";
-// import ServiceArea from "./contact-us/_ui/ServiceArea";
+import ServiceSection from "./_ui/services/ServicesSection";
+import ServiceArea from "./contact-us/_ui/ServiceArea";
 
 import OtherLanguagesSnapshot from "./_ui/content/OtherLanguagesSnapshot";
 
@@ -15,7 +15,7 @@ export default function HomePage() {
       {/* <div>
         HeroComponent
       </div> */}
-      {/* <div>
+      <div>
         <ServiceArea />
       </div>
       {op.otherLangKeys.length && (
@@ -25,14 +25,14 @@ export default function HomePage() {
             orgNameFarsi={op.orgNameFarsi}
           />
         </div>
-      )} */}
+      )}
 
       <OtherLanguagesSnapshot />
-      {/* <Suspense fallback={null}>
+      <Suspense fallback={null}>
         {Object.entries(SERVICES).map(([key, service]) => (
           <ServiceSection key={key} service={service} />
         ))}
-      </Suspense> */}
+      </Suspense>
     </main>
   );
 }

@@ -2,6 +2,7 @@ import { cn } from "@/app/_lib/utils/cn";
 import OtherLanguages from "../../layout/navbar/OtherLanguages";
 import { Header } from "../../typography/Header";
 import { P } from "../../typography/paragraph";
+import List from "../List";
 
 type Props = {
   serviceLabelFarsi: string;
@@ -38,17 +39,14 @@ const ServicesOtherLanguages = ({
         <div className="h-px w-full bg-slate-200/70" />
       </header>
 
-      {/* simple responsive list */}
-      <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-        {subcategoryLabelsFarsi.map((label) => (
-          <li
-            key={label}
-            className="rounded-xl border border-slate-200/60 bg-slate-50/80 px-3 py-2 text-slate-800"
-          >
-            {label}
-          </li>
-        ))}
-      </ul>
+      <List
+        items={subcategoryLabelsFarsi}
+        layout="grid"
+        columns={2}
+        className="mt-4 bg-transparent border-0 px-0 py-0"
+        itemClassName="rounded-xl border border-slate-200/60 bg-slate-50/80 px-3 py-2"
+        textClassName="bg-transparent border-0 px-0 text-slate-800"
+      />
     </article>
   );
 };
