@@ -1,21 +1,19 @@
+import { cn } from "@/app/_lib/utils/cn";
+import OtherLanguages from "../../layout/navbar/OtherLanguages";
 import { Header } from "../../typography/Header";
 import { P } from "../../typography/paragraph";
-import { cn } from "@/app/_lib/utils/cn";
 
 type Props = {
   serviceLabelFarsi: string;
   subcategoryLabelsFarsi: readonly string[];
   className?: string;
-  badgeLabel?: string; // optional, e.g. "خدمات"
 };
 
 const ServicesOtherLanguages = ({
   serviceLabelFarsi,
   subcategoryLabelsFarsi,
   className,
-  badgeLabel,
 }: Props) => {
-  const count = subcategoryLabelsFarsi.length;
   return (
     <article
       dir="rtl"
@@ -31,15 +29,14 @@ const ServicesOtherLanguages = ({
             {serviceLabelFarsi}
           </Header>
 
-          <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600">
-            {badgeLabel}
-          </span>
+          <div>
+            <P className="inline-flex">بیشتر در زبانهای </P>{" "}
+            <OtherLanguages className="inline-flex cursor-pointer items-center rounded-md px-1 text-sky-700 underline decoration-sky-300 underline-offset-2 transition hover:text-sky-800 hover:decoration-sky-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60" />
+          </div>
         </div>
 
         <div className="h-px w-full bg-slate-200/70" />
       </header>
-
-      <P className="mt-3 text-slate-600">{count} مورد در این بخش</P>
 
       {/* simple responsive list */}
       <ul className="mt-4 grid gap-2 sm:grid-cols-2">
