@@ -1,6 +1,5 @@
 
 import { SERVICES } from "@/app/_lib/org/category/services";
-import { Suspense } from "react";
 import { ORG_PROFILE as op } from "./_lib/org/profile";
 import MultiLanguageCapacity from "./_ui/content/MultiLanguageCapacity";
 
@@ -8,13 +7,14 @@ import ServiceSection from "./_ui/services/ServicesSection";
 import ServiceArea from "./contact-us/_ui/ServiceArea";
 
 import OtherLanguagesSnapshot from "./_ui/content/OtherLanguagesSnapshot";
+import { Suspense } from "react";
+import ContactForm from "./contact-us/_ui/ContactForm";
+import HomeHero from "./_ui/HomeHero";
 
 export default function HomePage() {
   return (
     <main className="space-y-10">
-      {/* <div>
-        HeroComponent
-      </div> */}
+      <HomeHero />
       <div>
         <ServiceArea />
       </div>
@@ -32,6 +32,10 @@ export default function HomePage() {
         {Object.entries(SERVICES).map(([key, service]) => (
           <ServiceSection key={key} service={service} />
         ))}
+      </Suspense>
+
+      <Suspense>
+        <ContactForm showMotion/>
       </Suspense>
     </main>
   );
