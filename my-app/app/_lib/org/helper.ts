@@ -25,3 +25,14 @@ export const getServiceLabelBySlug = (slug: string) => {
 
 export const ImageUrl =
   "v1771144431/business-f/building/bath1234poof_y6clz0.png";
+
+export function toOtherLangProps(service: Service) {
+  const subcategoryLabelsFarsi = Object.values(service.subcategories).map(
+    (leaf) => leaf.labelFarsi,
+  );
+
+  return {
+    serviceLabelFarsi: service.labelFarsi,
+    subcategoryLabelsFarsi,
+  };
+}

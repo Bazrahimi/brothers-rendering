@@ -60,6 +60,11 @@ export default function MultiLanguageCapacity({ otherLangKeys, orgNameFarsi }: P
           <SecondaryLanguageCard key={otherLangKey} otherLangKey={otherLangKey} orgNameFarsi={orgNameFarsi} />
         ))}
       </div>
+
+      <div>
+      
+      </div>
+
     </section>
   );
 }
