@@ -1,21 +1,21 @@
+// import { SERVICES } from "@/app/_lib/org/category/services";
+// import { ORG_PROFILE as op } from "./_lib/org/profile";
+// import MultiLanguageCapacity from "./_ui/content/MultiLanguageCapacity";
 
-import { SERVICES } from "@/app/_lib/org/category/services";
-import { ORG_PROFILE as op } from "./_lib/org/profile";
-import MultiLanguageCapacity from "./_ui/content/MultiLanguageCapacity";
+// import ServiceSection from "./_ui/services/ServicesSection";
+// import ServiceArea from "./contact-us/_ui/ServiceArea";
 
-import ServiceSection from "./_ui/services/ServicesSection";
-import ServiceArea from "./contact-us/_ui/ServiceArea";
+// import { Suspense } from "react";
+// import OtherLanguagesSnapshot from "./_ui/content/OtherLanguagesSnapshot";
 
-import OtherLanguagesSnapshot from "./_ui/content/OtherLanguagesSnapshot";
-import { Suspense } from "react";
-import ContactForm from "./contact-us/_ui/ContactForm";
+// import ContactForm from "./contact-us/_ui/ContactForm";
 import HomeHero from "./_ui/HomeHero";
 
 export default function HomePage() {
   return (
     <main className="space-y-10">
       <HomeHero />
-      <div>
+      {/* <div>
         <ServiceArea />
       </div>
       {op.otherLangKeys.length && (
@@ -35,8 +35,8 @@ export default function HomePage() {
       </Suspense>
 
       <Suspense>
-        <ContactForm showMotion/>
-      </Suspense>
+        <ContactForm showMotion />
+      </Suspense> */}
     </main>
   );
 }

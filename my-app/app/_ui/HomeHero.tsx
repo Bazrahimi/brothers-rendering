@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { CTA } from "@/app/_lib/content/cta";
-import { ORG_PROFILE } from "@/app/_lib/org/profile";
+import { ORG_PROFILE as op } from "@/app/_lib/org/profile";
 import { PublicRoutes } from "@/app/_lib/routes/publicRoutes";
 
 import { cn } from "@/app/_lib/utils/cn";
@@ -9,13 +9,14 @@ import Button from "@/app/_ui/button/Button";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 import ServiceLeafImage from "@/app/services/[slug]/_ui/ServiceLeafImage";
+import { getServiceCategoryLinks } from "@/app/_lib/routes/publicRoutes";
 
 type Props = {
   className?: string;
 };
 
 export default function HomeHero({ className }: Props) {
-  const activeCta = CTA[ORG_PROFILE.cta];
+  const activeCta = CTA[op.cta];
 
   const quoteHref = {
     pathname: PublicRoutes.freeConsultation(), // or your freeQuote route if you have one
@@ -32,7 +33,7 @@ export default function HomeHero({ className }: Props) {
         "relative overflow-hidden rounded-3xl border border-slate-200 bg-white/70 shadow-sm backdrop-blur",
         className,
       )}
-      aria-label={`${ORG_PROFILE.orgName} hero`}
+      aria-label={`${op.orgName} hero`}
     >
       {/* soft background glow */}
       <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-slate-900/5 blur-3xl" />
@@ -48,12 +49,16 @@ export default function HomeHero({ className }: Props) {
           </div>
 
           <Header as="h1" className="text-slate-900">
-            {ORG_PROFILE.orgName}
+            {op.orgName}
           </Header>
+          {(op.otherLangKeys?.includes("HZ") ||
+            op.otherLangKeys?.includes("FA")) && (
+            <Header as="h1" className="text-slate-700">
+              {op.orgNameFarsi}
+            </Header>
+          )}
 
-          <P className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            {ORG_PROFILE.description}
-          </P>
+          <P className="text-slate-600">{op.description}</P>
 
           {/* CTA row */}
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -73,17 +78,16 @@ export default function HomeHero({ className }: Props) {
 
           {/* Trust row */}
           <div className="grid gap-3 sm:grid-cols-3">
-            <TrustPill label="ABN" value={ORG_PROFILE.abn} />
-            <TrustPill label="Phone" value={ORG_PROFILE.phone} />
-            <TrustPill label="Location" value="Cranbourne North, VIC" />
+            <TrustPill label="ABN" value={op.abn} />
+            <TrustPill label="Phone" value={op.phone} />
           </div>
 
           {/* Optional language note */}
-          {ORG_PROFILE.otherLangKeys?.length ? (
+          {op.otherLangKeys?.length ? (
             <P className="text-sm text-slate-600">
               Multilingual support available:{" "}
               <span className="font-semibold text-slate-800">
-                {ORG_PROFILE.otherLangKeys.join(" • ")}
+                {op.otherLangKeys.join(" • ")}
               </span>
             </P>
           ) : null}
@@ -93,30 +97,28 @@ export default function HomeHero({ className }: Props) {
         <div className="lg:col-span-5">
           <div className="rounded-3xl border border-slate-200 bg-white p-3 shadow-sm">
             <ServiceLeafImage
-              image={ORG_PROFILE.heroImgUrl}
-              alt={`${ORG_PROFILE.orgName} hero`}
+              image={op.heroImgUrl}
+              alt={`${op.orgName} hero`}
               aspect="aspect-[16/12]"
             />
 
             {/* Small caption row */}
-            <div className="mt-3 flex items-center justify-between gap-3 px-2 pb-1">
-              <P className="text-sm text-slate-700 font-semibold">
-                Quality workmanship
-              </P>
-              <P className="text-xs text-slate-500">
-                Fast quotes • Clear communication
-              </P>
-            </div>
+
+            <P className=" text-slate-500 text-center" size="sm">
+              Fast {CTA[op.cta].label} • Clear communication
+            </P>
           </div>
         </div>
       </div>
 
       {/* Bottom micro-nav (optional) */}
+   
       <div className="border-t border-slate-200 bg-white/60 px-6 py-3 sm:px-8">
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-600">
+             {/* TODO: Can replace the below with this getServiceCategoryLinks  */}
           <HeroLink href="#services" label="View Services" />
           <HeroLink href={PublicRoutes.contact()} label="Book a Consultation" />
-          <HeroLink href={ORG_PROFILE.website} label="Website" external />
+          <HeroLink href={op.website} label="Website" external />
         </div>
       </div>
     </section>
