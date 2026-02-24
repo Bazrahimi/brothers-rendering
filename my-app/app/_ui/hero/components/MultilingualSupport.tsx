@@ -9,6 +9,7 @@ const MultilingualSupport = ({ otherLangKeys }: Props) => {
   if (!otherLangKeys?.length) return null;
 
   const languages = otherLangKeys
+//TODO: are you able safely fix the below issue ot what need to be done without modify the original or other file
     .map((key) => ol[key]?.label[key])
     .filter(Boolean)
     .join(" • ");

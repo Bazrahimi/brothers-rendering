@@ -22,16 +22,13 @@ app
 │   │   │       ├── residentialPainting.ts
 │   │   │       └── solidPlastering.ts
 │   │   ├── definitions.ts
-│   │   ├── faqs.ts
 │   │   ├── font.ts
 │   │   ├── helper.ts
-│   │   ├── openingHours.ts
 │   │   ├── orgPages
-│   │   │   └── aboutUs.ts
+│   │   │   ├── aboutUs.ts
+│   │   │   └── contactUs.ts
 │   │   ├── profile.ts
-│   │   ├── serviceArea.ts
-│   │   ├── socialMedia.ts
-│   │   └── socialMediaLinks.ts
+│   │   └── serviceArea.ts
 │   ├── routes
 │   │   └── publicRoutes.ts
 │   └── utils
@@ -45,17 +42,24 @@ app
 │   │   ├── ActionButton.tsx
 │   │   └── Button.tsx
 │   ├── carousels
-│   │   ├── CarouselImage.tsx
 │   │   ├── CarouselSkeleton.tsx
-│   │   ├── CarouselSlide.tsx
-│   │   ├── CarouselSlideContent.tsx
 │   │   ├── ServiceLeavesCarousel.tsx
-│   │   └── hook
-│   │       └── useMounted.ts
+│   │   ├── components
+│   │   │   ├── CarouselImage.tsx
+│   │   │   ├── CarouselNav.tsx
+│   │   │   ├── CarouselSlide.tsx
+│   │   │   └── CarouselSlideContent.tsx
+│   │   ├── hook
+│   │   │   ├── useCarouselNav.ts
+│   │   │   └── useMounted.ts
+│   │   └── index.ts
 │   ├── content
 │   │   ├── List.tsx
 │   │   ├── MultiLanguageCapacity.tsx
-│   │   └── ServiceCTA.tsx
+│   │   ├── OtherLanguagesSnapshot.tsx
+│   │   ├── ServiceCTA.tsx
+│   │   └── otherLanguages
+│   │       └── ServicesOtherLanguages.tsx
 │   ├── form
 │   │   ├── Checkbox.tsx
 │   │   ├── FieldError.tsx
@@ -63,6 +67,17 @@ app
 │   │   ├── Input.tsx
 │   │   ├── Select.tsx
 │   │   └── Textarea.tsx
+│   ├── hero
+│   │   ├── HomeHero.tsx
+│   │   └── components
+│   │       ├── HeroCta.tsx
+│   │       ├── HeroHeadAndDesc.tsx
+│   │       ├── HeroLink.tsx
+│   │       ├── HeroMicroNav.tsx
+│   │       ├── HeroServiceBadge.tsx
+│   │       ├── HeroVisualCard.tsx
+│   │       ├── MultilingualSupport.tsx
+│   │       └── TrustPill.tsx
 │   ├── image
 │   │   ├── ImageShimer.tsx
 │   │   └── svgFromText.ts
@@ -82,6 +97,8 @@ app
 │   │       ├── OtherLanguages.tsx
 │   │       ├── ServiceMenu.tsx
 │   │       └── useDropdownMenu.ts
+│   ├── services
+│   │   └── ServicesSection.tsx
 │   └── typography
 │       ├── Header.tsx
 │       └── paragraph.tsx
@@ -119,11 +136,10 @@ app
 │   └── page.tsx
 ├── globals.css
 ├── languages
-│   ├── [otherLangs]
-│   │   ├── _ui
-│   │   │   └── SubcategoriesOtherLangs.tsx
-│   │   └── page.tsx
-│   └── page.tsx
+│   └── [otherLangs]
+│       ├── _ui
+│       │   └── SubcategoriesOtherLangs.tsx
+│       └── page.tsx
 ├── layout.tsx
 ├── page.tsx
 └── services
@@ -137,4 +153,4 @@ app
     │   └── ServicesHero.tsx
     └── page.tsx
 
-42 directories, 96 files
+47 directories, 107 files
