@@ -9,7 +9,7 @@
 // import OtherLanguagesSnapshot from "./_ui/content/OtherLanguagesSnapshot";
 
 // import ContactForm from "./contact-us/_ui/ContactForm";
-import HomeHero from "./_ui/HomeHero";
+import HomeHero from "./_ui/hero/HomeHero";
 
 export default function HomePage() {
   return (

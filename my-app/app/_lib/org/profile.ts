@@ -16,7 +16,7 @@ export const ORG_PROFILE = {
   description:
     "Commercial and Residential Painting work through south easter suburbs",
   // languages: ["EN", "HZ", "FA"] as const satisfies readonly LanguageKey[],
-  otherLangKeys: ["FA", ] as OtherLanguageKey[],
+  otherLangKeys: [ "HZ", "FA" ] as OtherLanguageKey[],
   domain: ORG_DOMAIN,
   email: "info@canconstruction.com.au",
   website: `https://${ORG_DOMAIN}`,
