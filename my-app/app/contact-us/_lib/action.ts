@@ -1,6 +1,6 @@
 "use server";
 
-import { toActionErrors } from "@/app/_lib/utils/slugify";
+import { toActionErrors } from "@/app/_lib/utils/actionHelper";
 import { handleEnquiryEmails } from "./handleEnquiryEmail";
 import { EnquiryForm, EnquirySchema, EnquiryState } from "./schema";
 

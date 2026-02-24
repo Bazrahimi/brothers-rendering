@@ -12,7 +12,7 @@ export default function AboutValues({ section }: { section: ValuesSection }) {
         {section.title}
       </Header>
 
-      <List items={section.items} variant="check" className="mt-2 ml-5" />
+      <List items={section.items} className="mt-2 ml-5" />
     </section>
   );
 }

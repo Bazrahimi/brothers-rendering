@@ -1,20 +1,7 @@
-import type { Service, ServiceKey } from "../org/definitions";
-import { SERVICES } from "../org/category/services";
+import { SERVICES } from "@/app/_lib/org/category/services";
+import type { Service } from "../definitions";
 
-export const unSlugify = (slug: string) =>
-  slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-
-export const slugify = (str: string) =>
-  str
-    .normalize("NFKD")
-    // Keep English letters, Persian letters, numbers, and spaces
-    .replace(/[^a-zA-Z0-9\u0600-\u06FF\s-]/g, "")
-    .trim()
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-    .toLowerCase();
-
-/** Get title for a service key (type-safe) */
+import type { ServiceKey } from "@/app/_lib/org/category/services";
 export const getServiceLabel = (key: ServiceKey): string => {
   return SERVICES[key].label;
 };

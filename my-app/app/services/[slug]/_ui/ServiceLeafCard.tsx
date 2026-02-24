@@ -47,7 +47,7 @@ export default function ServiceLeafCard({ leaf, index, leafId }: Props) {
             >
               {/* Divider */}
               <div className="mb-4 h-px w-full bg-slate-200/70" />
-              <List items={leaf.items} variant="check" />
+              <List items={leaf.items}  />
 
               <div className="mt-5 hidden md:block">
                 <ServiceCTA

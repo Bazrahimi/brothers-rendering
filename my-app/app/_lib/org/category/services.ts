@@ -50,3 +50,6 @@ export const SERVICES = {
     subcategories: siliconAndCaulking,
   },
 } as const satisfies Record<string, Service>;
+
+export type ServiceKey = keyof typeof SERVICES;
+export type ServiceTitle = Service["label"];

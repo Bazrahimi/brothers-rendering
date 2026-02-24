@@ -1,5 +1,5 @@
+import type { ServiceKey } from "@/app/_lib/org/category/services";
 import { SERVICES } from "@/app/_lib/org/category/services";
-import type { ServiceKey } from "../org/definitions";
 const languages = "/languages";
 export const PublicRoutes = {
   home: () => "/",

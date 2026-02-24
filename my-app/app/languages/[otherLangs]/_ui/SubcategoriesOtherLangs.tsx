@@ -63,7 +63,6 @@ export default function SubcategoriesOtherLangs({
         >
           <List
             items={items}
-            variant="check"
             className="space-y-2"
             itemClassName="rounded-xl border border-slate-200/60 bg-slate-50/80 px-3 py-2"
             iconClassName="text-emerald-600"

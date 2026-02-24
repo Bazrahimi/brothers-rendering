@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { ActionState } from "@/app/_lib/utils/slugify";
+import { ActionState } from "@/app/_lib/utils/actionHelper";
 import { ENQUIRY_FIELDS as F } from "./constant";
 
 export const EnquirySchema = z.object({

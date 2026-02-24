@@ -8,9 +8,11 @@ type Props = {
 const MultilingualSupport = ({ otherLangKeys }: Props) => {
   if (!otherLangKeys?.length) return null;
 
+  const getLanguageLabel = (key: OtherLanguageKey) =>
+    key === "HZ" ? ol.HZ.label.HZ : ol.FA.label.FA;
+
   const languages = otherLangKeys
-//TODO: are you able safely fix the below issue ot what need to be done without modify the original or other file
-    .map((key) => ol[key]?.label[key])
+    .map(getLanguageLabel)
     .filter(Boolean)
     .join(" • ");
 

@@ -1,5 +1,6 @@
 import type { ServiceSubCategory } from "../../definitions";
-import { ImageUrl } from "../../helper";
+
+import { ImageUrl } from "../serviceLookup";
 
 export const siliconAndCaulking = {
   caulking: {

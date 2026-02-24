@@ -10,7 +10,6 @@ import { A11y, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import type { ServiceSubCategory } from "@/app/_lib/org/definitions";
-import { isLeaf } from "@/app/_lib/org/definitions";
 import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
 
@@ -32,7 +31,7 @@ export default function ServiceLeavesCarousel({
     useCarouselNav("service-carousel");
   if (!mounted) return <CarouselSkeleton />;
 
-  const entries = Object.entries(subcategories).filter(([, v]) => isLeaf(v));
+  const entries = Object.entries(subcategories);
   if (entries.length === 0) return null;
 
   const shouldPaginate = entries.length > 1

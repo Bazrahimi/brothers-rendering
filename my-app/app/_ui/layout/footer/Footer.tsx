@@ -51,33 +51,7 @@ const Footer = () => {
         {/* Social Media */}
         <SocialLinks />
 
-        {/* Administration & Credits */}
-
-        {/* <nav aria-labelledby="account">
-          <Header as="h4" id="account" size="sm">
-            Account
-          </Header>
-          <ul className={CN.list}>
-            <li className={CN.Item}>
-              <IoIosLogIn className={CN.Icon} aria-hidden="true" />
-              <Link href={AuthRoutes.login()} className={CN.link}>
-                Login
-              </Link>
-            </li>
-            <li className={CN.Item}>
-              <MdOutlineJoinInner className={CN.Icon} aria-hidden="true" />
-              <Link href={AuthRoutes.signUp()} className={CN.link}>
-                Sign Up
-              </Link>
-            </li>
-            <li className={CN.Item}>
-              <BsFillCartFill className={CN.Icon} aria-hidden="true" />
-              <Link href={ShopRoutes.shopCart()} className={CN.link}>
-                My Cart
-              </Link>
-            </li>
-          </ul>
-        </nav> */}
+   
       </div>
 
       {/* Acknowledgements */}

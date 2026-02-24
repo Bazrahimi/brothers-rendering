@@ -1,5 +1,5 @@
 import { SERVICES } from "@/app/_lib/org/category/services";
-import { toOtherLangProps } from "@/app/_lib/org/helper";
+import { toOtherLangProps } from "@/app/_lib/org/category/serviceLookup";
 import ServicesOtherLanguages from "./otherLanguages/ServicesOtherLanguages";
 
 const OtherLanguagesSnapshot = () => {

@@ -1,9 +1,3 @@
-import { SERVICES } from "./category/services";
-
-export type ServiceKey = keyof typeof SERVICES;
-
-export type ServiceTitle = Service["label"];
-
 export type LeafImage =
   | { kind: "url"; src: string }
   | { kind: "svg"; text: string };
@@ -27,15 +21,4 @@ export type Service = {
   description: readonly string[];
   image: LeafImage;
   subcategories: ServiceSubCategory;
-};
-
-export const isLeaf = (v: unknown): v is ServiceLeaf => {
-  return (
-    typeof v === "object" &&
-    v !== null &&
-    "label" in v &&
-    "labelFarsi" in v &&
-    "image" in v &&
-    "items" in v
-  );
 };

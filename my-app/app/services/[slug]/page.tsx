@@ -1,4 +1,4 @@
-import { getServiceLabelBySlug } from "@/app/_lib/org/helper";
+import { getServiceLabelBySlug } from "@/app/_lib/org/category/serviceLookup";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import ServiceCTA from "@/app/_ui/content/ServiceCTA";
 import PageHeading from "@/app/_ui/layout/PageIntro";
