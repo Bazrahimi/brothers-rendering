@@ -1,7 +1,10 @@
 import { SERVICES } from "@/app/_lib/org/category/services";
 import type { Service } from "../definitions";
 
-import type { ServiceKey } from "@/app/_lib/org/category/services";
+export type ServiceKey = keyof typeof SERVICES;
+export type ServiceTitle = Service["label"];
+
+
 export const getServiceLabel = (key: ServiceKey): string => {
   return SERVICES[key].label;
 };
@@ -22,8 +25,7 @@ export const getServiceLabelBySlug = (slug: string) => {
   return serviceBySlug.get(slug) ?? null;
 };
 
-export const ImageUrl =
-  "v1771144431/business-f/building/bath1234poof_y6clz0.png";
+
 
 export function toOtherLangProps(service: Service) {
   const subcategoryLabelsFarsi = Object.values(service.subcategories).map(

@@ -1,4 +1,4 @@
-import type { ServiceKey } from "@/app/_lib/org/category/services";
+import type { ServiceKey } from "../org/category/serviceLookup";
 import { SERVICES } from "@/app/_lib/org/category/services";
 const languages = "/languages";
 export const PublicRoutes = {

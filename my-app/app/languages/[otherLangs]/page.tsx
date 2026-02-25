@@ -1,7 +1,7 @@
 //app/languages/[otherLangs]/page.tsx
 import { OTHER_LANGUAGES as ol } from "@/app/_lib/languages/multiculturalStatement";
 import { SERVICES } from "@/app/_lib/org/category/services";
-import { ORG_PROFILE } from "@/app/_lib/org/profile";
+import { ORG_PROFILE as op } from "@/app/_lib/org/profile";
 import PageIntro from "@/app/_ui/layout/PageIntro";
 import Section from "@/app/_ui/layout/Section";
 import { notFound } from "next/navigation";
@@ -16,35 +16,20 @@ const OtherLanguagePage = async ({
   const { otherLangs } = await params;
 
   const decoded = decodeURIComponent(otherLangs);
-  const dashIndex = decoded.indexOf("-");
-  const first = dashIndex === -1 ? decoded : decoded.slice(0, dashIndex);
-  const second = dashIndex === -1 ? "" : decoded.slice(dashIndex + 1);
 
-  const secondaryLanguageKeys = ORG_PROFILE.otherLangKeys;
-  if (secondaryLanguageKeys.length === 0) return notFound();
-  const selectedLangs = secondaryLanguageKeys.filter((lang) => {
-    const labels = ol[lang].label;
-    const hzLabel = "HZ" in labels ? labels.HZ : "";
-    const faLabel = "FA" in labels ? labels.FA : "";
+  const otherLangKeys = op.otherLangKeys;
+ if (!otherLangKeys) return notFound();
 
-    return (
-      lang === first ||
-      lang === second ||
-      hzLabel === first ||
-      hzLabel === second ||
-      faLabel === first ||
-      faLabel === second
-    );
-  });
+
 
   return (
     <main className="my-5 space-y-8">
       <Section id={decoded}>
-        {selectedLangs.map((lang) => (
+        {otherLangKeys.map((lang) => (
           <div key={lang}>
             <PageIntro
               heading={lang === "HZ" ? ol[lang].label.HZ : ol[lang].label.FA}
-              subHeading={ol[lang].statement(ORG_PROFILE.orgNameFarsi)}
+              subHeading={ol[lang].statement(op.orgNameFarsi)}
               isRtl
             />
           </div>
@@ -63,7 +48,7 @@ const OtherLanguagePage = async ({
 
       <Section>
         <ServiceCTA 
-        ctaKey={ORG_PROFILE.cta}
+        ctaKey={op.cta}
         locale="fa"
         serviceLabel="test"
         generalEnquiry

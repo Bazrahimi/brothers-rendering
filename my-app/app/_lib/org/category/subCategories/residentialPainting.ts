@@ -1,5 +1,5 @@
 import type { ServiceSubCategory } from "../../definitions";
-import { ImageUrl } from "../serviceLookup";
+import { ImageUrl } from "../asset";
 
 export const residentialPaintingAndDecorating = {
   newBuild: {
