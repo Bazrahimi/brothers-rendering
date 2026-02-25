@@ -1,13 +1,14 @@
 import type { ServiceSubCategory } from "../../definitions";
-import { ImageUrl } from "../asset";
+import { ImageUrl } from "../assets";
 
 export const residentialPaintingAndDecorating = {
   newBuild: {
     label: "New Build",
     labelFarsi: "ساخت‌وساز جدید",
     image: { kind: "url", src: ImageUrl },
-    description:
-      ["Interior and exterior painting for new homes and multi-unit builds."],
+    description: [
+      "Interior and exterior painting for new homes and multi-unit builds.",
+    ],
     items: [
       "New Houses",
       "Duplex and Multiple units",

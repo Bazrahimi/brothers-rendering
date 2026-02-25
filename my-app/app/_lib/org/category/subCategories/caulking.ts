@@ -1,6 +1,6 @@
 import type { ServiceSubCategory } from "../../definitions";
 
-import { ImageUrl } from "../asset";
+import { ImageUrl } from "../assets";
 
 export const siliconAndCaulking = {
   caulking: {

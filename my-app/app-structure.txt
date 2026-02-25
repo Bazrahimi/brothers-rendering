@@ -15,6 +15,8 @@ app
 │   │   └── multiculturalStatement.ts
 │   ├── org
 │   │   ├── category
+│   │   │   ├── assets.ts
+│   │   │   ├── serviceLookup.ts
 │   │   │   ├── services.ts
 │   │   │   └── subCategories
 │   │   │       ├── caulking.ts
@@ -23,7 +25,6 @@ app
 │   │   │       └── solidPlastering.ts
 │   │   ├── definitions.ts
 │   │   ├── font.ts
-│   │   ├── helper.ts
 │   │   ├── orgPages
 │   │   │   ├── aboutUs.ts
 │   │   │   └── contactUs.ts
@@ -32,9 +33,9 @@ app
 │   ├── routes
 │   │   └── publicRoutes.ts
 │   └── utils
+│       ├── actionHelper.ts
 │       ├── cn.ts
-│       ├── helper.ts
-│       └── slugify.ts
+│       └── slug.ts
 ├── _ui
 │   ├── MultiLanguageCapacity
 │   │   └── OtherLanguageCard.tsx
@@ -112,7 +113,6 @@ app
 │   ├── _lib
 │   │   ├── action.ts
 │   │   ├── constant.ts
-│   │   ├── definitions.ts
 │   │   ├── email
 │   │   │   ├── components
 │   │   │   │   ├── SendToAdmin.tsx
