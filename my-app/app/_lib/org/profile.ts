@@ -5,7 +5,7 @@ import { OtherLanguageKey } from "../languages/multiculturalStatement";
 import { LeafImage } from "./definitions";
 import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
 
-const ORG_DOMAIN = "canconstruction.com.au" as const;
+const ORG_DOMAIN = "mgrbuildinggroup.com.au" as const;
 const orgName = "Clyde Painting Services ";
 
 export const ORG_PROFILE = {

@@ -5,9 +5,9 @@ app
 │   ├── content
 │   │   └── cta.ts
 │   ├── email
-│   │   ├── components
-│   │   │   └── EmailFooter.tsx
-│   │   └── emailClient.ts
+│   │   ├── SendToAdmin.tsx
+│   │   ├── emailClient.ts
+│   │   └── sendUserConfirmation.tsx
 │   ├── env
 │   │   ├── public.ts
 │   │   └── server.ts
@@ -61,6 +61,12 @@ app
 │   │   ├── ServiceCTA.tsx
 │   │   └── otherLanguages
 │   │       └── ServicesOtherLanguages.tsx
+│   ├── email
+│   │   ├── components
+│   │   │   └── EmailFooter.tsx
+│   │   ├── layout
+│   │   └── templates
+│   │       └── NewEnquiry.tsx
 │   ├── form
 │   │   ├── Checkbox.tsx
 │   │   ├── FieldError.tsx
@@ -113,12 +119,6 @@ app
 │   ├── _lib
 │   │   ├── action.ts
 │   │   ├── constant.ts
-│   │   ├── email
-│   │   │   ├── components
-│   │   │   │   ├── SendToAdmin.tsx
-│   │   │   │   └── sendUserConfirmation.tsx
-│   │   │   └── templates
-│   │   │       └── NewEnquiry.tsx
 │   │   ├── handleEnquiryEmail.ts
 │   │   └── schema.ts
 │   ├── _ui
