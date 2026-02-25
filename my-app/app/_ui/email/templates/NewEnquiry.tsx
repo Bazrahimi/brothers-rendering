@@ -1,4 +1,4 @@
-import EmailFooter from "@/app/_lib/email/components/EmailFooter";
+import EmailFooter from "@/app/_ui/email/components/EmailFooter";
 import { Enquiry } from "@/app/contact-us/_lib/schema";
 import {
   Body,

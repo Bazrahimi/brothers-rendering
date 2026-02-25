@@ -8,7 +8,7 @@ import {
   WEB_ENQUIRY,
 } from "@/app/_lib/email/emailClient";
 
-import NewEnquiry from "../templates/NewEnquiry";
+import NewEnquiry from "../../_ui/email/templates/NewEnquiry";
 
 export const sendAdminEmail = async (data: Enquiry) => {
   try {
