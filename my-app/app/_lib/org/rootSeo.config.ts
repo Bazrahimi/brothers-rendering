@@ -3,7 +3,7 @@ import type { OrgRootSeo } from "./definitions";
 export const ORG_ROOT_SEO = {
   ogImagePath: "/images/og_image.png",
   themeColor: "#0b254d",
-  manifestPath: "/manifest.ts",
+  manifestPath: "/manifest.json",
   icons: {
     icon: "/favicon.ico",
     apple: "/icons/apple-touch-icon.png",
