@@ -1,6 +1,6 @@
 import { required } from "./server";
 export const publicEnv = {
-  baseUrl: required(process.env.NEXT_PUBLIC_BASE_URL, "NEXT_PUBLIC_BASE_URL"),
+  // baseUrl: required(process.env.NEXT_PUBLIC_BASE_URL, "NEXT_PUBLIC_BASE_URL"),
   cloudinaryCloudName: required(
     process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
     "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME",
