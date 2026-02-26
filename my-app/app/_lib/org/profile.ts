@@ -16,7 +16,7 @@ export const ORG_PROFILE = {
   description:
     "Commercial and Residential Painting work through south easter suburbs",
   // languages: ["EN", "HZ", "FA"] as const satisfies readonly LanguageKey[],
-  otherLangKeys: [ "HZ", "FA" ] as OtherLanguageKey[],
+  otherLangKeys: ["HZ", "FA"] as OtherLanguageKey[],
   domain: ORG_DOMAIN,
   email: "info@canconstruction.com.au",
   website: `https://${ORG_DOMAIN}`,
@@ -27,4 +27,18 @@ export const ORG_PROFILE = {
   logoFullUrl: "",
   heroImgUrl: { kind: "svg", text: orgName } as LeafImage,
   cta: "freeQuote" as CtaKey,
+  brand: {
+    colors: {
+      primary: {
+        light: "#1a54ad",
+        main: "#0b254d",
+        dark: "#040f1f",
+      },
+      secondary: {
+        light: "#ed7753",
+        main: "#e85325",
+        dark: "#b3320b",
+      },
+    },
+  },
 } as const;

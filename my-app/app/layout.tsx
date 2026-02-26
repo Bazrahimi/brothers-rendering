@@ -29,6 +29,20 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{
+          ["--color-org-primary-light" as any]:
+            ORG_PROFILE.brand.colors.primary.light,
+          ["--color-org-primary-main" as any]:
+            ORG_PROFILE.brand.colors.primary.main,
+          ["--color-org-primary-dark" as any]:
+            ORG_PROFILE.brand.colors.primary.dark,
+          ["--color-org-secondary-light" as any]:
+            ORG_PROFILE.brand.colors.secondary.light,
+          ["--color-org-secondary-main" as any]:
+            ORG_PROFILE.brand.colors.secondary.main,
+          ["--color-org-secondary-dark" as any]:
+            ORG_PROFILE.brand.colors.secondary.dark,
+        }}
       >
         <Navbar />
 

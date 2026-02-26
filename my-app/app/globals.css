@@ -16,14 +16,14 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   /* Primary */
-  --color-org-primary-light: #1a54ad; /* lighter */
-  --color-org-primary-main: #0b254d; /* base */
-  --color-org-primary-dark: #040f1f; /* darker */
+  --color-org-primary-light: #1a54ad; 
+  --color-org-primary-main: #0b254d; 
+  --color-org-primary-dark: #040f1f; 
 
   /* Secondary */
-  --color-org-secondary-light: #ed7753; /* lighter */
-  --color-org-secondary-main: #e85325; /* base */
-  --color-org-secondary-dark: #b3320b; /* darker */
+  --color-org-secondary-light: #ed7753; 
+  --color-org-secondary-main: #e85325; 
+  --color-org-secondary-dark: #b3320b; 
 }
 
 /* @media (prefers-color-scheme: dark) {
