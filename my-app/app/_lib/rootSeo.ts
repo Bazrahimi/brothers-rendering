@@ -22,7 +22,7 @@ export const ROOT_SEO = {
 } as const;
 
 export function absoluteUrl(pathOrUrl: string): string {
-  if (!pathOrUrl) return `${ROOT_SEO.baseUrl}${ROOT_SEO.ogImagePath}`;
+  if (!pathOrUrl) return ROOT_SEO.baseUrl;
   if (pathOrUrl.startsWith("http") || pathOrUrl.startsWith("//"))
     return pathOrUrl;
   return `${ROOT_SEO.baseUrl}${pathOrUrl.startsWith("/") ? pathOrUrl : `/${pathOrUrl}`}`;

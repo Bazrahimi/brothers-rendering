@@ -4,11 +4,14 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import Navbar from "@/app/_ui/layout/navbar/Navbar";
 import Footer from "@/app/_ui/layout/footer/Footer";
+import Navbar from "@/app/_ui/layout/navbar/Navbar";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const viewport: Viewport = {
   themeColor: ROOT_SEO.themeColor,
@@ -25,7 +28,13 @@ export const metadata: Metadata = {
   description: ROOT_SEO.description,
 
   // Root-level canonical = homepage
-  alternates: { canonical: ROOT_SEO.baseUrl },
+  alternates: {
+    canonical: ROOT_SEO.baseUrl,
+    languages: {
+      "en-AU": ROOT_SEO.baseUrl,
+      "fa-IR": `${ROOT_SEO.baseUrl}/fa`,
+    },
+  },
 
   manifest: ROOT_SEO.manifestPath,
   icons: ROOT_SEO.icons,
@@ -55,10 +64,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <Navbar />
         <main className="mx-auto w-full max-w-7xl px-2 sm:px-2 lg:px-4">
           {children}
