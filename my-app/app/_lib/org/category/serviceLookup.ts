@@ -1,23 +1,23 @@
-import { SERVICES } from "@/app/_lib/org/category/services";
-import type { Service } from "../definitions";
+import { SERVICES_PAGE } from "@/app/_lib/org/category/services";
+import type { ServicesPage } from "../definitions";
 
-export type ServiceKey = keyof typeof SERVICES;
-export type ServiceTitle = Service["label"];
+export type ServicePageKey = keyof typeof SERVICES_PAGE;
+export type ServicePageLabel = ServicesPage["label"];
 
 
-export const getServiceLabel = (key: ServiceKey): string => {
-  return SERVICES[key].label;
+export const getServiceLabel = (key: ServicePageKey): string => {
+  return SERVICES_PAGE[key].label;
 };
 
 /** return full service config */
-export const getService = (key: ServiceKey): Service => {
-  return SERVICES[key];
+export const getService = (key: ServicePageKey): ServicesPage => {
+  return SERVICES_PAGE[key];
 };
 
-const serviceBySlug = new Map<string, { key: ServiceKey; service: Service }>(
-  Object.entries(SERVICES).map(([key, service]) => [
+const serviceBySlug = new Map<string, { key: ServicePageKey; service: ServicesPage }>(
+  Object.entries(SERVICES_PAGE).map(([key, service]) => [
     service.slug,
-    { key: key as ServiceKey, service },
+    { key: key as ServicePageKey, service },
   ]),
 );
 
@@ -27,7 +27,7 @@ export const getServiceLabelBySlug = (slug: string) => {
 
 
 
-export function toOtherLangProps(service: Service) {
+export function toOtherLangProps(service: ServicesPage) {
   const subcategoryLabelsFarsi = Object.values(service.subcategories).map(
     (leaf) => leaf.labelFarsi,
   );

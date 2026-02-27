@@ -1,4 +1,5 @@
 import type { ServicePageKey } from "../org/category/serviceLookup";
+
 import { SERVICES_PAGE } from "@/app/_lib/org/category/services";
 const languages = "/languages";
 export const PublicRoutes = {
