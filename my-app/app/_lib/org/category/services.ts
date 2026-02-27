@@ -1,52 +1,77 @@
+// app/_lib/org/category/servicesPage.ts
 import type { ServicesPage } from "../definitions";
-import { siliconAndCaulking } from "./subCategories/caulking";
-import { commercialPaintingAndDecorating } from "./subCategories/commercialPainting";
-import { residentialPaintingAndDecorating } from "./subCategories/residentialPainting";
 
-import { solidPlastering } from "./subCategories/solidPlastering";
+import { acrylicRendering } from "./subCategories/acrylicRendering";
+import { cementRendering } from "./subCategories/cementRendering";
+import { concreteRender } from "./subCategories/concreteRender";
+import { crackRepairs } from "./subCategories/crackRepairs";
+import { polystyreneCladding } from "./subCategories/polystyreneCladding";
+import { hebelCladding } from "./subCategories/hebelCladding";
 
 export const SERVICES_PAGE = {
-  residentialPainting: {
-    slug: "residential-painting-and-decorating",
-    label: "Residential Painting And Decorating",
-    image: { kind: "svg", text: "Residential Painting And Decorating" },
-    labelFarsi: "نقاشی و دکوراسیون مسکونی",
+  acrylicRendering: {
+    slug: "acrylic-rendering-services",
+    label: "Acrylic Rendering Services",
+    image: { kind: "svg", text: "Acrylic Rendering Services" },
+    labelFarsi: "رندر اکریلیک",
     description: [
-      "Comprehensive interior and exterior painting solutions for homes and businesses.",
+      "Fast, flexible acrylic render finishes for residential and commercial projects.",
     ] as const,
-    subcategories: residentialPaintingAndDecorating,
+    subcategories: acrylicRendering,
   },
 
-  commercialPainting: {
-    slug: "commercial-painting-and-decorating",
-    label: "Commercial Painting And Decorating",
-    image: { kind: "svg", text: "Commercial Painting And Decorating" },
-    labelFarsi: "نقاشی و دکوراسیون تجاری",
+  cementRendering: {
+    slug: "cement-rendering-services",
+    label: "Cement Rendering Services",
+    image: { kind: "svg", text: "Cement Rendering Services" },
+    labelFarsi: "رندر سیمانی",
     description: [
-      "Comprehensive interior and exterior painting solutions for businesses.",
+      "Durable cement rendering for weatherproof, modern exterior finishes.",
     ] as const,
-    subcategories: commercialPaintingAndDecorating,
+    subcategories: cementRendering,
   },
 
-  solidPlastering: {
-    slug: "solid-plastering-and-rendering",
-    label: "Solid Plastering and Rendering",
-    image: { kind: "svg", text: "Solid Plastering and Rendering" },
-    labelFarsi: "گچ‌کاری و اندودکاری",
+  concreteRender: {
+    slug: "concrete-render-services",
+    label: "Concrete Render Services",
+    image: { kind: "svg", text: "Concrete Render Services" },
+    labelFarsi: "رندر بتنی",
     description: [
-      "Expert external cladding and traditional rendering services.",
+      "Smooth concrete finishes for modern interiors and feature walls.",
     ] as const,
-    subcategories: solidPlastering,
+    subcategories: concreteRender,
   },
 
-  siliconAndCaulking: {
-    slug: "silicon-and-caulking",
-    label: "Silicon and Caulking",
-    image: { kind: "svg", text: "Silicon and Caulking" },
-    labelFarsi: "سیلیکون‌کاری و درزگیری",
+  crackRepairs: {
+    slug: "crack-repair-services",
+    label: "Crack Repair Services",
+    image: { kind: "svg", text: "Crack Repair Services" },
+    labelFarsi: "تعمیر ترک",
     description: [
-      "Precision tiling and professional caulking for residential and commercial projects.",
+      "Wall crack diagnosis and repairs to restore durability and appearance.",
     ] as const,
-    subcategories: siliconAndCaulking,
+    subcategories: crackRepairs,
+  },
+
+  polystyreneCladding: {
+    slug: "polystyrene-cladding-services",
+    label: "Polystyrene Cladding Services",
+    image: { kind: "svg", text: "Polystyrene Cladding Services" },
+    labelFarsi: "کلادینگ پلی‌استایرن",
+    description: [
+      "Insulated foam cladding systems rendered for strength and modern curb appeal.",
+    ] as const,
+    subcategories: polystyreneCladding,
+  },
+
+  hebelCladding: {
+    slug: "hebel-cladding-services",
+    label: "Hebel Cladding Services",
+    image: { kind: "svg", text: "Hebel Cladding Services" },
+    labelFarsi: "کلادینگ هبل",
+    description: [
+      "Hebel (AAC) panel installation and finishing for efficient, fire-rated walls.",
+    ] as const,
+    subcategories: hebelCladding,
   },
 } as const satisfies Record<string, ServicesPage>;
