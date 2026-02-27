@@ -14,7 +14,7 @@ export type ServiceSubCategory = {
   [key: string]: ServiceLeaf;
 };
 
-export type Service = {
+export type ServicesPage = {
   label: string;
   labelFarsi: string; //
   slug: string;

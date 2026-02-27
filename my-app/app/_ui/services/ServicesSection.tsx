@@ -1,4 +1,4 @@
-import type { Service } from "@/app/_lib/org/definitions";
+import type { ServicesPage } from "@/app/_lib/org/definitions";
 import { PublicRoutes } from "@/app/_lib/routes/publicRoutes";
 import { cn } from "@/app/_lib/utils/cn";
 import ServiceLeavesCarousel from "@/app/_ui/carousels/ServiceLeavesCarousel";
@@ -10,7 +10,7 @@ import ServiceCTA from "../content/ServiceCTA";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 
 type Props = {
-  service: Service;
+  service: ServicesPage;
   className?: string;
 };
 

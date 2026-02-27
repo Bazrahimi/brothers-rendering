@@ -1,11 +1,11 @@
-import type { Service } from "../definitions";
+import type { ServicesPage } from "../definitions";
 import { siliconAndCaulking } from "./subCategories/caulking";
 import { commercialPaintingAndDecorating } from "./subCategories/commercialPainting";
 import { residentialPaintingAndDecorating } from "./subCategories/residentialPainting";
 
 import { solidPlastering } from "./subCategories/solidPlastering";
 
-export const SERVICES = {
+export const SERVICES_PAGE = {
   residentialPainting: {
     slug: "residential-painting-and-decorating",
     label: "Residential Painting And Decorating",
@@ -49,4 +49,4 @@ export const SERVICES = {
     ] as const,
     subcategories: siliconAndCaulking,
   },
-} as const satisfies Record<string, Service>;
+} as const satisfies Record<string, ServicesPage>;

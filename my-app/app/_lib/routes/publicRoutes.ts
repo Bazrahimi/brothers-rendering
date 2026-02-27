@@ -1,5 +1,5 @@
-import type { ServiceKey } from "../org/category/serviceLookup";
-import { SERVICES } from "@/app/_lib/org/category/services";
+import type { ServicePageKey } from "../org/category/serviceLookup";
+import { SERVICES_PAGE } from "@/app/_lib/org/category/services";
 const languages = "/languages";
 export const PublicRoutes = {
   home: () => "/",
@@ -13,9 +13,9 @@ export const PublicRoutes = {
 
 /** Service nav links */
 export const getServiceCategoryLinks = () => {
-  return (Object.keys(SERVICES) as ServiceKey[]).map((key) => {
-    const label = SERVICES[key].label;
-    const slug = SERVICES[key].slug;
+  return (Object.keys(SERVICES_PAGE) as ServicePageKey[]).map((key) => {
+    const label = SERVICES_PAGE[key].label;
+    const slug = SERVICES_PAGE[key].slug;
 
     return {
       key,

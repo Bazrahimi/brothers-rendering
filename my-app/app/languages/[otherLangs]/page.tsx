@@ -1,6 +1,6 @@
 //app/languages/[otherLangs]/page.tsx
 import { OTHER_LANGUAGES as ol } from "@/app/_lib/languages/multiculturalStatement";
-import { SERVICES } from "@/app/_lib/org/category/services";
+import { SERVICES_PAGE } from "@/app/_lib/org/category/services";
 import { ORG_PROFILE as op } from "@/app/_lib/org/profile";
 import PageIntro from "@/app/_ui/layout/PageIntro";
 import Section from "@/app/_ui/layout/Section";
@@ -36,7 +36,7 @@ const OtherLanguagePage = async ({
         ))}
       </Section>
       <Section>
-        {Object.entries(SERVICES).map(([key, service]) => (
+        {Object.entries(SERVICES_PAGE).map(([key, service]) => (
           <div key={key}>
             <SubcategoriesOtherLangs
               heading={service.labelFarsi}

@@ -1,4 +1,4 @@
-// import { SERVICES } from "@/app/_lib/org/category/services";
+// import { SERVICES_PAGE } from "@/app/_lib/org/category/services";
 // import { ORG_PROFILE as op } from "./_lib/org/profile";
 // import MultiLanguageCapacity from "./_ui/content/MultiLanguageCapacity";
 
@@ -29,7 +29,7 @@ export default function HomePage() {
 
       <OtherLanguagesSnapshot />
       <Suspense fallback={null}>
-        {Object.entries(SERVICES).map(([key, service]) => (
+        {Object.entries(SERVICES_PAGE).map(([key, service]) => (
           <ServiceSection key={key} service={service} />
         ))}
       </Suspense>
