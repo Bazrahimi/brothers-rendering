@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 /* Swiper Base Styles */
 @import "swiper/css";
 @import "swiper/css/navigation";
@@ -17,14 +16,14 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   /* Primary */
-  --color-org-primary-light: #1a54ad; 
-  --color-org-primary-main: #0b254d; 
-  --color-org-primary-dark: #040f1f; 
+  --color-org-primary-light: #5a5e50;
+  --color-org-primary-main: #030501;
+  --color-org-primary-dark: #010300;
 
   /* Secondary */
-  --color-org-secondary-light: #ed7753; 
-  --color-org-secondary-main: #e85325; 
-  --color-org-secondary-dark: #b3320b; 
+  --color-org-secondary-light: #17e39f;
+  --color-org-secondary-main: #1ba174;
+  --color-org-secondary-dark: #12664a;
 }
 
 /* @media (prefers-color-scheme: dark) {
