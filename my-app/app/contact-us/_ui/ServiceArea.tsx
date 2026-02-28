@@ -3,19 +3,8 @@ import { SERVICE_AREA } from "@/app/_lib/org/serviceArea";
 import { cn } from "@/app/_lib/utils/cn";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
+import { scopeLabel } from "@/app/_lib/org/serviceArea";
 
-const scopeLabel = (scope: string) => {
-  switch (scope) {
-    case "metro":
-      return "Melbourne metro";
-    case "state":
-      return "Victoria-wide";
-    case "national":
-      return "Australia-wide";
-    default:
-      return scope;
-  }
-};
 
 export default function ServiceArea() {
   const area = SERVICE_AREA;

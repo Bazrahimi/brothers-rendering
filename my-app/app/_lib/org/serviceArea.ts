@@ -61,3 +61,17 @@ export const SERVICE_AREA: ServiceArea = {
   note:
     "We provide commercial and residential painting services across Melbourne, with a focus on the South Eastern suburbs.",
 };
+
+
+export const scopeLabel = (scope: string) => {
+  switch (scope) {
+    case "metro":
+      return "Melbourne Metro";
+    case "state":
+      return "Victoria-Wide";
+    case "national":
+      return "Australia-Wide";
+    default:
+      return scope;
+  }
+};
