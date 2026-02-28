@@ -10,7 +10,7 @@ type Props = {
 
 export default function HeroCta({ quoteHref, label }: Props) {
   return (
-    <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+    <div className="flex flex-col gap-3 sm:flex-row sm:items-center justify-between p-5">
       <Button as="link" href={quoteHref} size="md">
         {label}
       </Button>

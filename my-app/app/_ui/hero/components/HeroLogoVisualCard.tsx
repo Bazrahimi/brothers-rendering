@@ -8,17 +8,18 @@ type Props = {
   ctaLabel: string;
 };
 
-export default function HeroVisualCard({ heroImgUrl, orgName, ctaLabel }: Props) {
+export default function HeroLogoVisualCard({ heroImgUrl, orgName, ctaLabel }: Props) {
   return (
     <div className="lg:col-span-5">
-      <div className="rounded-3xl border border-slate-200 bg-white p-3 shadow-sm">
+      {/* TODO: since the logo always going to be in center. how to make hte crops blur so we so more the bacground image */}
+      <div className="rounded-3xl border border-white/60 bg-white/20 p-3 shadow-sm backdrop-blur-3xl">
         <ServiceLeafImage
           image={heroImgUrl}
-          alt={`${orgName} hero`}
+          alt={`${orgName} Logo`}
           aspect="aspect-[16/12]"
         />
 
-        <P className="text-center text-slate-500" size="sm">
+        <P className="text-center text-gray-50">
           Fast {ctaLabel} • Clear communication
         </P>
       </div>

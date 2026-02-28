@@ -24,7 +24,7 @@ export const ORG_PROFILE = {
   address: "35 Westpool Dr, Hallam VIC 3803",
   abn: "24 612 814 294",
   logo: "/images/logo-transparent-hd.png",
-  logoFullUrl: "",
-  heroImgUrl: { kind: "url", src: 'business-f/building/brothers-rendering/brother-render-hero-image_klfiqy.png' } as LeafImage,
+  logoUrl:{ kind: "url", src: 'business-f/building/brothers-rendering/brother-render-hero-image_klfiqy.png' } as LeafImage,
+  heroImgUrl: "/images/brother-hero.jpg",
   cta: "freeQuote" as CtaKey,
 } as const;
