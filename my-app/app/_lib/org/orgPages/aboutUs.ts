@@ -34,7 +34,7 @@ export const ABOUT_TEAM: TeamSection = {
     {
       name: "Nadia Nazari",
       role: "Vice President",
-      image: "/images/team/nadia-nazari.png",
+      image: "/images/team/zakir-hussain.png",
     },
   ],
 } as const;
