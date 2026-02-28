@@ -79,7 +79,7 @@ export default function HomeHero({ className }: Props) {
         <div className="border-t border-white/10">
           <HeroMicroNav items={HERO_SERVICE_CATEGORY_LINKS} />
 
-          <HeroCta quoteHref={quoteHref} label={activeCta.label} />
+          <HeroCta quoteHref={quoteHref} label={activeCta.label} phone={op.phone} />
         </div>
       </div>
     </section>
