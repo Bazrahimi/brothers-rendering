@@ -33,10 +33,10 @@ export default function HomePage() {
   return (
     <main className="space-y-10">
       <HomeHero />
-      <div>
+      {/* <div>
         <ServiceArea />
       </div>
-      {op.otherLangKeys.length && (
+      {op.otherLangKeys.length ? (
         <div>
           <MultiLanguageCapacity
             otherLangKeys={op.otherLangKeys}
@@ -44,7 +44,7 @@ export default function HomePage() {
           />
           <OtherLanguagesSnapshot />
         </div>
-      )}
+      ) : null}
 
       <Suspense fallback={null}>
         {Object.entries(SERVICES_PAGE).map(([key, service]) => (
@@ -54,7 +54,7 @@ export default function HomePage() {
 
       <Suspense>
         <ContactForm showMotion />
-      </Suspense>
+      </Suspense> */}
     </main>
   );
 }

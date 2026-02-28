@@ -58,7 +58,7 @@ export default function HomeHero({ className }: Props) {
                 orgName={op.orgName}
                 orgNameFarsi={op.orgNameFarsi}
                 otherLangKeys={op.otherLangKeys}
-                description={op.description}
+                // description={op.description}
               />
 
               <MultilingualSupport otherLangKeys={op.otherLangKeys} />
@@ -76,7 +76,7 @@ export default function HomeHero({ className }: Props) {
         </div>
 
         {/* Bottom micro-nav */}
-        <div className="border-t border-white/10 bg-black/20 backdrop-blur">
+        <div className="border-t border-white/10">
           <HeroMicroNav items={HERO_SERVICE_CATEGORY_LINKS} />
 
           <HeroCta quoteHref={quoteHref} label={activeCta.label} />

@@ -4,7 +4,7 @@ type HeroHeadAndDescProps = {
   orgName: string;
   orgNameFarsi?: string;
   otherLangKeys?: string[];
-  description: string;
+  description?: string;
 };
 
 export const HeroHeadAndDesc = ({
@@ -26,7 +26,7 @@ export const HeroHeadAndDesc = ({
           {orgNameFarsi}
         </Header>
       )}
-      <P className="text-slate-600">{description}</P>
+      {description && <P className="text-slate-600">{description}</P>}
     </>
   );
 };

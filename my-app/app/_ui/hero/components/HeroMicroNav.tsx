@@ -10,8 +10,8 @@ type Props = {
 
 export default function HeroMicroNav({ items }: Props) {
   return (
-    <div className="border-t border-slate-200 bg-white/60 px-6 py-3 sm:px-8">
-      <P className="flex flex-wrap items-center gap-x-5 gap-y-2  text-slate-600">
+    <div className="border-t border-slate-200 bg-gray-50  px-2 py-3 sm:px-6 mx-3 rounded-2xl">
+      <P className="flex flex-wrap items-center gap-x-5 gap-y-2  text-white">
         {items.map(({ href, label }) => (
           <HeroLink key={href} href={href} label={label} />
         ))}

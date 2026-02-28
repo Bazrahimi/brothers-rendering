@@ -7,7 +7,7 @@ const HeroLink = ({ href, label }: Props) => {
   return (
     <Link
       href={href}
-      className="font-semibold text-slate-700 hover:text-slate-900"
+      className="font-semibold text-slate-700 hover:text-green-600"
     >
       {label}
     </Link>
