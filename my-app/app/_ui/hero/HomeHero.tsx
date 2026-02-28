@@ -1,4 +1,5 @@
 // app/(home)/_ui/HomeHero.tsx
+import { ORG_PROFILE as op } from "@/app/_lib/org/profile";
 import { IMAGE_DEFAULT_BLUR } from "@/app/_ui/image/ImageShimer";
 import Image from "next/image";
 import HeroCta from "./components/HeroCta";
@@ -6,9 +7,8 @@ import { HeroHeadAndDesc } from "./components/HeroHeadAndDesc";
 import HeroMicroNav from "./components/HeroMicroNav";
 import { HeroServiceBadge } from "./components/HeroServiceBadge";
 import MultilingualSupport from "./components/MultilingualSupport";
-import { ORG_PROFILE as op } from "@/app/_lib/org/profile";
 
-import { CTA, CtaKey } from "@/app/_lib/content/cta";
+import { CTA } from "@/app/_lib/content/cta";
 // import { ORG_PROFILE as op } from "@/app/_lib/org/profile";
 import {
   getServiceCategoryLinks,
@@ -17,17 +17,14 @@ import {
 import { cn } from "@/app/_lib/utils/cn";
 import HeroLogoVisualCard from "./components/HeroLogoVisualCard";
 
-
 type Props = {
-
-
   className?: string;
 };
 
 // ✅ Safe on server (pure function call)
 const HERO_SERVICE_CATEGORY_LINKS = getServiceCategoryLinks();
 
-export default function HomeHero({ className}: Props) {
+export default function HomeHero({ className }: Props) {
   const activeCta = CTA[op.cta];
 
   const quoteHref = {

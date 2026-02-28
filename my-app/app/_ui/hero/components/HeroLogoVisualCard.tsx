@@ -11,7 +11,7 @@ type Props = {
 export default function HeroLogoVisualCard({ heroImgUrl, orgName, ctaLabel }: Props) {
   return (
     <div className="lg:col-span-5">
-      {/* TODO: since the logo always going to be in center. how to make hte crops blur so we so more the bacground image */}
+   
       <div className="rounded-3xl border border-white/60 bg-white/20 p-3 shadow-sm backdrop-blur-3xl">
         <ServiceLeafImage
           image={heroImgUrl}
