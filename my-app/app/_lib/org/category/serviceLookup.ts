@@ -45,35 +45,38 @@ export function toOtherLangProps(service: ServicesPage) {
 const shouldIncludeFarsi = (langs?: readonly OtherLanguageKey[]) =>
   !!langs?.some((l) => l === "FA" || l === "HZ");
 
-export const getAllServiceLabels = (): ServicesPage["label"][] => {
-  return Object.values(SERVICES_PAGE).map((s) => s.label);
-};
-
-export const getAllServiceLabelFarsi = (
-  langs?: readonly OtherLanguageKey[],
-): ServicesPage["labelFarsi"][] => {
-  if (!shouldIncludeFarsi(langs)) return [];
-  return Object.values(SERVICES_PAGE).map((s) => s.labelFarsi);
-};
-
-export const getAllSubcategoryLabels = (): string[] => {
-  return unique(
-    Object.values(SERVICES_PAGE).flatMap((service) =>
-      Object.values(service.subcategories).map((leaf) => leaf.label),
-    ),
-  );
-};
-
-export const getAllSubcategoryLabelsFarsi = (
+export const getHomeServiceKeywords = (
   langs?: readonly OtherLanguageKey[],
 ): string[] => {
-  if (!shouldIncludeFarsi(langs)) return [];
+  const services = Object.values(SERVICES_PAGE);
 
-  return unique(
-    Object.values(SERVICES_PAGE).flatMap((service) =>
-      Object.values(service.subcategories).map((leaf) => leaf.labelFarsi),
-    ),
-  );
+  const en = services.map((s) => s.label);
+  const fa = shouldIncludeFarsi(langs) ? services.map((s) => s.labelFarsi) : [];
+
+  return unique([...en, ...fa]);
+};
+
+export const getServiceSubcategoryKeywordsBySlug = (
+  slug: string,
+  langs?: readonly OtherLanguageKey[],
+): string[] => {
+  // 1) find the service by slug
+  const service = Object.values(SERVICES_PAGE).find((s) => s.slug === slug);
+  if (!service) return [];
+
+  // 2) read subcategories (overview, compatibleSurfaces, etc)
+  const leaves = Object.values(service.subcategories);
+
+  // 3) EN labels always
+  const en = leaves.map((leaf) => leaf.label);
+
+  // 4) FA labels only if FA/HZ enabled
+  const fa = shouldIncludeFarsi(langs)
+    ? leaves.map((leaf) => leaf.labelFarsi)
+    : [];
+
+  // 5) dedupe + return
+  return unique([...en, ...fa]);
 };
 
 const unique = (items: readonly string[]) =>

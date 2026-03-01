@@ -1,7 +1,6 @@
 import {
-  getAllSubcategoryLabels,
-  getAllSubcategoryLabelsFarsi,
   getServiceLabelBySlug,
+  getServiceSubcategoryKeywordsBySlug,
 } from "@/app/_lib/org/category/serviceLookup";
 import { buildMetadata, seoPage } from "@/app/_lib/org/layoutAndSeo";
 import { ORG_PROFILE as op } from "@/app/_lib/org/profile";
@@ -13,10 +12,12 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import ServiceDetails from "./_ui/ServiceDetails";
 
-type Params = { slug: string };
-
-export const generateMetadata = async ({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> => {
-  const {slug} = await params;
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> => {
+  const { slug } = await params;
   const found = getServiceLabelBySlug(slug);
   if (!found) notFound();
   const { service } = found;
@@ -28,8 +29,8 @@ export const generateMetadata = async ({ params }: { params: Promise<{ slug: str
       description: service.description.join(" "),
       keywords: [
         op.orgName,
-        ...getAllSubcategoryLabels(),
-        ...getAllSubcategoryLabelsFarsi(op.otherLangKeys),
+
+        ...getServiceSubcategoryKeywordsBySlug(slug, op.otherLangKeys),
       ],
     }),
   );
