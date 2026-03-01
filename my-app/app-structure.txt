@@ -19,12 +19,15 @@ app
 │   │   │   ├── serviceLookup.ts
 │   │   │   ├── services.ts
 │   │   │   └── subCategories
-│   │   │       ├── caulking.ts
-│   │   │       ├── commercialPainting.ts
-│   │   │       ├── residentialPainting.ts
-│   │   │       └── solidPlastering.ts
+│   │   │       ├── acrylicRendering.ts
+│   │   │       ├── cementRendering.ts
+│   │   │       ├── concreteRender.ts
+│   │   │       ├── crackRepairs.ts
+│   │   │       ├── hebelCladding.ts
+│   │   │       └── polystyreneCladding.ts
 │   │   ├── definitions.ts
 │   │   ├── font.ts
+│   │   ├── layoutAndSeo.ts
 │   │   ├── orgPages
 │   │   │   ├── aboutUs.ts
 │   │   │   └── contactUs.ts
@@ -79,14 +82,14 @@ app
 │   ├── hero
 │   │   ├── HomeHero.tsx
 │   │   └── components
+│   │       ├── HeroBackground.tsx
 │   │       ├── HeroCta.tsx
 │   │       ├── HeroHeadAndDesc.tsx
 │   │       ├── HeroLink.tsx
+│   │       ├── HeroLogoVisualCard.tsx
 │   │       ├── HeroMicroNav.tsx
 │   │       ├── HeroServiceBadge.tsx
-│   │       ├── HeroVisualCard.tsx
-│   │       ├── MultilingualSupport.tsx
-│   │       └── TrustPill.tsx
+│   │       └── MultilingualSupport.tsx
 │   ├── image
 │   │   ├── ImageShimer.tsx
 │   │   └── svgFromText.ts
@@ -155,4 +158,4 @@ app
     │   └── ServicesHero.tsx
     └── page.tsx
 
-47 directories, 109 files
+47 directories, 112 files

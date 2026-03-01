@@ -1,6 +1,7 @@
 import { cldLeafAuto } from "@/app/_lib/cloudinary/cloudinary";
 import type { LeafImage } from "@/app/_lib/org/definitions";
 import { cn } from "@/app/_lib/utils/cn";
+import { IMAGE_DEFAULT_BLUR } from "@/app/_ui/image/ImageShimer";
 import { svgFromText } from "@/app/_ui/image/svgFromText";
 import Image from "next/image";
 
@@ -28,6 +29,8 @@ export default function ServiceLeafImage({
         className="object-cover"
         loading="lazy"
         unoptimized={isDataUrl}
+        placeholder="blur"
+        blurDataURL={IMAGE_DEFAULT_BLUR}
       />
     </div>
   );
