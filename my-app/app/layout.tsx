@@ -16,17 +16,17 @@ const geistMono = Geist_Mono({
 
 export const viewport = vp;
 
-export const metadata: Metadata = {
-  metadataBase: new URL(ROOT_SEO.baseUrl),
-  title: {
-    default: ROOT_SEO.siteName,
-    template: `%s | ${ROOT_SEO.siteName}`,
-  },
-  description: ROOT_SEO.siteName,
-  manifest: ROOT_SEO.manifestPath,
-  icons: ROOT_SEO.icons,
-  robots: ROOT_SEO.robots,
-};
+// export const metadata: Metadata = {
+//   metadataBase: new URL(ROOT_SEO.baseUrl),
+//   title: {
+//     default: ROOT_SEO.siteName,
+//     template: `%s | ${ROOT_SEO.siteName}`,
+//   },
+//   description: ROOT_SEO.siteName,
+//   manifest: ROOT_SEO.manifestPath,
+//   icons: ROOT_SEO.icons,
+//   robots: ROOT_SEO.robots,
+// };
 
 
 export default function RootLayout({

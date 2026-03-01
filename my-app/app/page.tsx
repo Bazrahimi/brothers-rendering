@@ -11,6 +11,7 @@ import OtherLanguagesSnapshot from "./_ui/content/OtherLanguagesSnapshot";
 import { buildMetadata, seoPage } from "./_lib/org/layoutAndSeo";
 import HomeHero from "./_ui/hero/HomeHero";
 import ContactForm from "./contact-us/_ui/ContactForm";
+import { getAllServiceLabelFarsi, getAllServiceLabels } from "./_lib/org/category/serviceLookup";
 
 export const metadata = buildMetadata(
   seoPage({
@@ -19,11 +20,8 @@ export const metadata = buildMetadata(
     description: op.description,
     keywords: [
       op.orgName,
-      "Rendering",
-      "Plastering",
-      "Cladding",
-      "Melbourne",
-      "South East Melbourne",
+      ...getAllServiceLabels(),
+      ...getAllServiceLabelFarsi(op.otherLangKeys)
     ],
     // ogImagePath: "/images/og-home.png",
   }),
@@ -33,7 +31,7 @@ export default function HomePage() {
   return (
     <main className="space-y-10">
       <HomeHero />
-      {/* <div>
+      <div>
         <ServiceArea />
       </div>
       {op.otherLangKeys.length ? (
@@ -54,7 +52,7 @@ export default function HomePage() {
 
       <Suspense>
         <ContactForm showMotion />
-      </Suspense> */}
+      </Suspense>
     </main>
   );
 }

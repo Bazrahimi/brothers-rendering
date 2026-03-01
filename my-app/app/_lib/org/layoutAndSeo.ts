@@ -178,3 +178,5 @@ export function seoPage(input: Omit<PageSeo, "title" | "description"> & Partial<
     noindex: input.noindex,
   };
 }
+
+
