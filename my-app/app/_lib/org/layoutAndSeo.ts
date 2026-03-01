@@ -110,10 +110,7 @@ export function buildMetadata(page: PageSeo): Metadata {
   return {
     metadataBase: new URL(ROOT_SEO.baseUrl),
 
-    title: {
-      default: ROOT_SEO.siteName,
-      template: `%s | ${ROOT_SEO.siteName}`,
-    },
+    title: page.title,
 
     // Page-level title/description
     // (In App Router: this merges nicely with template)
@@ -128,7 +125,11 @@ export function buildMetadata(page: PageSeo): Metadata {
     // - Keep defaults index/follow
     // - allow page.noindex to override
     robots: page.noindex
-      ? { index: false, follow: false, googleBot: { index: false, follow: false } }
+      ? {
+          index: false,
+          follow: false,
+          googleBot: { index: false, follow: false },
+        }
       : ROOT_SEO.robots,
 
     keywords: page.keywords,
@@ -168,7 +169,10 @@ export function buildMetadata(page: PageSeo): Metadata {
  * A tiny helper to create per-page SEO objects quickly.
  * (Just avoids repeating op/orgName everywhere.)
  */
-export function seoPage(input: Omit<PageSeo, "title" | "description"> & Partial<Pick<PageSeo, "title" | "description">>): PageSeo {
+export function seoPage(
+  input: Omit<PageSeo, "title" | "description"> &
+    Partial<Pick<PageSeo, "title" | "description">>,
+): PageSeo {
   return {
     title: input.title ?? op.orgName,
     description: input.description ?? op.description,
@@ -178,5 +182,3 @@ export function seoPage(input: Omit<PageSeo, "title" | "description"> & Partial<
     noindex: input.noindex,
   };
 }
-
-
