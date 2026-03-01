@@ -56,5 +56,25 @@ export const getAllServiceLabelFarsi = (
   return Object.values(SERVICES_PAGE).map((s) => s.labelFarsi);
 };
 
+export const getAllSubcategoryLabels = (): string[] => {
+  return unique(
+    Object.values(SERVICES_PAGE).flatMap((service) =>
+      Object.values(service.subcategories).map((leaf) => leaf.label),
+    ),
+  );
+};
+
+export const getAllSubcategoryLabelsFarsi = (
+  langs?: readonly OtherLanguageKey[],
+): string[] => {
+  if (!shouldIncludeFarsi(langs)) return [];
+
+  return unique(
+    Object.values(SERVICES_PAGE).flatMap((service) =>
+      Object.values(service.subcategories).map((leaf) => leaf.labelFarsi),
+    ),
+  );
+};
+
 const unique = (items: readonly string[]) =>
   Array.from(new Set(items.filter(Boolean)));

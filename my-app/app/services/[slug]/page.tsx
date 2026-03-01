@@ -1,11 +1,39 @@
-import { getServiceLabelBySlug } from "@/app/_lib/org/category/serviceLookup";
-import { ORG_PROFILE } from "@/app/_lib/org/profile";
+import {
+  getAllSubcategoryLabels,
+  getAllSubcategoryLabelsFarsi,
+  getServiceLabelBySlug,
+} from "@/app/_lib/org/category/serviceLookup";
+import { buildMetadata, seoPage } from "@/app/_lib/org/layoutAndSeo";
+import { ORG_PROFILE as op } from "@/app/_lib/org/profile";
 import ServiceCTA from "@/app/_ui/content/ServiceCTA";
 import PageHeading from "@/app/_ui/layout/PageIntro";
 import Section from "@/app/_ui/layout/Section";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import ServiceDetails from "./_ui/ServiceDetails";
+
+type Params = { slug: string };
+
+export const generateMetadata = async ({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> => {
+  const {slug} = await params;
+  const found = getServiceLabelBySlug(slug);
+  if (!found) notFound();
+  const { service } = found;
+
+  return buildMetadata(
+    seoPage({
+      canonicalPathname: `/services/${service.slug}`,
+      title: `${service.label} | ${op.orgName}`,
+      description: service.description.join(" "),
+      keywords: [
+        op.orgName,
+        ...getAllSubcategoryLabels(),
+        ...getAllSubcategoryLabelsFarsi(op.otherLangKeys),
+      ],
+    }),
+  );
+};
 
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
@@ -33,7 +61,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
       <Section>
         <Suspense fallback={null}>
           <ServiceCTA
-            ctaKey={ORG_PROFILE.cta}
+            ctaKey={op.cta}
             locale="en"
             serviceLabel={service.label}
             generalEnquiry
