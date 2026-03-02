@@ -57,14 +57,14 @@ export default function AboutUsPage() {
         <ServiceArea />
       </div>
 
-      {op.otherLangKeys.length && (
+      {op.otherLangKeys.length ? (
         <div className="bg-org-secondary-main/15">
           <MultiLanguageCapacity
             otherLangKeys={op.otherLangKeys}
             orgNameFarsi={op.orgNameFarsi}
           />
         </div>
-      )}
+      ) : null}
 
       {/* 🔥 Special CTA Section */}
       <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 p-8 sm:p-10 shadow-xl">

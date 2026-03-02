@@ -2,26 +2,29 @@ import { SERVICES_PAGE } from "@/app/_lib/org/category/services";
 import { ORG_PROFILE as op } from "./_lib/org/profile";
 import MultiLanguageCapacity from "./_ui/content/MultiLanguageCapacity";
 
+import dynamic from "next/dynamic";
 import ServiceSection from "./_ui/services/ServicesSection";
 import ServiceArea from "./contact-us/_ui/ServiceArea";
 
 import { Suspense } from "react";
 import OtherLanguagesSnapshot from "./_ui/content/OtherLanguagesSnapshot";
 
+import { getHomeServiceKeywords } from "./_lib/org/category/serviceLookup";
 import { buildMetadata, seoPage } from "./_lib/org/layoutAndSeo";
 import HomeHero from "./_ui/hero/HomeHero";
-import ContactForm from "./contact-us/_ui/ContactForm";
-import { getHomeServiceKeywords } from "./_lib/org/category/serviceLookup";
+import HomeHeroSkeleton from "./_ui/hero/HomeHeroSkeleton";
+import ServiceSectionSkeleton from "./_ui/services/ServiceSectionSkeleton";
+const ContactFormLazy = dynamic(() => import("./contact-us/_ui/ContactForm"), {
+  // ssr: false,
+  loading: () => <div className="max-w-lg mx-auto h-[500px]" />,
+});
 
 export const metadata = buildMetadata(
   seoPage({
     canonicalPathname: "/",
     title: op.orgName,
     description: op.description,
-    keywords: [
-      op.orgName,
-      ...getHomeServiceKeywords(op.otherLangKeys)
-    ],
+    keywords: [op.orgName, ...getHomeServiceKeywords(op.otherLangKeys)],
     // ogImagePath: "/images/og-home.png",
   }),
 );
@@ -29,7 +32,10 @@ export const metadata = buildMetadata(
 export default function HomePage() {
   return (
     <main className="space-y-10">
-      <HomeHero />
+      <Suspense fallback={<HomeHeroSkeleton />}>
+        <HomeHero />
+      </Suspense>
+
       <div>
         <ServiceArea />
       </div>
@@ -43,15 +49,13 @@ export default function HomePage() {
         </div>
       ) : null}
 
-      <Suspense fallback={null}>
-        {Object.entries(SERVICES_PAGE).map(([key, service]) => (
-          <ServiceSection key={key} service={service} />
-        ))}
-      </Suspense>
+      {Object.entries(SERVICES_PAGE).map(([key, service]) => (
+        <Suspense key={key} fallback={<ServiceSectionSkeleton />}>
+          <ServiceSection service={service} />
+        </Suspense>
+      ))}
 
-      <Suspense>
-        <ContactForm showMotion />
-      </Suspense>
+      <ContactFormLazy showMotion />
     </main>
   );
 }
