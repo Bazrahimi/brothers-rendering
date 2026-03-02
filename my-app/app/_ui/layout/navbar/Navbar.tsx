@@ -4,6 +4,7 @@ import Link from "next/link";
 // import AccountMenu from "./AccountMenu";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import NavLinks from "./NavLinks";
+import { ORG_ICONS } from "@/app/_lib/org/icons";
 
 // Reusable styles
 // const navLinkBase =
@@ -30,7 +31,7 @@ const Navbar = () => {
           className="inline-flex items-center gap-2"
         >
           <Image
-            src="/icons/favicon-32x32.png"
+            src={ORG_ICONS.favicon}
             alt={`${ORG_PROFILE.orgName} Logo`}
             width={28}
             height={28}

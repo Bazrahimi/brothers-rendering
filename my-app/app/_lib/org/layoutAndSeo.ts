@@ -1,5 +1,6 @@
 // app/_lib/org/layoutAndSeo.ts
 import type { Metadata, Viewport } from "next";
+import { ORG_ICONS } from "./icons";
 import { ORG_PROFILE as op } from "./profile";
 
 /**
@@ -65,10 +66,10 @@ export const ROOT_SEO: RootSeoConfig = {
   siteName: op.orgName,
   baseUrl: getBaseUrl(),
   themeColor: "#030501",
-  manifestPath: "/manifest.json",
+  manifestPath: "/manifest.webmanifest",
   icons: {
-    icon: "/icons/favicon.ico",
-    apple: "/icons/apple-touch-icon.png",
+    icon: ORG_ICONS.favicon,
+    apple: ORG_ICONS.apple,
   },
   // ✅ use leading slash so URL joining is reliable
   defaultOgImagePath: "/images/og_image.png",

@@ -1,7 +1,7 @@
 // app/layout.tsx
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import { viewport as vp } from "./_lib/org/layoutAndSeo";
+import "./globals.css";
 
 import Footer from "@/app/_ui/layout/footer/Footer";
 import Navbar from "@/app/_ui/layout/navbar/Navbar";
@@ -16,18 +16,24 @@ const geistMono = Geist_Mono({
 
 export const viewport = vp;
 
-// export const metadata: Metadata = {
-//   metadataBase: new URL(ROOT_SEO.baseUrl),
-//   title: {
-//     default: ROOT_SEO.siteName,
-//     template: `%s | ${ROOT_SEO.siteName}`,
-//   },
-//   description: ROOT_SEO.siteName,
-//   manifest: ROOT_SEO.manifestPath,
-//   icons: ROOT_SEO.icons,
-//   robots: ROOT_SEO.robots,
-// };
+export const metadata: Metadata = {
+  metadataBase: new URL(ROOT_SEO.baseUrl),
+  title: {
+    default: ROOT_SEO.siteName,
+    template: `%s | ${ROOT_SEO.siteName}`,
+  },
+  description: ROOT_SEO.siteName,
+  manifest: ROOT_SEO.manifestPath,
+  icons: ROOT_SEO.icons,
+  robots: ROOT_SEO.robots,
 
+  // Nice PWA extras:
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: ROOT_SEO.siteName,
+  },
+};
 
 export default function RootLayout({
   children,

@@ -6,13 +6,14 @@ import { PublicRoutes } from "./_lib/routes/publicRoutes";
 import Button from "./_ui/button/Button";
 import { Header } from "./_ui/typography/Header";
 import { P } from "./_ui/typography/paragraph";
+import { ORG_ICONS as oi } from "./_lib/org/icons";
 
 const NotFound = async () => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-org-primary-light/5 px-6 py-16 text-center text-slate-800">
       {/* Logo */}
       <Image
-        src="/icons/apple-touch-icon.png"
+        src={oi.apple}
         alt={`${op.orgName} logo`}
         width={88}
         height={88}
