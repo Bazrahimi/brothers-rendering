@@ -6,13 +6,13 @@ import { LeafImage } from "./definitions";
 import { ORG_ICONS } from "./icons";
 import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
 
+const ORG_DOMAIN = "brothersrendering.com.au" as const;
+const orgName = "Brothers Rendering Services Pty Ltd";
+
 const getBaseUrl = (): string => {
   if (process.env.NODE_ENV === "development") return "http://localhost:3000";
   return `https://${ORG_DOMAIN}`;
 };
-
-const ORG_DOMAIN = "brothersrendering.com.au" as const;
-const orgName = "Brothers Rendering Services Pty Ltd";
 
 export const ORG_PROFILE = {
   orgName: orgName,
