@@ -10,7 +10,6 @@ import { ORG_PROFILE as op } from "./profile";
 
 export type RootSeoConfig = {
   siteName: string;
-  baseUrl: string; // must be absolute e.g. https://example.com
   themeColor: string;
   manifestPath: string;
   icons: {
@@ -47,24 +46,11 @@ export type PageSeo = {
   noindex?: boolean;
 };
 
-/** Always return a correct absolute base URL. */
-export function getBaseUrl(): string {
-  // In dev, always point to localhost.
-  if (process.env.NODE_ENV === "development") return "http://localhost:3000";
 
-  // op.website should already be absolute ("https://domain.com").
-  // If someone accidentally sets "domain.com" we guard below.
-  const w = op.website?.trim();
-  if (!w) return "https://example.com";
-
-  if (w.startsWith("http://") || w.startsWith("https://")) return w;
-
-  return `https://${w}`;
-}
 
 export const ROOT_SEO: RootSeoConfig = {
   siteName: op.orgName,
-  baseUrl: getBaseUrl(),
+  // baseUrl: op.baseUrl,
   themeColor: "#030501",
   manifestPath: "/manifest.webmanifest",
   icons: {
@@ -87,7 +73,7 @@ export const ROOT_SEO: RootSeoConfig = {
  */
 export function absoluteUrl(path: string): string {
   const clean = path.startsWith("/") ? path : `/${path}`;
-  return `${ROOT_SEO.baseUrl}${clean}`;
+  return `${op.baseUrl}${clean}`;
 }
 
 /**
@@ -109,7 +95,7 @@ export function buildMetadata(page: PageSeo): Metadata {
   const ogImage = absoluteUrl(page.ogImagePath ?? ROOT_SEO.defaultOgImagePath);
 
   return {
-    metadataBase: new URL(ROOT_SEO.baseUrl),
+    metadataBase: new URL(op.baseUrl),
 
     title: page.title,
 

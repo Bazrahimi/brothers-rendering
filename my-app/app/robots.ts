@@ -1,7 +1,7 @@
 // app/robots.ts
-import { ROOT_SEO } from "@/app/_lib/org/layoutAndSeo";
 import type { MetadataRoute } from "next";
 import { publicEnv } from "./_lib/env/public";
+import { ORG_PROFILE } from "./_lib/org/profile";
 
 const allowIndexing = publicEnv.allowIndexing === "true";
 
@@ -24,6 +24,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: `${ROOT_SEO.baseUrl}/sitemap.xml`,
+    sitemap: `${ORG_PROFILE.baseUrl}/sitemap.xml`,
   };
 }

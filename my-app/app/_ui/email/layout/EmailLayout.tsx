@@ -38,9 +38,9 @@ export default function EmailLayout({
         <Container style={styles.container}>
           {/* Header */}
           <Section style={styles.header}>
-            {ORG_PROFILE.logoCLdUrl ? (
+            {ORG_PROFILE.logoFullUrl ? (
               <Img
-                src={ORG_PROFILE.logoCLdUrl}
+                src={ORG_PROFILE.logoFullUrl}
                 alt={`${ORG_PROFILE.orgName} logo`}
                 width={48}
                 height={48}

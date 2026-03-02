@@ -23,9 +23,9 @@ export default function EmailFooter() {
       }}
     >
       {/* Logo (optional) */}
-      {ORG_PROFILE.logoCLdUrl && (
+      {ORG_PROFILE.logoFullUrl && (
         <Img
-          src={ORG_PROFILE.logoCLdUrl}
+          src={ORG_PROFILE.logoFullUrl}
           alt={`${ORG_PROFILE.orgName} logo`}
           width={48}
           height={48}
@@ -81,10 +81,10 @@ export default function EmailFooter() {
         <div>
           Website:{" "}
           <a
-            href={ORG_PROFILE.website}
+            href={ORG_PROFILE.baseUrl}
             style={{ color: "#1d4ed8", textDecoration: "none" }}
           >
-            {ORG_PROFILE.website}
+            {ORG_PROFILE.baseUrl}
           </a>
         </div>
       </div>

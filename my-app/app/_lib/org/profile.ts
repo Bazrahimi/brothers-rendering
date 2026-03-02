@@ -3,7 +3,13 @@
 import { CtaKey } from "../content/cta";
 import { OtherLanguageKey } from "../languages/multiculturalStatement";
 import { LeafImage } from "./definitions";
+import { ORG_ICONS } from "./icons";
 import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
+
+const getBaseUrl = (): string => {
+  if (process.env.NODE_ENV === "development") return "http://localhost:3000";
+  return `https://${ORG_DOMAIN}`;
+};
 
 const ORG_DOMAIN = "brothersrendering.com.au" as const;
 const orgName = "Brothers Rendering Services Pty Ltd";
@@ -19,7 +25,7 @@ export const ORG_PROFILE = {
   otherLangKeys: [] as OtherLanguageKey[],
   domain: ORG_DOMAIN,
   email: "info@canconstruction.com.au",
-  website: `https://${ORG_DOMAIN}`,
+  baseUrl: getBaseUrl(),
   phone: "+61 420 910 786",
   address: "35 Westpool Dr, Hallam VIC 3803",
   abn: "24 612 814 294",
@@ -28,8 +34,7 @@ export const ORG_PROFILE = {
     kind: "url",
     src: "business-f/building/brothers-rendering/brother-render-hero-image_klfiqy.png",
   } as LeafImage,
-  logoCLdUrl: "",
+  logoFullUrl: `${getBaseUrl()}${ORG_ICONS.favicon}`,
   heroImgUrl: "/images/brother-hero.jpg",
   cta: "freeQuote" as CtaKey,
 } as const;
-
