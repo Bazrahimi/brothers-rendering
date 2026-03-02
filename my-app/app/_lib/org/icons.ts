@@ -1,4 +1,4 @@
 export const ORG_ICONS = {
-  faviconIco: "/favicon.ico",
-  appleTouch: "/apple-touch-icon.png",
+  icon: "/favicon.ico",
+  apple: "/apple-touch-icon.png",
 } as const;

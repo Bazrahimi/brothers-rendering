@@ -19,12 +19,12 @@ export default function manifest(): MetadataRoute.Manifest {
     // Add separate icon entries for "any" and "maskable".
        icons: [
       {
-        src: ORG_ICONS.appleTouch,
+        src: ORG_ICONS.apple,
         sizes: "192x192",
         type: "image/png",
       },
       {
-        src: ORG_ICONS.appleTouch,
+        src: ORG_ICONS.apple,
         sizes: "512x512",
         type: "image/png",
       },

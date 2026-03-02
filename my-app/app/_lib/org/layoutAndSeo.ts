@@ -43,8 +43,8 @@ export const ROOT_SEO: RootSeoConfig = {
   themeColor: "#030501",
   manifestPath: "/manifest.webmanifest",
   icons: {
-    icon: ORG_ICONS.faviconIco,
-    apple: ORG_ICONS.appleTouch,
+    icon: ORG_ICONS.icon,
+    apple: ORG_ICONS.apple,
   },
   defaultOgImagePath: "/images/og_image.png",
   robots: {

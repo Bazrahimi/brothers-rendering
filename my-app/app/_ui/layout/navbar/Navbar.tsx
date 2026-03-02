@@ -31,7 +31,7 @@ const Navbar = () => {
           className="inline-flex items-center gap-2"
         >
           <Image
-            src={ORG_ICONS.faviconIco}
+            src={ORG_ICONS.icon}
             alt={`${ORG_PROFILE.orgName} Logo`}
             width={28}
             height={28}
