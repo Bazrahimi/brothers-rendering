@@ -28,6 +28,7 @@ export const ORG_PROFILE = {
     kind: "url",
     src: "business-f/building/brothers-rendering/brother-render-hero-image_klfiqy.png",
   } as LeafImage,
+  logoCLdUrl: "",
   heroImgUrl: "/images/brother-hero.jpg",
   cta: "freeQuote" as CtaKey,
 } as const;

@@ -1,7 +1,5 @@
-import React from "react";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import EmailFooter from "@/app/_ui/email/components/EmailFooter";
-import PoweredByKateb from "../components/PoweredByKateb";
 import {
   Body,
   Container,
@@ -13,6 +11,8 @@ import {
   Section,
   Text,
 } from "@react-email/components";
+import React from "react";
+import PoweredByKateb from "../components/PoweredByKateb";
 
 type Props = {
   preview: string;
@@ -38,9 +38,9 @@ export default function EmailLayout({
         <Container style={styles.container}>
           {/* Header */}
           <Section style={styles.header}>
-            {ORG_PROFILE.logoFullUrl ? (
+            {ORG_PROFILE.logoCLdUrl ? (
               <Img
-                src={ORG_PROFILE.logoFullUrl}
+                src={ORG_PROFILE.logoCLdUrl}
                 alt={`${ORG_PROFILE.orgName} logo`}
                 width={48}
                 height={48}
@@ -54,7 +54,9 @@ export default function EmailLayout({
               </Heading>
 
               {ORG_PROFILE.orgNameFarsi ? (
-                <Text style={styles.brandFarsi}>{ORG_PROFILE.orgNameFarsi}</Text>
+                <Text style={styles.brandFarsi}>
+                  {ORG_PROFILE.orgNameFarsi}
+                </Text>
               ) : null}
             </div>
           </Section>

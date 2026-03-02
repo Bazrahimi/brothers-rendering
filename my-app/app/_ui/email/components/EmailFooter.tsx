@@ -23,9 +23,9 @@ export default function EmailFooter() {
       }}
     >
       {/* Logo (optional) */}
-      {ORG_PROFILE.logoFullUrl && (
+      {ORG_PROFILE.logoCLdUrl && (
         <Img
-          src={ORG_PROFILE.logoFullUrl}
+          src={ORG_PROFILE.logoCLdUrl}
           alt={`${ORG_PROFILE.orgName} logo`}
           width={48}
           height={48}
