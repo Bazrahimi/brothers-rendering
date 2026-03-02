@@ -17,33 +17,16 @@ export default function manifest(): MetadataRoute.Manifest {
 
     // ✅ IMPORTANT: Next's typings do NOT allow "any maskable" as one string.
     // Add separate icon entries for "any" and "maskable".
-    icons: [
-      // Any
+       icons: [
       {
-        src: ORG_ICONS.android256,
-        sizes: "256x256",
+        src: ORG_ICONS.appleTouch,
+        sizes: "192x192",
         type: "image/png",
-        purpose: "any",
       },
       {
-        src: ORG_ICONS.android512,
+        src: ORG_ICONS.appleTouch,
         sizes: "512x512",
         type: "image/png",
-        purpose: "any",
-      },
-
-      // Maskable
-      {
-        src: ORG_ICONS.android256,
-        sizes: "256x256",
-        type: "image/png",
-        purpose: "maskable",
-      },
-      {
-        src: ORG_ICONS.android512,
-        sizes: "512x512",
-        type: "image/png",
-        purpose: "maskable",
       },
     ],
   };

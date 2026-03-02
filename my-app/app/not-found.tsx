@@ -13,7 +13,7 @@ const NotFound = async () => {
     <main className="flex min-h-screen flex-col items-center justify-center bg-org-primary-light/5 px-6 py-16 text-center text-slate-800">
       {/* Logo */}
       <Image
-        src={oi.apple}
+        src={oi.appleTouch}
         alt={`${op.orgName} logo`}
         width={88}
         height={88}

@@ -3,20 +3,12 @@ import type { Metadata, Viewport } from "next";
 import { ORG_ICONS } from "./icons";
 import { ORG_PROFILE as op } from "./profile";
 
-/**
- * Central source of truth for layout + SEO defaults.
- * Goal: ship fast + keep consistent across all sites.
- */
-
 export type RootSeoConfig = {
   siteName: string;
   themeColor: string;
   manifestPath: string;
-  icons: {
-    icon: string;
-    apple: string;
-  };
-  defaultOgImagePath: string; // should start with "/"
+  icons: NonNullable<Metadata["icons"]>;
+  defaultOgImagePath: string;
   robots: Metadata["robots"];
 };
 
@@ -46,18 +38,14 @@ export type PageSeo = {
   noindex?: boolean;
 };
 
-
-
 export const ROOT_SEO: RootSeoConfig = {
   siteName: op.orgName,
-  // baseUrl: op.baseUrl,
   themeColor: "#030501",
   manifestPath: "/manifest.webmanifest",
   icons: {
-    icon: ORG_ICONS.favicon,
-    apple: ORG_ICONS.apple,
+    icon: ORG_ICONS.faviconIco,
+    apple: ORG_ICONS.appleTouch,
   },
-  // ✅ use leading slash so URL joining is reliable
   defaultOgImagePath: "/images/og_image.png",
   robots: {
     index: true,
