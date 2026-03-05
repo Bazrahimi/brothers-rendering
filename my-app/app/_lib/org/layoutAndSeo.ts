@@ -1,7 +1,10 @@
 // app/_lib/org/layoutAndSeo.ts
 import type { Metadata, Viewport } from "next";
+import { PublicRoutes } from "../routes/publicRoutes";
+import { getHomeServiceKeywords, getServiceSubcategoryKeywordsBySlug } from "./category/serviceLookup";
 import { ORG_ICONS } from "./icons";
 import { ORG_PROFILE as op } from "./profile";
+import { SERVICE_AREA } from "./serviceArea";
 
 export type RootSeoConfig = {
   siteName: string;
@@ -23,11 +26,11 @@ export type PageSeo = {
    * Canonical pathname, e.g. "/" "/about-us" "/contact-us"
    * We build absolute canonical using ROOT_SEO.baseUrl
    */
-  canonicalPathname: `/${string}` | "/";
+  canonicalPathname: string;
   /**
    * Optional override OG image
    */
-  ogImagePath?: `/${string}`;
+  ogImagePath?: string;
   /**
    * Optional keywords (nice for small biz templates; not critical)
    */
@@ -157,3 +160,66 @@ export function seoPage(
     noindex: input.noindex,
   };
 }
+
+const locationKeywords = [
+  SERVICE_AREA.primaryRegion,
+  SERVICE_AREA.state,
+  SERVICE_AREA.country,
+];
+
+// Central, reuseable SEO configs
+export const SEO_PAGES = {
+  home: (): PageSeo => ({
+    canonicalPathname: PublicRoutes.home(),
+    title: op.orgName,
+    description: op.description,
+    keywords: [
+      op.orgName,
+      ...locationKeywords,
+      ...getHomeServiceKeywords(op.otherLangKeys),
+    ],
+  }),
+  about: (): PageSeo => ({
+    canonicalPathname: PublicRoutes.about(),
+    title: `About ${op.orgName}`,
+    description: `Learn about ${op.orgName}, our experience, values, and the team behind our rendering and cladding work in Melbourne.`,
+    keywords: [
+      op.orgName,
+      `About ${op.orgName}`,
+      "Render",
+      "Rendering",
+      "Solid Plastering",
+      ...locationKeywords,
+    ],
+  }),
+
+  contact: (): PageSeo => ({
+    canonicalPathname: PublicRoutes.contact(),
+    title: `Contact ${op.orgName}`,
+     description: `Request a free quote or free consultation or send an enquiry to ${op.orgName}. We service South East Melbourne and surrounding suburbs.`,
+    keywords: [
+      op.orgName,
+      `Contact ${op.orgName}`,
+      "Render Quote",
+      "rendering",
+      SERVICE_AREA.primaryRegion,
+      ...(SERVICE_AREA.featuredSuburbs ?? []),
+  
+    ],
+  }),
+
+  // Dynamic helper for services
+  service: (input: {
+    slug: string;
+    label: string;
+    description: string;
+    keywords?: string[];
+    ogImagePath?: string;
+  }): PageSeo => ({
+    canonicalPathname: PublicRoutes.service(input.slug),
+    title: `${input.label} | ${op.orgName}`,
+    description: input.description,
+    keywords: [op.orgName, ...(input.keywords ?? [])],
+    ogImagePath: input.ogImagePath,
+  }),
+};

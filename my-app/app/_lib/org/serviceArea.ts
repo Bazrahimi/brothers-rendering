@@ -27,6 +27,13 @@ export const ORG_INDUSTRY_SECTORS = {
       ngo: "Non profit organisation",
     },
   },
+  TECHNOLOGY: {
+    industry: "technology",
+    defaultScope: "state",
+    sectors: {
+      web_development: "Web Application | Software",
+    },
+  }
 } as const;
 
 export type OrgIndustrySectorKey = keyof typeof ORG_INDUSTRY_SECTORS;

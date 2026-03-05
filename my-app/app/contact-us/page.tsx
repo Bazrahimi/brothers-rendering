@@ -1,18 +1,9 @@
-import { buildMetadata, seoPage } from "@/app/_lib/org/layoutAndSeo";
-import { ORG_PROFILE as op } from "@/app/_lib/org/profile";
+import { buildMetadata, SEO_PAGES } from "@/app/_lib/org/layoutAndSeo";
 import ContactDetails from "./_ui/ContactDetails";
 import ContactForm from "./_ui/ContactForm";
 import ContactIntro from "./_ui/ContactIntro";
 
-export const metadata = buildMetadata(
-  seoPage({
-    canonicalPathname: "/contact-us",
-    title: `Contact ${op.orgName}`,
-    description: `Request a quote or send an enquiry to ${op.orgName}. We service South East Melbourne and surrounding suburbs.`,
-    keywords: [op.orgName, "Contact", "Free Quote", "Melbourne", "Rendering"],
-    // ogImagePath: "/images/og_contact.png",
-  }),
-);
+export const metadata = buildMetadata(SEO_PAGES.contact());
 const ContactUsPage = () => {
   return (
     <main>

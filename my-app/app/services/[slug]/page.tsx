@@ -2,7 +2,7 @@ import {
   getServiceLabelBySlug,
   getServiceSubcategoryKeywordsBySlug,
 } from "@/app/_lib/org/category/serviceLookup";
-import { buildMetadata, seoPage } from "@/app/_lib/org/layoutAndSeo";
+import { buildMetadata, SEO_PAGES } from "@/app/_lib/org/layoutAndSeo";
 import { ORG_PROFILE as op } from "@/app/_lib/org/profile";
 import ServiceCTA from "@/app/_ui/content/ServiceCTA";
 import PageHeading from "@/app/_ui/layout/PageIntro";
@@ -23,15 +23,11 @@ export const generateMetadata = async ({
   const { service } = found;
 
   return buildMetadata(
-    seoPage({
-      canonicalPathname: `/services/${service.slug}`,
-      title: `${service.label} | ${op.orgName}`,
+    SEO_PAGES.service({
+      slug: service.slug,
+      label: service.label,
       description: service.description.join(" "),
-      keywords: [
-        op.orgName,
-
-        ...getServiceSubcategoryKeywordsBySlug(slug, op.otherLangKeys),
-      ],
+      keywords: getServiceSubcategoryKeywordsBySlug(slug, op.otherLangKeys),
     }),
   );
 };

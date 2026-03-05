@@ -9,8 +9,7 @@ import ServiceArea from "./contact-us/_ui/ServiceArea";
 import { Suspense } from "react";
 import OtherLanguagesSnapshot from "./_ui/content/OtherLanguagesSnapshot";
 
-import { getHomeServiceKeywords } from "./_lib/org/category/serviceLookup";
-import { buildMetadata, seoPage } from "./_lib/org/layoutAndSeo";
+import { buildMetadata, SEO_PAGES } from "./_lib/org/layoutAndSeo";
 import HomeHero from "./_ui/hero/HomeHero";
 import HomeHeroSkeleton from "./_ui/hero/HomeHeroSkeleton";
 import ServiceSectionSkeleton from "./_ui/services/ServiceSectionSkeleton";
@@ -19,15 +18,7 @@ const ContactFormLazy = dynamic(() => import("./contact-us/_ui/ContactForm"), {
   loading: () => <div className="max-w-lg mx-auto h-[500px]" />,
 });
 
-export const metadata = buildMetadata(
-  seoPage({
-    canonicalPathname: "/",
-    title: op.orgName,
-    description: op.description,
-    keywords: [op.orgName, ...getHomeServiceKeywords(op.otherLangKeys)],
-    // ogImagePath: "/images/og-home.png",
-  }),
-);
+export const metadata = buildMetadata(SEO_PAGES.home());
 
 export default function HomePage() {
   return (

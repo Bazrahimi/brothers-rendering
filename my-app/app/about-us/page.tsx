@@ -19,17 +19,9 @@ import AboutTextSections from "./_ui/AboutTextSections";
 import AboutValues from "./_ui/AboutValues";
 import { TeamGrid } from "./_ui/TeamGrid";
 
-import { buildMetadata, seoPage } from "@/app/_lib/org/layoutAndSeo";
+import { buildMetadata, SEO_PAGES } from "@/app/_lib/org/layoutAndSeo";
 
-export const metadata = buildMetadata(
-  seoPage({
-    canonicalPathname: "/about-us",
-    title: `About ${op.orgName}`,
-    description: `Learn about ${op.orgName}, our experience, values, and the team behind our rendering and cladding work in Melbourne.`,
-    keywords: [op.orgName, "About", "Rendering", "Melbourne"],
-    // ogImagePath: "/images/og_about.png",
-  }),
-);
+export const metadata = buildMetadata(SEO_PAGES.about());
 
 export default function AboutUsPage() {
   return (
