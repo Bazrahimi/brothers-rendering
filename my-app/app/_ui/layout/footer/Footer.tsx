@@ -1,12 +1,12 @@
 // app/_ui/layout/footer/footer.tsx
 // import { BsFillCartFill } from "react-icons/bs";
-import { ORG_PROFILE } from "@/app/_lib/org/profile";
 
 import { uiFond } from "@/app/_lib/org/font";
 import { cn } from "@/app/_lib/utils/cn";
 import Acknowledgement from "./Acknowledgement";
 import GetInTouch from "./GetInTouch";
 import OrganisationInfo from "./OrganisationInfo";
+import PoweredByKateb from "./PoweredByKateb";
 import QuickLinks from "./QuickLinks";
 import SocialLinks from "./SocialLinks";
 
@@ -50,26 +50,12 @@ const Footer = () => {
 
         {/* Social Media */}
         <SocialLinks />
-
-   
       </div>
 
       {/* Acknowledgements */}
 
       <Acknowledgement />
-      {/* Copyright */}
-      <div className={CN.copy}>
-        © {new Date().getFullYear()} {ORG_PROFILE.orgName}. All rights reserved.
-        | Powered by{" "}
-        <a
-          href="https://github.com/Bazrahimi"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={CN.link}
-        >
-          Baz Rahimi
-        </a>
-      </div>
+      <PoweredByKateb />
     </footer>
   );
 };

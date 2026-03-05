@@ -1,4 +1,5 @@
-import { Section, Text } from "@react-email/components";
+import { KATEB_LOGO } from "@/app/_lib/utils/assets";
+import { Img, Link, Section, Text } from "@react-email/components";
 
 export default function PoweredByKateb() {
   return (
@@ -10,28 +11,47 @@ export default function PoweredByKateb() {
         textAlign: "center",
       }}
     >
-      <Text
+      <Link
+        href="https://www.katebtech.com.au"
+        target="_blank"
         style={{
-          fontSize: "11px",
-          color: "#9ca3af",
-          lineHeight: "16px",
-          margin: 0,
+          textDecoration: "none",
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        This system is powered by{" "}
-        <a
-          href="https://www.katebtech.com.au"
-          target="_blank"
+        <Img
+          src={KATEB_LOGO}
+          width="20"
+          height="20"
+          alt="Kateb Tech"
           style={{
-            color: "#1d4ed8",
-            textDecoration: "none",
-            fontWeight: 600,
+            display: "inline-block",
+            verticalAlign: "middle",
+            marginRight: "6px",
+          }}
+        />
+
+        <Text
+          style={{
+            fontSize: "11px",
+            color: "#9ca3af",
+            lineHeight: "16px",
+            margin: 0,
           }}
         >
-          Kateb Tech
-        </a>
-        .
-      </Text>
+          Powered by{" "}
+          <span
+            style={{
+              color: "#f59e0b",
+              fontWeight: 600,
+            }}
+          >
+            Kateb Tech
+          </span>
+        </Text>
+      </Link>
     </Section>
   );
 }
