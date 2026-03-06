@@ -8,7 +8,6 @@ import { SERVICE_AREA } from "./serviceArea";
 
 export type RootSeoConfig = {
   siteName: string;
-  themeColor: string;
   manifestPath: string;
   icons: NonNullable<Metadata["icons"]>;
   defaultOgImagePath: string;
@@ -43,7 +42,6 @@ export type PageSeo = {
 
 export const ROOT_SEO: RootSeoConfig = {
   siteName: op.orgName,
-  themeColor: "#030501",
   manifestPath: "/manifest.webmanifest",
   icons: {
     icon: publicAssets.icons.icon,
@@ -71,7 +69,7 @@ export function absoluteUrl(path: string): string {
  * Put this in app/layout.tsx: `export { viewport } from ...`
  */
 export const viewport: Viewport = {
-  themeColor: ROOT_SEO.themeColor,
+  themeColor: op.primaryColor,
 };
 
 /**

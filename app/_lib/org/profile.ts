@@ -23,16 +23,10 @@ export const ORG_PROFILE = {
   otherLangKeys: [] as OtherLanguageKey[],
   domain: ORG_DOMAIN,
   email: "info@canconstruction.com.au",
-  // baseUrl: getBaseUrl(),
   phone: "+61 420 910 786",
   address: "35 Westpool Dr, Hallam VIC 3803",
   abn: "24 612 814 294",
-  // logo: "/images/logo-transparent-hd.png",
-  // logoUrl: {
-  //   kind: "url",
-  //   src: "business-f/building/brothers-rendering/brother-render-hero-image_klfiqy.png",
-  // } as LeafImage,
-  // logoFullUrl: `${getBaseUrl()}${images.icon.apple}`,
-  // heroImgUrl: "/images/brother-hero.jpg",
   cta: "freeQuote" as CtaKey,
+  primaryColor: "#030501",
+  secondaryColor: "#1ba174",
 } as const;
