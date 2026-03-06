@@ -2,7 +2,7 @@ import { PublicRoutes } from "@/app/_lib/routes/publicRoutes";
 import Image from "next/image";
 import Link from "next/link";
 // import AccountMenu from "./AccountMenu";
-import { images } from "@/app/_lib/org/assets";
+import { publicAssets } from "@/app/_lib/org/publicAssets";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import NavLinks from "./NavLinks";
 
@@ -31,7 +31,7 @@ const Navbar = () => {
           className="inline-flex items-center gap-2"
         >
           <Image
-            src={images.icon.icon}
+            src={publicAssets.icons.icon}
             alt={`${ORG_PROFILE.orgName} Logo`}
             width={28}
             height={28}

@@ -1,4 +1,4 @@
-import { images } from "@/app/_lib/org/assets";
+import { publicAssets } from "@/app/_lib/org/publicAssets";
 import { IMAGE_DEFAULT_BLUR } from "@/app/_ui/image/ImageShimer";
 import Image from "next/image";
 
@@ -10,7 +10,7 @@ export default function HeroBackground({  orgName }: Props) {
   return (
     <div className="absolute inset-0">
       <Image
-        src={images.icon.apple}
+        src={publicAssets.icons.apple}
         alt={`${orgName} hero background`}
         fill
         priority

@@ -1,7 +1,7 @@
 // app/not-found.tsx
 import Image from "next/image";
 import { HiArrowLeft } from "react-icons/hi";
-import { images } from "./_lib/org/assets";
+import { publicAssets } from "./_lib/org/publicAssets";
 import { ORG_PROFILE as op } from "./_lib/org/profile";
 import { PublicRoutes } from "./_lib/routes/publicRoutes";
 import Button from "./_ui/button/Button";
@@ -13,7 +13,7 @@ const NotFound = async () => {
     <main className="flex min-h-screen flex-col items-center justify-center bg-org-primary-light/5 px-6 py-16 text-center text-slate-800">
       {/* Logo */}
       <Image
-        src={images.icon.apple}
+        src={publicAssets.icons.apple}
         alt={`${op.orgName} logo`}
         width={88}
         height={88}

@@ -1,4 +1,4 @@
-import { images } from "@/app/_lib/org/assets";
+import { publicAssets } from "@/app/_lib/org/publicAssets";
 import { getBaseUrl, ORG_PROFILE } from "@/app/_lib/org/profile";
 import EmailFooter from "@/app/_ui/email/components/EmailFooter";
 import {
@@ -40,7 +40,7 @@ export default function EmailLayout({
           {/* Header */}
           <Section style={styles.header}>
             <Img
-              src={`${getBaseUrl()}${images.icon.apple}`}
+              src={`${getBaseUrl()}${publicAssets.icons.apple}`}
               alt={`${ORG_PROFILE.orgName} logo`}
               width={48}
               height={48}

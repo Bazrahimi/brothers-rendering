@@ -1,4 +1,4 @@
-import { images } from "@/app/_lib/org/assets";
+import { publicAssets } from "@/app/_lib/org/publicAssets";
 import { P } from "@/app/_ui/typography/paragraph";
 import Image from "next/image";
 
@@ -13,7 +13,7 @@ export default function HeroLogoVisualCard({ orgName, ctaLabel }: Props) {
       <div className="rounded-3xl bg-white/10  px-8 py-8 ">
         {/* Logo */}
         <Image
-          src={images.icon.apple}
+          src={publicAssets.icons.apple}
           alt={`${orgName} Logo`}
           width={220}
           height={220}
