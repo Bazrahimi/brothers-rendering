@@ -1,36 +1,173 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Business Website Framework
 
-## Getting Started
+A reusable **Next.js (App Router) + TypeScript framework** for building
+fast, SEO‑ready small‑business websites.
 
-First, run the development server:
+This framework is designed so it can be **copied into a new repository**
+and used as the starting point for a new website project.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Each new project becomes **fully independent** --- changes made in the
+new project will **not affect this framework**.
+
+------------------------------------------------------------------------
+
+# Project Structure
+
+The framework keeps the **Next.js `app/` directory at the root** of the
+repository.
+
+## Key Concepts
+
+  Folder             Purpose
+  ------------------ -----------------------------------------------
+  `app/_lib`         Business logic, configuration, data models
+  `app/_ui`          Reusable UI components
+  `app/services`     Service pages and service content
+  `app/contact-us`   Contact form, validation, email logic
+  `app/languages`    Multi‑language support
+  `app/_lib/org`     Organisation profile, SEO, services, branding
+
+------------------------------------------------------------------------
+
+# Starting a New Project From This Framework
+
+Follow these steps to create a **new independent project** using this
+framework.
+
+The new project will **NOT be linked to this repository**.
+
+------------------------------------------------------------------------
+
+# Step 1 --- Create a New Empty GitHub Repository
+
+Create a new repository on GitHub.
+
+Example:
+
+    https://github.com/Bazrahimi/new-project-name
+
+Important:
+
+-   Do NOT add a README
+-   Do NOT add `.gitignore`
+-   Do NOT add a license
+
+The repository should be completely **empty**.
+
+------------------------------------------------------------------------
+
+# Step 1 --- Create a New Empty GitHub Repository
+
+------------------------------------------------------------------------
+
+# Step 3 --- Copy the Framework Into the New Project
+
+Clone the framework temporarily:
+
+``` bash
+git clone --depth 1 https://github.com/Bazrahimi/brothers-rendering.git _framework_tmp
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Copy the framework files into the new project:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+``` bash
+rsync -av --exclude ".git" _framework_tmp/ ./
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Remove the temporary folder:
 
-## Learn More
+``` bash
+rm -rf _framework_tmp
+```
 
-To learn more about Next.js, take a look at the following resources:
+Your project should now look like:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    new-project-name/
+    ├── app/
+    ├── package.json
+    ├── next.config.ts
+    └── ...
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+------------------------------------------------------------------------
 
-## Deploy on Vercel
+# Step 4 --- Verify Git Remote
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Make sure the project only points to your new repository.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+``` bash
+git remote -v
+```
+
+Expected result:
+
+    origin  git@github.com:Bazrahimi/new-project-name.git
+
+There should be **no reference to `brothers-rendering`**.
+
+------------------------------------------------------------------------
+
+# Step 5 --- Commit the Framework as the Starting Point
+
+Run:
+
+``` bash
+git add -A
+git commit -m "Initial project created from brothers-rendering framework"
+git push -u origin main
+```
+
+Now the new project is **fully independent**.
+
+Updates in the new project **will not affect the framework repository**.
+
+------------------------------------------------------------------------
+
+# Step 6 --- Install Dependencies
+
+Install project dependencies:
+
+``` bash
+pnpm install
+```
+
+Notes:
+
+-   `pnpm install` installs dependencies from `package.json`
+-   `pnpm i` is a shortcut for install
+-   `pnpm add` is used only when adding **new dependencies**
+
+------------------------------------------------------------------------
+
+# Step 7 --- Run the Development Server
+
+Start the development server:
+
+``` bash
+pnpm dev
+```
+
+
+Open in browser:
+
+    http://localhost:3000
+
+------------------------------------------------------------------------
+
+---
+
+# Step 8 — Create Environment Variables
+
+This framework uses environment variables for API keys and SEO controls.
+
+First create a local environment file from the example:
+
+```bash
+cp .env.example .env.local
+
+------------------------------------------------------------------------
+
+
+# Maintainer
+
+Built by **Baz Rahimi**\
+Kateb Technology
