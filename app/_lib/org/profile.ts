@@ -2,8 +2,8 @@
 
 import { CtaKey } from "../content/cta";
 import { OtherLanguageKey } from "../languages/multiculturalStatement";
+import { images } from "./assets";
 import { LeafImage } from "./definitions";
-import { ORG_ICONS } from "./icons";
 import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
 
 const ORG_DOMAIN = "brothersrendering.com.au" as const;
@@ -34,7 +34,7 @@ export const ORG_PROFILE = {
     kind: "url",
     src: "business-f/building/brothers-rendering/brother-render-hero-image_klfiqy.png",
   } as LeafImage,
-  logoFullUrl: `${getBaseUrl()}${ORG_ICONS.apple}`,
+  logoFullUrl: `${getBaseUrl()}${images.icon.apple}`,
   heroImgUrl: "/images/brother-hero.jpg",
   cta: "freeQuote" as CtaKey,
 } as const;

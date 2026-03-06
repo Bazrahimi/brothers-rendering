@@ -1,8 +1,8 @@
 // app/_lib/org/layoutAndSeo.ts
 import type { Metadata, Viewport } from "next";
 import { PublicRoutes } from "../routes/publicRoutes";
-import { getHomeServiceKeywords, getServiceSubcategoryKeywordsBySlug } from "./category/serviceLookup";
-import { ORG_ICONS } from "./icons";
+import { images } from "./assets";
+import { getHomeServiceKeywords } from "./category/serviceLookup";
 import { ORG_PROFILE as op } from "./profile";
 import { SERVICE_AREA } from "./serviceArea";
 
@@ -46,8 +46,8 @@ export const ROOT_SEO: RootSeoConfig = {
   themeColor: "#030501",
   manifestPath: "/manifest.webmanifest",
   icons: {
-    icon: ORG_ICONS.icon,
-    apple: ORG_ICONS.apple,
+    icon: images.icon.icon,
+    apple: images.icon.apple,
   },
   defaultOgImagePath: "/images/og_image.png",
   robots: {
@@ -196,7 +196,7 @@ export const SEO_PAGES = {
   contact: (): PageSeo => ({
     canonicalPathname: PublicRoutes.contact(),
     title: `Contact ${op.orgName}`,
-     description: `Request a free quote or free consultation or send an enquiry to ${op.orgName}. We service South East Melbourne and surrounding suburbs.`,
+    description: `Request a free quote or free consultation or send an enquiry to ${op.orgName}. We service South East Melbourne and surrounding suburbs.`,
     keywords: [
       op.orgName,
       `Contact ${op.orgName}`,
@@ -204,7 +204,6 @@ export const SEO_PAGES = {
       "rendering",
       SERVICE_AREA.primaryRegion,
       ...(SERVICE_AREA.featuredSuburbs ?? []),
-  
     ],
   }),
 
