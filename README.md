@@ -9,7 +9,7 @@ and used as the starting point for a new website project.
 Each new project becomes **fully independent** --- changes made in the
 new project will **not affect this framework**.
 
-------------------------------------------------------------------------
+---
 
 # Project Structure
 
@@ -18,16 +18,18 @@ repository.
 
 ## Key Concepts
 
-  Folder             Purpose
-  ------------------ -----------------------------------------------
-  `app/_lib`         Business logic, configuration, data models
-  `app/_ui`          Reusable UI components
-  `app/services`     Service pages and service content
-  `app/contact-us`   Contact form, validation, email logic
-  `app/languages`    Multi‑language support
-  `app/_lib/org`     Organisation profile, SEO, services, branding
+Folder Purpose
 
-------------------------------------------------------------------------
+---
+
+`app/_lib` Business logic, configuration, data models
+`app/_ui` Reusable UI components
+`app/services` Service pages and service content
+`app/contact-us` Contact form, validation, email logic
+`app/languages` Multi‑language support
+`app/_lib/org` Organisation profile, SEO, services, branding
+
+---
 
 # Starting a New Project From This Framework
 
@@ -36,7 +38,7 @@ framework.
 
 The new project will **NOT be linked to this repository**.
 
-------------------------------------------------------------------------
+---
 
 # Step 1 --- Create a New Empty GitHub Repository
 
@@ -48,35 +50,35 @@ Example:
 
 Important:
 
--   Do NOT add a README
--   Do NOT add `.gitignore`
--   Do NOT add a license
+- Do NOT add a README
+- Do NOT add `.gitignore`
+- Do NOT add a license
 
 The repository should be completely **empty**.
 
-------------------------------------------------------------------------
+---
 
-# Step 1 --- Create a New Empty GitHub Repository
+# Step 2 --- clone the new-project repository in local machine
 
-------------------------------------------------------------------------
+---
 
 # Step 3 --- Copy the Framework Into the New Project
 
 Clone the framework temporarily:
 
-``` bash
+```bash
 git clone --depth 1 https://github.com/Bazrahimi/brothers-rendering.git _framework_tmp
 ```
 
 Copy the framework files into the new project:
 
-``` bash
+```bash
 rsync -av --exclude ".git" _framework_tmp/ ./
 ```
 
 Remove the temporary folder:
 
-``` bash
+```bash
 rm -rf _framework_tmp
 ```
 
@@ -88,31 +90,38 @@ Your project should now look like:
     ├── next.config.ts
     └── ...
 
-------------------------------------------------------------------------
+---
 
 # Step 4 --- Verify Git Remote
 
 Make sure the project only points to your new repository.
 
-``` bash
+```bash
 git remote -v
 ```
 
 Expected result:
 
-    origin  git@github.com:Bazrahimi/new-project-name.git
+    origin  git@github.com:your-username/new-project-name.git (fetch)
+    origin  git@github.com:your-username/new-project-name.git (push)
 
 There should be **no reference to `brothers-rendering`**.
 
-------------------------------------------------------------------------
+If the remote is using HTTPS, change it to SSH:
+
+```bash
+git remote set-url origin git@github.com:your-username/new-project-name.git
+```
+
+---
 
 # Step 5 --- Commit the Framework as the Starting Point
 
 Run:
 
-``` bash
+```bash
 git add -A
-git commit -m "Initial project created from brothers-rendering framework"
+git commit -m "Initial project created from framework"
 git push -u origin main
 ```
 
@@ -120,38 +129,37 @@ Now the new project is **fully independent**.
 
 Updates in the new project **will not affect the framework repository**.
 
-------------------------------------------------------------------------
+---
 
 # Step 6 --- Install Dependencies
 
 Install project dependencies:
 
-``` bash
+```bash
 pnpm install
 ```
 
 Notes:
 
--   `pnpm install` installs dependencies from `package.json`
--   `pnpm i` is a shortcut for install
--   `pnpm add` is used only when adding **new dependencies**
+- `pnpm install` installs dependencies from `package.json`
+- `pnpm i` is a shortcut for install
+- `pnpm add` is used only when adding **new dependencies**
 
-------------------------------------------------------------------------
+---
 
 # Step 7 --- Run the Development Server
 
 Start the development server:
 
-``` bash
+```bash
 pnpm dev
 ```
-
 
 Open in browser:
 
     http://localhost:3000
 
-------------------------------------------------------------------------
+---
 
 ---
 
@@ -171,3 +179,4 @@ cp .env.example .env.local
 
 Built by **Baz Rahimi**\
 Kateb Technology
+```
