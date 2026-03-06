@@ -1,5 +1,5 @@
-import { ORG_PROFILE } from "@/app/_lib/org/profile";
-
+import { images } from "@/app/_lib/org/assets";
+import { ORG_PROFILE, getBaseUrl } from "@/app/_lib/org/profile";
 import { Img, Section } from "@react-email/components";
 // app/_lib/email/components/EmailFooter.tsx
 
@@ -22,20 +22,17 @@ export default function EmailFooter() {
         flexWrap: "wrap",
       }}
     >
-      {/* Logo (optional) */}
-      {ORG_PROFILE.logoFullUrl && (
-        <Img
-          src={ORG_PROFILE.logoFullUrl}
-          alt={`${ORG_PROFILE.orgName} logo`}
-          width={48}
-          height={48}
-          style={{
-            borderRadius: "9999px",
-            objectFit: "cover",
-            display: "block",
-          }}
-        />
-      )}
+      <Img
+        src={`${getBaseUrl()}${images.icon.apple}`}
+        alt={`${ORG_PROFILE.orgName} logo`}
+        width={48}
+        height={48}
+        style={{
+          borderRadius: "9999px",
+          objectFit: "cover",
+          display: "block",
+        }}
+      />
 
       {/* Text block */}
       <div
@@ -81,10 +78,10 @@ export default function EmailFooter() {
         <div>
           Website:{" "}
           <a
-            href={ORG_PROFILE.baseUrl}
+            href={getBaseUrl()}
             style={{ color: "#1d4ed8", textDecoration: "none" }}
           >
-            {ORG_PROFILE.baseUrl}
+            {getBaseUrl()}
           </a>
         </div>
       </div>

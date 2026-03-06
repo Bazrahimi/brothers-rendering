@@ -1,25 +1,28 @@
-import { LeafImage } from "@/app/_lib/org/definitions";
+import { images } from "@/app/_lib/org/assets";
 import { P } from "@/app/_ui/typography/paragraph";
-import ServiceLeafImage from "@/app/services/[slug]/_ui/ServiceLeafImage";
+import Image from "next/image";
 
 type Props = {
-  heroImgUrl: LeafImage;
   orgName: string;
   ctaLabel: string;
 };
 
-export default function HeroLogoVisualCard({ heroImgUrl, orgName, ctaLabel }: Props) {
+export default function HeroLogoVisualCard({ orgName, ctaLabel }: Props) {
   return (
-    <div className="lg:col-span-5">
-   
-      <div className="rounded-3xl border border-white/60 bg-white/20 p-3 shadow-sm backdrop-blur-3xl">
-        <ServiceLeafImage
-          image={heroImgUrl}
+    <div className="lg:col-span-5 flex flex-col items-center justify-center">
+      <div className="rounded-3xl bg-white/10  px-8 py-8 ">
+        {/* Logo */}
+        <Image
+          src={images.icon.apple}
           alt={`${orgName} Logo`}
-          aspect="aspect-[16/12]"
+          width={220}
+          height={220}
+          className="w-[140px] sm:w-[170px] lg:w-[210px] h-auto object-contain"
+          priority
         />
 
-        <P className="text-center text-gray-50">
+        {/* Caption */}
+        <P className="mt-6 text-center text-gray-50">
           Fast {ctaLabel} • Clear communication
         </P>
       </div>

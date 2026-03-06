@@ -1,16 +1,16 @@
+import { images } from "@/app/_lib/org/assets";
 import { IMAGE_DEFAULT_BLUR } from "@/app/_ui/image/ImageShimer";
 import Image from "next/image";
 
 type Props = {
-  heroImgUrl: string;
   orgName: string;
 };
 // TODO: could you please insert the inline comment for each talwind classes I want delete some of t
-export default function HeroBackground({ heroImgUrl, orgName }: Props) {
+export default function HeroBackground({  orgName }: Props) {
   return (
     <div className="absolute inset-0">
       <Image
-        src={heroImgUrl}
+        src={images.icon.apple}
         alt={`${orgName} hero background`}
         fill
         priority

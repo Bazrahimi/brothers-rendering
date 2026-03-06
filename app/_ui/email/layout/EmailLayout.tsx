@@ -1,4 +1,5 @@
-import { ORG_PROFILE } from "@/app/_lib/org/profile";
+import { images } from "@/app/_lib/org/assets";
+import { getBaseUrl, ORG_PROFILE } from "@/app/_lib/org/profile";
 import EmailFooter from "@/app/_ui/email/components/EmailFooter";
 import {
   Body,
@@ -38,15 +39,13 @@ export default function EmailLayout({
         <Container style={styles.container}>
           {/* Header */}
           <Section style={styles.header}>
-            {ORG_PROFILE.logoFullUrl ? (
-              <Img
-                src={ORG_PROFILE.logoFullUrl}
-                alt={`${ORG_PROFILE.orgName} logo`}
-                width={48}
-                height={48}
-                style={styles.logo}
-              />
-            ) : null}
+            <Img
+              src={`${getBaseUrl()}${images.icon.apple}`}
+              alt={`${ORG_PROFILE.orgName} logo`}
+              width={48}
+              height={48}
+              style={styles.logo}
+            />
 
             <div>
               <Heading as="h1" style={styles.brand}>
