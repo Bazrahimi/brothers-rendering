@@ -7,13 +7,13 @@ type Props = {
   className?: string;
 };
 
-export default function PoweredByKateb({ className }: Props) {
+export default function PoweredBy({ className }: Props) {
   const year = new Date().getFullYear();
 
   return (
     <div
       className={cn(
-        "flex flex-wrap items-center justify-center gap-2 text-xs text-slate-800 mt-3",
+        "flex flex-wrap items-center justify-center gap-2 text-xs text-slate-800",
         className,
       )}
     >

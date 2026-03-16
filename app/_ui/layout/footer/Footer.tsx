@@ -14,7 +14,7 @@ import SocialLinks from "./SocialLinks";
 // Reusable className tokens
 // -------------------------------
 export const CN = {
-  footer: "bg-org-secondary-main",
+  footer: "bg-org-secondary-main py-5",
   wrap: "mx-auto max-w-7xl px-6 py-14",
   grid: "grid grid-cols-1 gap-y-10 gap-x-8 sm:grid-cols-2 md:grid-cols-4",
 
@@ -55,7 +55,7 @@ const Footer = () => {
       {/* Acknowledgements */}
 
       <Acknowledgement />
-      <PoweredByKateb />
+      <PoweredByKateb  />
     </footer>
   );
 };

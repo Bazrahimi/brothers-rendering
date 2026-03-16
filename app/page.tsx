@@ -24,9 +24,8 @@ export default function HomePage() {
   return (
     <main className="space-y-10">
       <Suspense fallback={<HomeHeroSkeleton />}>
-        <HomeHero />
+        <HomeHero className="w-screen relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw]" />
       </Suspense>
-
       <div>
         <ServiceArea />
       </div>

@@ -4,7 +4,7 @@ export const publicAssets = {
     ogImage: "/images/og_image.png",
   },
   icons: {
-    icon: "/icons/favicon.ico",
-    apple: "/icons/apple-touch-icon.png",
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };

@@ -6,7 +6,7 @@ import { CN } from "./Footer";
 const QuickLinks = () => {
   return (
     <div>
-      <Header as="h4" size="sm">
+      <Header as="h4" size="sm" align="left">
         Quick Links
       </Header>
       <ul className={CN.list}>
