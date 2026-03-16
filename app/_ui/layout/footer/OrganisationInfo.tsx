@@ -5,7 +5,7 @@ import { P } from "../../typography/paragraph";
 const OrganisationInfo = () => {
   return (
     <div className="sm:col-span-2">
-      <Header as="h4" size="sm">
+      <Header as="h4" size="sm" align="left">
         {ORG_PROFILE.orgName}
       </Header>
       <P size="md" className="text-gray-900">

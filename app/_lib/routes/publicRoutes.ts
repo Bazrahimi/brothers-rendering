@@ -29,7 +29,12 @@ export const getServiceCategoryLinks = () => {
 /** Quick links */
 export const QUICK_LINKS = [
   { href: PublicRoutes.home(), label: "Home" },
-  { href: PublicRoutes.about(), label: "About HCA" },
-  ...getServiceCategoryLinks().map(({ href, label }) => ({ href, label })),
+  { href: PublicRoutes.about(), label: "About Us" },
   { href: PublicRoutes.contact(), label: "Contact us" },
 ] as const;
+
+
+export const SERVICES_LINKS = [
+
+  ...getServiceCategoryLinks().map(({ href, label }) => ({ href, label })),
+];

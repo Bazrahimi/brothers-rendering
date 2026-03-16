@@ -33,8 +33,8 @@ const SocialLinks = () => {
 
   return (
     <div>
-      <Header as="h4" size="sm">
-        Follow us on Social Media
+      <Header as="h4" size="sm" align="left">
+        Follow us
       </Header>
 
       <ul className={CN.list}>

@@ -9,6 +9,7 @@ import OrganisationInfo from "./OrganisationInfo";
 import PoweredByKateb from "./PoweredByKateb";
 import QuickLinks from "./QuickLinks";
 import SocialLinks from "./SocialLinks";
+import ServiceLink from "./ServicesLinks";
 
 // -------------------------------
 // Reusable className tokens
@@ -44,7 +45,8 @@ const Footer = () => {
 
         {/* Quick Links */}
         <QuickLinks />
-
+        
+        <ServiceLink />
         {/* Get In touch */}
         <GetInTouch />
 

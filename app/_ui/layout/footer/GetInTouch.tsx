@@ -22,8 +22,8 @@ const CONTACT = {
 const GetInTouch = () => {
   return (
     <address className="not-italic" aria-labelledby="contact-heading">
-      <Header as="h4" id="contact-heading" size="sm">
-        Get in touch with us
+      <Header as="h4" id="contact-heading" size="sm" align="left">
+        Get in touch
       </Header>
       <ul className={CN.listDense}>
         <li className={CN.Item}>
