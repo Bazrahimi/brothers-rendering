@@ -1,9 +1,9 @@
 import type { ServiceLeaf } from "@/app/_lib/org/definitions";
 import { cn } from "@/app/_lib/utils/cn";
 import List from "@/app/_ui/content/List";
+import ImageGallery from "@/app/_ui/image/ImageGallery";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
-import ServiceLeafImage from "./ServiceLeafImage";
 
 type Props = {
   leaf: ServiceLeaf;
@@ -56,7 +56,9 @@ export default function ServiceLeafCard({ leaf, index, leafId }: Props) {
               isEven ? "sm:order-2" : "sm:order-1",
             )}
           >
-            <ServiceLeafImage image={leaf.image} />
+            <div className="mx-auto w-full max-w-3xl overflow-hidden">
+              <ImageGallery images={leaf.image} priorityFirstImage />
+            </div>
           </aside>
         </div>
       </article>
