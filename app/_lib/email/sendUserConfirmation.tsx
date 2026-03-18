@@ -1,6 +1,6 @@
 "use server";
 
-import { Enquiry } from "@/app/contact-us/_lib/schema";
+import { Enquiry } from "@/app/(pages)/contact-us/_lib/schema";
 
 import {
   emailClient,

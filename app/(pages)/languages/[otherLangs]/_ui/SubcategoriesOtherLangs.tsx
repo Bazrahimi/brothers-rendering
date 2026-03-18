@@ -1,3 +1,4 @@
+import ServiceLeafImage from "@/app/(pages)/services/[slug]/_ui/ServiceLeafImage";
 import type { ServiceSubCategory } from "@/app/_lib/org/definitions";
 import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import { cn } from "@/app/_lib/utils/cn";
@@ -5,7 +6,6 @@ import List from "@/app/_ui/content/List";
 import ServiceCTA from "@/app/_ui/content/ServiceCTA";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
-import ServiceLeafImage from "@/app/services/[slug]/_ui/ServiceLeafImage";
 
 type Props = {
   heading: string;

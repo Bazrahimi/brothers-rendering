@@ -1,6 +1,6 @@
 "use client";
+import ServiceLeafImage from "@/app/(pages)/services/[slug]/_ui/ServiceLeafImage";
 import type { ServiceLeaf } from "@/app/_lib/org/definitions";
-import ServiceLeafImage from "@/app/services/[slug]/_ui/ServiceLeafImage";
 type CarouselImageProps = {
   image: ServiceLeaf["image"];
   alt: string;

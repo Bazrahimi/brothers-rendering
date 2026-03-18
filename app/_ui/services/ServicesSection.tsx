@@ -1,13 +1,13 @@
+import ServiceLeafImage from "@/app/(pages)/services/[slug]/_ui/ServiceLeafImage";
 import type { ServicesPage } from "@/app/_lib/org/definitions";
+import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import { PublicRoutes } from "@/app/_lib/routes/publicRoutes";
 import { cn } from "@/app/_lib/utils/cn";
 import ServiceLeavesCarousel from "@/app/_ui/carousels/ServiceLeavesCarousel";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
-import ServiceLeafImage from "@/app/services/[slug]/_ui/ServiceLeafImage";
 import Button from "../button/Button";
 import ServiceCTA from "../content/ServiceCTA";
-import { ORG_PROFILE } from "@/app/_lib/org/profile";
 
 type Props = {
   service: ServicesPage;
@@ -51,14 +51,15 @@ export default function ServiceSection({ service, className }: Props) {
           {/* <Link href={PublicRoutes.service(service.slug)} className="text-sm font-semibold">
               View all {service.label}
             </Link> */}
-          <Button as="link" href={PublicRoutes.service(service.slug)} fullWidth variant="secondary">
+          <Button
+            as="link"
+            href={PublicRoutes.service(service.slug)}
+            fullWidth
+            variant="secondary"
+          >
             View all {service.label}
           </Button>
-          <ServiceCTA 
-          ctaKey={ORG_PROFILE.cta}
-          serviceLabel={service.label}
-          
-          />
+          <ServiceCTA ctaKey={ORG_PROFILE.cta} serviceLabel={service.label} />
         </div>
       </div>
 

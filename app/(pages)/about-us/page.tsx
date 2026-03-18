@@ -4,17 +4,15 @@ import {
   ABOUT_TEAM,
   ABOUT_VALUES,
 } from "@/app/_lib/org/orgPages/aboutUs";
-import { ORG_PROFILE as op } from "../_lib/org/profile";
-import Section from "../_ui/layout/Section";
-import { Header } from "../_ui/typography/Header";
-
-import MultiLanguageCapacity from "../_ui/content/MultiLanguageCapacity";
-import { P } from "../_ui/typography/paragraph";
+import { ORG_PROFILE as op } from "@/app/_lib/org/profile";
+import Section from "@/app/_ui/layout/Section";
+import { Header } from "@/app/_ui/typography/Header";
+import MultiLanguageCapacity from "@/app/_ui/content/MultiLanguageCapacity";
+import { P } from "@/app/_ui/typography/paragraph";
 import ContactForm from "../contact-us/_ui/ContactForm";
 import ServiceArea from "../contact-us/_ui/ServiceArea";
-
 import { Suspense } from "react";
-import PageIntro from "../_ui/layout/PageIntro";
+import PageIntro from "@/app/_ui/layout/PageIntro";
 import AboutTextSections from "./_ui/AboutTextSections";
 import AboutValues from "./_ui/AboutValues";
 import { TeamGrid } from "./_ui/TeamGrid";

@@ -1,18 +1,18 @@
 import { SERVICES_PAGE } from "@/app/_lib/org/category/services";
-import { ORG_PROFILE as op } from "./_lib/org/profile";
-import MultiLanguageCapacity from "./_ui/content/MultiLanguageCapacity";
+import { ORG_PROFILE as op } from "../_lib/org/profile";
+import MultiLanguageCapacity from "../_ui/content/MultiLanguageCapacity";
 
 import dynamic from "next/dynamic";
-import ServiceSection from "./_ui/services/ServicesSection";
+import ServiceSection from "../_ui/services/ServicesSection";
 import ServiceArea from "./contact-us/_ui/ServiceArea";
 
 import { Suspense } from "react";
-import OtherLanguagesSnapshot from "./_ui/content/OtherLanguagesSnapshot";
+import OtherLanguagesSnapshot from "../_ui/content/OtherLanguagesSnapshot";
 
-import { buildMetadata, SEO_PAGES } from "./_lib/org/layoutAndSeo";
-import HomeHero from "./_ui/hero/HomeHero";
-import HomeHeroSkeleton from "./_ui/hero/HomeHeroSkeleton";
-import ServiceSectionSkeleton from "./_ui/services/ServiceSectionSkeleton";
+import { buildMetadata, SEO_PAGES } from "../_lib/org/layoutAndSeo";
+import HomeHero from "../_ui/hero/HomeHero";
+import HomeHeroSkeleton from "../_ui/hero/HomeHeroSkeleton";
+import ServiceSectionSkeleton from "../_ui/services/ServiceSectionSkeleton";
 const ContactFormLazy = dynamic(() => import("./contact-us/_ui/ContactForm"), {
   // ssr: false,
   loading: () => <div className="max-w-lg mx-auto h-[500px]" />,
