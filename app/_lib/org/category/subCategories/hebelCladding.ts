@@ -4,7 +4,7 @@ export const hebelCladding = {
   whatIsHebel: {
     label: "What is Hebel (AAC)?",
     labelFarsi: "هبل (AAC) چیست؟",
-    image: { kind: "svg", text: "What is Hebel" },
+    image: [],
     description: [
       "Hebel is Autoclaved Aerated Concrete (AAC): a lightweight precast building material with strong insulation properties.",
     ],
@@ -19,7 +19,7 @@ export const hebelCladding = {
   keyBenefits: {
     label: "Key Benefits",
     labelFarsi: "مزایای اصلی",
-    image: { kind: "svg", text: "Key Benefits" },
+    image: [],
     description: [
       "Hebel supports energy efficiency, fire resistance, and acoustic comfort for modern builds.",
     ],
@@ -35,7 +35,7 @@ export const hebelCladding = {
   applications: {
     label: "Applications",
     labelFarsi: "کاربردها",
-    image: { kind: "svg", text: "Applications" },
+    image: [],
     description: [
       "Suitable for residential, commercial, and multi-residential developments across many wall systems.",
     ],
@@ -53,7 +53,7 @@ export const hebelCladding = {
   choosingContractor: {
     label: "Choosing the Right Installer",
     labelFarsi: "انتخاب نصاب مناسب",
-    image: { kind: "svg", text: "Choosing Installer" },
+    image: [],
     description: [
       "Selecting an experienced installer ensures correct installation, compliance, and long-term performance.",
     ],
@@ -69,7 +69,7 @@ export const hebelCladding = {
   maintenance: {
     label: "Maintenance",
     labelFarsi: "نگهداری",
-    image: { kind: "svg", text: "Maintenance" },
+    image: [],
     description: [
       "Low maintenance overall; routine cleaning and inspections help preserve appearance and performance.",
     ],

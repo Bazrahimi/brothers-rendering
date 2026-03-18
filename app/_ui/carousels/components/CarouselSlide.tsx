@@ -24,7 +24,7 @@ export default function CarouselSlide({ leaf, leafId, serviceSlug }: Props) {
       <article className="h-full flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
         {/* Image */}
         <div className="overflow-hidden">
-          <CarouselImage image={leaf.image} alt={leaf.label} />
+          <CarouselImage image={leaf.image} />
         </div>
 
         {/* Content */}

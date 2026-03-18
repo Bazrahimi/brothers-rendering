@@ -4,7 +4,7 @@ export const polystyreneCladding = {
   systemOverview: {
     label: "Polystyrene Cladding System",
     labelFarsi: "سیستم کلادینگ پلی‌استایرن",
-    image: { kind: "svg", text: "Polystyrene System" },
+    image: [],
     description: [
       "Insulated polystyrene cladding systems rendered for durability, protection, and street appeal.",
     ],
@@ -19,7 +19,7 @@ export const polystyreneCladding = {
   keyBenefits: {
     label: "Benefits of Polystyrene Cladding",
     labelFarsi: "مزایای کلادینگ پلی‌استایرن",
-    image: { kind: "svg", text: "Cladding Benefits" },
+    image: [],
     description: [
       "A flexible, modern exterior solution designed for insulation, durability, and design versatility.",
     ],
@@ -35,7 +35,7 @@ export const polystyreneCladding = {
   brickLook: {
     label: "Polystyrene Brick Cladding Look",
     labelFarsi: "نمای آجری پلی‌استایرن",
-    image: { kind: "svg", text: "3D Brick Look" },
+    image: [],
     description: [
       "Achieve a 3D brick appearance while improving energy efficiency through an insulated cladding system.",
     ],
@@ -50,7 +50,7 @@ export const polystyreneCladding = {
   brands: {
     label: "Brands We Use",
     labelFarsi: "برندهای مورد استفاده",
-    image: { kind: "svg", text: "Brands" },
+    image: [],
     description: [
       "We use established polystyrene systems and products for consistent performance.",
     ],
@@ -60,7 +60,7 @@ export const polystyreneCladding = {
   pricingFactors: {
     label: "Cost Factors",
     labelFarsi: "عوامل تعیین هزینه",
-    image: { kind: "svg", text: "Cost Factors" },
+    image: [],
     description: [
       "Pricing depends on system selection, building size, storeys, access, and existing wall condition.",
     ],

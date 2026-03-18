@@ -12,7 +12,7 @@ export const SERVICES_PAGE = {
   acrylicRendering: {
     slug: "acrylic-rendering-services",
     label: "Acrylic Rendering Services",
-    image: { kind: "svg", text: "Acrylic Rendering Services" },
+    image: [],
     labelFarsi: "رندر اکریلیک",
     description: [
       "Fast, flexible acrylic render finishes for residential and commercial projects.",
@@ -23,7 +23,7 @@ export const SERVICES_PAGE = {
   cementRendering: {
     slug: "cement-rendering-services",
     label: "Cement Rendering Services",
-    image: { kind: "svg", text: "Cement Rendering Services" },
+    image: [],
     labelFarsi: "رندر سیمانی",
     description: [
       "Durable cement rendering for weatherproof, modern exterior finishes.",
@@ -34,7 +34,7 @@ export const SERVICES_PAGE = {
   concreteRender: {
     slug: "concrete-render-services",
     label: "Concrete Render Services",
-    image: { kind: "svg", text: "Concrete Render Services" },
+    image: [],
     labelFarsi: "رندر بتنی",
     description: [
       "Smooth concrete finishes for modern interiors and feature walls.",
@@ -45,7 +45,7 @@ export const SERVICES_PAGE = {
   crackRepairs: {
     slug: "crack-repair-services",
     label: "Crack Repair Services",
-    image: { kind: "svg", text: "Crack Repair Services" },
+    image: [],
     labelFarsi: "تعمیر ترک",
     description: [
       "Wall crack diagnosis and repairs to restore durability and appearance.",
@@ -56,7 +56,7 @@ export const SERVICES_PAGE = {
   polystyreneCladding: {
     slug: "polystyrene-cladding-services",
     label: "Polystyrene Cladding Services",
-    image: { kind: "svg", text: "Polystyrene Cladding Services" },
+    image:[],
     labelFarsi: "کلادینگ پلی‌استایرن",
     description: [
       "Insulated foam cladding systems rendered for strength and modern curb appeal.",
@@ -67,7 +67,7 @@ export const SERVICES_PAGE = {
   hebelCladding: {
     slug: "hebel-cladding-services",
     label: "Hebel Cladding Services",
-    image: { kind: "svg", text: "Hebel Cladding Services" },
+    image: [],
     labelFarsi: "کلادینگ هبل",
     description: [
       "Hebel (AAC) panel installation and finishing for efficient, fire-rated walls.",

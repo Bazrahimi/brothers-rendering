@@ -4,7 +4,7 @@ export const concreteRender = {
   smoothConcreteFinish: {
     label: "Smooth Concrete Finish",
     labelFarsi: "فینیش بتنی صاف",
-    image: { kind: "svg", text: "Smooth Concrete Finish" },
+    image: [],
     description: [
       "Concrete finish render creates clean, smooth surfaces for modern interiors and feature walls.",
     ],
@@ -19,7 +19,7 @@ export const concreteRender = {
   interiorFitOuts: {
     label: "Interior Fit-outs",
     labelFarsi: "فیت‌آوت داخلی",
-    image: { kind: "svg", text: "Interior Fit-outs" },
+    image: [],
     description: [
       "Suitable for many interior spaces where appearance is a priority.",
     ],
@@ -36,7 +36,7 @@ export const concreteRender = {
   maintenance: {
     label: "Maintenance Considerations",
     labelFarsi: "نکات نگهداری",
-    image: { kind: "svg", text: "Maintenance" },
+    image: [],
     description: [
       "Concrete render may require more ongoing maintenance to keep its finish looking fresh.",
     ],
@@ -51,7 +51,7 @@ export const concreteRender = {
   designTrend: {
     label: "Design Trend: Concrete Finishes",
     labelFarsi: "ترند طراحی: فینیش بتنی",
-    image: { kind: "svg", text: "Concrete Design Trend" },
+    image: [],
     description: [
       "Concrete textures pair well with raw materials, earthy tones, and natural outdoor spaces.",
     ],

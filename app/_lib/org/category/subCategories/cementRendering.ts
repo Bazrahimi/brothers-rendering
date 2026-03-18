@@ -4,7 +4,7 @@ export const cementRendering = {
   newRenderApplication: {
     label: "New Render Application",
     labelFarsi: "اجرای رندر جدید",
-    image: { kind: "svg", text: "New Render Application" },
+    image: [],
     description: [
       "A fresh cement render layer for a durable, weatherproof exterior finish.",
     ],
@@ -19,7 +19,7 @@ export const cementRendering = {
   renderingRepairs: {
     label: "Rendering Repairs",
     labelFarsi: "تعمیر رندر",
-    image: { kind: "svg", text: "Rendering Repairs" },
+    image: [],
     description: [
       "Repair cracked, chipped, or aged cement render to restore strength and appearance.",
     ],
@@ -34,7 +34,7 @@ export const cementRendering = {
   decorativeRendering: {
     label: "Decorative Rendering",
     labelFarsi: "رندر دکوراتیو",
-    image: { kind: "svg", text: "Decorative Rendering" },
+    image: [],
     description: [
       "Textures and finishes to make your façade unique and modern.",
     ],
@@ -49,7 +49,7 @@ export const cementRendering = {
   whatIsCementRender: {
     label: "What is Cement Rendering?",
     labelFarsi: "رندر سیمانی چیست؟",
-    image: { kind: "svg", text: "What is Cement Rendering?" },
+    image: [],
     description: [
       "Cement rendering uses cement, sand, and lime applied to masonry walls for a smooth or textured protective finish.",
     ],

@@ -87,7 +87,7 @@ export default function SubcategoriesOtherLangs({
           className={cn("sm:col-span-6", isEven ? "sm:order-2" : "sm:order-1")}
         >
           {/* image is optional */}
-          {img ? <ServiceLeafImage image={img} alt={heading} /> : null}
+          {img ? <ServiceLeafImage image={img} /> : null}
         </aside>
       </div>
     </article>

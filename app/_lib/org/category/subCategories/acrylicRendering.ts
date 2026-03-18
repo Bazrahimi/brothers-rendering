@@ -4,7 +4,7 @@ export const acrylicRendering = {
   overview: {
     label: "Acrylic Rendering Overview",
     labelFarsi: "معرفی رندر اکریلیک",
-    image: { kind: "svg", text: "Acrylic Rendering Overview" },
+    image: [],
     description: [
       "Acrylic rendering is a convenient way to upgrade exterior and interior surfaces with a modern, durable finish.",
     ],
@@ -19,7 +19,7 @@ export const acrylicRendering = {
   compatibleSurfaces: {
     label: "Compatible Surfaces",
     labelFarsi: "سطوح قابل اجرا",
-    image: { kind: "svg", text: "Compatible Surfaces" },
+    image: [],
     description: [
       "Versatile application across many surface types with strong adhesion and clean results.",
     ],
@@ -39,7 +39,7 @@ export const acrylicRendering = {
   substratesSystems: {
     label: "Boards & Cladding Systems",
     labelFarsi: "سیستم‌های برد و کلادینگ",
-    image: { kind: "svg", text: "Boards & Systems" },
+    image: [],
     description: [
       "High polymer acrylic render systems compatible with modern substrates used across Melbourne builds.",
     ],
@@ -58,7 +58,7 @@ export const acrylicRendering = {
   keyBenefits: {
     label: "Why Acrylic Render",
     labelFarsi: "چرا رندر اکریلیک",
-    image: { kind: "svg", text: "Why Acrylic Render" },
+    image: [],
     description: [
       "Acrylic renders offer faster drying, improved adhesion, and flexible performance compared to traditional cement render.",
     ],
@@ -76,7 +76,7 @@ export const acrylicRendering = {
   brandsAndFinishes: {
     label: "Products & Finishes",
     labelFarsi: "محصولات و فینیش‌ها",
-    image: { kind: "svg", text: "Products & Finishes" },
+    image: [],
     description: [
       "Premium products and texture coatings used to meet modern building requirements and hide older textures.",
     ],

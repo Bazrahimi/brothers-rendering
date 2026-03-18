@@ -4,7 +4,7 @@ export const crackRepairs = {
   repairServices: {
     label: "Wall Crack Repairs",
     labelFarsi: "تعمیر ترک‌های دیوار",
-    image: { kind: "svg", text: "Wall Crack Repairs" },
+    image: [],
     description: [
       "Repairs for plaster, brick, and rendered walls including drummy render and surface restoration.",
     ],
@@ -20,7 +20,7 @@ export const crackRepairs = {
   crackAssessment: {
     label: "Crack Assessment",
     labelFarsi: "ارزیابی ترک",
-    image: { kind: "svg", text: "Crack Assessment" },
+    image: [],
     description: [
       "Not all cracks are structural—assessment helps identify the cause and best repair approach.",
     ],
@@ -35,7 +35,7 @@ export const crackRepairs = {
   structuralWarningSigns: {
     label: "Structural Warning Signs",
     labelFarsi: "علائم هشدار سازه‌ای",
-    image: { kind: "svg", text: "Structural Warning Signs" },
+    image: [],
     description: [
       "Certain crack patterns and locations may indicate underlying structural issues.",
     ],
@@ -50,7 +50,7 @@ export const crackRepairs = {
   drummyRenderAndSpalling: {
     label: "Drummy Render & Concrete Spalling",
     labelFarsi: "رندر درامی و پوسته‌شدن بتن",
-    image: { kind: "svg", text: "Drummy Render & Spalling" },
+    image: [],
     description: [
       "Drummy render is loose render that sounds hollow; spalling is concrete deterioration often linked to moisture exposure.",
     ],
@@ -65,7 +65,7 @@ export const crackRepairs = {
   repairMethods: {
     label: "Repair Methods",
     labelFarsi: "روش‌های تعمیر",
-    image: { kind: "svg", text: "Repair Methods" },
+    image: [],
     description: [
       "We use the right compounds and techniques based on the crack type and substrate.",
     ],

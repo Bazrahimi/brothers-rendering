@@ -56,7 +56,7 @@ export default function ServiceLeafCard({ leaf, index, leafId }: Props) {
               isEven ? "sm:order-2" : "sm:order-1",
             )}
           >
-            <ServiceLeafImage image={leaf.image} alt={leaf.label} />
+            <ServiceLeafImage image={leaf.image} />
           </aside>
         </div>
       </article>

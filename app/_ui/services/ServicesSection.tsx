@@ -28,11 +28,7 @@ export default function ServiceSection({ service, className }: Props) {
         <div className="lg:col-span-5">
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
             {/* Bigger aspect ratio */}
-            <ServiceLeafImage
-              image={service.image}
-              alt={service.label}
-              aspect="aspect-[16/10]"
-            />
+            <ServiceLeafImage image={service.image} aspect="aspect-[16/10]" />
           </div>
         </div>
 

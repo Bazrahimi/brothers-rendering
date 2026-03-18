@@ -1,14 +1,10 @@
-export type LeafImage =
-  | { kind: "url"; src: string }
-  | { kind: "svg"; text: string };
-
-  
+import type { ImageMeta } from "../definitions";
 
 export type ServiceLeaf = {
   label: string;
   labelFarsi: string;
   description: string[];
-  image: LeafImage;
+  image: ImageMeta[];
   items: readonly string[];
 };
 
@@ -21,7 +17,7 @@ export type ServicesPage = {
   labelFarsi: string; //
   slug: string;
   description: readonly string[];
-  image: LeafImage;
+  image: ImageMeta[];
   subcategories: ServiceSubCategory;
 };
 
