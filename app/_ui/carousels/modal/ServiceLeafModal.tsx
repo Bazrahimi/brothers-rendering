@@ -1,7 +1,7 @@
 "use client";
 
 import type { ServiceLeaf } from "@/app/_lib/org/definitions";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import Button from "../../button/Button";
 import ServiceLeafModalContent from "./ServiceLeafModalContent";
@@ -19,11 +19,7 @@ export default function ServiceLeafModal({
   leaf,
   leafId,
 }: Props) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const canRenderInPortal = typeof document !== "undefined";
 
   useEffect(() => {
     if (!open) return;
@@ -41,7 +37,7 @@ export default function ServiceLeafModal({
     };
   }, [open, onClose]);
 
-  if (!mounted || !open) return null;
+  if (!canRenderInPortal || !open) return null;
 
   return createPortal(
     <div className="fixed inset-0 z-[9999] overflow-y-auto bg-slate-900/60 p-4">
