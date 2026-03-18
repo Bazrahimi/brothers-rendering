@@ -1,8 +1,6 @@
 import type { ServiceLeaf } from "@/app/_lib/org/definitions";
-import { ORG_PROFILE } from "@/app/_lib/org/profile";
 import { cn } from "@/app/_lib/utils/cn";
 import List from "@/app/_ui/content/List";
-import ServiceCTA from "@/app/_ui/content/ServiceCTA";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 import ServiceLeafImage from "./ServiceLeafImage";
@@ -47,15 +45,7 @@ export default function ServiceLeafCard({ leaf, index, leafId }: Props) {
             >
               {/* Divider */}
               <div className="mb-4 h-px w-full bg-slate-200/70" />
-              <List items={leaf.items}  />
-
-              <div className="mt-5 hidden md:block">
-                <ServiceCTA
-                  ctaKey={ORG_PROFILE.cta}
-                  serviceLabel={leaf.label}
-                  locale="en"
-                />
-              </div>
+              <List items={leaf.items} />
             </section>
           )}
 
@@ -67,13 +57,6 @@ export default function ServiceLeafCard({ leaf, index, leafId }: Props) {
             )}
           >
             <ServiceLeafImage image={leaf.image} alt={leaf.label} />
-            <div className="mt-5 block md:hidden">
-              <ServiceCTA
-                ctaKey={ORG_PROFILE.cta}
-                serviceLabel={leaf.label}
-                locale="en"
-              />
-            </div>
           </aside>
         </div>
       </article>
