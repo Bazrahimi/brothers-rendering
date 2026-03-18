@@ -1,16 +1,16 @@
 "use client";
 
 import { Header } from "../../typography/Header";
-import { P } from "../../typography/paragraph";
+import List from "../../content/List";
 
 type CarouselSlideContentProps = {
   label: string;
-  description: string[];
+  items: string[];
 };
 
 export default function CarouselSlideContent({
   label,
-  description,
+  items,
 }: CarouselSlideContentProps) {
   return (
     <div className="px-4 py-4">
@@ -19,10 +19,16 @@ export default function CarouselSlideContent({
         {label}
       </Header>
 
-      {/* Reserve space with min-h so cards are consistent */}
-      <P className="mt-2 text-slate-600 text-sm line-clamp-2 min-h-[40px]">
-        {description?.[0] ?? ""}
-      </P>
+      {/* List instead of description */}
+      <div className="mt-2 max-h-[180px] text-slate-600">
+        <List
+          items={items}
+          className="px-0 py-0"
+          itemClassName="!gap-1"
+          iconClassName="!h-3 !w-3"
+          textClassName=" px-0  !text-sm"
+        />
+      </div>
     </div>
   );
 }

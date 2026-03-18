@@ -11,20 +11,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import type { ServiceSubCategory } from "@/app/_lib/org/definitions";
 import { cn } from "@/app/_lib/utils/cn";
-import { Header } from "@/app/_ui/typography/Header";
 
 type Props = {
   subcategories: ServiceSubCategory;
   className?: string;
-  heading?: string;
-  slug: string;
+
+
 };
 
 export default function ServiceLeavesCarousel({
   subcategories,
   className,
-  slug,
-  heading = "Featured Services",
+
 }: Props) {
   const mounted = useMounted();
   const { prevClass, nextClass, navigation } =
@@ -34,31 +32,26 @@ export default function ServiceLeavesCarousel({
   const entries = Object.entries(subcategories);
   if (entries.length === 0) return null;
 
-  const shouldPaginate = entries.length > 1
+  const shouldPaginate = entries.length > 1;
 
   return (
     <section
       className={cn(
-        "rounded-2xl border border-slate-200 bg-white/70 p-5 shadow-sm backdrop-blur sm:p-7",
+        "rounded-2xl border border-slate-200 bg-white/70  shadow-sm backdrop-blur p-0",
         className,
       )}
     >
-      <div className="flex items-center justify-between gap-3 p-3 md:p-6">
-        <Header as="h2" align="center">
-          {heading}
-        </Header>
-      </div>
-
       {/* ✅ fix: min-h needs px */}
-      <div className="relative mt-4 min-h-[360px]">
+      <div className="relative  min-h-[360px]">
         <Swiper
           modules={[Navigation, Pagination, A11y]}
           loop={entries.length > 3}
           watchOverflow
           navigation={navigation}
           className="service-carousel pb-14"
-          pagination={ shouldPaginate ? { clickable: true } : false}
-          spaceBetween={14}
+  
+          pagination={shouldPaginate ? { clickable: true } : false}
+          spaceBetween={12}
           slidesPerView={1.1}
           breakpoints={{
             640: { slidesPerView: 2.1 },
@@ -68,7 +61,7 @@ export default function ServiceLeavesCarousel({
           {entries.map(([leafId, leaf]) => (
             <SwiperSlide key={leafId} className="h-auto">
               <div className="h-full">
-                <CarouselSlide leaf={leaf} leafId={leafId} serviceSlug={slug} />
+                <CarouselSlide leaf={leaf} leafId={leafId}  />
               </div>
             </SwiperSlide>
           ))}
