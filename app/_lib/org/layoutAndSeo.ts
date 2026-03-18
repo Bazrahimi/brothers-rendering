@@ -6,39 +6,18 @@ import { getHomeServiceKeywords } from "./category/serviceLookup";
 import { getBaseUrl, ORG_PROFILE as op } from "./profile";
 import { SERVICE_AREA } from "./serviceArea";
 
-export type RootSeoConfig = {
-  siteName: string;
-  manifestPath: string;
-  icons: NonNullable<Metadata["icons"]>;
-  defaultOgImagePath: string;
-  robots: Metadata["robots"];
-};
+import type { RootSeoConfig, PageSeo } from "../definitions";
 
-/**
- * Per-page SEO input.
- * Keep only what changes per page.
- */
-export type PageSeo = {
-  title: string; // page title (without template suffix)
-  description: string;
-  /**
-   * Canonical pathname, e.g. "/" "/about-us" "/contact-us"
-   * We build absolute canonical using ROOT_SEO.baseUrl
-   */
-  canonicalPathname: string;
-  /**
-   * Optional override OG image
-   */
-  ogImagePath?: string;
-  /**
-   * Optional keywords (nice for small biz templates; not critical)
-   */
-  keywords?: string[];
-  /**
-   * Optional "noindex" for staging/private pages
-   */
-  noindex?: boolean;
-};
+
+export function absoluteUrl(path: string): string {
+  // If already a full URL, return it unchanged
+  if (path.startsWith("http://") || path.startsWith("https://")) {
+    return path;
+  }
+
+  // Otherwise build absolute URL from your site base URL
+  return new URL(path, getBaseUrl()).toString();
+}
 
 export const ROOT_SEO: RootSeoConfig = {
   siteName: op.orgName,
@@ -55,19 +34,9 @@ export const ROOT_SEO: RootSeoConfig = {
   },
 };
 
-/**
- * Convert a pathname or path into an absolute URL.
- * - "/images/og.png" => "https://site.com/images/og.png"
- * - "images/og.png"  => "https://site.com/images/og.png"
- */
-export function absoluteUrl(path: string): string {
-  return `${getBaseUrl()}${path}`;
-}
 
-/**
- * ✅ Central viewport export.
- * Put this in app/layout.tsx: `export { viewport } from ...`
- */
+
+
 export const viewport: Viewport = {
   themeColor: op.primaryColor,
 };

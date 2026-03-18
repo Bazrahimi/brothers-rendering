@@ -21,20 +21,3 @@ export type ServicesPage = {
   subcategories: ServiceSubCategory;
 };
 
-export type OrgRootSeo = {
-  ogImagePath: string;
-  themeColor: string;
-  manifestPath: string;
-  icons: {
-    icon: string;
-    apple: string;
-  };
-  locale: {
-    default: string; // e.g. "en_AU"
-    alternates?: string[];
-  };
-  robots: {
-    index: boolean;
-    follow: boolean;
-  };
-};
