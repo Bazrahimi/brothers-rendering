@@ -94,16 +94,11 @@ export default function ServiceCTA({
       )}
 
       {generalEnquiry && (
-        <>
-          <P className="mt-3 text-center text-slate-100">
-            {locale === "fa" ? "| یا |" : "| OR |"}
-          </P>
-          <P className="mt-2 text-center text-slate-300">
-            {locale === "fa"
-              ? `اگر پرسش عمومی دارید با ${ORG_PROFILE.orgName} تماس بگیرید.`
-              : `Contact ${ORG_PROFILE.orgName} if you have a general question.`}
-          </P>
-        </>
+        <P className="mt-2 text-center text-slate-300">
+          {locale === "fa"
+            ? `اگر پرسش عمومی دارید با ${ORG_PROFILE.orgName} تماس بگیرید.`
+            : `Contact ${ORG_PROFILE.orgName} if you have a general question.`}
+        </P>
       )}
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -118,19 +113,14 @@ export default function ServiceCTA({
         </Button>
 
         {generalEnquiry && (
-          <>
-            <P className="text-slate-300 text-center font-bold inline-flex justify-center">
-              {locale === "fa" ? "| یا |" : "| OR |"}
-            </P>
-            <Button
-              as="link"
-              href={PublicRoutes.contact()}
-              variant="outline"
-              size="sm"
-            >
-              {locale === "fa" ? "پرسش عمومی" : "General Enquiry"}
-            </Button>
-          </>
+          <Button
+            as="link"
+            href={PublicRoutes.contact()}
+            variant="outline"
+            size="sm"
+          >
+            {locale === "fa" ? "پرسش عمومی" : "General Enquiry"}
+          </Button>
         )}
       </div>
     </div>
